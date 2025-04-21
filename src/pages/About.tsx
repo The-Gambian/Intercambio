@@ -191,7 +191,7 @@ const About = () => {
                     <div>
                       <p className="font-medium">Events</p>
                       <p>Regular meetups and activities throughout Lisbon</p>
-                      <p>Check our events calendar for details</p>
+                      <p>Check our events calendar for details about upcoming events</p>
                     </div>
                   </div>
                   
