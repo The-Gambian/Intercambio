@@ -1,240 +1,169 @@
 import React, { useState } from 'react';
-import { Search, BookOpen, Video, FileText, Download, Users, Clock, ArrowRight } from 'lucide-react';
+import { Search, BookOpen, Video, FileText, Users, ArrowRight, ExternalLink } from 'lucide-react';
 
 // Sample learning resources data
 const resourcesData = [
   {
     id: 1,
-    title: "Language Learning Resources",
-    description: "Resources for learning the local language, including courses, practice materials, and conversation groups.",
+    title: "Getting Started in Portugal",
+    description: "Essential resources for newcomers to Portugal",
     resources: [
       {
         id: 101,
-        title: "Beginner Language Course",
-        type: "course",
-        description: "A comprehensive 8-week course covering basic vocabulary, grammar, and conversation skills.",
-        level: "Beginner",
-        duration: "8 weeks",
-        format: "In-person & Online",
-        image: "https://images.unsplash.com/photo-1503676260728-1c00da094a0b?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2022&q=80"
+        type: "guide",
+        title: "Immigration & Documentation Guide",
+        description: "Step-by-step guidance on visas, residence permits (D7, D2, etc.), and citizenship processes in Portugal",
+        image: "https://i.im.ge/2025/04/22/vOgYlc.IMG-20231125-WA0027.jpeg"
       },
       {
         id: 102,
-        title: "Intermediate Conversation Group",
-        type: "group",
-        description: "Weekly conversation practice with native speakers and other learners at an intermediate level.",
-        level: "Intermediate",
-        duration: "Ongoing",
-        format: "In-person",
-        image: "https://images.unsplash.com/photo-1543269865-cbf427effbad?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80"
+        type: "workshop",
+        title: "Portuguese Bureaucracy Navigation",
+        description: "Understanding SEF, Finanças, Social Security, and other essential government services",
+        image: "https://i.im.ge/2025/04/22/vOgb0L.IMG-20240706-WA0029-1.jpeg"
       },
       {
         id: 103,
-        title: "Language Learning App Guide",
         type: "guide",
-        description: "A comparison of popular language learning apps with recommendations for different learning styles.",
-        level: "All Levels",
-        format: "PDF",
-        image: "https://images.unsplash.com/photo-1611162617213-7d7a39e9b1d7?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1974&q=80"
-      },
-      {
-        id: 104,
-        title: "Advanced Grammar Workshop",
-        type: "workshop",
-        description: "A focused workshop on complex grammar structures for advanced language learners.",
-        level: "Advanced",
-        duration: "4 weeks",
-        format: "Online",
-        image: "https://images.unsplash.com/photo-1434030216411-0b793f4b4173?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80"
+        title: "Housing in Portugal",
+        description: "Guide to finding accommodation, rental processes, and understanding tenant rights",
+        image: "https://i.im.ge/2025/04/22/vOggex.WhatsApp-Image-2025-03-18-at-16-10-11-1.jpeg"
       }
     ]
   },
   {
     id: 2,
-    title: "Cultural Adaptation",
-    description: "Resources to help navigate cultural differences, understand local customs, and manage culture shock.",
+    title: "Language Learning Resources",
+    description: "Tools and resources for learning Portuguese",
     resources: [
       {
         id: 201,
-        title: "Cultural Norms and Practices Guide",
         type: "guide",
-        description: "An overview of local cultural norms, social etiquette, and common practices.",
-        level: "All Levels",
-        format: "PDF",
-        image: "https://images.unsplash.com/photo-1526379095098-d400fd0bf935?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2074&q=80"
+        title: "Find a Portuguese Teacher",
+        description: "Directory of qualified Portuguese language teachers offering private and group lessons",
+        image: "https://i.im.ge/2025/04/22/vOgWCJ.WhatsApp-Image-2025-03-22-at-21-11-43.jpeg"
       },
       {
         id: 202,
-        title: "Managing Culture Shock Workshop",
-        type: "workshop",
-        description: "Strategies for recognizing and coping with the stages of culture shock.",
-        duration: "2 weeks",
-        format: "In-person",
-        image: "https://images.unsplash.com/photo-1573497019940-1c28c88b4f3e?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1974&q=80"
+        type: "guide",
+        title: "Language Learning Apps",
+        description: "Recommended apps and online platforms for Portuguese language learning (Duolingo, Babbel, Memrise, etc.)",
+        image: "https://i.im.ge/2025/04/22/vO8YPY.WhatsApp-Image-2025-04-13-at-09-48-10.jpeg"
       },
       {
         id: 203,
-        title: "Cross-Cultural Communication",
         type: "course",
-        description: "Learn to navigate communication styles, non-verbal cues, and potential misunderstandings across cultures.",
-        duration: "6 weeks",
-        format: "Online",
-        image: "https://images.unsplash.com/photo-1521737852567-6949f3f9f2b5?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2047&q=80"
+        title: "Portuguese Language Exchange",
+        description: "Weekly conversation practice with native speakers and fellow learners",
+        image: "https://i.im.ge/2025/04/22/vOgxVT.Brown-And-Beige-Modern-Summer-Movie-Night-Instagram-Post-1.png"
+      },
+      {
+        id: 204,
+        type: "guide",
+        title: "Study Resources",
+        description: "Books, podcasts, YouTube channels, and other materials for Portuguese learning",
+        image: "https://i.im.ge/2025/04/22/vOgYlc.IMG-20231125-WA0027.jpeg"
       }
     ]
   },
   {
     id: 3,
-    title: "Professional Development",
-    description: "Resources for career advancement, credential recognition, job searching, and workplace culture.",
+    title: "Cultural Integration",
+    description: "Resources for understanding and celebrating cultural heritage",
     resources: [
       {
         id: 301,
-        title: "Resume and Cover Letter Workshop",
         type: "workshop",
-        description: "Learn how to create effective resumes and cover letters that highlight your skills and experience for the local job market.",
-        duration: "1 day",
-        format: "In-person & Online",
-        image: "https://images.unsplash.com/photo-1586281380349-632531db7ed4?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80"
+        title: "African Heritage Celebrations",
+        description: "Calendar of cultural events, festivals, and celebrations in the African diaspora community",
+        image: "https://i.im.ge/2025/04/22/vOgb0L.IMG-20240706-WA0029-1.jpeg"
       },
       {
         id: 302,
-        title: "Credential Recognition Guide",
         type: "guide",
-        description: "Information on how to get foreign credentials recognized, including processes for different professions.",
-        level: "All Levels",
-        format: "PDF",
-        image: "https://images.unsplash.com/photo-1434030216411-0b793f4b4173?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80"
+        title: "Music & Arts Scene",
+        description: "Guide to African and Afro-Portuguese music events, concerts, and artistic expressions",
+        image: "https://i.im.ge/2025/04/22/vOggex.WhatsApp-Image-2025-03-18-at-16-10-11-1.jpeg"
       },
       {
         id: 303,
-        title: "Networking for Professional Success",
-        type: "course",
-        description: "Strategies for building professional networks, including informational interviews, industry events, and online networking.",
-        duration: "4 weeks",
-        format: "In-person",
-        image: "https://images.unsplash.com/photo-1556155092-490a1ba16284?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80"
+        type: "workshop",
+        title: "Cultural Workshops",
+        description: "Traditional dance, music, cooking, and craft workshops celebrating African heritage",
+        image: "https://i.im.ge/2025/04/22/vOgWCJ.WhatsApp-Image-2025-03-22-at-21-11-43.jpeg"
       },
       {
         id: 304,
-        title: "Interview Skills Practice Group",
-        type: "group",
-        description: "Practice interview skills with peers and receive feedback from career counselors.",
-        duration: "Ongoing",
-        format: "In-person & Online",
-        image: "https://images.unsplash.com/photo-1565688534245-05d6b5be184a?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80"
+        type: "guide",
+        title: "Community Spaces",
+        description: "Directory of cultural centers, museums, and venues celebrating African diaspora culture",
+        image: "https://i.im.ge/2025/04/22/vO8YPY.WhatsApp-Image-2025-04-13-at-09-48-10.jpeg"
       }
     ]
   },
   {
     id: 4,
-    title: "Family Resources",
-    description: "Resources for parents, children, and families navigating education, parenting, and family life in a new cultural context.",
+    title: "Professional Development",
+    description: "Career advancement and business resources",
     resources: [
       {
         id: 401,
-        title: "Navigating the School System",
         type: "workshop",
-        description: "Understanding the local education system, including enrollment, parent involvement, and supporting your child's learning.",
-        duration: "1 day",
-        format: "In-person",
-        image: "https://images.unsplash.com/photo-1503676260728-1c00da094a0b?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2022&q=80"
+        title: "Professional Networking",
+        description: "Building professional connections in Portugal's job market",
+        image: "https://i.im.ge/2025/04/22/vOgYlc.IMG-20231125-WA0027.jpeg"
       },
       {
         id: 402,
-        title: "Bicultural Parenting Support Group",
-        type: "group",
-        description: "Connect with other parents raising children between cultures to share challenges, strategies, and resources.",
-        duration: "Ongoing",
-        format: "In-person",
-        image: "https://images.unsplash.com/photo-1536640712-4d4c36ff0e4e?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80"
+        type: "guide",
+        title: "Entrepreneurship in Portugal",
+        description: "Guide to starting and running a business, including legal requirements and funding opportunities",
+        image: "https://i.im.ge/2025/04/22/vOgb0L.IMG-20240706-WA0029-1.jpeg"
       },
       {
         id: 403,
-        title: "Heritage Language Resources for Children",
-        type: "guide",
-        description: "Strategies and resources for helping children maintain their heritage language while learning the local language.",
-        level: "All Levels",
-        format: "PDF",
-        image: "https://images.unsplash.com/photo-1503676260728-1c00da094a0b?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2022&q=80"
+        type: "workshop",
+        title: "Qualification Recognition",
+        description: "Process for recognizing foreign qualifications and professional certifications",
+        image: "https://i.im.ge/2025/04/22/vOggex.WhatsApp-Image-2025-03-18-at-16-10-11-1.jpeg"
       }
     ]
   },
   {
     id: 5,
-    title: "Legal and Civic Education",
-    description: "Resources on legal rights, immigration processes, civic participation, and community engagement.",
+    title: "Family & Education",
+    description: "Resources for families and educational support",
     resources: [
       {
         id: 501,
-        title: "Know Your Rights Workshop",
-        type: "workshop",
-        description: "Information on legal rights regardless of immigration status, including employment, housing, and interactions with authorities.",
-        duration: "1 day",
-        format: "In-person & Online",
-        image: "https://images.unsplash.com/photo-1589829545856-d10d557cf95f?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80"
+        type: "guide",
+        title: "Portuguese Education System",
+        description: "Understanding schools, enrollment, and educational support for children",
+        image: "https://i.im.ge/2025/04/22/vOgWCJ.WhatsApp-Image-2025-03-22-at-21-11-43.jpeg"
       },
       {
         id: 502,
-        title: "Citizenship Preparation Course",
-        type: "course",
-        description: "Preparation for the citizenship test, including history, government, and interview practice.",
-        duration: "10 weeks",
-        format: "In-person",
-        image: "https://images.unsplash.com/photo-1569025690938-a00729c9e1f9?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80"
+        type: "workshop",
+        title: "Parenting in Portugal",
+        description: "Support group for African and Afro-descendant parents navigating cultural differences",
+        image: "https://i.im.ge/2025/04/22/vO8YPY.WhatsApp-Image-2025-04-13-at-09-48-10.jpeg"
       },
       {
         id: 503,
-        title: "Community Advocacy Training",
-        type: "workshop",
-        description: "Learn how to advocate for your community's needs through civic engagement and community organizing.",
-        duration: "4 weeks",
-        format: "In-person",
-        image: "https://images.unsplash.com/photo-1464998857633-50e59fbf2fe6?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80"
+        type: "guide",
+        title: "Healthcare Navigation",
+        description: "Accessing healthcare services, insurance, and medical care for families",
+        image: "https://i.im.ge/2025/04/22/vOgxVT.Brown-And-Beige-Modern-Summer-Movie-Night-Instagram-Post-1.png"
       }
     ]
   }
 ];
 
-// Resource type icons
-const resourceTypeIcons = {
-  course: <BookOpen className="h-5 w-5" />,
-  workshop: <Users className="h-5 w-5" />,
-  guide: <FileText className="h-5 w-5" />,
-  video: <Video className="h-5 w-5" />,
-  group: <Users className="h-5 w-5" />
-};
+const LearningHub: React.FC = () => {
+  const [searchTerm, setSearchTerm] = useState('');
 
-const LearningHub = () => {
-  const [searchTerm, setSearchTerm] = useState("");
-  const [expandedCategory, setExpandedCategory] = useState<number | null>(null);
-  const [selectedResource, setSelectedResource] = useState<{categoryId: number, resourceId: number} | null>(null);
-
-  // Filter resources based on search term
-  const filteredCategories = resourcesData.filter(category => {
-    // Check if category title or description matches search
-    const categoryMatches = category.title.toLowerCase().includes(searchTerm.toLowerCase()) || 
-                            category.description.toLowerCase().includes(searchTerm.toLowerCase());
-    
-    // Check if any resources in the category match search
-    const resourcesMatch = category.resources.some(resource => 
-      resource.title.toLowerCase().includes(searchTerm.toLowerCase()) || 
-      resource.description.toLowerCase().includes(searchTerm.toLowerCase())
-    );
-    
-    return categoryMatches || resourcesMatch;
-  });
-
-  const toggleCategory = (categoryId: number) => {
-    if (expandedCategory === categoryId) {
-      setExpandedCategory(null);
-    } else {
-      setExpandedCategory(categoryId);
-    }
-  };
-
-  const openResourceDetail = (categoryId: number, resourceId: number) => {
-    setSelectedResource({ categoryId, resourceId });
+  const handleResourceClick = () => {
+    window.open('https://5pzn0sic.forms.app/lead-generation-form', '_blank');
   };
 
   return (
@@ -243,219 +172,59 @@ const LearningHub = () => {
       <div className="bg-blue-900 text-white py-16">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <h1 className="text-4xl font-bold mb-4">Learning Hub</h1>
-          <p className="text-xl max-w-3xl">Access educational resources, courses, and materials to support your personal and professional development.</p>
+          <p className="text-xl max-w-3xl">Access resources, guides, and support for your journey in Portugal.</p>
         </div>
       </div>
 
-      {/* Search */}
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
-        <div className="bg-white rounded-lg shadow-md p-6 mb-8">
-          <div className="relative">
-            <div className="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
-              <Search className="h-5 w-5 text-gray-400" />
-            </div>
-            <input
-              type="text"
-              placeholder="Search for resources, courses, workshops..."
-              className="pl-10 pr-4 py-3 border border-gray-300 rounded-md w-full focus:outline-none focus:ring-2 focus:ring-blue-500"
-              value={searchTerm}
-              onChange={(e) => setSearchTerm(e.target.value)}
-            />
-          </div>
+        {/* Search bar */}
+        <div className="relative mb-8">
+          <input
+            type="text"
+            placeholder="Search resources..."
+            className="w-full p-4 pl-12 rounded-lg border border-gray-300 focus:outline-none focus:border-blue-500"
+            value={searchTerm}
+            onChange={(e) => setSearchTerm(e.target.value)}
+          />
+          <Search className="absolute left-4 top-1/2 transform -translate-y-1/2 text-gray-400" />
         </div>
 
-        {/* Resource Categories */}
-        {!selectedResource && (
-          <div className="space-y-8 mb-12">
-            {filteredCategories.map(category => (
-              <div key={category.id} className="bg-white rounded-lg shadow-md overflow-hidden">
-                <div 
-                  className="p-6 cursor-pointer hover:bg-gray-50 transition"
-                  onClick={() => toggleCategory(category.id)}
-                >
-                  <div className="flex justify-between items-center">
-                    <h2 className="text-2xl font-bold">{category.title}</h2>
-                    <button className="text-blue-700">
-                      {expandedCategory === category.id ? 'Collapse' : 'Expand'}
-                    </button>
-                  </div>
-                  <p className="text-gray-600 mt-2">{category.description}</p>
-                </div>
-                
-                {expandedCategory === category.id && (
-                  <div className="border-t border-gray-200 p-6">
-                    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-                      {category.resources.map(resource => (
-                        <div 
-                          key={resource.id} 
-                          className="border border-gray-200 rounded-lg overflow-hidden hover:shadow-md transition cursor-pointer"
-                          onClick={() => openResourceDetail(category.id, resource.id)}
-                        >
-                          <img 
-                            src={resource.image} 
-                            alt={resource.title} 
-                            className="w-full h-40 object-cover"
-                          />
-                          <div className="p-4">
-                            <div className="flex items-center text-sm text-blue-700 font-medium mb-2">
-                              {resourceTypeIcons[resource.type as keyof typeof resourceTypeIcons]}
-                              <span className="ml-1 capitalize">{resource.type}</span>
-                            </div>
-                            <h3 className="text-lg font-bold mb-2">{resource.title}</h3>
-                            <p className="text-gray-600 text-sm mb-3">{resource.description}</p>
-                            
-                            <div className="flex flex-wrap gap-2 mb-3">
-                              {resource.level && (
-                                <span className="bg-blue-50 text-blue-700 text-xs px-2 py-1 rounded-full">
-                                  {resource.level}
-                                </span>
-                              )}
-                              {resource.format && (
-                                <span className="bg-green-50 text-green-700 text-xs px-2 py-1 rounded-full">
-                                  {resource.format}
-                                </span>
-                              )}
-                              {resource.duration && (
-                                <span className="bg-purple-50 text-purple-700 text-xs px-2 py-1 rounded-full flex items-center">
-                                  <Clock className="h-3 w-3 mr-1" />
-                                  {resource.duration}
-                                </span>
-                              )}
-                            </div>
-                            
-                            <button 
-                              className="text-blue-700 font-medium flex items-center hover:text-blue-800 text-sm"
-                              onClick={() => openResourceDetail(category.id, resource.id)}
-                            >
-                              View Details <ArrowRight className="ml-1 h-4 w-4" />
-                            </button>
-                          </div>
-                        </div>
-                      ))}
+        {/* Resource categories */}
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+          {resourcesData.map((category) => (
+            <div key={category.id} className="bg-white rounded-lg shadow-md p-6">
+              <h2 className="text-2xl font-semibold mb-4">{category.title}</h2>
+              <p className="text-gray-600 mb-6">{category.description}</p>
+              
+              {/* Resources list */}
+              <div className="space-y-4">
+                {category.resources.map((resource) => (
+                  <div key={resource.id} className="flex items-start space-x-4">
+                    {/* Resource type icon */}
+                    <div className="p-2 bg-blue-100 rounded-lg">
+                      {resource.type === 'guide' && <BookOpen className="text-blue-600" />}
+                      {resource.type === 'workshop' && <Users className="text-blue-600" />}
+                      {resource.type === 'course' && <Video className="text-blue-600" />}
+                      {resource.type === 'group' && <Users className="text-blue-600" />}
+                    </div>
+                    
+                    {/* Resource content */}
+                    <div className="flex-1">
+                      <h3 className="font-semibold text-lg">{resource.title}</h3>
+                      <p className="text-gray-600 text-sm">{resource.description}</p>
+                      <button 
+                        onClick={handleResourceClick}
+                        className="mt-2 text-blue-600 flex items-center text-sm hover:text-blue-800"
+                      >
+                        Contact for more information <ExternalLink className="ml-1 w-4 h-4" />
+                      </button>
                     </div>
                   </div>
-                )}
+                ))}
               </div>
-            ))}
-
-            {filteredCategories.length === 0 && (
-              <div className="text-center py-12">
-                <h3 className="text-xl font-medium text-gray-600">No resources found matching your search</h3>
-                <p className="mt-2 text-gray-500">Try adjusting your search terms</p>
-              </div>
-            )}
-          </div>
-        )}
-
-        {/* Resource Detail View */}
-        {selectedResource && (
-          <div className="bg-white rounded-lg shadow-md overflow-hidden mb-12">
-            {resourcesData
-              .filter(category => category.id === selectedResource.categoryId)
-              .map(category => (
-                category.resources
-                  .filter(resource => resource.id === selectedResource.resourceId)
-                  .map(resource => (
-                    <div key={resource.id}>
-                      <img 
-                        src={resource.image} 
-                        alt={resource.title} 
-                        className="w-full h-64 md:h-96 object-cover"
-                      />
-                      <div className="p-6 md:p-8">
-                        <button 
-                          className="text-blue-700 font-medium mb-4 flex items-center hover:text-blue-800"
-                          onClick={() => setSelectedResource(null)}
-                        >
-                          &larr; Back to Resources
-                        </button>
-                        
-                        <div className="flex items-center text-sm text-blue-700 font-medium mb-2">
-                          {resourceTypeIcons[resource.type as keyof typeof resourceTypeIcons]}
-                          <span className="ml-1 capitalize">{resource.type}</span>
-                        </div>
-                        
-                        <h1 className="text-3xl font-bold mb-4">{resource.title}</h1>
-                        
-                        <div className="flex flex-wrap gap-3 mb-6">
-                          {resource.level && (
-                            <span className="bg-blue-50 text-blue-700 px-3 py-1 rounded-full">
-                              {resource.level}
-                            </span>
-                          )}
-                          {resource.format && (
-                            <span className="bg-green-50 text-green-700 px-3 py-1 rounded-full">
-                              {resource.format}
-                            </span>
-                          )}
-                          {resource.duration && (
-                            <span className="bg-purple-50 text-purple-700 px-3 py-1 rounded-full flex items-center">
-                              <Clock className="h-4 w-4 mr-1" />
-                              {resource.duration}
-                            </span>
-                          )}
-                        </div>
-                        
-                        <div className="prose max-w-none mb-8">
-                          <h2 className="text-xl font-semibold mb-3">Description</h2>
-                          <p className="text-gray-700">{resource.description}</p>
-                          
-                          {/* Additional content would be here in a real application */}
-                          <div className="mt-6">
-                            <h2 className="text-xl font-semibold mb-3">What You'll Learn</h2>
-                            <ul className="list-disc pl-5 space-y-2 text-gray-700">
-                              <li>Comprehensive understanding of key concepts and principles</li>
-                              <li>Practical skills that you can apply immediately</li>
-                              <li>Strategies for overcoming common challenges</li>
-                              <li>Resources for continued learning and development</li>
-                            </ul>
-                          </div>
-                          
-                          {resource.type === 'course' && (
-                            <div className="mt-6">
-                              <h2 className="text-xl font-semibold mb-3">Course Structure</h2>
-                              <p className="text-gray-700">This course is structured to provide both theoretical knowledge and practical application. Sessions include interactive discussions, hands-on activities, and opportunities for reflection and feedback.</p>
-                            </div>
-                          )}
-                          
-                          {resource.type === 'workshop' && (
-                            <div className="mt-6">
-                              <h2 className="text-xl font-semibold mb-3">Workshop Format</h2>
-                              <p className="text-gray-700">This interactive workshop combines presentation, group activities, and individual exercises to ensure participants can apply what they learn to their specific situations.</p>
-                            </div>
-                          )}
-                        </div>
-                        
-                        <div className="flex flex-col sm:flex-row gap-4">
-                          {resource.type === 'guide' && (
-                            <button className="bg-blue-700 hover:bg-blue-800 text-white px-6 py-3 rounded-md font-medium transition flex items-center justify-center">
-                              <Download className="mr-2 h-5 w-5" />
-                              Download Guide
-                            </button>
-                          )}
-                          
-                          {(resource.type === 'course' || resource.type === 'workshop') && (
-                            <button className="bg-blue-700 hover:bg-blue-800 text-white px-6 py-3 rounded-md font-medium transition flex items-center justify-center">
-                              Register Now
-                            </button>
-                          )}
-                          
-                          {resource.type === 'group' && (
-                            <button className="bg-blue-700 hover:bg-blue-800 text-white px-6 py-3 rounded-md font-medium transition flex items-center justify-center">
-                              Join Group
-                            </button>
-                          )}
-                          
-                          <button className="border border-blue-700 text-blue-700 hover:bg-blue-50 px-6 py-3 rounded-md font-medium transition flex items-center justify-center">
-                            Contact for More Information
-                          </button>
-                        </div>
-                      </div>
-                    </div>
-                  ))
-              ))}
-          </div>
-        )}
+            </div>
+          ))}
+        </div>
       </div>
     </div>
   );
