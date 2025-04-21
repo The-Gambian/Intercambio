@@ -136,9 +136,14 @@ const About = () => {
               <p className="mb-4">
                 Participate in our language exchanges, cultural meetups, workshops, and community gatherings. Connect with others and share experiences.
               </p>
-              <button className="bg-white text-blue-900 px-4 py-2 rounded-md font-medium hover:bg-blue-100 transition">
+              <a 
+                href="https://intercambiodiaspora.net/events" 
+                target="_blank" 
+                rel="noopener noreferrer" 
+                className="inline-block bg-white text-blue-900 px-4 py-2 rounded-md font-medium hover:bg-blue-100 transition"
+              >
                 View Events
-              </button>
+              </a>
             </div>
             
             <div className="bg-blue-800 p-6 rounded-lg">
@@ -146,9 +151,14 @@ const About = () => {
               <p className="mb-4">
                 Contribute to our community's narrative by sharing your experiences, skills, and cultural knowledge. Every voice matters.
               </p>
-              <button className="bg-white text-blue-900 px-4 py-2 rounded-md font-medium hover:bg-blue-100 transition">
+              <a 
+                href="https://5pzn0sic.forms.app/lead-generation-form" 
+                target="_blank" 
+                rel="noopener noreferrer" 
+                className="inline-block bg-white text-blue-900 px-4 py-2 rounded-md font-medium hover:bg-blue-100 transition"
+              >
                 Get Started
-              </button>
+              </a>
             </div>
             
             <div className="bg-blue-800 p-6 rounded-lg">
@@ -156,9 +166,14 @@ const About = () => {
               <p className="mb-4">
                 Collaborate with us to create impactful programs and events that serve the African and Afro-descendant diaspora community.
               </p>
-              <button className="bg-white text-blue-900 px-4 py-2 rounded-md font-medium hover:bg-blue-100 transition">
+              <a 
+                href="https://5pzn0sic.forms.app/lead-generation-form" 
+                target="_blank" 
+                rel="noopener noreferrer" 
+                className="inline-block bg-white text-blue-900 px-4 py-2 rounded-md font-medium hover:bg-blue-100 transition"
+              >
                 Contact Us
-              </button>
+              </a>
             </div>
           </div>
         </div>
@@ -182,7 +197,7 @@ const About = () => {
                     <Mail className="h-6 w-6 text-blue-700 mr-3 mt-0.5" />
                     <div>
                       <p className="font-medium">Email</p>
-                      <a href="mailto:intercambiodiaspora@gmail.com" className="text-blue-700 hover:underline">info@intercambiodiaspora.org</a>
+                      <a href="mailto:info@intercambiodiaspora.com" className="text-blue-700 hover:underline">info@intercambiodiaspora.com</a>
                     </div>
                   </div>
                   
@@ -191,7 +206,7 @@ const About = () => {
                     <div>
                       <p className="font-medium">Events</p>
                       <p>Regular meetups and activities throughout Lisbon</p>
-                      <p>Check our events calendar for details about upcoming events</p>
+                      <p>Check our events calendar for details</p>
                     </div>
                   </div>
                   
