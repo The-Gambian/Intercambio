@@ -1,5 +1,6 @@
 import React from 'react';
 import { Globe, Users, BookOpen, Heart, Calendar, MessageCircle, Mail } from 'lucide-react';
+import { Link } from 'react-router-dom';
 
 const About = () => {
   return (
@@ -136,14 +137,12 @@ const About = () => {
               <p className="mb-4">
                 Participate in our language exchanges, cultural meetups, workshops, and community gatherings. Connect with others and share experiences.
               </p>
-              <a 
-                href="https://intercambiodiaspora.net/events" 
-                target="_blank" 
-                rel="noopener noreferrer" 
+              <Link 
+                to="/events" 
                 className="inline-block bg-white text-blue-900 px-4 py-2 rounded-md font-medium hover:bg-blue-100 transition"
               >
                 View Events
-              </a>
+              </Link>
             </div>
             
             <div className="bg-blue-800 p-6 rounded-lg">
