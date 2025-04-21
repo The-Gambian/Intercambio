@@ -182,7 +182,7 @@ const About = () => {
                     <Mail className="h-6 w-6 text-blue-700 mr-3 mt-0.5" />
                     <div>
                       <p className="font-medium">Email</p>
-                      <a href="mailto:info@intercambiodiaspora.org" className="text-blue-700 hover:underline">info@intercambiodiaspora.org</a>
+                      <a href="mailto:info@intercambiodiaspora.com" className="text-blue-700 hover:underline">info@intercambiodiaspora.org</a>
                     </div>
                   </div>
                   

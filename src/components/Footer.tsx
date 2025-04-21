@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { Globe, Mail, Phone, MapPin, Facebook, Twitter, Instagram, Youtube } from 'lucide-react';
+import { Globe, Mail, Phone, MapPin, Facebook, Twitter, Instagram, Youtube, Linkedin } from 'lucide-react';
 import CookieConsent from 'react-cookie-consent';
 
 const Footer = () => {
@@ -59,16 +59,16 @@ const Footer = () => {
               </ul>
               
               <div className="mt-4 flex space-x-4">
-                <a href="#" className="text-blue-200 hover:text-white">
+                <a href="https://www.facebook.com/groups/717321330191930/" target="_blank" rel="noopener noreferrer" className="text-blue-200 hover:text-white">
                   <Facebook className="h-6 w-6" />
-                </a>
-                <a href="#" className="text-blue-200 hover:text-white">
-                  <Twitter className="h-6 w-6" />
                 </a>
                 <a href="https://www.instagram.com/intercambios_diaspora/" target="_blank" rel="noopener noreferrer" className="text-blue-200 hover:text-white">
                   <Instagram className="h-6 w-6" />
                 </a>
-                <a href="#" className="text-blue-200 hover:text-white">
+                <a href="https://www.linkedin.com/company/intercambio-diaspora/" target="_blank" rel="noopener noreferrer" className="text-blue-200 hover:text-white">
+                  <Linkedin className="h-6 w-6" />
+                </a>
+                <a href="https://www.youtube.com/@IntercâmbioDiaspora" target="_blank" rel="noopener noreferrer" className="text-blue-200 hover:text-white">
                   <Youtube className="h-6 w-6" />
                 </a>
               </div>
