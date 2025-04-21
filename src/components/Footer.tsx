@@ -1,9 +1,20 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { Mail, Phone, MapPin, Facebook, Instagram, Youtube, Linkedin } from 'lucide-react';
-import CookieConsent from 'react-cookie-consent';
+import CookieConsent, { Cookies } from 'react-cookie-consent';
 
 const Footer = () => {
+  const handleAccept = () => {
+    // Additional logic for accepting cookies can be added here
+    console.log('Cookies accepted');
+  };
+
+  const handleDecline = () => {
+    // Remove any existing cookies
+    Cookies.remove('intercambio_diaspora_cookie_consent');
+    console.log('Cookies declined');
+  };
+
   return (
     <>
       <footer className="bg-blue-900 text-white">
@@ -40,8 +51,8 @@ const Footer = () => {
                 <li><Link to="/learning-hub" className="text-blue-200 hover:text-white">Learning Hub</Link></li>
                 <li><Link to="/about" className="text-blue-200 hover:text-white">About Us</Link></li>
                 <li><Link to="/contact" className="text-blue-200 hover:text-white">Contact</Link></li>
-                <li><a href="#" className="text-blue-200 hover:text-white">Privacy Policy</a></li>
-                <li><a href="#" className="text-blue-200 hover:text-white">Terms of Service</a></li>
+                <li><Link to="/privacy-policy" className="text-blue-200 hover:text-white">Privacy Policy</Link></li>
+                <li><Link to="/terms-of-service" className="text-blue-200 hover:text-white">Terms of Service</Link></li>
               </ul>
             </div>
             
@@ -88,10 +99,20 @@ const Footer = () => {
       <CookieConsent
         location="bottom"
         buttonText="Accept"
-        cookieName="intercambio_diaspora_cookie_consent"
+        declineButtonText="Decline"
+        enableDeclineButton
+        onAccept={handleAccept}
+        onDecline={handleDecline}
         style={{ background: "#2B373B" }}
         buttonStyle={{ 
           background: "#2563EB",
+          color: "white",
+          fontSize: "14px",
+          borderRadius: "0.375rem",
+          padding: "0.5rem 1rem"
+        }}
+        declineButtonStyle={{
+          background: "#64748B",
           color: "white",
           fontSize: "14px",
           borderRadius: "0.375rem",
