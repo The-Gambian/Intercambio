@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { Globe, Mail, Phone, MapPin, Facebook, Twitter, Instagram, Youtube, Linkedin } from 'lucide-react';
+import { Mail, Phone, MapPin, Facebook, Instagram, Youtube, Linkedin } from 'lucide-react';
 import CookieConsent from 'react-cookie-consent';
 
 const Footer = () => {
@@ -11,7 +11,11 @@ const Footer = () => {
           <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
             <div>
               <div className="flex items-center">
-                <Globe className="h-8 w-8 text-blue-300" />
+                <img 
+                  src="https://yt3.googleusercontent.com/h-WATyK3LGNwBj3dG-UdED2mB7J_tY2FVzVY9MEk5PQtY6sQ2mWUZf9YFMlba3oO6Roij3Xn8A=s160-c-k-c0x00ffffff-no-rj" 
+                  alt="Intercambio Diaspora Logo" 
+                  className="h-10 w-10 rounded-full"
+                />
                 <span className="ml-2 text-xl font-bold">Intercambio Diaspora</span>
               </div>
               <p className="mt-2 text-sm text-blue-200">
