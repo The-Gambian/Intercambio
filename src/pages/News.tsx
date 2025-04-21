@@ -1,73 +1,63 @@
 import React, { useState } from 'react';
-import { Calendar, User, Search, Tag, ArrowRight } from 'lucide-react';
+import { Search, Calendar, User, Tag, ArrowRight } from 'lucide-react';
 import { format } from 'date-fns';
 
-// Sample news data
+// Updated news data from LinkedIn and Instagram
 const newsData = [
   {
     id: 1,
-    title: "New Community Center Opening Next Month",
-    excerpt: "The long-awaited diaspora community center will open its doors on July 15, offering a space for cultural events, language classes, and community gatherings.",
-    content: "The long-awaited diaspora community center will open its doors on July 15, offering a space for cultural events, language classes, and community gatherings. The center, funded by a combination of community donations and local government grants, will serve as a hub for diaspora communities from various backgrounds.\n\nThe 10,000 square foot facility includes a multipurpose hall, classrooms, a kitchen for culinary workshops, and office spaces for community organizations. The center will host regular events, including language exchange programs, cultural celebrations, and professional development workshops.\n\n\"This center represents years of hard work and collaboration within our community,\" said Maria Gonzalez, chairperson of the Intercambio Diaspora Community Center Committee. \"We're excited to finally have a dedicated space where people can connect, learn, and celebrate their heritage while building new connections.\"\n\nThe grand opening celebration will feature performances, food, and activities representing the diverse cultures of the local diaspora communities. All community members are invited to attend.",
-    date: new Date(2025, 5, 5),
-    author: "Elena Kim",
-    category: "Community",
-    image: "https://images.unsplash.com/photo-1497366811353-6870744d04b2?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2069&q=80"
+    title: "Intercâmbio Diáspora Celebrates African Heritage Day",
+    excerpt: "Join us for a day of cultural celebration, storytelling, and community connection at our African Heritage Day event.",
+    content: "We're excited to announce our upcoming African Heritage Day celebration! This special event will bring together members of the African and Afro-descendant community in Lisbon for a day of cultural exchange, storytelling, and connection.\n\nThe event will feature:\n- Traditional music and dance performances\n- Storytelling sessions\n- Cultural workshops\n- Community networking\n- African cuisine\n\nThis celebration is part of our ongoing commitment to creating spaces where African and Afro-descendant communities can celebrate their heritage, share their stories, and build meaningful connections.\n\nThe event will take place at our community space in Lisbon, and all are welcome to join. Whether you're part of the African diaspora or interested in learning more about African cultures, this event offers a wonderful opportunity for cultural exchange and community building.",
+    date: new Date(2024, 3, 15),
+    author: "Intercâmbio Diáspora Team",
+    category: "Events",
+    image: "https://i.im.ge/2025/04/22/vOgb0L.IMG-20240706-WA0029-1.jpeg"
   },
   {
     id: 2,
-    title: "Local Diaspora Businesses Receive Grant Funding",
-    excerpt: "Ten diaspora-owned small businesses have been selected to receive grants as part of the Economic Empowerment Initiative, supporting entrepreneurship within immigrant communities.",
-    content: "Ten diaspora-owned small businesses have been selected to receive grants as part of the Economic Empowerment Initiative, supporting entrepreneurship within immigrant communities. The grants, ranging from $5,000 to $15,000, will help these businesses expand operations, hire new employees, and invest in equipment and marketing.\n\nThe Economic Empowerment Initiative, a partnership between Intercambio Diaspora and the Regional Business Development Council, aims to address the unique challenges faced by immigrant entrepreneurs, including limited access to capital and business networks.\n\n\"Immigrant entrepreneurs bring valuable skills, perspectives, and services to our community,\" said David Chen, director of the initiative. \"These grants will help level the playing field and allow these businesses to thrive and contribute to our local economy.\"\n\nThe selected businesses represent a diverse range of industries, including food service, retail, professional services, and technology. All recipients will also receive business mentorship and participate in a six-month business development program.\n\nApplications for the next round of funding will open in September.",
-    date: new Date(2025, 5, 12),
-    author: "Marcus Johnson",
-    category: "Business",
-    image: "https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80"
+    title: "Language Exchange Program Launches New Sessions",
+    excerpt: "Our popular language exchange program expands with new Portuguese-English conversation groups and cultural learning opportunities.",
+    content: "We're thrilled to announce the expansion of our language exchange program! In response to growing community interest, we're launching new Portuguese-English conversation groups that combine language learning with cultural exchange.\n\nOur language exchange sessions provide a supportive environment where participants can:\n- Practice Portuguese and English with native speakers\n- Learn about cultural contexts and expressions\n- Build confidence in communication\n- Make friends from diverse backgrounds\n\nThe program is designed to be accessible to learners at all levels, from beginners to advanced speakers. Each session includes structured conversation practice, cultural discussions, and informal social time.\n\nParticipants have shared how these exchanges have not only improved their language skills but also helped them build meaningful connections within the community.",
+    date: new Date(2024, 3, 10),
+    author: "Language Program Coordinator",
+    category: "Education",
+    image: "https://i.im.ge/2025/04/22/vOggex.WhatsApp-Image-2025-03-18-at-16-10-11-1.jpeg"
   },
   {
     id: 3,
-    title: "Language Access Program Expands to Include Five New Languages",
-    excerpt: "The city's Language Access Program has added Amharic, Nepali, Tagalog, Somali, and Hmong to its services, ensuring more community members can access essential information and resources.",
-    content: "The city's Language Access Program has added Amharic, Nepali, Tagalog, Somali, and Hmong to its services, ensuring more community members can access essential information and resources. This expansion comes in response to demographic changes and advocacy from community organizations representing these language groups.\n\nThe program provides interpretation services for public meetings, translates essential documents, and ensures that city departments can effectively communicate with all residents, regardless of their English proficiency.\n\n\"Language should never be a barrier to accessing public services or participating in civic life,\" said Mayor Sophia Williams at the announcement event. \"This expansion reflects our commitment to being an inclusive city that values all of our residents.\"\n\nIntercambio Diaspora has been instrumental in advocating for this expansion and will partner with the city to recruit and train qualified interpreters and translators from these language communities.\n\n\"This is a significant step forward for our communities,\" said Abdi Hassan, language access coordinator at Intercambio Diaspora. \"Many people who speak these languages have valuable contributions to make to our city but have been limited by language barriers. This program will help them fully participate and access the resources they need.\"",
-    date: new Date(2025, 5, 18),
-    author: "Priya Sharma",
-    category: "Policy",
-    image: "https://images.unsplash.com/photo-1546410531-bb4caa6b424d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2071&q=80"
+    title: "Community Tour: Exploring African Heritage in Lisbon",
+    excerpt: "Join us for a guided tour exploring the rich African history and cultural heritage sites in Lisbon.",
+    content: "Discover the African heritage woven into Lisbon's history with our upcoming community tour! Led by knowledgeable guides from the African diaspora community, this tour offers a unique perspective on the city's historical and contemporary connections to Africa.\n\nThe tour will explore:\n- Historical sites significant to African history in Lisbon\n- Contemporary African cultural spaces\n- Community landmarks\n- Art installations and exhibitions\n\nThis initiative is part of our commitment to highlighting the contributions of African and Afro-descendant communities to Lisbon's cultural landscape. Through these tours, we aim to preserve and share important historical narratives while fostering understanding and appreciation of African heritage.\n\nParticipants will gain insights into both historical and contemporary aspects of African presence in Lisbon, making connections between past and present.",
+    date: new Date(2024, 3, 5),
+    author: "Cultural Programs Team",
+    category: "Culture",
+    image: "https://i.im.ge/2025/04/22/vOgWCJ.WhatsApp-Image-2025-03-22-at-21-11-43.jpeg"
   },
   {
     id: 4,
-    title: "Cultural Heritage Festival Draws Record Attendance",
-    excerpt: "Last weekend's annual Cultural Heritage Festival attracted over 5,000 attendees, making it the most successful event in its 10-year history.",
-    content: "Last weekend's annual Cultural Heritage Festival attracted over 5,000 attendees, making it the most successful event in its 10-year history. The festival, organized by Intercambio Diaspora, featured performances, food, art, and activities representing over 25 different cultural traditions.\n\nAttendees enjoyed dance performances ranging from traditional Mexican folkloric dance to Bollywood fusion, Ethiopian coffee ceremonies, hands-on craft workshops, and cuisine from around the world. The festival also included a marketplace where artisans sold handcrafted items, many using traditional techniques from their countries of origin.\n\n\"The festival has grown so much over the years,\" said Festival Director Luisa Morales. \"What started as a small gathering in a community center has become a major celebration that brings together people from all backgrounds to learn about and appreciate different cultures.\"\n\nMany attendees expressed appreciation for the opportunity to connect with their heritage and share it with others. \"I brought my children so they could experience the traditions I grew up with,\" said festival-goer James Nguyen. \"It's wonderful to see them engaging with their cultural heritage in such a joyful way.\"\n\nPlanning for next year's festival is already underway, with organizers considering expanding to a two-day event to accommodate growing interest.",
-    date: new Date(2025, 5, 25),
-    author: "Omar Farah",
-    category: "Culture",
-    image: "https://images.unsplash.com/photo-1533174072545-7a4b6ad7a6c3?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80"
+    title: "Professional Development Workshop Series",
+    excerpt: "New workshop series focuses on career development, entrepreneurship, and professional networking for diaspora community members.",
+    content: "We're launching a comprehensive professional development workshop series designed specifically for members of the African and Afro-descendant diaspora community. These workshops address the unique challenges and opportunities faced by our community members in the professional sphere.\n\nThe workshop series includes:\n- Resume writing and interview skills\n- Entrepreneurship in Portugal\n- Professional networking strategies\n- Career transition guidance\n- Leadership development\n\nEach workshop combines practical skills development with cultural awareness and community support. Participants will have opportunities to connect with mentors, share experiences, and build professional networks within the community.\n\nThe series is designed to empower community members with the tools and connections needed for professional success while maintaining cultural authenticity.",
+    date: new Date(2024, 3, 1),
+    author: "Professional Development Coordinator",
+    category: "Career",
+    image: "https://i.im.ge/2025/04/22/vO8YPY.WhatsApp-Image-2025-04-13-at-09-48-10.jpeg"
   },
   {
     id: 5,
-    title: "New Study Highlights Economic Contributions of Immigrant Communities",
-    excerpt: "A comprehensive research study released today documents the significant economic impact of immigrant and diaspora communities in the region.",
-    content: "A comprehensive research study released today documents the significant economic impact of immigrant and diaspora communities in the region. The study, conducted by the Urban Economic Institute in partnership with Intercambio Diaspora, found that immigrant-owned businesses generate over $1.2 billion in annual revenue and employ more than 8,500 people in the metropolitan area.\n\nThe research also highlighted that immigrants in the region have a higher rate of entrepreneurship than the general population, with 18% of immigrants owning their own businesses compared to 11% of the overall population.\n\n\"This study confirms what many of us have observed anecdotally: immigrant communities are a powerful economic force in our region,\" said Dr. Amina Osei, lead researcher on the project. \"From small family restaurants to tech startups, immigrant entrepreneurs are creating jobs, revitalizing neighborhoods, and contributing to innovation.\"\n\nThe study also examined the economic challenges faced by immigrant communities, including limited access to capital, language barriers, and unfamiliarity with local business regulations. It recommends several policy changes to address these barriers, including expanded microloan programs, streamlined business licensing processes, and increased language access services.\n\n\"We hope this research will inform policy decisions and help create a more supportive environment for immigrant entrepreneurs,\" said Carlos Mendez, economic development director at Intercambio Diaspora. \"When immigrant businesses thrive, the entire community benefits.\"",
-    date: new Date(2025, 6, 2),
-    author: "Sophia Chen",
-    category: "Research",
-    image: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2015&q=80"
-  },
-  {
-    id: 6,
-    title: "Youth Leadership Program Launches with Focus on Cultural Identity",
-    excerpt: "A new initiative aims to develop leadership skills in young people from diaspora communities while helping them explore and affirm their cultural identities.",
-    content: "A new initiative aims to develop leadership skills in young people from diaspora communities while helping them explore and affirm their cultural identities. The Diaspora Youth Leadership Program, launched by Intercambio Diaspora in partnership with the Youth Empowerment Network, will work with 50 high school students over the course of a year.\n\nParticipants will engage in leadership training, community service projects, cultural exploration activities, and mentorship with successful professionals from similar cultural backgrounds. The program will culminate in community impact projects designed and implemented by the youth participants.\n\n\"Young people from immigrant families often navigate complex identities, balancing their heritage cultures with their experiences growing up here,\" said Program Director Fatima Noor. \"This program creates a space where they can explore these identities as strengths rather than conflicts, while developing the skills to become leaders in their communities.\"\n\nThe program received over 200 applications for its inaugural cohort, demonstrating high interest among youth and their families. Participants represent diverse cultural backgrounds, including Latin American, East African, South Asian, and East Asian communities.\n\n\"I'm excited to connect with other young people who understand what it's like to live between cultures,\" said Miguel Sanchez, a program participant. \"I want to learn how to be a leader who can make a difference in my community while staying true to my cultural roots.\"",
-    date: new Date(2025, 6, 10),
-    author: "Jamal Williams",
-    category: "Youth",
-    image: "https://images.unsplash.com/photo-1529390079861-591de354faf5?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80"
+    title: "Youth Mentorship Program Launch",
+    excerpt: "New initiative connects young people from the diaspora community with mentors for educational and personal development support.",
+    content: "We're proud to announce the launch of our Youth Mentorship Program, designed to support young people from African and Afro-descendant backgrounds in their educational and personal development journeys.\n\nThe program matches youth with mentors from similar cultural backgrounds who can provide:\n- Academic guidance\n- Career advice\n- Cultural connection\n- Personal development support\n\nThis initiative responds to community feedback about the importance of role models and guidance for young people navigating education and career paths while maintaining strong connections to their cultural heritage.\n\nMentors are professionals from various fields who understand the unique experiences and challenges faced by youth in the diaspora community.",
+    date: new Date(2024, 2, 25),
+    author: "Youth Programs Director",
+    category: "Education",
+    image: "https://i.im.ge/2025/04/22/vOgxVT.Brown-And-Beige-Modern-Summer-Movie-Night-Instagram-Post-1.png"
   }
 ];
 
 // Available categories for filtering
-const categories = ["All", "Community", "Business", "Policy", "Culture", "Research", "Youth"];
+const categories = ["All", "Events", "Education", "Culture", "Career"];
 
 const News = () => {
   const [searchTerm, setSearchTerm] = useState("");
@@ -87,8 +77,8 @@ const News = () => {
       {/* Header */}
       <div className="bg-blue-900 text-white py-16">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <h1 className="text-4xl font-bold mb-4">Local News</h1>
-          <p className="text-xl max-w-3xl">Stay informed about news and developments relevant to diaspora communities in our region.</p>
+          <h1 className="text-4xl font-bold mb-4">Latest News</h1>
+          <p className="text-xl max-w-3xl">Stay updated with the latest news and events from Intercâmbio Diáspora.</p>
         </div>
       </div>
 
