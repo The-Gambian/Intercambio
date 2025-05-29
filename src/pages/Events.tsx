@@ -9,7 +9,7 @@ const upcomingEvents = [
     title: "Diáspora Picnic",
     date: new Date(2025, 4, 31, 13, 0), // May 31, 2025, 1:00 PM
     location: "Parque da Bela Vista, Quinta do Pombeiro, Casa Senhorial Norte, Azinhaga do Pombeiro, 1900-793 Lisboa",
-    description: "Join us for a community picnic featuring games, fellowship, and cultural exchange. This is a potluck event - bring a dish to share! Connect with fellow Zillennials in Portugal while enjoying an afternoon of fun and community building.",
+    description: "Join us for a community picnic featuring games, fellowship, and cultural exchanges. This is a potluck event - bring a dish to share! Connect with fellow Zillennials in Portugal while enjoying an afternoon of fun and community building.",
     category: "Cultural",
     image: "/Diaspora Picnic.jpeg",
     registrationLink: "https://forms.gle/AKjtjV5xmU8cNAXE7",
