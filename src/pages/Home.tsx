@@ -1,8 +1,8 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { Calendar, Newspaper, Users, MessageCircle, BookOpen, ArrowRight, Globe, Instagram } from 'lucide-react';
+import { Calendar, Newspaper, Users, MessageCircle, BookOpen, ArrowRight, Globe, Instagram, Mail, Heart } from 'lucide-react';
 
-const Home = () => {
+function Home() {
   return (
     <div>
       {/* Hero Section */}
@@ -176,59 +176,81 @@ const Home = () => {
         </div>
       </section>
 
-      {/* Testimonials */}
+      {/* Newsletter Section */}
       <section className="py-16 bg-blue-50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-12">
-            <h2 className="text-3xl font-bold text-gray-900">Community Voices</h2>
-            <p className="mt-4 text-xl text-gray-600">Hear from our members about their experiences</p>
+            <h2 className="text-3xl font-bold text-gray-900">Stay Connected</h2>
+            <p className="mt-4 text-xl text-gray-600">Join our newsletter to receive updates about events, stories, and community initiatives</p>
           </div>
+          <div className="max-w-xl mx-auto">
+            <form className="bg-white p-6 rounded-lg shadow-md">
+              <div className="mb-4">
+                <label htmlFor="name" className="block text-sm font-medium text-gray-700 mb-1">Name</label>
+                <input
+                  type="text"
+                  id="name"
+                  className="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
+                  placeholder="Your name"
+                />
+              </div>
+              <div className="mb-4">
+                <label htmlFor="email" className="block text-sm font-medium text-gray-700 mb-1">Email</label>
+                <input
+                  type="email"
+                  id="email"
+                  className="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
+                  placeholder="Your email address"
+                />
+              </div>
+              <button
+                type="submit"
+                className="w-full bg-blue-600 text-white py-2 px-4 rounded-md hover:bg-blue-700 transition flex items-center justify-center"
+              >
+                Subscribe <Mail className="ml-2 h-4 w-4" />
+              </button>
+            </form>
+          </div>
+        </div>
+      </section>
 
+      {/* Contribute Section */}
+      <section className="py-16 bg-white">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-12">
+            <h2 className="text-3xl font-bold text-gray-900">Support Our Community</h2>
+            <p className="mt-4 text-xl text-gray-600">Help us create more opportunities for connection and cultural exchange</p>
+          </div>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            <div className="bg-white p-6 rounded-lg shadow-md">
-              <div className="flex items-center mb-4">
-                <img 
-                  src="https://i.im.ge/2025/04/15/vQylFC.WhatsApp-Image-2025-04-06-at-20-10-28.jpeg" 
-                  alt="Boni" 
-                  className="w-12 h-12 rounded-full object-cover mr-4"
-                />
-                <div>
-                  <h4 className="font-semibold">Bone Mjt</h4>
-                  <p className="text-sm text-gray-600">Member since 2023</p>
-                </div>
+            <div className="bg-blue-50 p-6 rounded-lg text-center">
+              <div className="bg-blue-100 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4">
+                <Heart className="h-8 w-8 text-blue-600" />
               </div>
-              <p className="text-gray-700 italic">"Intercambio Diaspora has been a lifeline for me. I've made friends, found resources, and feel connected to my culture even while being far from home."</p>
+              <h3 className="text-xl font-bold mb-2">Share Your Story</h3>
+              <p className="text-gray-600 mb-4">Contribute to our community narrative by sharing your experiences and journey</p>
+              <Link to="/stories" className="inline-block bg-blue-600 text-white px-6 py-2 rounded-md hover:bg-blue-700 transition">
+                Share Now
+              </Link>
             </div>
-
-            <div className="bg-white p-6 rounded-lg shadow-md">
-              <div className="flex items-center mb-4">
-                <img 
-                  src="https://i.im.ge/2025/04/15/vQtBL8.Telma.png" 
-                  alt="Telma" 
-                  className="w-12 h-12 rounded-full object-cover mr-4"
-                />
-                <div>
-                  <h4 className="font-semibold">Telma Tvon</h4>
-                  <p className="text-sm text-gray-600">Member since 2022</p>
-                </div>
+            <div className="bg-blue-50 p-6 rounded-lg text-center">
+              <div className="bg-blue-100 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4">
+                <Users className="h-8 w-8 text-blue-600" />
               </div>
-              <p className="text-gray-700 italic">"Ótimo para ver todo mundo sorrindo e se divertindo 😄
-Somos todos abençoados por fazer parte desse grupo incrível de pessoas 🙌🏾🙌🏾🙌🏾."</p>
+              <h3 className="text-xl font-bold mb-2">Volunteer</h3>
+              <p className="text-gray-600 mb-4">Join our team of volunteers and help organize community events and programs</p>
+              <Link to="/contact" className="inline-block bg-blue-600 text-white px-6 py-2 rounded-md hover:bg-blue-700 transition">
+                Get Involved
+              </Link>
             </div>
-
-            <div className="bg-white p-6 rounded-lg shadow-md">
-              <div className="flex items-center mb-4">
-                <img 
-                  src="https://i.im.ge/2025/04/15/vQtWLa.Naky.png" 
-                  alt="African Lisbon Tour" 
-                  className="w-12 h-12 rounded-full object-cover mr-4"
-                />
-                <div>
-                  <h4 className="font-semibold">African Lisbon Tour</h4>
-                  <p className="text-sm text-gray-600">Member since 2024</p>
-                </div>
+            <div className="bg-blue-50 p-6 rounded-lg text-center">
+              <div className="bg-blue-100 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4">
+                <Globe className="h-8 w-8 text-blue-600" />
               </div>
-              <p className="text-gray-700 italic">"I would like to thank y'all for joining the African Lisbon Tour. It was really nice having you especially as locals. Thanks @Malik and team."</p>
+              <h3 className="text-xl font-bold mb-2">Partner With Us</h3>
+              <p className="text-gray-600 mb-4">Collaborate with us to create meaningful impact in our community</p>
+              <Link to="/contact" className="inline-block bg-blue-600 text-white px-6 py-2 rounded-md hover:bg-blue-700 transition">
+                Learn More
+              </Link>
             </div>
           </div>
         </div>
@@ -251,31 +273,8 @@ Somos todos abençoados por fazer parte desse grupo incrível de pessoas 🙌�
           </div>
         </div>
       </section>
-
-      {/* Newsletter */}
-      <section className="py-16 bg-blue-900 text-white">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="max-w-3xl mx-auto text-center">
-            <h2 className="text-3xl font-bold mb-4">Stay Connected</h2>
-            <p className="text-xl mb-8">Subscribe to our newsletter for the latest events, news, and community updates.</p>
-            <form className="flex flex-col sm:flex-row gap-4 justify-center">
-              <input 
-                type="email" 
-                placeholder="Enter your email" 
-                className="px-4 py-3 rounded-md text-gray-900 w-full sm:w-auto flex-grow"
-              />
-              <button 
-                type="submit" 
-                className="bg-blue-600 hover:bg-blue-700 px-6 py-3 rounded-md font-medium transition"
-              >
-                Subscribe
-              </button>
-            </form>
-          </div>
-        </div>
-      </section>
     </div>
   );
-};
+}
 
 export default Home;
