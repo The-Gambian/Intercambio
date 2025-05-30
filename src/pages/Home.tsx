@@ -11,7 +11,7 @@ function Home() {
         <div 
           className="absolute inset-0 bg-cover bg-center" 
           style={{ 
-            backgroundImage: "url('https://imagekit.io/tools/asset-public-link?detail=%7B%22name%22%3A%22IMG-20240706-WA0029%20(1).jpg%22%2C%22type%22%3A%22image%2Fjpeg%22%2C%22signedurl_expire%22%3A%222028-02-28T15%3A24%3A54.257Z%22%2C%22signedUrl%22%3A%22https%3A%2F%2Fmedia-hosting.imagekit.io%2F%2F6f91e43e0eec4210%2FIMG-20240706-WA0029%2520(1).jpg%3FExpires%3D1835364294%26Key-Pair-Id%3DK2ZIVPTIP2VGHC%26Signature%3DhEv4bNfA06TikLVgG72Dsh3S3M1Q1ov1wmZBK0nd~Fy9p6ttuY21PsrCTlzzpXoQDlso3eospw5GEjJzHFzcNfgEQiAkSkaHb9Px-JfpIbF2EI2JUfT1I5hDUh1VCEeQRPnyDkOrsUqc3d1jnn1ytwzWTlEiNCvpYRj8pTcGjishVeQXcMa9t2Gft6SV2nU3GaIsOiLCR7VH8CIiGHm7DZEwuN7j52odOChjFedkaWvpBw2MotM3YjeMTmfNKxqd3ntO8UvDdYc8U-zgPeEtAfIXGmqKChslc-uF3wo4bdxt1dYyA1NVb7B9grfS~zXf~heHwzg8sKq-~mtaaJCQUw__%22%7D')",
+            backgroundImage: "url('https://i.im.ge/2025/04/22/vOgb0L.IMG-20240706-WA0029-1.jpeg')",
             opacity: 0.3
           }}
         ></div>
@@ -122,7 +122,7 @@ function Home() {
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             <div className="bg-white border border-gray-200 rounded-lg overflow-hidden shadow-md hover:shadow-lg transition">
               <img 
-                src="/Diaspora Picnic.jpeg"
+                src="https://i.im.ge/2025/04/22/vOgb0L.IMG-20240706-WA0029-1.jpeg"
                 alt="Diaspora Picnic" 
                 className="w-full h-48 object-cover"
               />
@@ -143,7 +143,7 @@ function Home() {
 
             <div className="bg-white border border-gray-200 rounded-lg overflow-hidden shadow-md hover:shadow-lg transition">
               <img 
-                src="/image.png"
+                src="https://i.im.ge/2025/04/22/vOgWCJ.WhatsApp-Image-2025-03-22-at-21-11-43.jpeg"
                 alt="Africa Day Celebration" 
                 className="w-full h-48 object-cover"
               />
@@ -159,7 +159,7 @@ function Home() {
 
             <div className="bg-white border border-gray-200 rounded-lg overflow-hidden shadow-md hover:shadow-lg transition">
               <img 
-                src="https://i.im.ge/2025/04/15/vQtLIh.20240727-202200.jpeg" 
+                src="https://i.im.ge/2025/04/22/vOggex.WhatsApp-Image-2025-03-18-at-16-10-11-1.jpeg" 
                 alt="Language Exchange Event" 
                 className="w-full h-48 object-cover"
               />
