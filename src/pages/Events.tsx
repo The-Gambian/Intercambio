@@ -6,15 +6,27 @@ import { format } from 'date-fns';
 const upcomingEvents = [
   {
     id: 1,
-    title: "Africa Day Celebration",
-    date: new Date(2025, 4, 25, 14, 0), // May 25, 2025, 2:00 PM
-    location: "Lisbon, Portugal",
-    description: "Join us for a vibrant celebration of African cultures with food, music, dance, and art from the Lisbon diaspora. This special event brings together our community to honor and celebrate the rich cultural heritage of Africa and its diaspora.",
+    title: "Diáspora Picnic",
+    date: new Date(2025, 4, 31, 13, 0), // May 31, 2025, 1:00 PM
+    location: "Parque da Bela Vista, Quinta do Pombeiro, Casa Senhorial Norte, Azinhaga do Pombeiro, 1900-793 Lisboa",
+    description: "Join us for a community picnic featuring games, fellowship, and cultural exchange. This is a potluck event - bring a dish to share! Connect with fellow Zillennials in Portugal while enjoying an afternoon of fun and community building.",
     category: "Cultural",
-    image: "https://i.im.ge/2025/04/15/vQt2Sz.WhatsApp-Image-2025-03-18-at-16-10-12.jpeg"
+    image: "/Diaspora Picnic.jpeg",
+    registrationLink: "https://forms.gle/AKjtjV5xmU8cNAXE7",
+    endTime: "18:00"
   },
   {
     id: 2,
+    title: "Africa Day Celebration",
+    date: new Date(2025, 4, 25, 14, 0), // May 25, 2025, 2:00 PM
+    location: "Rua da Fábrica de Material de Guerra, 1, 1950-128 Lisbon, Portugal",
+    description: "Join us for a vibrant celebration of African cultures with concerts, traditional food, DJ sets, dance performances, and cultural projections. Experience the rich heritage of Africa through music, art, and community.",
+    category: "Cultural",
+    image: "/image.png",
+    endTime: "23:00"
+  },
+  {
+    id: 3,
     title: "Language Exchange Event",
     date: new Date(2025, 3, 26, 18, 0), // April 26, 2025, 6:00 PM
     location: "Intercâmbio Learning Center, Lisbon",
@@ -23,7 +35,7 @@ const upcomingEvents = [
     image: "https://i.im.ge/2025/04/15/vQtLIh.20240727-202200.jpeg"
   },
   {
-    id: 3,
+    id: 4,
     title: "Professional Networking Mixer",
     date: new Date(2025, 6, 5, 19, 0), // July 5, 2025, 7:00 PM
     location: "Urban Business Hub, Lisbon",
@@ -183,153 +195,146 @@ const Events = () => {
           </div>
         </div>
 
-        {/* Upcoming Events Section */}
-        <h2 className="text-2xl font-bold text-gray-900 mb-6">Upcoming Events</h2>
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-12">
-          {filteredUpcomingEvents.map(event => (
-            <div 
-              key={event.id} 
-              className="bg-white rounded-lg overflow-hidden shadow-md hover:shadow-lg transition cursor-pointer"
-              onClick={() => setSelectedEvent(event.id)}
-            >
-              <img 
-                src={event.image} 
-                alt={event.title} 
-                className="w-full h-48 object-cover"
-              />
-              <div className="p-6">
+        {/* Featured Article */}
+        {!selectedEvent && (
+          <div className="bg-white rounded-lg overflow-hidden shadow-md mb-8">
+            <div className="md:flex">
+              <div className="md:w-1/2">
+                <img 
+                  src={newsData[0].image} 
+                  alt={newsData[0].title} 
+                  className="w-full h-64 md:h-full object-cover"
+                />
+              </div>
+              <div className="md:w-1/2 p-6 md:p-8">
                 <div className="flex items-center text-sm text-blue-700 font-medium mb-2">
+                  
                   <Calendar className="h-4 w-4 mr-1" />
-                  {format(event.date, "MMMM d, yyyy")} • {format(event.date, "h:mm a")}
+                  {format(newsData[0].date, "MMMM d, yyyy")}
                 </div>
-                <h3 className="text-xl font-bold mb-2">{event.title}</h3>
-                <div className="flex items-center text-gray-600 mb-4">
-                  <MapPin className="h-4 w-4 mr-1" />
-                  {event.location}
+                <h2 className="text-2xl font-bold mb-4">{newsData[0].title}</h2>
+                <p className="text-gray-600 mb-6">{newsData[0].excerpt}</p>
+                <div className="flex items-center text-gray-500 mb-6">
+                  <User className="h-4 w-4 mr-1" />
+                  By {newsData[0].author}
                 </div>
-                <p className="text-gray-600 mb-4">{event.description}</p>
-                <span className="inline-block bg-blue-100 text-blue-800 text-xs px-2 py-1 rounded-full">
-                  {event.category}
-                </span>
+                <button 
+                  className="text-blue-700 font-medium flex items-center hover:text-blue-800"
+                  onClick={() => setSelectedEvent(newsData[0].id)}
+                >
+                  Read Full Article <ArrowRight className="ml-2 h-4 w-4" />
+                </button>
               </div>
             </div>
-          ))}
-        </div>
-
-        {/* Past Events Section */}
-        <div className="border-t border-gray-200 pt-12 mb-12">
-          <div className="flex justify-between items-center mb-6">
-            <h2 className="text-2xl font-bold text-gray-900">Past Events</h2>
-            <button
-              className="text-blue-700 hover:text-blue-800"
-              onClick={() => setShowPastEvents(!showPastEvents)}
-            >
-              {showPastEvents ? 'Hide Past Events' : 'Show Past Events'}
-            </button>
           </div>
-          
-          {showPastEvents && (
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-              {filteredPastEvents.map(event => (
-                <div 
-                  key={event.id} 
-                  className="bg-white rounded-lg overflow-hidden shadow-md hover:shadow-lg transition cursor-pointer"
-                  onClick={() => setSelectedEvent(event.id)}
-                >
-                  <img 
-                    src={event.image} 
-                    alt={event.title} 
-                    className="w-full h-48 object-cover"
-                  />
-                  <div className="p-6">
-                    <div className="flex items-center text-sm text-blue-700 font-medium mb-2">
-                      <Calendar className="h-4 w-4 mr-1" />
-                      {format(event.date, "MMMM d, yyyy")} • {format(event.date, "h:mm a")}
+        )}
+
+        {/* News Grid */}
+        {!selectedEvent && (
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-12">
+            {filteredNews.slice(1).map(article => (
+              <div 
+                key={article.id} 
+                className="bg-white rounded-lg overflow-hidden shadow-md hover:shadow-lg transition cursor-pointer"
+                onClick={() => setSelectedEvent(article.id)}
+              >
+                <img 
+                  src={article.image} 
+                  alt={article.title} 
+                  className="w-full h-48 object-cover"
+                />
+                <div className="p-6">
+                  <div className="flex items-center text-sm text-blue-700 font-medium mb-2">
+                    <Calendar className="h-4 w-4 mr-1" />
+                    {format(article.date, "MMMM d, yyyy")}
+                  </div>
+                  <h3 className="text-xl font-bold mb-2">{article.title}</h3>
+                  <p className="text-gray-600 mb-4">{article.excerpt}</p>
+                  <div className="flex justify-between items-center">
+                    <div className="flex items-center text-gray-500">
+                      <User className="h-4 w-4 mr-1" />
+                      By {article.author}
                     </div>
-                    <h3 className="text-xl font-bold mb-2">{event.title}</h3>
-                    <div className="flex items-center text-gray-600 mb-4">
-                      <MapPin className="h-4 w-4 mr-1" />
-                      {event.location}
-                    </div>
-                    <p className="text-gray-600 mb-4">{event.description}</p>
                     <span className="inline-block bg-blue-100 text-blue-800 text-xs px-2 py-1 rounded-full">
-                      {event.category}
+                      {article.category}
                     </span>
                   </div>
                 </div>
-              ))}
-            </div>
-          )}
-        </div>
+              </div>
+            ))}
+          </div>
+        )}
 
-        {filteredUpcomingEvents.length === 0 && filteredPastEvents.length === 0 && (
+        {filteredNews.length === 0 && (
           <div className="text-center py-12">
-            <h3 className="text-xl font-medium text-gray-600">No events found matching your criteria</h3>
+            <h3 className="text-xl font-medium text-gray-600">No articles found matching your criteria</h3>
             <p className="mt-2 text-gray-500">Try adjusting your search or filter settings</p>
           </div>
         )}
 
-        {/* Event Modal */}
+        {/* Article Detail View */}
         {selectedEvent && (
-          <div className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center p-4 z-50">
-            <div className="bg-white rounded-lg max-w-3xl w-full max-h-[90vh] overflow-y-auto">
-              {[...upcomingEvents, ...pastEvents].filter(event => event.id === selectedEvent).map(event => (
-                <div key={event.id}>
-                  <img 
-                    src={event.image} 
-                    alt={event.title} 
-                    className="w-full h-64 object-cover"
-                  />
-                  <div className="p-6">
-                    <h2 className="text-2xl font-bold mb-4">{event.title}</h2>
-                    
-                    <div className="flex flex-col md:flex-row md:items-center gap-4 mb-6">
-                      <div className="flex items-center text-gray-700">
-                        <Calendar className="h-5 w-5 mr-2 text-blue-700" />
-                        {format(event.date, "MMMM d, yyyy")}
-                      </div>
-                      <div className="flex items-center text-gray-700">
-                        <Clock className="h-5 w-5 mr-2 text-blue-700" />
-                        {format(event.date, "h:mm a")}
-                      </div>
-                      <div className="flex items-center text-gray-700">
-                        <MapPin className="h-5 w-5 mr-2 text-blue-700" />
-                        {event.location}
-                      </div>
+          <div className="bg-white rounded-lg shadow-md overflow-hidden mb-12">
+            {newsData.filter(article => article.id === selectedEvent).map(article => (
+              <div key={article.id}>
+                <img 
+                  src={article.image} 
+                  alt={article.title} 
+                  className="w-full h-64 md:h-96 object-cover"
+                />
+                <div className="p-6 md:p-8">
+                  <button 
+                    className="text-blue-700 font-medium mb-4 flex items-center hover:text-blue-800"
+                    onClick={() => setSelectedEvent(null)}
+                  >
+                    &larr; Back to News
+                  </button>
+                  
+                  <div className="flex flex-wrap items-center gap-4 mb-4">
+                    <div className="flex items-center text-sm text-blue-700 font-medium">
+                      <Calendar className="h-4 w-4 mr-1" />
+                      {format(article.date, "MMMM d, yyyy")}
                     </div>
-                    
-                    <div className="mb-6">
-                      <h3 className="text-lg font-semibold mb-2">About This Event</h3>
-                      <p className="text-gray-700">{event.description}</p>
+                    <div className="flex items-center text-sm text-gray-600">
+                      <User className="h-4 w-4 mr-1" />
+                      By {article.author}
                     </div>
-                    
-                    <div className="flex justify-between items-center">
-                      <span className="inline-block bg-blue-100 text-blue-800 px-3 py-1 rounded-full">
-                        {event.category}
-                      </span>
-                      <div className="flex gap-3">
-                        <button 
-                          className="bg-gray-200 hover:bg-gray-300 px-4 py-2 rounded-md font-medium transition"
-                          onClick={() => setSelectedEvent(null)}
-                        >
-                          Close
-                        </button>
-                        {new Date(event.date) > new Date() && (
-                          <a 
-                            href="https://5pzn0sic.forms.app/lead-generation-form"
-                            target="_blank"
-                            rel="noopener noreferrer"
-                            className="bg-blue-700 hover:bg-blue-800 text-white px-4 py-2 rounded-md font-medium transition"
-                          >
-                            Register
-                          </a>
-                        )}
-                      </div>
+                    <span className="inline-block bg-blue-100 text-blue-800 text-xs px-2 py-1 rounded-full">
+                      {article.category}
+                    </span>
+                  </div>
+                  
+                  <h1 className="text-3xl font-bold mb-6">{article.title}</h1>
+                  
+                  <div className="prose max-w-none">
+                    {article.content.split('\n\n').map((paragraph, index) => (
+                      <p key={index} className="mb-4 text-gray-700">{paragraph}</p>
+                    ))}
+                  </div>
+                  
+                  <div className="mt-8 pt-8 border-t border-gray-200">
+                    <h3 className="text-lg font-semibold mb-4">Share this article</h3>
+                    <div className="flex space-x-4">
+                      <button className="bg-blue-600 text-white p-2 rounded-full hover:bg-blue-700">
+                        <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                          <path fillRule="evenodd" d="M22 12c0-5.523-4.477-10-10-10S2 6.477 2 12c0 4.991 3.657 9.128 8.438 9.878v-6.987h-2.54V12h2.54V9.797c0-2.506 1.492-3.89 3.777-3.89 1.094 0 2.238.195 2.238.195v2.46h-1.26c-1.243 0-1.63.771-1.63 1.562V12h2.773l-.443 2.89h-2.33v6.988C18.343 21.128 22 16.991 22 12z" clipRule="evenodd"></path>
+                        </svg>
+                      </button>
+                      <button className="bg-blue-400 text-white p-2 rounded-full hover:bg-blue-500">
+                        <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                          <path d="M8.29 20.251c7.547 0 11.675-6.253 11.675-11.675 0-.178 0-.355-.012-.53A8.348 8.348 0 0022 5.92a8.19 8.19 0 01-2.357.646 4.118 4.118 0 001.804-2.27 8.224 8.224 0 01-2.605.996 4.107 4.107 0 00-6.993 3.743 11.65 11.65 0 01-8.457-4.287 4.106 4.106 0 001.27 5.477A4.072 4.072 0 012.8 9.713v.052a4.105 4.105 0 003.292 4.022 4.095 4.095 0 01-1.853.07 4.108 4.108 0 003.834 2.85A8.233 8.233 0 012 18.407a11.616 11.616 0 006.29 1.84"></path>
+                        </svg>
+                      </button>
+                      <button className="bg-green-600 text-white p-2 rounded-full hover:bg-green-700">
+                        <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                          <path fillRule="evenodd" d="M19.812 5.418c.861.23 1.538.907 1.768 1.768C21.998 8.746 22 12 22 12s0 3.255-.418 4.814a2.504 2.504 0 0 1-1.768 1.768c-1.56.419-7.814.419-7.814.419s-6.255 0-7.814-.419a2.505 2.505 0 0 1-1.768-1.768C2 15.255 2 12 2 12s0-3.255.417-4.814a2.507 2.507 0 0 1 1.768-1.768C5.744 5 11.998 5 11.998 5s6.255 0 7.814.418ZM15.194 12 10 15V9l5.194 3Z" clipRule="evenodd"></path>
+                        </svg>
+                      </button>
                     </div>
                   </div>
                 </div>
-              ))}
-            </div>
+              </div>
+            ))}
           </div>
         )}
       </div>
