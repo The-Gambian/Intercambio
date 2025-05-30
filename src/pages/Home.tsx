@@ -122,14 +122,35 @@ const Home = () => {
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             <div className="bg-white border border-gray-200 rounded-lg overflow-hidden shadow-md hover:shadow-lg transition">
               <img 
-                src="https://i.im.ge/2025/04/15/vQt2Sz.WhatsApp-Image-2025-03-18-at-16-10-12.jpeg" 
-                alt="Cultural Festival" 
+                src="/Diaspora Picnic.jpeg"
+                alt="Diaspora Picnic" 
                 className="w-full h-48 object-cover"
               />
               <div className="p-6">
-                <div className="text-sm text-blue-700 font-semibold mb-2">May 25, 2025 • 2:00 PM</div>
+                <div className="text-sm text-blue-700 font-semibold mb-2">May 31, 2025 • 13:00 - 18:00</div>
+                <h3 className="text-xl font-bold mb-2">Diáspora Picnic</h3>
+                <p className="text-gray-600 mb-4">Join us for a community picnic featuring games, fellowship, and cultural exchange.</p>
+                <a 
+                  href="https://forms.gle/AKjtjV5xmU8cNAXE7"
+                  target="_blank"
+                  rel="noopener noreferrer" 
+                  className="text-blue-700 font-medium flex items-center hover:text-blue-800"
+                >
+                  Register Now <ArrowRight className="ml-2 h-4 w-4" />
+                </a>
+              </div>
+            </div>
+
+            <div className="bg-white border border-gray-200 rounded-lg overflow-hidden shadow-md hover:shadow-lg transition">
+              <img 
+                src="/image.png"
+                alt="Africa Day Celebration" 
+                className="w-full h-48 object-cover"
+              />
+              <div className="p-6">
+                <div className="text-sm text-blue-700 font-semibold mb-2">May 25, 2025 • 14:00 - 23:00</div>
                 <h3 className="text-xl font-bold mb-2">Africa Day Celebration</h3>
-                <p className="text-gray-600 mb-4">Celebrate African cultures with food, music, dance, and art from the Lisbon diaspora.</p>
+                <p className="text-gray-600 mb-4">Celebrate African cultures with concerts, traditional food, DJ sets, dance, and projections.</p>
                 <Link to="/events" className="text-blue-700 font-medium flex items-center hover:text-blue-800">
                   Learn More <ArrowRight className="ml-2 h-4 w-4" />
                 </Link>
@@ -139,29 +160,13 @@ const Home = () => {
             <div className="bg-white border border-gray-200 rounded-lg overflow-hidden shadow-md hover:shadow-lg transition">
               <img 
                 src="https://i.im.ge/2025/04/15/vQtLIh.20240727-202200.jpeg" 
-                alt="Language Workshop" 
+                alt="Language Exchange Event" 
                 className="w-full h-48 object-cover"
               />
               <div className="p-6">
                 <div className="text-sm text-blue-700 font-semibold mb-2">April 26, 2025 • 6:00 PM</div>
                 <h3 className="text-xl font-bold mb-2">Language Exchange Event</h3>
                 <p className="text-gray-600 mb-4">Practice language skills and connect with native speakers in a friendly environment.</p>
-                <Link to="/events" className="text-blue-700 font-medium flex items-center hover:text-blue-800">
-                  Learn More <ArrowRight className="ml-2 h-4 w-4" />
-                </Link>
-              </div>
-            </div>
-
-            <div className="bg-white border border-gray-200 rounded-lg overflow-hidden shadow-md hover:shadow-lg transition">
-              <img 
-                src="https://i.im.ge/2025/04/15/vQNpyz.468379422-18292585060232775-1964059377380777353-n.jpeg" 
-                alt="Networking Event" 
-                className="w-full h-48 object-cover"
-              />
-              <div className="p-6">
-                <div className="text-sm text-blue-700 font-semibold mb-2">July 5, 2025 • 7:00 PM</div>
-                <h3 className="text-xl font-bold mb-2">Professional Networking Mixer</h3>
-                <p className="text-gray-600 mb-4">Connect with professionals from diverse backgrounds and expand your network.</p>
                 <Link to="/events" className="text-blue-700 font-medium flex items-center hover:text-blue-800">
                   Learn More <ArrowRight className="ml-2 h-4 w-4" />
                 </Link>
