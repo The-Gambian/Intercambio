@@ -31,6 +31,38 @@ function Home() {
         </div>
       </section>
 
+      {/* Latest News Section */}
+      <section className="py-16 bg-white">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-12">
+            <h2 className="text-3xl font-bold text-gray-900">Latest News</h2>
+            <p className="mt-4 text-xl text-gray-600">Stay updated with our community highlights</p>
+          </div>
+
+          <div className="bg-white rounded-lg shadow-xl overflow-hidden mb-12">
+            <div className="md:flex">
+              <div className="md:w-1/2">
+                <img 
+                  src="https://i.im.ge/2025/04/22/vOgb0L.IMG-20240706-WA0029-1.jpeg"
+                  alt="Diaspora Picnic Event"
+                  className="w-full h-96 object-cover"
+                />
+              </div>
+              <div className="md:w-1/2 p-8">
+                <div className="text-sm text-blue-600 mb-4">May 31, 2025</div>
+                <h3 className="text-2xl font-bold mb-4">Successful Diaspora Picnic Brings Community Together</h3>
+                <p className="text-gray-600 mb-6">
+                  Our recent Diaspora Picnic was a wonderful celebration of community and cultural exchange. Members from various African and Afro-descendant communities came together, sharing traditional dishes, stories, and creating new connections. The event featured games, music, and meaningful conversations that strengthened our community bonds.
+                </p>
+                <Link to="/news" className="text-blue-600 font-medium flex items-center hover:text-blue-800">
+                  Read More <ArrowRight className="ml-2 h-4 w-4" />
+                </Link>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* Features Section */}
       <section className="py-16 bg-gray-50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
