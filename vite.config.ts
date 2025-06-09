@@ -21,5 +21,9 @@ export default defineConfig({
     strictPort: true,
     host: true,
     origin: "http://0.0.0.0:5173",
+    // This is the key fix for local development SPA routing
+    historyApiFallback: {
+      index: '/index.html',
+    },
   },
 });
