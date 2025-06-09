@@ -11,7 +11,7 @@ function Home() {
         <div 
           className="absolute inset-0 bg-cover bg-center" 
           style={{ 
-            backgroundImage: "url('/WhatsApp Image 2025-05-31 at 21.18.38.jpeg')",
+            backgroundImage: "url('/community-gathering.jpeg')",
             opacity: 0.4
           }}
         ></div>
@@ -43,7 +43,7 @@ function Home() {
             <div className="md:flex">
               <div className="md:w-1/2">
                 <img 
-                  src="/WhatsApp Image 2025-05-31 at 21.18.38.jpeg"
+                  src="/community-gathering.jpeg"
                   alt="Diaspora Community Gathering"
                   className="w-full h-96 object-cover"
                 />
@@ -155,7 +155,7 @@ function Home() {
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             <div className="bg-white border border-gray-200 rounded-lg overflow-hidden shadow-md hover:shadow-lg transition">
               <img 
-                src="/WhatsApp Image 2025-05-31 at 21.18.38.jpeg"
+                src="/community-gathering.jpeg"
                 alt="Diaspora Picnic" 
                 className="w-full h-48 object-cover"
               />
@@ -176,7 +176,7 @@ function Home() {
 
             <div className="bg-white border border-gray-200 rounded-lg overflow-hidden shadow-md hover:shadow-lg transition">
               <img 
-                src="/africa day.PNG"
+                src="/africa-day.png"
                 alt="Africa Day Celebration" 
                 className="w-full h-48 object-cover"
               />
@@ -192,7 +192,7 @@ function Home() {
 
             <div className="bg-white border border-gray-200 rounded-lg overflow-hidden shadow-md hover:shadow-lg transition">
               <img 
-                src="/WhatsApp Image 2025-03-22 at 21.11.45.jpeg" 
+                src="/language-exchange.jpeg" 
                 alt="Language Exchange Event" 
                 className="w-full h-48 object-cover"
               />
