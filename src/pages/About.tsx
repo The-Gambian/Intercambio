@@ -19,7 +19,7 @@ const About = () => {
           <div className="md:flex md:items-center md:gap-12">
             <div className="md:w-1/2 mb-8 md:mb-0">
               <img 
-                src="/WhatsApp Image 2025-05-31 at 21.18.38.jpeg" 
+                src="https://i.imgur.com/j7O5Vuv.jpg" 
                 alt="Intercâmbio Diáspora community gathering" 
                 className="rounded-lg shadow-md w-full h-auto"
               />
