@@ -75,7 +75,7 @@ const News = () => {
   return (
     <div className="bg-gray-50 min-h-screen">
       {/* Header */}
-      <div className="bg-blue-900 text-white py-16">
+      <div className="bg-pan-red text-white py-16">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <h1 className="text-4xl font-bold mb-4">Latest News</h1>
           <p className="text-xl max-w-3xl">Stay updated with the latest news and events from Intercâmbio Diáspora.</p>
@@ -93,7 +93,7 @@ const News = () => {
               <input
                 type="text"
                 placeholder="Search news..."
-                className="pl-10 pr-4 py-2 border border-gray-300 rounded-md w-full focus:outline-none focus:ring-2 focus:ring-blue-500"
+                className="pl-10 pr-4 py-2 border border-gray-300 rounded-md w-full focus:outline-none focus:ring-2 focus:ring-red-500"
                 value={searchTerm}
                 onChange={(e) => setSearchTerm(e.target.value)}
               />
@@ -103,7 +103,7 @@ const News = () => {
                 <Tag className="h-5 w-5 text-gray-400" />
               </div>
               <select
-                className="pl-10 pr-4 py-2 border border-gray-300 rounded-md w-full md:w-48 focus:outline-none focus:ring-2 focus:ring-blue-500 appearance-none"
+                className="pl-10 pr-4 py-2 border border-gray-300 rounded-md w-full md:w-48 focus:outline-none focus:ring-2 focus:ring-red-500 appearance-none"
                 value={selectedCategory}
                 onChange={(e) => setSelectedCategory(e.target.value)}
               >
@@ -127,7 +127,7 @@ const News = () => {
                 />
               </div>
               <div className="md:w-1/2 p-6 md:p-8">
-                <div className="flex items-center text-sm text-blue-700 font-medium mb-2">
+                <div className="flex items-center text-sm text-red-700 font-medium mb-2">
                   <Calendar className="h-4 w-4 mr-1" />
                   {format(newsData[0].date, "MMMM d, yyyy")}
                 </div>
@@ -138,7 +138,7 @@ const News = () => {
                   By {newsData[0].author}
                 </div>
                 <button 
-                  className="text-blue-700 font-medium flex items-center hover:text-blue-800"
+                  className="text-red-700 font-medium flex items-center hover:text-red-800"
                   onClick={() => setSelectedArticle(newsData[0].id)}
                 >
                   Read Full Article <ArrowRight className="ml-2 h-4 w-4" />
@@ -163,7 +163,7 @@ const News = () => {
                   className="w-full h-48 object-cover"
                 />
                 <div className="p-6">
-                  <div className="flex items-center text-sm text-blue-700 font-medium mb-2">
+                  <div className="flex items-center text-sm text-red-700 font-medium mb-2">
                     <Calendar className="h-4 w-4 mr-1" />
                     {format(article.date, "MMMM d, yyyy")}
                   </div>
@@ -203,14 +203,14 @@ const News = () => {
                 />
                 <div className="p-6 md:p-8">
                   <button 
-                    className="text-blue-700 font-medium mb-4 flex items-center hover:text-blue-800"
+                    className="text-red-700 font-medium mb-4 flex items-center hover:text-red-800"
                     onClick={() => setSelectedArticle(null)}
                   >
                     &larr; Back to News
                   </button>
                   
                   <div className="flex flex-wrap items-center gap-4 mb-4">
-                    <div className="flex items-center text-sm text-blue-700 font-medium">
+                    <div className="flex items-center text-sm text-red-700 font-medium">
                       <Calendar className="h-4 w-4 mr-1" />
                       {format(article.date, "MMMM d, yyyy")}
                     </div>
