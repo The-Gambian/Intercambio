@@ -2,8 +2,11 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import { Mail, Phone, MapPin, Facebook, Instagram, Youtube, Linkedin } from 'lucide-react';
 import CookieConsent, { Cookies } from 'react-cookie-consent';
+import { useLanguage } from '../contexts/LanguageContext';
 
 const Footer = () => {
+  const { t } = useLanguage();
+
   const handleAccept = () => {
     console.log('Cookies accepted');
   };
@@ -28,34 +31,34 @@ const Footer = () => {
                 <span className="ml-2 text-xl font-bold text-white">Intercambio Diaspora</span>
               </div>
               <p className="mt-2 text-sm text-white">
-                Connecting diaspora communities through cultural exchange, education, and support.
+                {t('footer.description')}
               </p>
             </div>
             
             <div>
-              <h3 className="text-lg font-semibold mb-4 text-white">Quick Links</h3>
+              <h3 className="text-lg font-semibold mb-4 text-white">{t('footer.quickLinks')}</h3>
               <ul className="space-y-2">
-                <li><Link to="/" className="text-white hover:text-pan-gold">Home</Link></li>
-                <li><Link to="/events" className="text-white hover:text-pan-gold">Events</Link></li>
-                <li><Link to="/news" className="text-white hover:text-pan-gold">News</Link></li>
-                <li><Link to="/stories" className="text-white hover:text-pan-gold">Stories</Link></li>
-                <li><Link to="/discussions" className="text-white hover:text-pan-gold">Discussions</Link></li>
+                <li><Link to="/" className="text-white hover:text-pan-gold">{t('nav.home')}</Link></li>
+                <li><Link to="/events" className="text-white hover:text-pan-gold">{t('nav.events')}</Link></li>
+                <li><Link to="/news" className="text-white hover:text-pan-gold">{t('nav.news')}</Link></li>
+                <li><Link to="/stories" className="text-white hover:text-pan-gold">{t('nav.stories')}</Link></li>
+                <li><Link to="/discussions" className="text-white hover:text-pan-gold">{t('nav.discussions')}</Link></li>
               </ul>
             </div>
             
             <div>
-              <h3 className="text-lg font-semibold mb-4 text-white">Resources</h3>
+              <h3 className="text-lg font-semibold mb-4 text-white">{t('footer.resources')}</h3>
               <ul className="space-y-2">
-                <li><Link to="/learning-hub" className="text-white hover:text-pan-gold">Learning Hub</Link></li>
-                <li><Link to="/about" className="text-white hover:text-pan-gold">About Us</Link></li>
-                <li><Link to="/contact" className="text-white hover:text-pan-gold">Contact</Link></li>
+                <li><Link to="/learning-hub" className="text-white hover:text-pan-gold">{t('nav.learningHub')}</Link></li>
+                <li><Link to="/about" className="text-white hover:text-pan-gold">{t('nav.about')}</Link></li>
+                <li><Link to="/contact" className="text-white hover:text-pan-gold">{t('nav.contact')}</Link></li>
                 <li><Link to="/privacy-policy" className="text-white hover:text-pan-gold">Privacy Policy</Link></li>
                 <li><Link to="/terms-of-service" className="text-white hover:text-pan-gold">Terms of Service</Link></li>
               </ul>
             </div>
             
             <div>
-              <h3 className="text-lg font-semibold mb-4 text-white">Contact Us</h3>
+              <h3 className="text-lg font-semibold mb-4 text-white">{t('footer.contact')}</h3>
               <ul className="space-y-2">
                 <li className="flex items-center">
                   <Mail className="h-5 w-5 mr-2 text-pan-gold" />
@@ -89,15 +92,15 @@ const Footer = () => {
           </div>
           
           <div className="mt-8 pt-8 border-t border-white/20 text-center text-sm text-white">
-            <p>&copy; {new Date().getFullYear()} Intercambio Diaspora. All rights reserved.</p>
+            <p>&copy; {new Date().getFullYear()} Intercambio Diaspora. {t('footer.copyright')}</p>
           </div>
         </div>
       </footer>
 
       <CookieConsent
         location="bottom"
-        buttonText="Accept"
-        declineButtonText="Decline"
+        buttonText={t('footer.cookies.accept')}
+        declineButtonText={t('footer.cookies.decline')}
         enableDeclineButton
         onAccept={handleAccept}
         onDecline={handleDecline}
@@ -118,9 +121,9 @@ const Footer = () => {
         }}
         expires={150}
       >
-        This website uses cookies to enhance the user experience. By continuing to browse the site, you agree to our use of cookies.{" "}
+        {t('footer.cookies.text')}{" "}
         <Link to="/privacy-policy" className="text-pan-gold hover:text-white underline">
-          Learn more
+          {t('footer.cookies.learnMore')}
         </Link>
       </CookieConsent>
     </>
