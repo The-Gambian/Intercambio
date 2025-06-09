@@ -10,7 +10,7 @@ const featuredStory = {
   date: new Date(2024, 3, 15),
   excerpt: "A journey of cultural identity, community building, and creating connections in Portugal.",
   content: "When I first arrived in Portugal, I carried with me not just my belongings, but the weight of my cultural identity and the uncertainty of finding my place in a new land...",
-  image: "https://i.im.ge/2025/04/22/vOgb0L.IMG-20240706-WA0029-1.jpeg",
+  image: "/WhatsApp Image 2025-05-31 at 21.18.38.jpeg",
   category: "Personal Journey",
   tags: ["Identity", "Community", "Culture"]
 };
@@ -23,7 +23,7 @@ const storiesData = [
     author: "João Santos",
     date: new Date(2024, 3, 10),
     excerpt: "How learning Portuguese became more than just mastering a language - it became a gateway to understanding my heritage.",
-    image: "https://images.pexels.com/photos/256417/pexels-photo-256417.jpeg",
+    image: "/WhatsApp Image 2025-03-22 at 21.11.45.jpeg",
     category: "Language & Identity",
     tags: ["Language", "Heritage", "Education"]
   },
@@ -33,7 +33,7 @@ const storiesData = [
     author: "Ana Costa",
     date: new Date(2024, 3, 8),
     excerpt: "Navigating career transitions and professional growth in a new country while maintaining cultural connections.",
-    image: "https://images.pexels.com/photos/1181406/pexels-photo-1181406.jpeg",
+    image: "/WhatsApp Image 2025-04-13 at 02.49.55.jpeg",
     category: "Professional Growth",
     tags: ["Career", "Migration", "Professional Life"]
   },
@@ -43,7 +43,7 @@ const storiesData = [
     author: "Miguel Oliveira",
     date: new Date(2024, 3, 5),
     excerpt: "How our community keeps cultural traditions alive while embracing new experiences in Portugal.",
-    image: "https://images.pexels.com/photos/3184291/pexels-photo-3184291.jpeg",
+    image: "/africa day.PNG",
     category: "Cultural Heritage",
     tags: ["Traditions", "Community", "Culture"]
   }
