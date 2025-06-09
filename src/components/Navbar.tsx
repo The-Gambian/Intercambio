@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
-import { Menu, X, Search, Facebook, Instagram, Youtube, Linkedin } from 'lucide-react';
+import { Menu, X, Facebook, Instagram, Youtube, Linkedin } from 'lucide-react';
 import { useLanguage } from '../contexts/LanguageContext';
 import LanguageSwitcher from './LanguageSwitcher';
 
@@ -15,14 +15,17 @@ const Navbar = () => {
   return (
     <nav className="bg-white">
       <div className="flex items-center h-16">
-        {/* Logo Section - Black Background */}
-        <div className="bg-black px-6 h-full flex items-center">
+        {/* Logo Section - Black Background with responsive sizing */}
+        <div className="bg-black px-4 sm:px-6 md:px-8 h-full flex items-center">
           <Link to="/" className="flex items-center">
             <img 
               src="https://yt3.googleusercontent.com/h-WATyK3LGNwBj3dG-UdED2mB7J_tY2FVzVY9MEk5PQtY6sQ2mWUZf9YFMlba3oO6Roij3Xn8A=s160-c-k-c0x00ffffff-no-rj" 
               alt="Intercambio Diaspora Logo" 
-              className="h-12 w-12 rounded-full object-cover"
+              className="h-10 w-10 sm:h-12 sm:w-12 md:h-14 md:w-14 rounded-full object-cover"
             />
+            <span className="ml-2 sm:ml-3 text-white font-semibold text-sm sm:text-base md:text-lg hidden xs:block">
+              Intercâmbio Diáspora
+            </span>
           </Link>
         </div>
 
@@ -56,20 +59,10 @@ const Navbar = () => {
           </div>
         </div>
 
-        {/* Search, Language and Social Section - Red Background (Desktop Only) */}
+        {/* Language and Social Section - Red Background (Desktop Only) */}
         <div className="bg-pan-red px-6 h-full hidden lg:flex items-center space-x-4">
           {/* Language Switcher */}
           <LanguageSwitcher />
-          
-          {/* Search Bar */}
-          <div className="flex items-center bg-white rounded-md px-3 py-2 min-w-[200px]">
-            <Search className="h-4 w-4 text-gray-400 mr-2" />
-            <input
-              type="text"
-              placeholder={t('nav.search')}
-              className="bg-transparent border-none outline-none text-sm flex-grow text-gray-700 placeholder-gray-400"
-            />
-          </div>
 
           {/* Social Media Icons */}
           <div className="flex items-center space-x-3">
@@ -88,15 +81,10 @@ const Navbar = () => {
           </div>
         </div>
 
-        {/* Mobile Search, Language and Social Section - Red Background (Tablet Only) */}
-        <div className="bg-pan-red px-3 h-full flex lg:hidden md:flex items-center space-x-2">
+        {/* Mobile Language and Social Section - Red Background (Tablet Only) */}
+        <div className="bg-pan-red px-3 sm:px-4 h-full flex lg:hidden md:flex items-center space-x-2 sm:space-x-3">
           {/* Language Switcher */}
           <LanguageSwitcher />
-          
-          {/* Mobile Search Icon */}
-          <button className="text-white hover:text-pan-gold transition-colors">
-            <Search className="h-4 w-4" />
-          </button>
           
           {/* Mobile Social Icons */}
           <a href="https://www.facebook.com/groups/717321330191930/" target="_blank" rel="noopener noreferrer" className="text-white hover:text-pan-gold transition-colors">
@@ -110,6 +98,20 @@ const Navbar = () => {
           </a>
           <a href="https://www.youtube.com/@IntercâmbioDiaspora" target="_blank" rel="noopener noreferrer" className="text-white hover:text-pan-gold transition-colors">
             <Youtube className="h-4 w-4" />
+          </a>
+        </div>
+
+        {/* Mobile Only Language and Social Section - Red Background (Very Small Screens) */}
+        <div className="bg-pan-red px-2 h-full flex md:hidden items-center space-x-1">
+          {/* Language Switcher */}
+          <LanguageSwitcher />
+          
+          {/* Minimal Social Icons for very small screens */}
+          <a href="https://www.instagram.com/intercambios_diaspora/" target="_blank" rel="noopener noreferrer" className="text-white hover:text-pan-gold transition-colors">
+            <Instagram className="h-3 w-3 sm:h-4 sm:w-4" />
+          </a>
+          <a href="https://www.facebook.com/groups/717321330191930/" target="_blank" rel="noopener noreferrer" className="text-white hover:text-pan-gold transition-colors">
+            <Facebook className="h-3 w-3 sm:h-4 sm:w-4" />
           </a>
         </div>
       </div>
@@ -130,19 +132,6 @@ const Navbar = () => {
             
             {/* Divider */}
             <div className="border-t border-gray-700 my-2"></div>
-            
-            {/* Mobile Search */}
-            <div className="px-3 py-2">
-              <label className="block text-white text-sm font-medium mb-2">Search</label>
-              <div className="flex items-center bg-white rounded-md px-3 py-2">
-                <Search className="h-4 w-4 text-gray-400 mr-2" />
-                <input
-                  type="text"
-                  placeholder={t('nav.search')}
-                  className="bg-transparent border-none outline-none text-sm flex-grow text-gray-700 placeholder-gray-400"
-                />
-              </div>
-            </div>
             
             {/* Mobile Social Icons */}
             <div className="px-3 py-2">
