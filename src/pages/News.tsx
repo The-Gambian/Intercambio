@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { Search, Calendar, User, Tag, ArrowRight } from 'lucide-react';
 import { format } from 'date-fns';
 
-// Updated news data from LinkedIn and Instagram
+// Updated news data with new Imgur images
 const newsData = [
   {
     id: 1,
@@ -12,7 +12,7 @@ const newsData = [
     date: new Date(2024, 3, 15),
     author: "Intercâmbio Diáspora Team",
     category: "Events",
-    image: "/community-gathering.jpeg"
+    image: "https://i.imgur.com/eUtTakc.jpg"
   },
   {
     id: 2,
@@ -22,7 +22,7 @@ const newsData = [
     date: new Date(2024, 3, 10),
     author: "Language Program Coordinator",
     category: "Education",
-    image: "/language-exchange.jpeg"
+    image: "https://i.imgur.com/cmCCoJI.jpg"
   },
   {
     id: 3,
@@ -32,7 +32,7 @@ const newsData = [
     date: new Date(2024, 3, 5),
     author: "Cultural Programs Team",
     category: "Culture",
-    image: "/africa-day.png"
+    image: "https://i.imgur.com/fHIxWQt.jpg"
   },
   {
     id: 4,
@@ -42,7 +42,7 @@ const newsData = [
     date: new Date(2024, 3, 1),
     author: "Professional Development Coordinator",
     category: "Career",
-    image: "/professional-event.jpeg"
+    image: "https://i.imgur.com/1ntgyJg.jpg"
   },
   {
     id: 5,
@@ -52,12 +52,42 @@ const newsData = [
     date: new Date(2024, 2, 25),
     author: "Youth Programs Director",
     category: "Education",
-    image: "/language-exchange.jpeg"
+    image: "https://i.imgur.com/aLhAefJ.jpg"
+  },
+  {
+    id: 6,
+    title: "Cultural Exchange Workshop Series",
+    excerpt: "Interactive workshops exploring African cultural traditions, music, and art with hands-on activities and community discussions.",
+    content: "Join us for our new Cultural Exchange Workshop Series, designed to celebrate and preserve African cultural traditions through interactive learning experiences. These workshops provide hands-on opportunities to engage with various aspects of African heritage.\n\nWorkshop topics include:\n- Traditional African music and instruments\n- African art and craft techniques\n- Storytelling traditions\n- Culinary heritage\n- Dance and movement\n\nEach workshop is led by community members and cultural practitioners who bring authentic knowledge and passion to their teaching. Participants will not only learn new skills but also connect with others who share an interest in African culture.\n\nThese workshops are open to all community members and allies, creating inclusive spaces for cultural learning and appreciation.",
+    date: new Date(2024, 2, 20),
+    author: "Cultural Programs Team",
+    category: "Culture",
+    image: "https://i.imgur.com/4Y46Pd9.jpg"
+  },
+  {
+    id: 7,
+    title: "Community Networking Event Success",
+    excerpt: "Our recent networking event brought together professionals from diverse backgrounds, creating new opportunities for collaboration and growth.",
+    content: "Our recent Community Networking Event was a tremendous success, bringing together over 100 professionals from the African and Afro-descendant diaspora community. The event created valuable opportunities for connection, collaboration, and professional growth.\n\nHighlights from the event:\n- Professional speed networking sessions\n- Industry-specific discussion groups\n- Mentorship matching opportunities\n- Resource sharing workshops\n- Cultural celebration and entertainment\n\nParticipants represented diverse industries including technology, healthcare, education, arts, and entrepreneurship. Many attendees reported making meaningful connections that have already led to new collaborations and opportunities.\n\nThe success of this event demonstrates the strength and potential of our community when we come together to support each other's professional aspirations.",
+    date: new Date(2024, 2, 15),
+    author: "Professional Development Coordinator",
+    category: "Networking",
+    image: "https://i.imgur.com/AR9vw6I.jpg"
+  },
+  {
+    id: 8,
+    title: "Educational Support Program Expansion",
+    excerpt: "Our educational support initiatives expand to include new resources for students and families navigating the Portuguese education system.",
+    content: "We're excited to announce the expansion of our Educational Support Program, which now includes comprehensive resources for students and families from the African diaspora community navigating the Portuguese education system.\n\nNew program features:\n- Academic tutoring and support\n- University application guidance\n- Scholarship information and assistance\n- Parent engagement workshops\n- Cultural identity support in educational settings\n\nThe program addresses the unique challenges faced by diaspora students and families, providing culturally sensitive support that honors their heritage while helping them succeed in Portuguese educational institutions.\n\nOur team of educators and volunteers work closely with participants to ensure they have the tools and confidence needed for academic success.",
+    date: new Date(2024, 2, 10),
+    author: "Education Program Director",
+    category: "Education",
+    image: "https://i.imgur.com/T15A3ek.jpg"
   }
 ];
 
 // Available categories for filtering
-const categories = ["All", "Events", "Education", "Culture", "Career"];
+const categories = ["All", "Events", "Education", "Culture", "Career", "Networking"];
 
 const News = () => {
   const [searchTerm, setSearchTerm] = useState("");
@@ -65,12 +95,16 @@ const News = () => {
   const [selectedArticle, setSelectedArticle] = useState<number | null>(null);
 
   // Filter news based on search term and category
-  const filteredNews = newsData.filter(article => {
-    const matchesSearch = article.title.toLowerCase().includes(searchTerm.toLowerCase()) || 
+  const filterNews = (events: typeof newsData) => {
+    return events.filter(article => {
+      const matchesSearch = article.title.toLowerCase().includes(searchTerm.toLowerCase()) || 
                           article.excerpt.toLowerCase().includes(searchTerm.toLowerCase());
-    const matchesCategory = selectedCategory === "All" || article.category === selectedCategory;
-    return matchesSearch && matchesCategory;
-  });
+      const matchesCategory = selectedCategory === "All" || article.category === selectedCategory;
+      return matchesSearch && matchesCategory;
+    });
+  };
+
+  const filteredNews = filterNews(newsData);
 
   return (
     <div className="bg-gray-50 min-h-screen">
@@ -174,7 +208,7 @@ const News = () => {
                       <User className="h-4 w-4 mr-1" />
                       By {article.author}
                     </div>
-                    <span className="inline-block bg-blue-100 text-blue-800 text-xs px-2 py-1 rounded-full">
+                    <span className="inline-block bg-red-100 text-red-800 text-xs px-2 py-1 rounded-full">
                       {article.category}
                     </span>
                   </div>
@@ -218,7 +252,7 @@ const News = () => {
                       <User className="h-4 w-4 mr-1" />
                       By {article.author}
                     </div>
-                    <span className="inline-block bg-blue-100 text-blue-800 text-xs px-2 py-1 rounded-full">
+                    <span className="inline-block bg-red-100 text-red-800 text-xs px-2 py-1 rounded-full">
                       {article.category}
                     </span>
                   </div>
@@ -234,12 +268,12 @@ const News = () => {
                   <div className="mt-8 pt-8 border-t border-gray-200">
                     <h3 className="text-lg font-semibold mb-4">Share this article</h3>
                     <div className="flex space-x-4">
-                      <button className="bg-blue-600 text-white p-2 rounded-full hover:bg-blue-700">
+                      <button className="bg-red-600 text-white p-2 rounded-full hover:bg-red-700">
                         <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
                           <path fillRule="evenodd" d="M22 12c0-5.523-4.477-10-10-10S2 6.477 2 12c0 4.991 3.657 9.128 8.438 9.878v-6.987h-2.54V12h2.54V9.797c0-2.506 1.492-3.89 3.777-3.89 1.094 0 2.238.195 2.238.195v2.46h-1.26c-1.243 0-1.63.771-1.63 1.562V12h2.773l-.443 2.89h-2.33v6.988C18.343 21.128 22 16.991 22 12z" clipRule="evenodd"></path>
                         </svg>
                       </button>
-                      <button className="bg-blue-400 text-white p-2 rounded-full hover:bg-blue-500">
+                      <button className="bg-red-400 text-white p-2 rounded-full hover:bg-red-500">
                         <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
                           <path d="M8.29 20.251c7.547 0 11.675-6.253 11.675-11.675 0-.178 0-.355-.012-.53A8.348 8.348 0 0022 5.92a8.19 8.19 0 01-2.357.646 4.118 4.118 0 001.804-2.27 8.224 8.224 0 01-2.605.996 4.107 4.107 0 00-6.993 3.743 11.65 11.65 0 01-8.457-4.287 4.106 4.106 0 001.27 5.477A4.072 4.072 0 012.8 9.713v.052a4.105 4.105 0 003.292 4.022 4.095 4.095 0 01-1.853.07 4.108 4.108 0 003.834 2.85A8.233 8.233 0 012 18.407a11.616 11.616 0 006.29 1.84"></path>
                         </svg>
