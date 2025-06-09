@@ -155,7 +155,7 @@ const Events = () => {
   return (
     <div className="bg-gray-50 min-h-screen">
       {/* Header */}
-      <div className="bg-blue-900 text-white py-16">
+      <div className="bg-pan-red text-white py-16">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <h1 className="text-4xl font-bold mb-4">Community Events</h1>
           <p className="text-xl max-w-3xl">Join our vibrant community gatherings, workshops, and celebrations. Connect, learn, and grow with fellow diaspora members.</p>
@@ -173,7 +173,7 @@ const Events = () => {
               <input
                 type="text"
                 placeholder="Search events..."
-                className="pl-10 pr-4 py-2 border border-gray-300 rounded-md w-full focus:outline-none focus:ring-2 focus:ring-blue-500"
+                className="pl-10 pr-4 py-2 border border-gray-300 rounded-md w-full focus:outline-none focus:ring-2 focus:ring-red-500"
                 value={searchTerm}
                 onChange={(e) => setSearchTerm(e.target.value)}
               />
@@ -183,7 +183,7 @@ const Events = () => {
                 <Filter className="h-5 w-5 text-gray-400" />
               </div>
               <select
-                className="pl-10 pr-4 py-2 border border-gray-300 rounded-md w-full md:w-48 focus:outline-none focus:ring-2 focus:ring-blue-500 appearance-none"
+                className="pl-10 pr-4 py-2 border border-gray-300 rounded-md w-full md:w-48 focus:outline-none focus:ring-2 focus:ring-red-500 appearance-none"
                 value={selectedCategory}
                 onChange={(e) => setSelectedCategory(e.target.value)}
               >
@@ -213,7 +213,7 @@ const Events = () => {
                   <div key={event.id} className="bg-white rounded-lg shadow-md overflow-hidden">
                     <img src={event.image} alt={event.title} className="w-full h-48 object-cover" />
                     <div className="p-6">
-                      <div className="flex items-center text-sm text-blue-600 mb-2">
+                      <div className="flex items-center text-sm text-red-600 mb-2">
                         <Calendar className="h-4 w-4 mr-1" />
                         {format(event.date, "MMMM d, yyyy 'at' h:mm a")}
                       </div>
@@ -234,7 +234,7 @@ const Events = () => {
                           href={event.registrationLink}
                           target="_blank"
                           rel="noopener noreferrer"
-                          className="inline-block bg-blue-600 text-white px-4 py-2 rounded-md hover:bg-blue-700 transition"
+                          className="inline-block bg-red-600 text-white px-4 py-2 rounded-md hover:bg-red-700 transition"
                         >
                           Register Now
                         </a>
@@ -253,7 +253,7 @@ const Events = () => {
                 <h2 className="text-2xl font-bold">Past Events</h2>
                 <button
                   onClick={() => setShowPastEvents(!showPastEvents)}
-                  className="text-blue-600 hover:text-blue-800"
+                  className="text-red-600 hover:text-red-800"
                 >
                   {showPastEvents ? 'Show Less' : 'Show All'}
                 </button>
@@ -263,7 +263,7 @@ const Events = () => {
                   <div key={event.id} className="bg-white rounded-lg shadow-md overflow-hidden">
                     <img src={event.image} alt={event.title} className="w-full h-48 object-cover" />
                     <div className="p-6">
-                      <div className="flex items-center text-sm text-blue-600 mb-2">
+                      <div className="flex items-center text-sm text-red-600 mb-2">
                         <Calendar className="h-4 w-4 mr-1" />
                         {format(event.date, "MMMM d, yyyy")}
                       </div>
