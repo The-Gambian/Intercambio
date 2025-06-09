@@ -13,21 +13,21 @@ const resourcesData = [
         type: "guide",
         title: "Immigration & Documentation Guide",
         description: "Step-by-step guidance on visas, residence permits (D7, D2, etc.), and citizenship processes in Portugal",
-        image: "/WhatsApp Image 2025-05-31 at 21.18.38.jpeg"
+        image: "/community-gathering.jpeg"
       },
       {
         id: 102,
         type: "workshop",
         title: "Portuguese Bureaucracy Navigation",
         description: "Understanding SEF, Finanças, Social Security, and other essential government services",
-        image: "/WhatsApp Image 2025-04-13 at 02.49.55.jpeg"
+        image: "/professional-event.jpeg"
       },
       {
         id: 103,
         type: "guide",
         title: "Housing in Portugal",
         description: "Guide to finding accommodation, rental processes, and understanding tenant rights",
-        image: "/WhatsApp Image 2025-03-22 at 21.11.45.jpeg"
+        image: "/language-exchange.jpeg"
       }
     ]
   },
@@ -41,28 +41,28 @@ const resourcesData = [
         type: "guide",
         title: "Find a Portuguese Teacher",
         description: "Directory of qualified Portuguese language teachers offering private and group lessons",
-        image: "/africa day.PNG"
+        image: "/africa-day.png"
       },
       {
         id: 202,
         type: "guide",
         title: "Language Learning Apps",
         description: "Recommended apps and online platforms for Portuguese language learning (Duolingo, Babbel, Memrise, etc.)",
-        image: "/WhatsApp Image 2025-04-13 at 02.49.55.jpeg"
+        image: "/professional-event.jpeg"
       },
       {
         id: 203,
         type: "course",
         title: "Portuguese Language Exchange",
         description: "Weekly conversation practice with native speakers and fellow learners",
-        image: "/WhatsApp Image 2025-03-22 at 21.11.45.jpeg"
+        image: "/language-exchange.jpeg"
       },
       {
         id: 204,
         type: "guide",
         title: "Study Resources",
         description: "Books, podcasts, YouTube channels, and other materials for Portuguese learning",
-        image: "/WhatsApp Image 2025-05-31 at 21.18.38.jpeg"
+        image: "/community-gathering.jpeg"
       }
     ]
   },
@@ -76,28 +76,28 @@ const resourcesData = [
         type: "workshop",
         title: "African Heritage Celebrations",
         description: "Calendar of cultural events, festivals, and celebrations in the African diaspora community",
-        image: "/WhatsApp Image 2025-05-31 at 21.18.38.jpeg"
+        image: "/community-gathering.jpeg"
       },
       {
         id: 302,
         type: "guide",
         title: "Music & Arts Scene",
         description: "Guide to African and Afro-Portuguese music events, concerts, and artistic expressions",
-        image: "/WhatsApp Image 2025-03-22 at 21.11.45.jpeg"
+        image: "/language-exchange.jpeg"
       },
       {
         id: 303,
         type: "workshop",
         title: "Cultural Workshops",
         description: "Traditional dance, music, cooking, and craft workshops celebrating African heritage",
-        image: "/africa day.PNG"
+        image: "/africa-day.png"
       },
       {
         id: 304,
         type: "guide",
         title: "Community Spaces",
         description: "Directory of cultural centers, museums, and venues celebrating African diaspora culture",
-        image: "/WhatsApp Image 2025-04-13 at 02.49.55.jpeg"
+        image: "/professional-event.jpeg"
       }
     ]
   },
@@ -111,21 +111,21 @@ const resourcesData = [
         type: "workshop",
         title: "Professional Networking",
         description: "Building professional connections in Portugal's job market",
-        image: "/WhatsApp Image 2025-05-31 at 21.18.38.jpeg"
+        image: "/community-gathering.jpeg"
       },
       {
         id: 402,
         type: "guide",
         title: "Entrepreneurship in Portugal",
         description: "Guide to starting and running a business, including legal requirements and funding opportunities",
-        image: "/WhatsApp Image 2025-04-13 at 02.49.55.jpeg"
+        image: "/professional-event.jpeg"
       },
       {
         id: 403,
         type: "workshop",
         title: "Qualification Recognition",
         description: "Process for recognizing foreign qualifications and professional certifications",
-        image: "/WhatsApp Image 2025-03-22 at 21.11.45.jpeg"
+        image: "/language-exchange.jpeg"
       }
     ]
   },
@@ -139,21 +139,21 @@ const resourcesData = [
         type: "guide",
         title: "Portuguese Education System",
         description: "Understanding schools, enrollment, and educational support for children",
-        image: "/africa day.PNG"
+        image: "/africa-day.png"
       },
       {
         id: 502,
         type: "workshop",
         title: "Parenting in Portugal",
         description: "Support group for African and Afro-descendant parents navigating cultural differences",
-        image: "/WhatsApp Image 2025-04-13 at 02.49.55.jpeg"
+        image: "/professional-event.jpeg"
       },
       {
         id: 503,
         type: "guide",
         title: "Healthcare Navigation",
         description: "Accessing healthcare services, insurance, and medical care for families",
-        image: "/WhatsApp Image 2025-03-22 at 21.11.45.jpeg"
+        image: "/language-exchange.jpeg"
       }
     ]
   }
@@ -169,7 +169,7 @@ const LearningHub: React.FC = () => {
   return (
     <div className="bg-gray-50 min-h-screen">
       {/* Header */}
-      <div className="bg-blue-900 text-white py-16">
+      <div className="bg-pan-red text-white py-16">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <h1 className="text-4xl font-bold mb-4">Learning Hub</h1>
           <p className="text-xl max-w-3xl">Access resources, guides, and support for your journey in Portugal.</p>
@@ -182,7 +182,7 @@ const LearningHub: React.FC = () => {
           <input
             type="text"
             placeholder="Search resources..."
-            className="w-full p-4 pl-12 rounded-lg border border-gray-300 focus:outline-none focus:border-blue-500"
+            className="w-full p-4 pl-12 rounded-lg border border-gray-300 focus:outline-none focus:border-red-500"
             value={searchTerm}
             onChange={(e) => setSearchTerm(e.target.value)}
           />
