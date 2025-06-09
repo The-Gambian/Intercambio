@@ -11,7 +11,7 @@ const upcomingEvents = [
     location: "Parque da Bela Vista, Quinta do Pombeiro, Casa Senhorial Norte, Azinhaga do Pombeiro, 1900-793 Lisboa",
     description: "Join us for a community picnic featuring games, fellowship, and cultural exchange. This is a potluck event - bring a dish to share! Connect with fellow Zillennials in Portugal while enjoying an afternoon of fun and community building.",
     category: "Cultural",
-    image: "/WhatsApp Image 2025-05-31 at 21.18.38.jpeg",
+    image: "https://i.imgur.com/3KJGfwj.jpg",
     registrationLink: "https://forms.gle/AKjtjV5xmU8cNAXE7",
     endTime: "18:00"
   },
@@ -22,7 +22,7 @@ const upcomingEvents = [
     location: "Rua da Fábrica de Material de Guerra, 1, 1950-128 Lisbon, Portugal",
     description: "Join us for a vibrant celebration of African cultures with concerts, traditional food, DJ sets, dance performances, and cultural projections. Experience the rich heritage of Africa through music, art, and community.",
     category: "Cultural",
-    image: "/africa day.PNG",
+    image: "https://i.imgur.com/vchikwW.jpg",
     endTime: "23:00"
   },
   {
@@ -32,7 +32,7 @@ const upcomingEvents = [
     location: "Intercâmbio Learning Center, Lisbon",
     description: "Practice your language skills and connect with native speakers in a friendly, supportive environment. This weekly event focuses on Portuguese and English language exchange, creating opportunities for cultural learning and community building.",
     category: "Educational",
-    image: "/WhatsApp Image 2025-03-22 at 21.11.45.jpeg"
+    image: "https://i.imgur.com/ppZR0iC.jpg"
   },
   {
     id: 4,
@@ -41,11 +41,11 @@ const upcomingEvents = [
     location: "Urban Business Hub, Lisbon",
     description: "Connect with professionals from diverse backgrounds and expand your network. This event features structured networking activities, professional development discussions, and opportunities to build meaningful business relationships.",
     category: "Networking",
-    image: "/WhatsApp Image 2025-04-13 at 02.49.55.jpeg"
+    image: "https://i.imgur.com/7mdxG48.jpg"
   }
 ];
 
-// Past events from LinkedIn and Instagram
+// Past events from LinkedIn and Instagram with updated images
 const pastEvents = [
   {
     id: 101,
@@ -54,7 +54,7 @@ const pastEvents = [
     location: "Lisbon City Center",
     description: "Join us for a unique walking tour exploring Lisbon's African heritage and contemporary African presence. Learn about historical connections, visit significant sites, and discover the vibrant African influence in modern Lisbon.",
     category: "Cultural",
-    image: "/WhatsApp Image 2025-03-22 at 21.11.45.jpeg"
+    image: "https://i.imgur.com/Vhmiy5j.jpg"
   },
   {
     id: 102,
@@ -63,7 +63,7 @@ const pastEvents = [
     location: "Intercâmbio Learning Center",
     description: "An evening of language practice and cultural exchange, featuring Portuguese-English conversation groups and discussions about African diaspora experiences.",
     category: "Educational",
-    image: "/WhatsApp Image 2025-03-22 at 21.11.45.jpeg"
+    image: "https://i.imgur.com/uL7QWGB.jpg"
   },
   {
     id: 103,
@@ -72,7 +72,7 @@ const pastEvents = [
     location: "Community Center, Lisbon",
     description: "A special gathering for sharing stories, experiences, and building connections within our diaspora community. Featured traditional music, food, and storytelling.",
     category: "Community",
-    image: "/WhatsApp Image 2025-05-31 at 21.18.38.jpeg"
+    image: "https://i.imgur.com/eqADTrh.jpg"
   },
   {
     id: 104,
@@ -81,7 +81,7 @@ const pastEvents = [
     location: "Lisbon, Portugal",
     description: "A vibrant community gathering featuring language exchange, cultural sharing, and networking opportunities. Join us for an evening of connection and learning.",
     category: "Community",
-    image: "/WhatsApp Image 2025-05-31 at 21.18.38.jpeg"
+    image: "https://i.imgur.com/U0U8tKF.jpg"
   },
   {
     id: 105,
@@ -90,7 +90,7 @@ const pastEvents = [
     location: "Community Center, Lisbon",
     description: "Interactive workshop exploring African cultural traditions, music, and art. Featuring demonstrations, hands-on activities, and community discussions.",
     category: "Cultural",
-    image: "/WhatsApp Image 2025-04-13 at 02.49.55.jpeg"
+    image: "https://i.imgur.com/4x5JR34.jpg"
   },
   {
     id: 106,
@@ -99,7 +99,7 @@ const pastEvents = [
     location: "Intercâmbio Learning Center",
     description: "Casual evening of language practice and cultural exchange. Practice Portuguese and English while making new friends and connections.",
     category: "Educational",
-    image: "/WhatsApp Image 2025-03-22 at 21.11.45.jpeg"
+    image: "https://i.imgur.com/YSkHnzk.jpg"
   },
   {
     id: 107,
@@ -108,7 +108,7 @@ const pastEvents = [
     location: "Cultural Center, Lisbon",
     description: "A celebration of African heritage featuring traditional music, dance performances, food, and community activities.",
     category: "Cultural",
-    image: "/africa day.PNG"
+    image: "https://i.imgur.com/q3JhdT8.jpg"
   },
   {
     id: 108,
@@ -117,7 +117,7 @@ const pastEvents = [
     location: "Business Hub, Lisbon",
     description: "Professional networking event connecting members of the African diaspora community. Share opportunities, build connections, and support professional growth.",
     category: "Networking",
-    image: "/WhatsApp Image 2025-04-13 at 02.49.55.jpeg"
+    image: "https://i.imgur.com/aFewmTX.jpg"
   },
   {
     id: 109,
@@ -126,7 +126,7 @@ const pastEvents = [
     location: "Community Center, Lisbon",
     description: "End-of-year celebration bringing together our community to reflect on achievements, share stories, and look forward to the new year.",
     category: "Community",
-    image: "/WhatsApp Image 2025-05-31 at 21.18.38.jpeg"
+    image: "https://i.imgur.com/j7O5Vuv.jpg"
   }
 ];
 
