@@ -3,7 +3,7 @@ import React from 'react';
 const TermsOfService = () => {
   return (
     <div className="bg-gray-50 min-h-screen">
-      <div className="bg-blue-900 text-white py-16">
+      <div className="bg-pan-red text-white py-16">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <h1 className="text-4xl font-bold mb-4">Terms of Service</h1>
           <p className="text-xl">Last updated: {new Date().toLocaleDateString()}</p>
@@ -13,14 +13,14 @@ const TermsOfService = () => {
       <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
         <div className="bg-white rounded-lg shadow-md p-8">
           <section className="mb-8">
-            <h2 className="text-2xl font-bold mb-4">Agreement to Terms</h2>
+            <h2 className="text-2xl font-bold mb-4 text-pan-black">Agreement to Terms</h2>
             <p className="text-gray-700 mb-4">
               By accessing or using the Intercâmbio Diáspora website and services, you agree to be bound by these Terms of Service. If you disagree with any part of these terms, you may not access our services.
             </p>
           </section>
 
           <section className="mb-8">
-            <h2 className="text-2xl font-bold mb-4">Use of Services</h2>
+            <h2 className="text-2xl font-bold mb-4 text-pan-black">Use of Services</h2>
             <p className="text-gray-700 mb-4">
               Our services are intended for:
             </p>
@@ -35,7 +35,7 @@ const TermsOfService = () => {
           </section>
 
           <section className="mb-8">
-            <h2 className="text-2xl font-bold mb-4">User Accounts</h2>
+            <h2 className="text-2xl font-bold mb-4 text-pan-black">User Accounts</h2>
             <p className="text-gray-700 mb-4">When creating an account, you agree to:</p>
             <ul className="list-disc pl-6 text-gray-700">
               <li>Provide accurate and complete information</li>
@@ -46,7 +46,7 @@ const TermsOfService = () => {
           </section>
 
           <section className="mb-8">
-            <h2 className="text-2xl font-bold mb-4">Community Guidelines</h2>
+            <h2 className="text-2xl font-bold mb-4 text-pan-black">Community Guidelines</h2>
             <p className="text-gray-700 mb-4">Users must:</p>
             <ul className="list-disc pl-6 text-gray-700">
               <li>Respect other community members</li>
@@ -58,14 +58,14 @@ const TermsOfService = () => {
           </section>
 
           <section className="mb-8">
-            <h2 className="text-2xl font-bold mb-4">Intellectual Property</h2>
+            <h2 className="text-2xl font-bold mb-4 text-pan-black">Intellectual Property</h2>
             <p className="text-gray-700 mb-4">
               All content on our website, including text, graphics, logos, and images, is the property of Intercâmbio Diáspora or our licensors and is protected by copyright and other intellectual property laws.
             </p>
           </section>
 
           <section className="mb-8">
-            <h2 className="text-2xl font-bold mb-4">Events and Programs</h2>
+            <h2 className="text-2xl font-bold mb-4 text-pan-black">Events and Programs</h2>
             <p className="text-gray-700 mb-4">
               Participation in events and programs is subject to:
             </p>
@@ -78,28 +78,30 @@ const TermsOfService = () => {
           </section>
 
           <section className="mb-8">
-            <h2 className="text-2xl font-bold mb-4">Limitation of Liability</h2>
+            <h2 className="text-2xl font-bold mb-4 text-pan-black">Limitation of Liability</h2>
             <p className="text-gray-700 mb-4">
               Intercâmbio Diáspora shall not be liable for any indirect, incidental, special, consequential, or punitive damages resulting from your use or inability to use our services.
             </p>
           </section>
 
           <section className="mb-8">
-            <h2 className="text-2xl font-bold mb-4">Changes to Terms</h2>
+            <h2 className="text-2xl font-bold mb-4 text-pan-black">Changes to Terms</h2>
             <p className="text-gray-700 mb-4">
               We reserve the right to modify these terms at any time. We will notify users of any material changes through our website or email.
             </p>
           </section>
 
           <section>
-            <h2 className="text-2xl font-bold mb-4">Contact Information</h2>
+            <h2 className="text-2xl font-bold mb-4 text-pan-black">Contact Information</h2>
             <p className="text-gray-700 mb-4">
               For questions about these Terms of Service, please contact us at:
             </p>
-            <p className="text-gray-700">
-              Email: info@intercambiodiaspora.org<br />
-              Address: Lisbon, Portugal
-            </p>
+            <div className="bg-pan-green/10 p-4 rounded-lg">
+              <p className="text-gray-700">
+                <strong>Email:</strong> info@intercambiodiaspora.org<br />
+                <strong>Address:</strong> Lisbon, Portugal
+              </p>
+            </div>
           </section>
         </div>
       </div>
