@@ -11,19 +11,14 @@ export default defineConfig({
     outDir: 'dist',
     assetsDir: 'assets',
   },
-  // Configure for SPA routing
-  preview: {
-    port: 4173,
-    strictPort: true,
-  },
   server: {
     port: 5173,
     strictPort: true,
     host: true,
     origin: "http://0.0.0.0:5173",
-    // This is the key fix for local development SPA routing
-    historyApiFallback: {
-      index: '/index.html',
-    },
+  },
+  preview: {
+    port: 4173,
+    strictPort: true,
   },
 });
