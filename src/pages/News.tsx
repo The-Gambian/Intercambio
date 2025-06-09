@@ -12,7 +12,7 @@ const newsData = [
     date: new Date(2024, 3, 15),
     author: "Intercâmbio Diáspora Team",
     category: "Events",
-    image: "https://i.im.ge/2025/04/22/vOgb0L.IMG-20240706-WA0029-1.jpeg"
+    image: "/WhatsApp Image 2025-05-31 at 21.18.38.jpeg"
   },
   {
     id: 2,
@@ -22,7 +22,7 @@ const newsData = [
     date: new Date(2024, 3, 10),
     author: "Language Program Coordinator",
     category: "Education",
-    image: "https://i.im.ge/2025/04/22/vOggex.WhatsApp-Image-2025-03-18-at-16-10-11-1.jpeg"
+    image: "/WhatsApp Image 2025-03-22 at 21.11.45.jpeg"
   },
   {
     id: 3,
@@ -32,7 +32,7 @@ const newsData = [
     date: new Date(2024, 3, 5),
     author: "Cultural Programs Team",
     category: "Culture",
-    image: "https://i.im.ge/2025/04/22/vOgWCJ.WhatsApp-Image-2025-03-22-at-21-11-43.jpeg"
+    image: "/africa day.PNG"
   },
   {
     id: 4,
@@ -42,7 +42,7 @@ const newsData = [
     date: new Date(2024, 3, 1),
     author: "Professional Development Coordinator",
     category: "Career",
-    image: "https://i.im.ge/2025/04/22/vO8YPY.WhatsApp-Image-2025-04-13-at-09-48-10.jpeg"
+    image: "/WhatsApp Image 2025-04-13 at 02.49.55.jpeg"
   },
   {
     id: 5,
@@ -52,7 +52,7 @@ const newsData = [
     date: new Date(2024, 2, 25),
     author: "Youth Programs Director",
     category: "Education",
-    image: "https://i.im.ge/2025/04/22/vOgxVT.Brown-And-Beige-Modern-Summer-Movie-Night-Instagram-Post-1.png"
+    image: "/WhatsApp Image 2025-03-22 at 21.11.45.jpeg"
   }
 ];
 
