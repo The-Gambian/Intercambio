@@ -9,7 +9,7 @@ const featuredTopics = [
     title: "Share Your Story",
     description: "Contribute to our community narrative by sharing your experiences as part of the African diaspora in Portugal.",
     category: "Personal Stories",
-    image: "https://i.im.ge/2025/04/22/vOgb0L.IMG-20240706-WA0029-1.jpeg",
+    image: "/WhatsApp Image 2025-05-31 at 21.18.38.jpeg",
     formLink: "https://5pzn0sic.forms.app/lead-generation-form"
   },
   {
@@ -17,7 +17,7 @@ const featuredTopics = [
     title: "Language Exchange",
     description: "Connect with language partners and join our conversation groups for Portuguese and English practice.",
     category: "Language Learning",
-    image: "https://i.im.ge/2025/04/22/vOggex.WhatsApp-Image-2025-03-18-at-16-10-11-1.jpeg",
+    image: "/WhatsApp Image 2025-03-22 at 21.11.45.jpeg",
     formLink: "https://5pzn0sic.forms.app/lead-generation-form"
   },
   {
@@ -25,7 +25,7 @@ const featuredTopics = [
     title: "Cultural Events",
     description: "Suggest cultural activities or collaborate on upcoming community events.",
     category: "Events",
-    image: "https://i.im.ge/2025/04/22/vOgWCJ.WhatsApp-Image-2025-03-22-at-21-11-43.jpeg",
+    image: "/africa day.PNG",
     formLink: "https://5pzn0sic.forms.app/lead-generation-form"
   }
 ];
@@ -37,7 +37,7 @@ const communityHighlights = [
     title: "African Heritage Day Celebration",
     description: "Over 200 community members came together to celebrate our diverse cultural heritage through music, dance, and food.",
     date: new Date(2024, 3, 15),
-    image: "https://i.im.ge/2025/04/22/vO8YPY.WhatsApp-Image-2025-04-13-at-09-48-10.jpeg",
+    image: "/WhatsApp Image 2025-04-13 at 02.49.55.jpeg",
     link: "https://www.instagram.com/intercambios_diaspora/"
   },
   {
@@ -45,7 +45,7 @@ const communityHighlights = [
     title: "Language Exchange Meetup",
     description: "Weekly language exchange bringing together Portuguese learners and native speakers for cultural and linguistic exchange.",
     date: new Date(2024, 3, 10),
-    image: "https://i.im.ge/2025/04/22/vOgxVT.Brown-And-Beige-Modern-Summer-Movie-Night-Instagram-Post-1.png",
+    image: "/WhatsApp Image 2025-03-22 at 21.11.45.jpeg",
     link: "https://www.instagram.com/intercambios_diaspora/"
   }
 ];
