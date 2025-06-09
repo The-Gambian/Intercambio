@@ -12,8 +12,8 @@ const Navbar = () => {
   return (
     <nav className="bg-white">
       <div className="flex items-center h-16">
-        {/* Logo Section - Red Background */}
-        <div className="bg-pan-red px-6 h-full flex items-center">
+        {/* Logo Section - Black Background */}
+        <div className="bg-black px-6 h-full flex items-center">
           <Link to="/" className="flex items-center">
             <img 
               src="https://yt3.googleusercontent.com/h-WATyK3LGNwBj3dG-UdED2mB7J_tY2FVzVY9MEk5PQtY6sQ2mWUZf9YFMlba3oO6Roij3Xn8A=s160-c-k-c0x00ffffff-no-rj" 
