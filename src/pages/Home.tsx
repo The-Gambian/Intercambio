@@ -43,7 +43,7 @@ function Home() {
             <div className="md:flex">
               <div className="md:w-1/2">
                 <img 
-                  src="https://images.pexels.com/photos/3184291/pexels-photo-3184291.jpeg"
+                  src="https://i.imgur.com/aFewmTX.jpg"
                   alt="Diaspora Community Gathering"
                   className="w-full h-96 object-cover"
                 />
@@ -155,7 +155,7 @@ function Home() {
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             <div className="bg-white border border-gray-200 rounded-lg overflow-hidden shadow-md hover:shadow-lg transition">
               <img 
-                src="https://images.pexels.com/photos/3184291/pexels-photo-3184291.jpeg"
+                src="https://i.imgur.com/3KJGfwj.jpg"
                 alt="Diaspora Picnic" 
                 className="w-full h-48 object-cover"
               />
@@ -176,7 +176,7 @@ function Home() {
 
             <div className="bg-white border border-gray-200 rounded-lg overflow-hidden shadow-md hover:shadow-lg transition">
               <img 
-                src="https://images.pexels.com/photos/3184360/pexels-photo-3184360.jpeg"
+                src="https://i.imgur.com/vchikwW.jpg"
                 alt="Africa Day Celebration" 
                 className="w-full h-48 object-cover"
               />
@@ -192,7 +192,7 @@ function Home() {
 
             <div className="bg-white border border-gray-200 rounded-lg overflow-hidden shadow-md hover:shadow-lg transition">
               <img 
-                src="https://images.pexels.com/photos/3184465/pexels-photo-3184465.jpeg" 
+                src="https://i.imgur.com/ppZR0iC.jpg" 
                 alt="Language Exchange Event" 
                 className="w-full h-48 object-cover"
               />
