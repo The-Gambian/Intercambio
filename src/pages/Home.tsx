@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { Calendar, Newspaper, Users, MessageCircle, BookOpen, ArrowRight, Globe, Instagram, Mail, Heart } from 'lucide-react';
+import { Calendar, Newspaper, Users, MessageCircle, BookOpen, ArrowRight, Globe, Instagram, Mail, Heart, Quote } from 'lucide-react';
 
 function Home() {
   return (
@@ -209,8 +209,83 @@ function Home() {
         </div>
       </section>
 
-      {/* Newsletter Section */}
+      {/* Testimonials Section */}
       <section className="py-16 bg-pan-green/10">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-12">
+            <h2 className="text-3xl font-bold text-pan-black">What Our Community Says</h2>
+            <p className="mt-4 text-xl text-gray-600">Hear from members who have found connection and growth through our community</p>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+            {/* Testimonial 1 - Telma */}
+            <div className="bg-white p-8 rounded-lg shadow-md relative">
+              <div className="absolute top-4 left-4">
+                <Quote className="h-8 w-8 text-pan-gold" />
+              </div>
+              <div className="flex items-center mb-6 mt-8">
+                <img 
+                  src="https://i.imgur.com/wcqx18C.jpg" 
+                  alt="Telma" 
+                  className="w-16 h-16 rounded-full object-cover mr-4"
+                />
+                <div>
+                  <h4 className="font-semibold text-lg">Telma</h4>
+                  <p className="text-gray-600">Writer and author of "um preto muito português"</p>
+                </div>
+              </div>
+              <p className="text-gray-700 italic">
+                "As a writer exploring African identity in Portugal, Intercâmbio Diáspora provided the authentic voices and stories that enriched my work. This community became both my research foundation and my creative inspiration, helping me tell our stories with truth and dignity."
+              </p>
+            </div>
+
+            {/* Testimonial 2 - Naky */}
+            <div className="bg-white p-8 rounded-lg shadow-md relative">
+              <div className="absolute top-4 left-4">
+                <Quote className="h-8 w-8 text-pan-gold" />
+              </div>
+              <div className="flex items-center mb-6 mt-8">
+                <img 
+                  src="https://i.imgur.com/w9tjPNZ.jpg" 
+                  alt="Naky" 
+                  className="w-16 h-16 rounded-full object-cover mr-4"
+                />
+                <div>
+                  <h4 className="font-semibold text-lg">Naky</h4>
+                  <p className="text-gray-600">Founder of "African Lisbon Tour"</p>
+                </div>
+              </div>
+              <p className="text-gray-700 italic">
+                "Through Intercâmbio Diáspora, I discovered the hidden African heritage of Lisbon and turned that passion into African Lisbon Tour. This community connected me with historians, storytellers, and cultural guardians who helped me create meaningful experiences that celebrate our presence in this city."
+              </p>
+            </div>
+
+            {/* Testimonial 3 - Boni */}
+            <div className="bg-white p-8 rounded-lg shadow-md relative">
+              <div className="absolute top-4 left-4">
+                <Quote className="h-8 w-8 text-pan-gold" />
+              </div>
+              <div className="flex items-center mb-6 mt-8">
+                <img 
+                  src="https://i.imgur.com/Bi5Fxvk.jpg" 
+                  alt="Boni" 
+                  className="w-16 h-16 rounded-full object-cover mr-4"
+                />
+                <div>
+                  <h4 className="font-semibold text-lg">Boni</h4>
+                  <p className="text-gray-600">Cultural event organiser</p>
+                </div>
+              </div>
+              <p className="text-gray-700 italic">
+                "Organizing cultural events became more impactful through Intercâmbio Diáspora's network. I found collaborators, venues, and most importantly, an audience that truly appreciates authentic African culture. Together, we create events that educate, celebrate, and unite our diverse diaspora community."
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Newsletter Section */}
+      <section className="py-16 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-12">
             <h2 className="text-3xl font-bold text-pan-black">Stay Connected</h2>
@@ -248,14 +323,14 @@ function Home() {
       </section>
 
       {/* Contribute Section */}
-      <section className="py-16 bg-white">
+      <section className="py-16 bg-pan-green/10">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-12">
             <h2 className="text-3xl font-bold text-pan-black">Support Our Community</h2>
             <p className="mt-4 text-xl text-gray-600">Help us create more opportunities for connection and cultural exchange</p>
           </div>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            <div className="bg-pan-green/10 p-6 rounded-lg text-center">
+            <div className="bg-white p-6 rounded-lg text-center shadow-md">
               <div className="bg-pan-gold/20 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4">
                 <Heart className="h-8 w-8 text-pan-gold" />
               </div>
@@ -265,7 +340,7 @@ function Home() {
                 Share Now
               </Link>
             </div>
-            <div className="bg-pan-green/10 p-6 rounded-lg text-center">
+            <div className="bg-white p-6 rounded-lg text-center shadow-md">
               <div className="bg-pan-gold/20 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4">
                 <Users className="h-8 w-8 text-pan-gold" />
               </div>
@@ -275,7 +350,7 @@ function Home() {
                 Get Involved
               </Link>
             </div>
-            <div className="bg-pan-green/10 p-6 rounded-lg text-center">
+            <div className="bg-white p-6 rounded-lg text-center shadow-md">
               <div className="bg-pan-gold/20 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4">
                 <Globe className="h-8 w-8 text-pan-gold" />
               </div>
