@@ -1,9 +1,12 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import { Menu, X, Search, Facebook, Instagram, Youtube, Linkedin } from 'lucide-react';
+import { useLanguage } from '../contexts/LanguageContext';
+import LanguageSwitcher from './LanguageSwitcher';
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
+  const { t } = useLanguage();
 
   const toggleMenu = () => {
     setIsOpen(!isOpen);
@@ -29,19 +32,19 @@ const Navbar = () => {
             <div className="flex items-center justify-between h-full">
               {/* Desktop Navigation */}
               <div className="hidden md:flex items-center space-x-8">
-                <Link to="/" className="text-white hover:text-pan-gold transition-colors font-medium">Home</Link>
-                <Link to="/about" className="text-white hover:text-pan-gold transition-colors font-medium">About</Link>
-                <Link to="/events" className="text-white hover:text-pan-gold transition-colors font-medium">Events</Link>
-                <Link to="/news" className="text-white hover:text-pan-gold transition-colors font-medium">News</Link>
-                <Link to="/stories" className="text-white hover:text-pan-gold transition-colors font-medium">Stories</Link>
-                <Link to="/discussions" className="text-white hover:text-pan-gold transition-colors font-medium">Discussions</Link>
-                <Link to="/learning-hub" className="text-white hover:text-pan-gold transition-colors font-medium">Learning Hub</Link>
-                <Link to="/contact" className="text-white hover:text-pan-gold transition-colors font-medium">Contact</Link>
+                <Link to="/" className="text-white hover:text-pan-gold transition-colors font-medium">{t('nav.home')}</Link>
+                <Link to="/about" className="text-white hover:text-pan-gold transition-colors font-medium">{t('nav.about')}</Link>
+                <Link to="/events" className="text-white hover:text-pan-gold transition-colors font-medium">{t('nav.events')}</Link>
+                <Link to="/news" className="text-white hover:text-pan-gold transition-colors font-medium">{t('nav.news')}</Link>
+                <Link to="/stories" className="text-white hover:text-pan-gold transition-colors font-medium">{t('nav.stories')}</Link>
+                <Link to="/discussions" className="text-white hover:text-pan-gold transition-colors font-medium">{t('nav.discussions')}</Link>
+                <Link to="/learning-hub" className="text-white hover:text-pan-gold transition-colors font-medium">{t('nav.learningHub')}</Link>
+                <Link to="/contact" className="text-white hover:text-pan-gold transition-colors font-medium">{t('nav.contact')}</Link>
               </div>
 
               {/* Mobile menu button */}
               <div className="md:hidden flex items-center">
-                <span className="text-white text-xs font-medium mr-2">MENU</span>
+                <span className="text-white text-xs font-medium mr-2">{t('nav.menu')}</span>
                 <button
                   onClick={toggleMenu}
                   className="inline-flex items-center justify-center p-2 rounded-md text-white hover:text-pan-gold focus:outline-none"
@@ -53,14 +56,17 @@ const Navbar = () => {
           </div>
         </div>
 
-        {/* Search and Social Section - Red Background (Desktop Only) */}
+        {/* Search, Language and Social Section - Red Background (Desktop Only) */}
         <div className="bg-pan-red px-6 h-full hidden lg:flex items-center space-x-4">
+          {/* Language Switcher */}
+          <LanguageSwitcher />
+          
           {/* Search Bar */}
           <div className="flex items-center bg-white rounded-md px-3 py-2 min-w-[200px]">
             <Search className="h-4 w-4 text-gray-400 mr-2" />
             <input
               type="text"
-              placeholder="Search..."
+              placeholder={t('nav.search')}
               className="bg-transparent border-none outline-none text-sm flex-grow text-gray-700 placeholder-gray-400"
             />
           </div>
@@ -82,8 +88,11 @@ const Navbar = () => {
           </div>
         </div>
 
-        {/* Mobile Search and Social Section - Red Background (Tablet Only) */}
+        {/* Mobile Search, Language and Social Section - Red Background (Tablet Only) */}
         <div className="bg-pan-red px-3 h-full flex lg:hidden md:flex items-center space-x-2">
+          {/* Language Switcher */}
+          <LanguageSwitcher />
+          
           {/* Mobile Search Icon */}
           <button className="text-white hover:text-pan-gold transition-colors">
             <Search className="h-4 w-4" />
@@ -110,14 +119,14 @@ const Navbar = () => {
         <div className="md:hidden bg-black border-t border-gray-700">
           <div className="px-2 pt-2 pb-3 space-y-1">
             {/* Navigation Links */}
-            <Link to="/" className="block px-3 py-2 rounded-md text-white hover:text-pan-gold hover:bg-gray-800 transition-colors font-medium" onClick={toggleMenu}>Home</Link>
-            <Link to="/about" className="block px-3 py-2 rounded-md text-white hover:text-pan-gold hover:bg-gray-800 transition-colors font-medium" onClick={toggleMenu}>About</Link>
-            <Link to="/events" className="block px-3 py-2 rounded-md text-white hover:text-pan-gold hover:bg-gray-800 transition-colors font-medium" onClick={toggleMenu}>Events</Link>
-            <Link to="/news" className="block px-3 py-2 rounded-md text-white hover:text-pan-gold hover:bg-gray-800 transition-colors font-medium" onClick={toggleMenu}>News</Link>
-            <Link to="/stories" className="block px-3 py-2 rounded-md text-white hover:text-pan-gold hover:bg-gray-800 transition-colors font-medium" onClick={toggleMenu}>Stories</Link>
-            <Link to="/discussions" className="block px-3 py-2 rounded-md text-white hover:text-pan-gold hover:bg-gray-800 transition-colors font-medium" onClick={toggleMenu}>Discussions</Link>
-            <Link to="/learning-hub" className="block px-3 py-2 rounded-md text-white hover:text-pan-gold hover:bg-gray-800 transition-colors font-medium" onClick={toggleMenu}>Learning Hub</Link>
-            <Link to="/contact" className="block px-3 py-2 rounded-md text-white hover:text-pan-gold hover:bg-gray-800 transition-colors font-medium" onClick={toggleMenu}>Contact</Link>
+            <Link to="/" className="block px-3 py-2 rounded-md text-white hover:text-pan-gold hover:bg-gray-800 transition-colors font-medium" onClick={toggleMenu}>{t('nav.home')}</Link>
+            <Link to="/about" className="block px-3 py-2 rounded-md text-white hover:text-pan-gold hover:bg-gray-800 transition-colors font-medium" onClick={toggleMenu}>{t('nav.about')}</Link>
+            <Link to="/events" className="block px-3 py-2 rounded-md text-white hover:text-pan-gold hover:bg-gray-800 transition-colors font-medium" onClick={toggleMenu}>{t('nav.events')}</Link>
+            <Link to="/news" className="block px-3 py-2 rounded-md text-white hover:text-pan-gold hover:bg-gray-800 transition-colors font-medium" onClick={toggleMenu}>{t('nav.news')}</Link>
+            <Link to="/stories" className="block px-3 py-2 rounded-md text-white hover:text-pan-gold hover:bg-gray-800 transition-colors font-medium" onClick={toggleMenu}>{t('nav.stories')}</Link>
+            <Link to="/discussions" className="block px-3 py-2 rounded-md text-white hover:text-pan-gold hover:bg-gray-800 transition-colors font-medium" onClick={toggleMenu}>{t('nav.discussions')}</Link>
+            <Link to="/learning-hub" className="block px-3 py-2 rounded-md text-white hover:text-pan-gold hover:bg-gray-800 transition-colors font-medium" onClick={toggleMenu}>{t('nav.learningHub')}</Link>
+            <Link to="/contact" className="block px-3 py-2 rounded-md text-white hover:text-pan-gold hover:bg-gray-800 transition-colors font-medium" onClick={toggleMenu}>{t('nav.contact')}</Link>
             
             {/* Divider */}
             <div className="border-t border-gray-700 my-2"></div>
@@ -129,7 +138,7 @@ const Navbar = () => {
                 <Search className="h-4 w-4 text-gray-400 mr-2" />
                 <input
                   type="text"
-                  placeholder="Search..."
+                  placeholder={t('nav.search')}
                   className="bg-transparent border-none outline-none text-sm flex-grow text-gray-700 placeholder-gray-400"
                 />
               </div>
@@ -137,7 +146,7 @@ const Navbar = () => {
             
             {/* Mobile Social Icons */}
             <div className="px-3 py-2">
-              <label className="block text-white text-sm font-medium mb-2">Follow Us</label>
+              <label className="block text-white text-sm font-medium mb-2">{t('nav.followUs')}</label>
               <div className="flex space-x-4">
                 <a href="https://www.facebook.com/groups/717321330191930/" target="_blank" rel="noopener noreferrer" className="text-white hover:text-pan-gold transition-colors p-2 bg-gray-800 rounded-md">
                   <Facebook className="h-5 w-5" />
