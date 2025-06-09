@@ -9,7 +9,7 @@ const featuredTopics = [
     title: "Share Your Story",
     description: "Contribute to our community narrative by sharing your experiences as part of the African diaspora in Portugal.",
     category: "Personal Stories",
-    image: "/WhatsApp Image 2025-05-31 at 21.18.38.jpeg",
+    image: "/community-gathering.jpeg",
     formLink: "https://5pzn0sic.forms.app/lead-generation-form"
   },
   {
@@ -17,7 +17,7 @@ const featuredTopics = [
     title: "Language Exchange",
     description: "Connect with language partners and join our conversation groups for Portuguese and English practice.",
     category: "Language Learning",
-    image: "/WhatsApp Image 2025-03-22 at 21.11.45.jpeg",
+    image: "/language-exchange.jpeg",
     formLink: "https://5pzn0sic.forms.app/lead-generation-form"
   },
   {
@@ -25,7 +25,7 @@ const featuredTopics = [
     title: "Cultural Events",
     description: "Suggest cultural activities or collaborate on upcoming community events.",
     category: "Events",
-    image: "/africa day.PNG",
+    image: "/africa-day.png",
     formLink: "https://5pzn0sic.forms.app/lead-generation-form"
   }
 ];
@@ -37,7 +37,7 @@ const communityHighlights = [
     title: "African Heritage Day Celebration",
     description: "Over 200 community members came together to celebrate our diverse cultural heritage through music, dance, and food.",
     date: new Date(2024, 3, 15),
-    image: "/WhatsApp Image 2025-04-13 at 02.49.55.jpeg",
+    image: "/professional-event.jpeg",
     link: "https://www.instagram.com/intercambios_diaspora/"
   },
   {
@@ -45,7 +45,7 @@ const communityHighlights = [
     title: "Language Exchange Meetup",
     description: "Weekly language exchange bringing together Portuguese learners and native speakers for cultural and linguistic exchange.",
     date: new Date(2024, 3, 10),
-    image: "/WhatsApp Image 2025-03-22 at 21.11.45.jpeg",
+    image: "/language-exchange.jpeg",
     link: "https://www.instagram.com/intercambios_diaspora/"
   }
 ];
@@ -81,7 +81,7 @@ const Discussions = () => {
   return (
     <div className="bg-gray-50 min-h-screen">
       {/* Header */}
-      <div className="bg-blue-900 text-white py-16">
+      <div className="bg-pan-red text-white py-16">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <h1 className="text-4xl font-bold mb-4">Community Engagement</h1>
           <p className="text-xl max-w-3xl">Connect, share, and engage with our vibrant diaspora community through various channels and activities.</p>
