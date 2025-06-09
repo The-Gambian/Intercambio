@@ -1,8 +1,11 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { Calendar, Newspaper, Users, MessageCircle, BookOpen, ArrowRight, Globe, Instagram, Mail, Heart, Quote } from 'lucide-react';
+import { useLanguage } from '../contexts/LanguageContext';
 
 function Home() {
+  const { t } = useLanguage();
+
   return (
     <div>
       {/* Hero Section */}
@@ -17,14 +20,14 @@ function Home() {
         ></div>
         <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-24 md:py-32">
           <div className="max-w-3xl">
-            <h1 className="text-4xl md:text-6xl font-bold mb-6 font-serif">Connecting Diaspora Communities Worldwide</h1>
-            <p className="text-xl md:text-2xl mb-8 font-light">Join our vibrant community of language cultural exchange, support, and growth for diaspora communities in Portugal.</p>
+            <h1 className="text-4xl md:text-6xl font-bold mb-6 font-serif">{t('home.hero.title')}</h1>
+            <p className="text-xl md:text-2xl mb-8 font-light">{t('home.hero.subtitle')}</p>
             <div className="flex flex-wrap gap-4">
               <Link to="/about" className="bg-pan-gold text-pan-black px-6 py-3 rounded-md font-medium hover:bg-pan-gold/90 transition text-lg">
-                Learn More
+                {t('home.hero.learnMore')}
               </Link>
               <Link to="/events" className="bg-transparent border-2 border-pan-gold text-pan-gold px-6 py-3 rounded-md font-medium hover:bg-pan-gold/10 transition text-lg">
-                Upcoming Events
+                {t('home.hero.upcomingEvents')}
               </Link>
             </div>
           </div>
@@ -35,8 +38,8 @@ function Home() {
       <section className="py-16 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-12">
-            <h2 className="text-3xl font-bold text-pan-black">Latest News</h2>
-            <p className="mt-4 text-xl text-gray-600">Stay updated with our community highlights</p>
+            <h2 className="text-3xl font-bold text-pan-black">{t('home.news.title')}</h2>
+            <p className="mt-4 text-xl text-gray-600">{t('home.news.subtitle')}</p>
           </div>
 
           <div className="bg-white rounded-lg shadow-xl overflow-hidden mb-12">
@@ -50,12 +53,12 @@ function Home() {
               </div>
               <div className="md:w-1/2 p-8">
                 <div className="text-sm text-pan-red mb-4">May 31, 2025</div>
-                <h3 className="text-2xl font-bold mb-4">Successful Diaspora Picnic Brings Community Together</h3>
+                <h3 className="text-2xl font-bold mb-4">{t('home.news.featured.title')}</h3>
                 <p className="text-gray-600 mb-6">
-                  Our recent Diaspora Picnic was a wonderful celebration of community and cultural exchange. Members from various African and Afro-descendant communities came together, sharing traditional dishes, stories, and creating new connections. The event featured games, music, and meaningful conversations that strengthened our community bonds.
+                  {t('home.news.featured.content')}
                 </p>
                 <Link to="/news" className="text-pan-red font-medium flex items-center hover:text-pan-red/80">
-                  Read More <ArrowRight className="ml-2 h-4 w-4" />
+                  {t('home.news.readMore')} <ArrowRight className="ml-2 h-4 w-4" />
                 </Link>
               </div>
             </div>
@@ -67,8 +70,8 @@ function Home() {
       <section className="py-16 bg-pan-green/10">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-12">
-            <h2 className="text-3xl font-bold text-pan-black">What We Offer</h2>
-            <p className="mt-4 text-xl text-gray-600">Explore our community resources and activities</p>
+            <h2 className="text-3xl font-bold text-pan-black">{t('home.features.title')}</h2>
+            <p className="mt-4 text-xl text-gray-600">{t('home.features.subtitle')}</p>
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
@@ -77,10 +80,10 @@ function Home() {
               <div className="bg-pan-gold/20 p-3 rounded-full w-12 h-12 flex items-center justify-center mb-4">
                 <Calendar className="h-6 w-6 text-pan-gold" />
               </div>
-              <h3 className="text-xl font-semibold mb-2">Community Events</h3>
-              <p className="text-gray-600 mb-4">Join cultural celebrations, workshops, and networking opportunities.</p>
+              <h3 className="text-xl font-semibold mb-2">{t('home.features.events.title')}</h3>
+              <p className="text-gray-600 mb-4">{t('home.features.events.description')}</p>
               <Link to="/events" className="text-pan-red font-medium flex items-center hover:text-pan-red/80">
-                View Events <ArrowRight className="ml-2 h-4 w-4" />
+                {t('home.features.events.link')} <ArrowRight className="ml-2 h-4 w-4" />
               </Link>
             </div>
 
@@ -88,10 +91,10 @@ function Home() {
               <div className="bg-pan-gold/20 p-3 rounded-full w-12 h-12 flex items-center justify-center mb-4">
                 <Newspaper className="h-6 w-6 text-pan-gold" />
               </div>
-              <h3 className="text-xl font-semibold mb-2">Local News</h3>
-              <p className="text-gray-600 mb-4">Stay updated with news relevant to diaspora communities.</p>
+              <h3 className="text-xl font-semibold mb-2">{t('home.features.news.title')}</h3>
+              <p className="text-gray-600 mb-4">{t('home.features.news.description')}</p>
               <Link to="/news" className="text-pan-red font-medium flex items-center hover:text-pan-red/80">
-                Read News <ArrowRight className="ml-2 h-4 w-4" />
+                {t('home.features.news.link')} <ArrowRight className="ml-2 h-4 w-4" />
               </Link>
             </div>
 
@@ -99,10 +102,10 @@ function Home() {
               <div className="bg-pan-gold/20 p-3 rounded-full w-12 h-12 flex items-center justify-center mb-4">
                 <Users className="h-6 w-6 text-pan-gold" />
               </div>
-              <h3 className="text-xl font-semibold mb-2">Member Stories</h3>
-              <p className="text-gray-600 mb-4">Read inspiring stories from our community members.</p>
+              <h3 className="text-xl font-semibold mb-2">{t('home.features.stories.title')}</h3>
+              <p className="text-gray-600 mb-4">{t('home.features.stories.description')}</p>
               <Link to="/stories" className="text-pan-red font-medium flex items-center hover:text-pan-red/80">
-                Explore Stories <ArrowRight className="ml-2 h-4 w-4" />
+                {t('home.features.stories.link')} <ArrowRight className="ml-2 h-4 w-4" />
               </Link>
             </div>
 
@@ -110,10 +113,10 @@ function Home() {
               <div className="bg-pan-gold/20 p-3 rounded-full w-12 h-12 flex items-center justify-center mb-4">
                 <MessageCircle className="h-6 w-6 text-pan-gold" />
               </div>
-              <h3 className="text-xl font-semibold mb-2">Discussions</h3>
-              <p className="text-gray-600 mb-4">Engage in meaningful conversations with community members.</p>
+              <h3 className="text-xl font-semibold mb-2">{t('home.features.discussions.title')}</h3>
+              <p className="text-gray-600 mb-4">{t('home.features.discussions.description')}</p>
               <Link to="/discussions" className="text-pan-red font-medium flex items-center hover:text-pan-red/80">
-                Join Discussions <ArrowRight className="ml-2 h-4 w-4" />
+                {t('home.features.discussions.link')} <ArrowRight className="ml-2 h-4 w-4" />
               </Link>
             </div>
 
@@ -121,10 +124,10 @@ function Home() {
               <div className="bg-pan-gold/20 p-3 rounded-full w-12 h-12 flex items-center justify-center mb-4">
                 <BookOpen className="h-6 w-6 text-pan-gold" />
               </div>
-              <h3 className="text-xl font-semibold mb-2">Learning Hub</h3>
-              <p className="text-gray-600 mb-4">Access educational resources, language courses, and more.</p>
+              <h3 className="text-xl font-semibold mb-2">{t('home.features.learning.title')}</h3>
+              <p className="text-gray-600 mb-4">{t('home.features.learning.description')}</p>
               <Link to="/learning-hub" className="text-pan-red font-medium flex items-center hover:text-pan-red/80">
-                Start Learning <ArrowRight className="ml-2 h-4 w-4" />
+                {t('home.features.learning.link')} <ArrowRight className="ml-2 h-4 w-4" />
               </Link>
             </div>
 
@@ -132,10 +135,10 @@ function Home() {
               <div className="bg-pan-gold/20 p-3 rounded-full w-12 h-12 flex items-center justify-center mb-4">
                 <Globe className="h-6 w-6 text-pan-gold" />
               </div>
-              <h3 className="text-xl font-semibold mb-2">Global Network</h3>
-              <p className="text-gray-600 mb-4">Connect with diaspora communities from around the world.</p>
+              <h3 className="text-xl font-semibold mb-2">{t('home.features.network.title')}</h3>
+              <p className="text-gray-600 mb-4">{t('home.features.network.description')}</p>
               <Link to="/about" className="text-pan-red font-medium flex items-center hover:text-pan-red/80">
-                Learn More <ArrowRight className="ml-2 h-4 w-4" />
+                {t('home.features.network.link')} <ArrowRight className="ml-2 h-4 w-4" />
               </Link>
             </div>
           </div>
@@ -146,9 +149,9 @@ function Home() {
       <section className="py-16 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex justify-between items-center mb-8">
-            <h2 className="text-3xl font-bold text-pan-black">Upcoming Events</h2>
+            <h2 className="text-3xl font-bold text-pan-black">{t('home.upcomingEvents.title')}</h2>
             <Link to="/events" className="text-pan-red font-medium flex items-center hover:text-pan-red/80">
-              View All <ArrowRight className="ml-2 h-4 w-4" />
+              {t('home.upcomingEvents.viewAll')} <ArrowRight className="ml-2 h-4 w-4" />
             </Link>
           </div>
 
@@ -161,15 +164,15 @@ function Home() {
               />
               <div className="p-6">
                 <div className="text-sm text-pan-red font-semibold mb-2">May 31, 2025 • 13:00 - 18:00</div>
-                <h3 className="text-xl font-bold mb-2">Diáspora Picnic</h3>
-                <p className="text-gray-600 mb-4">Join us for a community picnic featuring games, fellowship, and cultural exchange.</p>
+                <h3 className="text-xl font-bold mb-2">{t('home.upcomingEvents.diasporaPicnic.title')}</h3>
+                <p className="text-gray-600 mb-4">{t('home.upcomingEvents.diasporaPicnic.description')}</p>
                 <a 
                   href="https://forms.gle/AKjtjV5xmU8cNAXE7"
                   target="_blank"
                   rel="noopener noreferrer" 
                   className="text-pan-red font-medium flex items-center hover:text-pan-red/80"
                 >
-                  Register Now <ArrowRight className="ml-2 h-4 w-4" />
+                  {t('home.upcomingEvents.diasporaPicnic.register')} <ArrowRight className="ml-2 h-4 w-4" />
                 </a>
               </div>
             </div>
@@ -182,10 +185,10 @@ function Home() {
               />
               <div className="p-6">
                 <div className="text-sm text-pan-red font-semibold mb-2">May 25, 2025 • 14:00 - 23:00</div>
-                <h3 className="text-xl font-bold mb-2">Africa Day Celebration</h3>
-                <p className="text-gray-600 mb-4">Celebrate African cultures with concerts, traditional food, DJ sets, dance, and projections.</p>
+                <h3 className="text-xl font-bold mb-2">{t('home.upcomingEvents.africaDay.title')}</h3>
+                <p className="text-gray-600 mb-4">{t('home.upcomingEvents.africaDay.description')}</p>
                 <Link to="/events" className="text-pan-red font-medium flex items-center hover:text-pan-red/80">
-                  Learn More <ArrowRight className="ml-2 h-4 w-4" />
+                  {t('home.upcomingEvents.learnMore')} <ArrowRight className="ml-2 h-4 w-4" />
                 </Link>
               </div>
             </div>
@@ -198,10 +201,10 @@ function Home() {
               />
               <div className="p-6">
                 <div className="text-sm text-pan-red font-semibold mb-2">April 26, 2025 • 6:00 PM</div>
-                <h3 className="text-xl font-bold mb-2">Language Exchange Event</h3>
-                <p className="text-gray-600 mb-4">Practice language skills and connect with native speakers in a friendly environment.</p>
+                <h3 className="text-xl font-bold mb-2">{t('home.upcomingEvents.languageExchange.title')}</h3>
+                <p className="text-gray-600 mb-4">{t('home.upcomingEvents.languageExchange.description')}</p>
                 <Link to="/events" className="text-pan-red font-medium flex items-center hover:text-pan-red/80">
-                  Learn More <ArrowRight className="ml-2 h-4 w-4" />
+                  {t('home.upcomingEvents.learnMore')} <ArrowRight className="ml-2 h-4 w-4" />
                 </Link>
               </div>
             </div>
@@ -213,8 +216,8 @@ function Home() {
       <section className="py-16 bg-pan-green/10">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-12">
-            <h2 className="text-3xl font-bold text-pan-black">What Our Community Says</h2>
-            <p className="mt-4 text-xl text-gray-600">Hear from members who have found connection and growth through our community</p>
+            <h2 className="text-3xl font-bold text-pan-black">{t('home.testimonials.title')}</h2>
+            <p className="mt-4 text-xl text-gray-600">{t('home.testimonials.subtitle')}</p>
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
@@ -235,7 +238,7 @@ function Home() {
                 </div>
               </div>
               <p className="text-gray-700 italic">
-                "As a writer exploring African identity in Portugal, Intercâmbio Diáspora provided the authentic voices and stories that enriched my work. This community became both my research foundation and my creative inspiration, helping me tell our stories with truth and dignity."
+                {t('home.testimonials.telma')}
               </p>
             </div>
 
@@ -256,7 +259,7 @@ function Home() {
                 </div>
               </div>
               <p className="text-gray-700 italic">
-                "Through Intercâmbio Diáspora, I discovered the hidden African heritage of Lisbon and turned that passion into African Lisbon Tour. This community connected me with historians, storytellers, and cultural guardians who helped me create meaningful experiences that celebrate our presence in this city."
+                {t('home.testimonials.naky')}
               </p>
             </div>
 
@@ -277,7 +280,7 @@ function Home() {
                 </div>
               </div>
               <p className="text-gray-700 italic">
-                "Organizing cultural events became more impactful through Intercâmbio Diáspora's network. I found collaborators, venues, and most importantly, an audience that truly appreciates authentic African culture. Together, we create events that educate, celebrate, and unite our diverse diaspora community."
+                {t('home.testimonials.boni')}
               </p>
             </div>
           </div>
@@ -288,34 +291,34 @@ function Home() {
       <section className="py-16 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-12">
-            <h2 className="text-3xl font-bold text-pan-black">Stay Connected</h2>
-            <p className="mt-4 text-xl text-gray-600">Join our newsletter to receive updates about events, stories, and community initiatives</p>
+            <h2 className="text-3xl font-bold text-pan-black">{t('home.newsletter.title')}</h2>
+            <p className="mt-4 text-xl text-gray-600">{t('home.newsletter.subtitle')}</p>
           </div>
           <div className="max-w-xl mx-auto">
             <form className="bg-white p-6 rounded-lg shadow-md">
               <div className="mb-4">
-                <label htmlFor="name" className="block text-sm font-medium text-gray-700 mb-1">Name</label>
+                <label htmlFor="name" className="block text-sm font-medium text-gray-700 mb-1">{t('home.newsletter.name')}</label>
                 <input
                   type="text"
                   id="name"
                   className="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-pan-red"
-                  placeholder="Your name"
+                  placeholder={t('home.newsletter.namePlaceholder')}
                 />
               </div>
               <div className="mb-4">
-                <label htmlFor="email" className="block text-sm font-medium text-gray-700 mb-1">Email</label>
+                <label htmlFor="email" className="block text-sm font-medium text-gray-700 mb-1">{t('home.newsletter.email')}</label>
                 <input
                   type="email"
                   id="email"
                   className="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-pan-red"
-                  placeholder="Your email address"
+                  placeholder={t('home.newsletter.emailPlaceholder')}
                 />
               </div>
               <button
                 type="submit"
                 className="w-full bg-pan-red text-white py-2 px-4 rounded-md hover:bg-pan-red/90 transition flex items-center justify-center"
               >
-                Subscribe <Mail className="ml-2 h-4 w-4" />
+                {t('home.newsletter.subscribe')} <Mail className="ml-2 h-4 w-4" />
               </button>
             </form>
           </div>
@@ -326,38 +329,38 @@ function Home() {
       <section className="py-16 bg-pan-green/10">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-12">
-            <h2 className="text-3xl font-bold text-pan-black">Support Our Community</h2>
-            <p className="mt-4 text-xl text-gray-600">Help us create more opportunities for connection and cultural exchange</p>
+            <h2 className="text-3xl font-bold text-pan-black">{t('home.contribute.title')}</h2>
+            <p className="mt-4 text-xl text-gray-600">{t('home.contribute.subtitle')}</p>
           </div>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             <div className="bg-white p-6 rounded-lg text-center shadow-md">
               <div className="bg-pan-gold/20 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4">
                 <Heart className="h-8 w-8 text-pan-gold" />
               </div>
-              <h3 className="text-xl font-bold mb-2">Share Your Story</h3>
-              <p className="text-gray-600 mb-4">Contribute to our community narrative by sharing your experiences and journey</p>
+              <h3 className="text-xl font-bold mb-2">{t('home.contribute.shareStory.title')}</h3>
+              <p className="text-gray-600 mb-4">{t('home.contribute.shareStory.description')}</p>
               <Link to="/stories" className="inline-block bg-pan-red text-white px-6 py-2 rounded-md hover:bg-pan-red/90 transition">
-                Share Now
+                {t('home.contribute.shareStory.button')}
               </Link>
             </div>
             <div className="bg-white p-6 rounded-lg text-center shadow-md">
               <div className="bg-pan-gold/20 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4">
                 <Users className="h-8 w-8 text-pan-gold" />
               </div>
-              <h3 className="text-xl font-bold mb-2">Volunteer</h3>
-              <p className="text-gray-600 mb-4">Join our team of volunteers and help organize community events and programs</p>
+              <h3 className="text-xl font-bold mb-2">{t('home.contribute.volunteer.title')}</h3>
+              <p className="text-gray-600 mb-4">{t('home.contribute.volunteer.description')}</p>
               <Link to="/contact" className="inline-block bg-pan-red text-white px-6 py-2 rounded-md hover:bg-pan-red/90 transition">
-                Get Involved
+                {t('home.contribute.volunteer.button')}
               </Link>
             </div>
             <div className="bg-white p-6 rounded-lg text-center shadow-md">
               <div className="bg-pan-gold/20 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4">
                 <Globe className="h-8 w-8 text-pan-gold" />
               </div>
-              <h3 className="text-xl font-bold mb-2">Partner With Us</h3>
-              <p className="text-gray-600 mb-4">Collaborate with us to create meaningful impact in our community</p>
+              <h3 className="text-xl font-bold mb-2">{t('home.contribute.partner.title')}</h3>
+              <p className="text-gray-600 mb-4">{t('home.contribute.partner.description')}</p>
               <Link to="/contact" className="inline-block bg-pan-red text-white px-6 py-2 rounded-md hover:bg-pan-red/90 transition">
-                Learn More
+                {t('home.contribute.partner.button')}
               </Link>
             </div>
           </div>
@@ -368,7 +371,7 @@ function Home() {
       <section className="py-8 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center">
-            <h2 className="text-2xl font-bold text-pan-black mb-4">Connect With Us</h2>
+            <h2 className="text-2xl font-bold text-pan-black mb-4">{t('home.social.title')}</h2>
             <a 
               href="https://www.instagram.com/intercambios_diaspora/" 
               target="_blank" 
@@ -376,7 +379,7 @@ function Home() {
               className="inline-flex items-center text-pan-red hover:text-pan-red/80"
             >
               <Instagram className="h-6 w-6 mr-2" />
-              <span className="font-medium">Follow us on Instagram</span>
+              <span className="font-medium">{t('home.social.instagram')}</span>
             </a>
           </div>
         </div>
