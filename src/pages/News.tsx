@@ -12,7 +12,7 @@ const newsData = [
     date: new Date(2024, 3, 15),
     author: "Intercâmbio Diáspora Team",
     category: "Events",
-    image: "/WhatsApp Image 2025-05-31 at 21.18.38.jpeg"
+    image: "/community-gathering.jpeg"
   },
   {
     id: 2,
@@ -22,7 +22,7 @@ const newsData = [
     date: new Date(2024, 3, 10),
     author: "Language Program Coordinator",
     category: "Education",
-    image: "/WhatsApp Image 2025-03-22 at 21.11.45.jpeg"
+    image: "/language-exchange.jpeg"
   },
   {
     id: 3,
@@ -32,7 +32,7 @@ const newsData = [
     date: new Date(2024, 3, 5),
     author: "Cultural Programs Team",
     category: "Culture",
-    image: "/africa day.PNG"
+    image: "/africa-day.png"
   },
   {
     id: 4,
@@ -42,7 +42,7 @@ const newsData = [
     date: new Date(2024, 3, 1),
     author: "Professional Development Coordinator",
     category: "Career",
-    image: "/WhatsApp Image 2025-04-13 at 02.49.55.jpeg"
+    image: "/professional-event.jpeg"
   },
   {
     id: 5,
@@ -52,7 +52,7 @@ const newsData = [
     date: new Date(2024, 2, 25),
     author: "Youth Programs Director",
     category: "Education",
-    image: "/WhatsApp Image 2025-03-22 at 21.11.45.jpeg"
+    image: "/language-exchange.jpeg"
   }
 ];
 
