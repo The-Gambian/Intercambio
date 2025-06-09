@@ -13,21 +13,21 @@ const resourcesData = [
         type: "guide",
         title: "Immigration & Documentation Guide",
         description: "Step-by-step guidance on visas, residence permits (D7, D2, etc.), and citizenship processes in Portugal",
-        image: "https://i.im.ge/2025/04/22/vOgYlc.IMG-20231125-WA0027.jpeg"
+        image: "/WhatsApp Image 2025-05-31 at 21.18.38.jpeg"
       },
       {
         id: 102,
         type: "workshop",
         title: "Portuguese Bureaucracy Navigation",
         description: "Understanding SEF, Finanças, Social Security, and other essential government services",
-        image: "https://i.im.ge/2025/04/22/vOgb0L.IMG-20240706-WA0029-1.jpeg"
+        image: "/WhatsApp Image 2025-04-13 at 02.49.55.jpeg"
       },
       {
         id: 103,
         type: "guide",
         title: "Housing in Portugal",
         description: "Guide to finding accommodation, rental processes, and understanding tenant rights",
-        image: "https://i.im.ge/2025/04/22/vOggex.WhatsApp-Image-2025-03-18-at-16-10-11-1.jpeg"
+        image: "/WhatsApp Image 2025-03-22 at 21.11.45.jpeg"
       }
     ]
   },
@@ -41,28 +41,28 @@ const resourcesData = [
         type: "guide",
         title: "Find a Portuguese Teacher",
         description: "Directory of qualified Portuguese language teachers offering private and group lessons",
-        image: "https://i.im.ge/2025/04/22/vOgWCJ.WhatsApp-Image-2025-03-22-at-21-11-43.jpeg"
+        image: "/africa day.PNG"
       },
       {
         id: 202,
         type: "guide",
         title: "Language Learning Apps",
         description: "Recommended apps and online platforms for Portuguese language learning (Duolingo, Babbel, Memrise, etc.)",
-        image: "https://i.im.ge/2025/04/22/vO8YPY.WhatsApp-Image-2025-04-13-at-09-48-10.jpeg"
+        image: "/WhatsApp Image 2025-04-13 at 02.49.55.jpeg"
       },
       {
         id: 203,
         type: "course",
         title: "Portuguese Language Exchange",
         description: "Weekly conversation practice with native speakers and fellow learners",
-        image: "https://i.im.ge/2025/04/22/vOgxVT.Brown-And-Beige-Modern-Summer-Movie-Night-Instagram-Post-1.png"
+        image: "/WhatsApp Image 2025-03-22 at 21.11.45.jpeg"
       },
       {
         id: 204,
         type: "guide",
         title: "Study Resources",
         description: "Books, podcasts, YouTube channels, and other materials for Portuguese learning",
-        image: "https://i.im.ge/2025/04/22/vOgYlc.IMG-20231125-WA0027.jpeg"
+        image: "/WhatsApp Image 2025-05-31 at 21.18.38.jpeg"
       }
     ]
   },
@@ -76,28 +76,28 @@ const resourcesData = [
         type: "workshop",
         title: "African Heritage Celebrations",
         description: "Calendar of cultural events, festivals, and celebrations in the African diaspora community",
-        image: "https://i.im.ge/2025/04/22/vOgb0L.IMG-20240706-WA0029-1.jpeg"
+        image: "/WhatsApp Image 2025-05-31 at 21.18.38.jpeg"
       },
       {
         id: 302,
         type: "guide",
         title: "Music & Arts Scene",
         description: "Guide to African and Afro-Portuguese music events, concerts, and artistic expressions",
-        image: "https://i.im.ge/2025/04/22/vOggex.WhatsApp-Image-2025-03-18-at-16-10-11-1.jpeg"
+        image: "/WhatsApp Image 2025-03-22 at 21.11.45.jpeg"
       },
       {
         id: 303,
         type: "workshop",
         title: "Cultural Workshops",
         description: "Traditional dance, music, cooking, and craft workshops celebrating African heritage",
-        image: "https://i.im.ge/2025/04/22/vOgWCJ.WhatsApp-Image-2025-03-22-at-21-11-43.jpeg"
+        image: "/africa day.PNG"
       },
       {
         id: 304,
         type: "guide",
         title: "Community Spaces",
         description: "Directory of cultural centers, museums, and venues celebrating African diaspora culture",
-        image: "https://i.im.ge/2025/04/22/vO8YPY.WhatsApp-Image-2025-04-13-at-09-48-10.jpeg"
+        image: "/WhatsApp Image 2025-04-13 at 02.49.55.jpeg"
       }
     ]
   },
@@ -111,21 +111,21 @@ const resourcesData = [
         type: "workshop",
         title: "Professional Networking",
         description: "Building professional connections in Portugal's job market",
-        image: "https://i.im.ge/2025/04/22/vOgYlc.IMG-20231125-WA0027.jpeg"
+        image: "/WhatsApp Image 2025-05-31 at 21.18.38.jpeg"
       },
       {
         id: 402,
         type: "guide",
         title: "Entrepreneurship in Portugal",
         description: "Guide to starting and running a business, including legal requirements and funding opportunities",
-        image: "https://i.im.ge/2025/04/22/vOgb0L.IMG-20240706-WA0029-1.jpeg"
+        image: "/WhatsApp Image 2025-04-13 at 02.49.55.jpeg"
       },
       {
         id: 403,
         type: "workshop",
         title: "Qualification Recognition",
         description: "Process for recognizing foreign qualifications and professional certifications",
-        image: "https://i.im.ge/2025/04/22/vOggex.WhatsApp-Image-2025-03-18-at-16-10-11-1.jpeg"
+        image: "/WhatsApp Image 2025-03-22 at 21.11.45.jpeg"
       }
     ]
   },
@@ -139,21 +139,21 @@ const resourcesData = [
         type: "guide",
         title: "Portuguese Education System",
         description: "Understanding schools, enrollment, and educational support for children",
-        image: "https://i.im.ge/2025/04/22/vOgWCJ.WhatsApp-Image-2025-03-22-at-21-11-43.jpeg"
+        image: "/africa day.PNG"
       },
       {
         id: 502,
         type: "workshop",
         title: "Parenting in Portugal",
         description: "Support group for African and Afro-descendant parents navigating cultural differences",
-        image: "https://i.im.ge/2025/04/22/vO8YPY.WhatsApp-Image-2025-04-13-at-09-48-10.jpeg"
+        image: "/WhatsApp Image 2025-04-13 at 02.49.55.jpeg"
       },
       {
         id: 503,
         type: "guide",
         title: "Healthcare Navigation",
         description: "Accessing healthcare services, insurance, and medical care for families",
-        image: "https://i.im.ge/2025/04/22/vOgxVT.Brown-And-Beige-Modern-Summer-Movie-Night-Instagram-Post-1.png"
+        image: "/WhatsApp Image 2025-03-22 at 21.11.45.jpeg"
       }
     ]
   }
