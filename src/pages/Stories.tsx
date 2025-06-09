@@ -10,7 +10,7 @@ const featuredStory = {
   date: new Date(2024, 3, 15),
   excerpt: "A journey of cultural identity, community building, and creating connections in Portugal.",
   content: "When I first arrived in Portugal, I carried with me not just my belongings, but the weight of my cultural identity and the uncertainty of finding my place in a new land...",
-  image: "/WhatsApp Image 2025-05-31 at 21.18.38.jpeg",
+  image: "/community-gathering.jpeg",
   category: "Personal Journey",
   tags: ["Identity", "Community", "Culture"]
 };
@@ -23,7 +23,7 @@ const storiesData = [
     author: "João Santos",
     date: new Date(2024, 3, 10),
     excerpt: "How learning Portuguese became more than just mastering a language - it became a gateway to understanding my heritage.",
-    image: "/WhatsApp Image 2025-03-22 at 21.11.45.jpeg",
+    image: "/language-exchange.jpeg",
     category: "Language & Identity",
     tags: ["Language", "Heritage", "Education"]
   },
@@ -33,7 +33,7 @@ const storiesData = [
     author: "Ana Costa",
     date: new Date(2024, 3, 8),
     excerpt: "Navigating career transitions and professional growth in a new country while maintaining cultural connections.",
-    image: "/WhatsApp Image 2025-04-13 at 02.49.55.jpeg",
+    image: "/professional-event.jpeg",
     category: "Professional Growth",
     tags: ["Career", "Migration", "Professional Life"]
   },
@@ -43,7 +43,7 @@ const storiesData = [
     author: "Miguel Oliveira",
     date: new Date(2024, 3, 5),
     excerpt: "How our community keeps cultural traditions alive while embracing new experiences in Portugal.",
-    image: "/africa day.PNG",
+    image: "/africa-day.png",
     category: "Cultural Heritage",
     tags: ["Traditions", "Community", "Culture"]
   }
@@ -82,8 +82,8 @@ const Stories = () => {
   return (
     <div className="min-h-screen bg-gray-50">
       {/* Hero Section */}
-      <div className="relative bg-blue-900 text-white py-24">
-        <div className="absolute inset-0 bg-gradient-to-r from-blue-900 to-blue-700 opacity-90"></div>
+      <div className="relative bg-pan-red text-white py-24">
+        <div className="absolute inset-0 bg-gradient-to-r from-red-900 to-red-700 opacity-90"></div>
         <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <h1 className="text-5xl font-bold mb-6">Diaspora Stories: Our Voices, Our Journeys</h1>
           <p className="text-xl max-w-3xl mb-8">
@@ -92,7 +92,7 @@ const Stories = () => {
           </p>
           <button 
             onClick={() => setShowSubmitForm(true)}
-            className="bg-white text-blue-900 px-8 py-3 rounded-md font-medium hover:bg-blue-50 transition"
+            className="bg-white text-red-900 px-8 py-3 rounded-md font-medium hover:bg-red-50 transition"
           >
             Share Your Story
           </button>
@@ -111,14 +111,14 @@ const Stories = () => {
               />
             </div>
             <div className="md:w-1/2 p-8 md:p-12">
-              <div className="flex items-center text-sm text-blue-600 mb-4">
+              <div className="flex items-center text-sm text-red-600 mb-4">
                 <Calendar className="h-4 w-4 mr-2" />
                 {format(featuredStory.date, "MMMM d, yyyy")}
               </div>
               <h2 className="text-3xl font-bold mb-4">{featuredStory.title}</h2>
               <div className="flex items-center mb-6">
-                <div className="w-10 h-10 bg-blue-100 rounded-full flex items-center justify-center">
-                  <User className="h-6 w-6 text-blue-600" />
+                <div className="w-10 h-10 bg-red-100 rounded-full flex items-center justify-center">
+                  <User className="h-6 w-6 text-red-600" />
                 </div>
                 <div className="ml-3">
                   <p className="font-medium">{featuredStory.author}</p>
@@ -127,15 +127,15 @@ const Stories = () => {
               </div>
               <p className="text-gray-600 mb-6">{featuredStory.excerpt}</p>
               <div className="flex items-center space-x-4">
-                <button className="flex items-center text-gray-500 hover:text-blue-600">
+                <button className="flex items-center text-gray-500 hover:text-red-600">
                   <Heart className="h-5 w-5 mr-1" />
                   <span>123</span>
                 </button>
-                <button className="flex items-center text-gray-500 hover:text-blue-600">
+                <button className="flex items-center text-gray-500 hover:text-red-600">
                   <MessageCircle className="h-5 w-5 mr-1" />
                   <span>45</span>
                 </button>
-                <button className="flex items-center text-gray-500 hover:text-blue-600">
+                <button className="flex items-center text-gray-500 hover:text-red-600">
                   <Share2 className="h-5 w-5 mr-1" />
                   <span>Share</span>
                 </button>
@@ -154,13 +154,13 @@ const Stories = () => {
               <input
                 type="text"
                 placeholder="Search stories..."
-                className="pl-10 w-full border border-gray-300 rounded-md py-2 px-4 focus:outline-none focus:ring-2 focus:ring-blue-500"
+                className="pl-10 w-full border border-gray-300 rounded-md py-2 px-4 focus:outline-none focus:ring-2 focus:ring-red-500"
                 value={searchTerm}
                 onChange={(e) => setSearchTerm(e.target.value)}
               />
             </div>
             <select
-              className="border border-gray-300 rounded-md py-2 px-4 focus:outline-none focus:ring-2 focus:ring-blue-500"
+              className="border border-gray-300 rounded-md py-2 px-4 focus:outline-none focus:ring-2 focus:ring-red-500"
               value={selectedCategory}
               onChange={(e) => setSelectedCategory(e.target.value)}
             >
@@ -184,7 +184,7 @@ const Stories = () => {
                   }}
                   className={`px-3 py-1 rounded-full text-sm ${
                     selectedThemes.includes(theme)
-                      ? 'bg-blue-600 text-white'
+                      ? 'bg-red-600 text-white'
                       : 'bg-gray-100 text-gray-700 hover:bg-gray-200'
                   }`}
                 >
@@ -208,7 +208,7 @@ const Stories = () => {
                 </label>
                 <input
                   type="text"
-                  className="w-full border border-gray-300 rounded-md py-2 px-4 focus:outline-none focus:ring-2 focus:ring-blue-500"
+                  className="w-full border border-gray-300 rounded-md py-2 px-4 focus:outline-none focus:ring-2 focus:ring-red-500"
                 />
               </div>
               <div>
@@ -217,7 +217,7 @@ const Stories = () => {
                 </label>
                 <input
                   type="text"
-                  className="w-full border border-gray-300 rounded-md py-2 px-4 focus:outline-none focus:ring-2 focus:ring-blue-500"
+                  className="w-full border border-gray-300 rounded-md py-2 px-4 focus:outline-none focus:ring-2 focus:ring-red-500"
                 />
               </div>
               <div>
@@ -226,7 +226,7 @@ const Stories = () => {
                 </label>
                 <textarea
                   rows={6}
-                  className="w-full border border-gray-300 rounded-md py-2 px-4 focus:outline-none focus:ring-2 focus:ring-blue-500"
+                  className="w-full border border-gray-300 rounded-md py-2 px-4 focus:outline-none focus:ring-2 focus:ring-red-500"
                   placeholder="Share your journey, experiences, and reflections..."
                 ></textarea>
               </div>
@@ -237,7 +237,7 @@ const Stories = () => {
                 <input
                   type="file"
                   accept="image/*"
-                  className="w-full border border-gray-300 rounded-md py-2 px-4 focus:outline-none focus:ring-2 focus:ring-blue-500"
+                  className="w-full border border-gray-300 rounded-md py-2 px-4 focus:outline-none focus:ring-2 focus:ring-red-500"
                 />
               </div>
               <div className="flex justify-end space-x-4">
@@ -250,7 +250,7 @@ const Stories = () => {
                 </button>
                 <button
                   type="submit"
-                  className="px-4 py-2 bg-blue-600 text-white rounded-md hover:bg-blue-700"
+                  className="px-4 py-2 bg-red-600 text-white rounded-md hover:bg-red-700"
                 >
                   Submit Story
                 </button>
@@ -271,14 +271,14 @@ const Stories = () => {
                 className="w-full h-48 object-cover"
               />
               <div className="p-6">
-                <div className="flex items-center text-sm text-blue-600 mb-2">
+                <div className="flex items-center text-sm text-red-600 mb-2">
                   <Calendar className="h-4 w-4 mr-2" />
                   {format(story.date, "MMMM d, yyyy")}
                 </div>
                 <h3 className="text-xl font-bold mb-2">{story.title}</h3>
                 <div className="flex items-center mb-4">
-                  <div className="w-8 h-8 bg-blue-100 rounded-full flex items-center justify-center">
-                    <User className="h-5 w-5 text-blue-600" />
+                  <div className="w-8 h-8 bg-red-100 rounded-full flex items-center justify-center">
+                    <User className="h-5 w-5 text-red-600" />
                   </div>
                   <div className="ml-3">
                     <p className="text-sm font-medium">{story.author}</p>
@@ -288,17 +288,17 @@ const Stories = () => {
                 <p className="text-gray-600 mb-4 line-clamp-3">{story.excerpt}</p>
                 <div className="flex items-center justify-between">
                   <div className="flex space-x-3">
-                    <button className="text-gray-500 hover:text-blue-600">
+                    <button className="text-gray-500 hover:text-red-600">
                       <Heart className="h-5 w-5" />
                     </button>
-                    <button className="text-gray-500 hover:text-blue-600">
+                    <button className="text-gray-500 hover:text-red-600">
                       <MessageCircle className="h-5 w-5" />
                     </button>
-                    <button className="text-gray-500 hover:text-blue-600">
+                    <button className="text-gray-500 hover:text-red-600">
                       <Share2 className="h-5 w-5" />
                     </button>
                   </div>
-                  <button className="text-blue-600 hover:text-blue-800 font-medium flex items-center">
+                  <button className="text-red-600 hover:text-red-800 font-medium flex items-center">
                     Read More <ArrowRight className="ml-1 h-4 w-4" />
                   </button>
                 </div>
