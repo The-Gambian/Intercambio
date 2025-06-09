@@ -32,7 +32,7 @@ const Contact = () => {
   return (
     <div className="bg-gray-50 min-h-screen">
       {/* Header */}
-      <div className="bg-blue-900 text-white py-16">
+      <div className="bg-pan-red text-white py-16">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <h1 className="text-4xl font-bold mb-4">Contact Us</h1>
           <p className="text-xl max-w-3xl">Get in touch with our team for questions, partnerships, or to learn more about our programs and services.</p>
@@ -44,36 +44,36 @@ const Contact = () => {
         <div className="bg-white rounded-lg shadow-md overflow-hidden">
           <div className="md:flex">
             {/* Contact Information */}
-            <div className="md:w-1/3 bg-blue-800 text-white p-8">
+            <div className="md:w-1/3 bg-red-800 text-white p-8">
               <h2 className="text-2xl font-bold mb-6">Contact Information</h2>
-              <p className="mb-8 text-blue-100">Have questions or want to get involved? Reach out to us using any of the methods below.</p>
+              <p className="mb-8 text-red-100">Have questions or want to get involved? Reach out to us using any of the methods below.</p>
               
               <div className="space-y-6">
                 <div className="flex items-start">
-                  <Mail className="h-6 w-6 text-blue-300 mr-4 mt-1" />
+                  <Mail className="h-6 w-6 text-red-300 mr-4 mt-1" />
                   <div>
                     <p className="font-medium">Email</p>
-                    <a href="mailto:info@intercambiodiaspora.com" className="text-blue-100 hover:text-white">
+                    <a href="mailto:info@intercambiodiaspora.com" className="text-red-100 hover:text-white">
                       info@intercambiodiaspora.com
                     </a>
                   </div>
                 </div>
                 
                 <div className="flex items-start">
-                  <Phone className="h-6 w-6 text-blue-300 mr-4 mt-1" />
+                  <Phone className="h-6 w-6 text-red-300 mr-4 mt-1" />
                   <div>
                     <p className="font-medium">Phone</p>
-                    <a href="tel:+351213531932" className="text-blue-100 hover:text-white">
+                    <a href="tel:+351213531932" className="text-red-100 hover:text-white">
                       21 353 1932
                     </a>
                   </div>
                 </div>
                 
                 <div className="flex items-start">
-                  <MapPin className="h-6 w-6 text-blue-300 mr-4 mt-1" />
+                  <MapPin className="h-6 w-6 text-red-300 mr-4 mt-1" />
                   <div>
                     <p className="font-medium">Address</p>
-                    <p className="text-blue-100">
+                    <p className="text-red-100">
                       R. Duque de Palmela 2 8° andar<br />
                       1250-098 Lisboa
                     </p>
@@ -81,10 +81,10 @@ const Contact = () => {
                 </div>
                 
                 <div className="flex items-start">
-                  <Clock className="h-6 w-6 text-blue-300 mr-4 mt-1" />
+                  <Clock className="h-6 w-6 text-red-300 mr-4 mt-1" />
                   <div>
                     <p className="font-medium">Office Hours</p>
-                    <p className="text-blue-100">
+                    <p className="text-red-100">
                       Monday - Friday: 9:00 AM - 5:00 PM<br />
                       Saturday: 10:00 AM - 2:00 PM (by appointment)
                     </p>
@@ -95,16 +95,16 @@ const Contact = () => {
               <div className="mt-12">
                 <h3 className="font-medium mb-4">Follow Us</h3>
                 <div className="flex space-x-4">
-                  <a href="https://www.facebook.com/groups/717321330191930/" target="_blank" rel="noopener noreferrer" className="bg-blue-700 p-2 rounded-full hover:bg-blue-600 transition">
+                  <a href="https://www.facebook.com/groups/717321330191930/" target="_blank" rel="noopener noreferrer" className="bg-red-700 p-2 rounded-full hover:bg-red-600 transition">
                     <Facebook className="w-5 h-5" />
                   </a>
-                  <a href="https://www.instagram.com/intercambios_diaspora/" target="_blank" rel="noopener noreferrer" className="bg-blue-700 p-2 rounded-full hover:bg-blue-600 transition">
+                  <a href="https://www.instagram.com/intercambios_diaspora/" target="_blank" rel="noopener noreferrer" className="bg-red-700 p-2 rounded-full hover:bg-red-600 transition">
                     <Instagram className="w-5 h-5" />
                   </a>
-                  <a href="https://www.linkedin.com/company/intercambio-diaspora/" target="_blank" rel="noopener noreferrer" className="bg-blue-700 p-2 rounded-full hover:bg-blue-600 transition">
+                  <a href="https://www.linkedin.com/company/intercambio-diaspora/" target="_blank" rel="noopener noreferrer" className="bg-red-700 p-2 rounded-full hover:bg-red-600 transition">
                     <Linkedin className="w-5 h-5" />
                   </a>
-                  <a href="https://www.youtube.com/@IntercâmbioDiaspora" target="_blank" rel="noopener noreferrer" className="bg-blue-700 p-2 rounded-full hover:bg-blue-600 transition">
+                  <a href="https://www.youtube.com/@IntercâmbioDiaspora" target="_blank" rel="noopener noreferrer" className="bg-red-700 p-2 rounded-full hover:bg-red-600 transition">
                     <Youtube className="w-5 h-5" />
                   </a>
                 </div>
@@ -128,7 +128,7 @@ const Contact = () => {
                       value={formData.name}
                       onChange={handleChange}
                       required
-                      className="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
+                      className="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-red-500"
                     />
                   </div>
                   
@@ -143,7 +143,7 @@ const Contact = () => {
                       value={formData.email}
                       onChange={handleChange}
                       required
-                      className="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
+                      className="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-red-500"
                     />
                   </div>
                 </div>
@@ -159,7 +159,7 @@ const Contact = () => {
                     value={formData.subject}
                     onChange={handleChange}
                     required
-                    className="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
+                    className="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-red-500"
                   />
                 </div>
                 
@@ -174,13 +174,13 @@ const Contact = () => {
                     value={formData.message}
                     onChange={handleChange}
                     required
-                    className="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
+                    className="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-red-500"
                   ></textarea>
                 </div>
                 
                 <button
                   type="submit"
-                  className="bg-blue-700 hover:bg-blue-800 text-white px-6 py-3 rounded-md font-medium transition flex items-center"
+                  className="bg-red-700 hover:bg-red-800 text-white px-6 py-3 rounded-md font-medium transition flex items-center"
                 >
                   Send Message
                   <Send className="ml-2 h-5 w-5" />
