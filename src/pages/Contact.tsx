@@ -1,7 +1,9 @@
 import React, { useState } from 'react';
 import { Mail, Phone, MapPin, Globe, Clock, Send, Facebook, Instagram, Youtube, Linkedin } from 'lucide-react';
+import { useLanguage } from '../contexts/LanguageContext';
 
 const Contact = () => {
+  const { t } = useLanguage();
   const [formData, setFormData] = useState({
     name: '',
     email: '',
@@ -34,8 +36,8 @@ const Contact = () => {
       {/* Header */}
       <div className="bg-pan-red text-white py-16">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <h1 className="text-4xl font-bold mb-4">Contact Us</h1>
-          <p className="text-xl max-w-3xl">Get in touch with our team for questions, partnerships, or to learn more about our programs and services.</p>
+          <h1 className="text-4xl font-bold mb-4">{t('contact.title')}</h1>
+          <p className="text-xl max-w-3xl">{t('contact.subtitle')}</p>
         </div>
       </div>
 
@@ -45,14 +47,14 @@ const Contact = () => {
           <div className="md:flex">
             {/* Contact Information */}
             <div className="md:w-1/3 bg-red-800 text-white p-8">
-              <h2 className="text-2xl font-bold mb-6">Contact Information</h2>
-              <p className="mb-8 text-red-100">Have questions or want to get involved? Reach out to us using any of the methods below.</p>
+              <h2 className="text-2xl font-bold mb-6">{t('contact.info.title')}</h2>
+              <p className="mb-8 text-red-100">{t('contact.info.subtitle')}</p>
               
               <div className="space-y-6">
                 <div className="flex items-start">
                   <Mail className="h-6 w-6 text-red-300 mr-4 mt-1" />
                   <div>
-                    <p className="font-medium">Email</p>
+                    <p className="font-medium">{t('contact.info.email')}</p>
                     <a href="mailto:info@intercambiodiaspora.com" className="text-red-100 hover:text-white">
                       info@intercambiodiaspora.com
                     </a>
@@ -62,7 +64,7 @@ const Contact = () => {
                 <div className="flex items-start">
                   <Phone className="h-6 w-6 text-red-300 mr-4 mt-1" />
                   <div>
-                    <p className="font-medium">Phone</p>
+                    <p className="font-medium">{t('contact.info.phone')}</p>
                     <a href="tel:+351213531932" className="text-red-100 hover:text-white">
                       21 353 1932
                     </a>
@@ -72,7 +74,7 @@ const Contact = () => {
                 <div className="flex items-start">
                   <MapPin className="h-6 w-6 text-red-300 mr-4 mt-1" />
                   <div>
-                    <p className="font-medium">Address</p>
+                    <p className="font-medium">{t('contact.info.address')}</p>
                     <p className="text-red-100">
                       R. Duque de Palmela 2 8° andar<br />
                       1250-098 Lisboa
@@ -83,17 +85,16 @@ const Contact = () => {
                 <div className="flex items-start">
                   <Clock className="h-6 w-6 text-red-300 mr-4 mt-1" />
                   <div>
-                    <p className="font-medium">Office Hours</p>
+                    <p className="font-medium">{t('contact.info.hours')}</p>
                     <p className="text-red-100">
-                      Monday - Friday: 9:00 AM - 5:00 PM<br />
-                      Saturday: 10:00 AM - 2:00 PM (by appointment)
+                      {t('contact.info.hoursDesc')}
                     </p>
                   </div>
                 </div>
               </div>
               
               <div className="mt-12">
-                <h3 className="font-medium mb-4">Follow Us</h3>
+                <h3 className="font-medium mb-4">{t('nav.followUs')}</h3>
                 <div className="flex space-x-4">
                   <a href="https://www.facebook.com/groups/717321330191930/" target="_blank" rel="noopener noreferrer" className="bg-red-700 p-2 rounded-full hover:bg-red-600 transition">
                     <Facebook className="w-5 h-5" />
@@ -113,13 +114,13 @@ const Contact = () => {
             
             {/* Contact Form */}
             <div className="md:w-2/3 p-8">
-              <h2 className="text-2xl font-bold mb-6">Send Us a Message</h2>
+              <h2 className="text-2xl font-bold mb-6">{t('contact.form.title')}</h2>
               
               <form onSubmit={handleSubmit}>
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
                   <div>
                     <label htmlFor="name" className="block text-sm font-medium text-gray-700 mb-1">
-                      Your Name <span className="text-red-500">*</span>
+                      {t('contact.form.name')} <span className="text-red-500">{t('contact.form.required')}</span>
                     </label>
                     <input
                       type="text"
@@ -134,7 +135,7 @@ const Contact = () => {
                   
                   <div>
                     <label htmlFor="email" className="block text-sm font-medium text-gray-700 mb-1">
-                      Your Email <span className="text-red-500">*</span>
+                      {t('contact.form.email')} <span className="text-red-500">{t('contact.form.required')}</span>
                     </label>
                     <input
                       type="email"
@@ -150,7 +151,7 @@ const Contact = () => {
                 
                 <div className="mb-6">
                   <label htmlFor="subject" className="block text-sm font-medium text-gray-700 mb-1">
-                    Subject <span className="text-red-500">*</span>
+                    {t('contact.form.subject')} <span className="text-red-500">{t('contact.form.required')}</span>
                   </label>
                   <input
                     type="text"
@@ -165,7 +166,7 @@ const Contact = () => {
                 
                 <div className="mb-6">
                   <label htmlFor="message" className="block text-sm font-medium text-gray-700 mb-1">
-                    Message <span className="text-red-500">*</span>
+                    {t('contact.form.message')} <span className="text-red-500">{t('contact.form.required')}</span>
                   </label>
                   <textarea
                     id="message"
@@ -182,7 +183,7 @@ const Contact = () => {
                   type="submit"
                   className="bg-red-700 hover:bg-red-800 text-white px-6 py-3 rounded-md font-medium transition flex items-center"
                 >
-                  Send Message
+                  {t('contact.form.send')}
                   <Send className="ml-2 h-5 w-5" />
                 </button>
               </form>
@@ -193,7 +194,7 @@ const Contact = () => {
 
       {/* Map */}
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
-        <h2 className="text-2xl font-bold text-gray-900 mb-6 text-center">Our Location</h2>
+        <h2 className="text-2xl font-bold text-gray-900 mb-6 text-center">{t('contact.location.title')}</h2>
         <div className="bg-white rounded-lg shadow-md overflow-hidden">
           <div className="aspect-w-16 aspect-h-9 h-96">
             <iframe 
@@ -212,43 +213,43 @@ const Contact = () => {
 
       {/* FAQ Section */}
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
-        <h2 className="text-2xl font-bold text-gray-900 mb-6 text-center">Frequently Asked Questions</h2>
+        <h2 className="text-2xl font-bold text-gray-900 mb-6 text-center">{t('contact.faq.title')}</h2>
         
         <div className="bg-white rounded-lg shadow-md overflow-hidden">
           <div className="p-6">
             <div className="space-y-6">
               <div>
-                <h3 className="text-lg font-semibold text-gray-900 mb-2">What is Intercâmbio Diáspora?</h3>
+                <h3 className="text-lg font-semibold text-gray-900 mb-2">{t('contact.faq.what.question')}</h3>
                 <p className="text-gray-700">
-                  We are a grassroots community platform based in Lisbon that brings together individuals of African descent and allies from around the world to learn, share, and grow together through language exchanges, cultural meetups, museum visits, educational workshops, storytelling sessions, and local tours.
+                  {t('contact.faq.what.answer')}
                 </p>
               </div>
               
               <div>
-                <h3 className="text-lg font-semibold text-gray-900 mb-2">How can I participate in your events?</h3>
+                <h3 className="text-lg font-semibold text-gray-900 mb-2">{t('contact.faq.participate.question')}</h3>
                 <p className="text-gray-700">
-                  You can join our events by checking our Events page for upcoming activities and registering through our online form. We offer various activities including language exchanges, cultural meetups, workshops, and community gatherings.
+                  {t('contact.faq.participate.answer')}
                 </p>
               </div>
               
               <div>
-                <h3 className="text-lg font-semibold text-gray-900 mb-2">Do I need to be from the African diaspora to participate?</h3>
+                <h3 className="text-lg font-semibold text-gray-900 mb-2">{t('contact.faq.diaspora.question')}</h3>
                 <p className="text-gray-700">
-                  While our focus is on connecting African and Afro-descendant communities, we welcome allies and anyone interested in learning about and celebrating African cultures, fostering cross-cultural understanding and solidarity.
+                  {t('contact.faq.diaspora.answer')}
                 </p>
               </div>
               
               <div>
-                <h3 className="text-lg font-semibold text-gray-900 mb-2">How can I support or partner with Intercâmbio Diáspora?</h3>
+                <h3 className="text-lg font-semibold text-gray-900 mb-2">{t('contact.faq.support.question')}</h3>
                 <p className="text-gray-700">
-                  There are several ways to support our work: attend our events, volunteer your skills, share your stories, or partner with us on community initiatives. Contact us through our form or email to discuss collaboration opportunities.
+                  {t('contact.faq.support.answer')}
                 </p>
               </div>
               
               <div>
-                <h3 className="text-lg font-semibold text-gray-900 mb-2">What languages are used in your events?</h3>
+                <h3 className="text-lg font-semibold text-gray-900 mb-2">{t('contact.faq.languages.question')}</h3>
                 <p className="text-gray-700">
-                  Our events primarily use Portuguese and English, but we celebrate multilingualism and often incorporate other languages through our cultural exchange activities and language learning programs.
+                  {t('contact.faq.languages.answer')}
                 </p>
               </div>
             </div>
