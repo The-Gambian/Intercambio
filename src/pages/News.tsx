@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { Search, Calendar, User, Tag, ArrowRight } from 'lucide-react';
 import { format } from 'date-fns';
+import { useLanguage } from '../contexts/LanguageContext';
 
 // Updated news data with new Imgur images
 const newsData = [
@@ -90,6 +91,7 @@ const newsData = [
 const categories = ["All", "Events", "Education", "Culture", "Career", "Networking"];
 
 const News = () => {
+  const { t } = useLanguage();
   const [searchTerm, setSearchTerm] = useState("");
   const [selectedCategory, setSelectedCategory] = useState("All");
   const [selectedArticle, setSelectedArticle] = useState<number | null>(null);
@@ -111,8 +113,8 @@ const News = () => {
       {/* Header */}
       <div className="bg-pan-red text-white py-16">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <h1 className="text-4xl font-bold mb-4">Latest News</h1>
-          <p className="text-xl max-w-3xl">Stay updated with the latest news and events from Intercâmbio Diáspora.</p>
+          <h1 className="text-4xl font-bold mb-4">{t('news.title')}</h1>
+          <p className="text-xl max-w-3xl">{t('news.subtitle')}</p>
         </div>
       </div>
 
@@ -126,7 +128,7 @@ const News = () => {
               </div>
               <input
                 type="text"
-                placeholder="Search news..."
+                placeholder={t('news.search')}
                 className="pl-10 pr-4 py-2 border border-gray-300 rounded-md w-full focus:outline-none focus:ring-2 focus:ring-red-500"
                 value={searchTerm}
                 onChange={(e) => setSearchTerm(e.target.value)}
@@ -169,13 +171,13 @@ const News = () => {
                 <p className="text-gray-600 mb-6">{newsData[0].excerpt}</p>
                 <div className="flex items-center text-gray-500 mb-6">
                   <User className="h-4 w-4 mr-1" />
-                  By {newsData[0].author}
+                  {t('news.by')} {newsData[0].author}
                 </div>
                 <button 
                   className="text-red-700 font-medium flex items-center hover:text-red-800"
                   onClick={() => setSelectedArticle(newsData[0].id)}
                 >
-                  Read Full Article <ArrowRight className="ml-2 h-4 w-4" />
+                  {t('news.readFullArticle')} <ArrowRight className="ml-2 h-4 w-4" />
                 </button>
               </div>
             </div>
@@ -206,7 +208,7 @@ const News = () => {
                   <div className="flex justify-between items-center">
                     <div className="flex items-center text-gray-500">
                       <User className="h-4 w-4 mr-1" />
-                      By {article.author}
+                      {t('news.by')} {article.author}
                     </div>
                     <span className="inline-block bg-red-100 text-red-800 text-xs px-2 py-1 rounded-full">
                       {article.category}
@@ -220,8 +222,8 @@ const News = () => {
 
         {filteredNews.length === 0 && (
           <div className="text-center py-12">
-            <h3 className="text-xl font-medium text-gray-600">No articles found matching your criteria</h3>
-            <p className="mt-2 text-gray-500">Try adjusting your search or filter settings</p>
+            <h3 className="text-xl font-medium text-gray-600">{t('news.noArticles')}</h3>
+            <p className="mt-2 text-gray-500">{t('news.noArticlesDesc')}</p>
           </div>
         )}
 
@@ -240,7 +242,7 @@ const News = () => {
                     className="text-red-700 font-medium mb-4 flex items-center hover:text-red-800"
                     onClick={() => setSelectedArticle(null)}
                   >
-                    &larr; Back to News
+                    {t('news.backToNews')}
                   </button>
                   
                   <div className="flex flex-wrap items-center gap-4 mb-4">
@@ -250,7 +252,7 @@ const News = () => {
                     </div>
                     <div className="flex items-center text-sm text-gray-600">
                       <User className="h-4 w-4 mr-1" />
-                      By {article.author}
+                      {t('news.by')} {article.author}
                     </div>
                     <span className="inline-block bg-red-100 text-red-800 text-xs px-2 py-1 rounded-full">
                       {article.category}
@@ -266,7 +268,7 @@ const News = () => {
                   </div>
                   
                   <div className="mt-8 pt-8 border-t border-gray-200">
-                    <h3 className="text-lg font-semibold mb-4">Share this article</h3>
+                    <h3 className="text-lg font-semibold mb-4">{t('news.shareArticle')}</h3>
                     <div className="flex space-x-4">
                       <button className="bg-red-600 text-white p-2 rounded-full hover:bg-red-700">
                         <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
