@@ -33,7 +33,7 @@ const upcomingEvents = [
     location: "Jardim da Estrela, Praça da Estrela, Lisboa",
     description: "Join us for an enriching experience that promotes language learning, cultural exploration, and meaningful connections among members of the African Diaspora in Lisbon. Bring a blanket to sit on the grass, and look out for the pan-African flag to find us! Features language immersion, interactive activities, networking opportunities, and cultural exchange.",
     category: "Educational",
-    image: "https://imgur.com/Um1K5jA",
+    image: "https://imgur.com/Um1K5jA.jpg",
     registrationLink: "https://www.facebook.com/events/701026239495168/",
     endTime: "20:00"
   },
