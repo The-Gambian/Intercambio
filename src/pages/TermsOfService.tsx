@@ -1,105 +1,104 @@
 import React from 'react';
+import { useLanguage } from '../contexts/LanguageContext';
 
 const TermsOfService = () => {
+  const { t } = useLanguage();
+
   return (
     <div className="bg-gray-50 min-h-screen">
       <div className="bg-pan-red text-white py-16">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <h1 className="text-4xl font-bold mb-4">Terms of Service</h1>
-          <p className="text-xl">Last updated: {new Date().toLocaleDateString()}</p>
+          <h1 className="text-4xl font-bold mb-4">{t('terms.title')}</h1>
+          <p className="text-xl">{t('terms.lastUpdated')} {new Date().toLocaleDateString()}</p>
         </div>
       </div>
 
       <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
         <div className="bg-white rounded-lg shadow-md p-8">
           <section className="mb-8">
-            <h2 className="text-2xl font-bold mb-4 text-pan-black">Agreement to Terms</h2>
+            <h2 className="text-2xl font-bold mb-4 text-pan-black">{t('terms.agreement.title')}</h2>
             <p className="text-gray-700 mb-4">
-              By accessing or using the Intercâmbio Diáspora website and services, you agree to be bound by these Terms of Service. If you disagree with any part of these terms, you may not access our services.
+              {t('terms.agreement.content')}
             </p>
           </section>
 
           <section className="mb-8">
-            <h2 className="text-2xl font-bold mb-4 text-pan-black">Use of Services</h2>
+            <h2 className="text-2xl font-bold mb-4 text-pan-black">{t('terms.use.title')}</h2>
             <p className="text-gray-700 mb-4">
-              Our services are intended for:
+              {t('terms.use.content')}
             </p>
             <ul className="list-disc pl-6 text-gray-700 mb-4">
-              <li>Community members seeking to connect with the African and Afro-descendant diaspora</li>
-              <li>Participants in cultural exchange and educational programs</li>
-              <li>Users interested in our events and activities</li>
+              {t('terms.use.list').split('\n').map((item, index) => (
+                <li key={index}>{item}</li>
+              ))}
             </ul>
             <p className="text-gray-700 mb-4">
-              You agree to use our services only for lawful purposes and in accordance with these Terms.
+              {t('terms.use.lawful')}
             </p>
           </section>
 
           <section className="mb-8">
-            <h2 className="text-2xl font-bold mb-4 text-pan-black">User Accounts</h2>
-            <p className="text-gray-700 mb-4">When creating an account, you agree to:</p>
+            <h2 className="text-2xl font-bold mb-4 text-pan-black">{t('terms.accounts.title')}</h2>
+            <p className="text-gray-700 mb-4">{t('terms.accounts.content')}</p>
             <ul className="list-disc pl-6 text-gray-700">
-              <li>Provide accurate and complete information</li>
-              <li>Maintain the security of your account credentials</li>
-              <li>Promptly update any changes to your information</li>
-              <li>Accept responsibility for all activities under your account</li>
+              {t('terms.accounts.list').split('\n').map((item, index) => (
+                <li key={index}>{item}</li>
+              ))}
             </ul>
           </section>
 
           <section className="mb-8">
-            <h2 className="text-2xl font-bold mb-4 text-pan-black">Community Guidelines</h2>
-            <p className="text-gray-700 mb-4">Users must:</p>
+            <h2 className="text-2xl font-bold mb-4 text-pan-black">{t('terms.guidelines.title')}</h2>
+            <p className="text-gray-700 mb-4">{t('terms.guidelines.content')}</p>
             <ul className="list-disc pl-6 text-gray-700">
-              <li>Respect other community members</li>
-              <li>Avoid harmful or discriminatory behavior</li>
-              <li>Not post inappropriate or offensive content</li>
-              <li>Follow event and program guidelines</li>
-              <li>Maintain confidentiality when required</li>
+              {t('terms.guidelines.list').split('\n').map((item, index) => (
+                <li key={index}>{item}</li>
+              ))}
             </ul>
           </section>
 
           <section className="mb-8">
-            <h2 className="text-2xl font-bold mb-4 text-pan-black">Intellectual Property</h2>
+            <h2 className="text-2xl font-bold mb-4 text-pan-black">{t('terms.ip.title')}</h2>
             <p className="text-gray-700 mb-4">
-              All content on our website, including text, graphics, logos, and images, is the property of Intercâmbio Diáspora or our licensors and is protected by copyright and other intellectual property laws.
+              {t('terms.ip.content')}
             </p>
           </section>
 
           <section className="mb-8">
-            <h2 className="text-2xl font-bold mb-4 text-pan-black">Events and Programs</h2>
+            <h2 className="text-2xl font-bold mb-4 text-pan-black">{t('terms.events.title')}</h2>
             <p className="text-gray-700 mb-4">
-              Participation in events and programs is subject to:
+              {t('terms.events.content')}
             </p>
             <ul className="list-disc pl-6 text-gray-700">
-              <li>Registration requirements and deadlines</li>
-              <li>Payment of any applicable fees</li>
-              <li>Adherence to event-specific guidelines</li>
-              <li>Cancellation and refund policies</li>
+              {t('terms.events.list').split('\n').map((item, index) => (
+                <li key={index}>{item}</li>
+              ))}
             </ul>
           </section>
 
           <section className="mb-8">
-            <h2 className="text-2xl font-bold mb-4 text-pan-black">Limitation of Liability</h2>
+            <h2 className="text-2xl font-bold mb-4 text-pan-black">{t('terms.liability.title')}</h2>
             <p className="text-gray-700 mb-4">
-              Intercâmbio Diáspora shall not be liable for any indirect, incidental, special, consequential, or punitive damages resulting from your use or inability to use our services.
+              {t('terms.liability.content')}
             </p>
           </section>
 
           <section className="mb-8">
-            <h2 className="text-2xl font-bold mb-4 text-pan-black">Changes to Terms</h2>
+            <h2 className="text-2xl font-bold mb-4 text-pan-black">{t('terms.changes.title')}</h2>
             <p className="text-gray-700 mb-4">
-              We reserve the right to modify these terms at any time. We will notify users of any material changes through our website or email.
+              {t('terms.changes.content')}
             </p>
           </section>
 
           <section>
-            <h2 className="text-2xl font-bold mb-4 text-pan-black">Contact Information</h2>
+            <h2 className="text-2xl font-bold mb-4 text-pan-black">{t('terms.contact.title')}</h2>
             <p className="text-gray-700 mb-4">
-              For questions about these Terms of Service, please contact us at:
+              {t('terms.contact.content')}
             </p>
             <div className="bg-pan-green/10 p-4 rounded-lg">
               <p className="text-gray-700">
-                <strong>Email:</strong> info@intercambiodiaspora.org<br />
-                <strong>Address:</strong> Lisbon, Portugal
+                <strong>{t('terms.contact.email')}</strong> info@intercambiodiaspora.org<br />
+                <strong>{t('terms.contact.address')}</strong> Lisbon, Portugal
               </p>
             </div>
           </section>
