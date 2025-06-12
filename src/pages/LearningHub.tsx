@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { Search, BookOpen, Video, FileText, Users, ArrowRight, ExternalLink } from 'lucide-react';
+import { useLanguage } from '../contexts/LanguageContext';
 
 // Sample learning resources data
 const resourcesData = [
@@ -160,6 +161,7 @@ const resourcesData = [
 ];
 
 const LearningHub: React.FC = () => {
+  const { t } = useLanguage();
   const [searchTerm, setSearchTerm] = useState('');
 
   const handleResourceClick = () => {
@@ -171,8 +173,8 @@ const LearningHub: React.FC = () => {
       {/* Header */}
       <div className="bg-pan-red text-white py-16">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <h1 className="text-4xl font-bold mb-4">Learning Hub</h1>
-          <p className="text-xl max-w-3xl">Access resources, guides, and support for your journey in Portugal.</p>
+          <h1 className="text-4xl font-bold mb-4">{t('learningHub.title')}</h1>
+          <p className="text-xl max-w-3xl">{t('learningHub.subtitle')}</p>
         </div>
       </div>
 
@@ -181,7 +183,7 @@ const LearningHub: React.FC = () => {
         <div className="relative mb-8">
           <input
             type="text"
-            placeholder="Search resources..."
+            placeholder={t('learningHub.search')}
             className="w-full p-4 pl-12 rounded-lg border border-gray-300 focus:outline-none focus:border-red-500"
             value={searchTerm}
             onChange={(e) => setSearchTerm(e.target.value)}
@@ -216,7 +218,7 @@ const LearningHub: React.FC = () => {
                         onClick={handleResourceClick}
                         className="mt-2 text-blue-600 flex items-center text-sm hover:text-blue-800"
                       >
-                        Contact for more information <ExternalLink className="ml-1 w-4 h-4" />
+                        {t('learningHub.contactInfo')} <ExternalLink className="ml-1 w-4 h-4" />
                       </button>
                     </div>
                   </div>
