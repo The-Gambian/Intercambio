@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { Calendar, MessageCircle, Share2, ExternalLink } from 'lucide-react';
 import { format } from 'date-fns';
+import { useLanguage } from '../contexts/LanguageContext';
 
 // Featured discussion topics that link to external forms/resources
 const featuredTopics = [
@@ -76,6 +77,7 @@ const socialChannels = [
 ];
 
 const Discussions = () => {
+  const { t } = useLanguage();
   const [selectedTopic, setSelectedTopic] = useState<number | null>(null);
 
   return (
@@ -83,15 +85,15 @@ const Discussions = () => {
       {/* Header */}
       <div className="bg-pan-red text-white py-16">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <h1 className="text-4xl font-bold mb-4">Community Engagement</h1>
-          <p className="text-xl max-w-3xl">Connect, share, and engage with our vibrant diaspora community through various channels and activities.</p>
+          <h1 className="text-4xl font-bold mb-4">{t('discussions.title')}</h1>
+          <p className="text-xl max-w-3xl">{t('discussions.subtitle')}</p>
         </div>
       </div>
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
         {/* Featured Topics */}
         <section className="mb-16">
-          <h2 className="text-2xl font-bold text-gray-900 mb-8">Participate & Share</h2>
+          <h2 className="text-2xl font-bold text-gray-900 mb-8">{t('discussions.participate.title')}</h2>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             {featuredTopics.map(topic => (
               <div key={topic.id} className="bg-white rounded-lg shadow-md overflow-hidden">
@@ -112,7 +114,7 @@ const Discussions = () => {
                     rel="noopener noreferrer"
                     className="inline-flex items-center text-blue-700 hover:text-blue-800"
                   >
-                    Participate <ExternalLink className="ml-2 h-4 w-4" />
+                    {t('discussions.participate')} <ExternalLink className="ml-2 h-4 w-4" />
                   </a>
                 </div>
               </div>
@@ -122,7 +124,7 @@ const Discussions = () => {
 
         {/* Community Highlights */}
         <section className="mb-16">
-          <h2 className="text-2xl font-bold text-gray-900 mb-8">Community Highlights</h2>
+          <h2 className="text-2xl font-bold text-gray-900 mb-8">{t('discussions.highlights.title')}</h2>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
             {communityHighlights.map(highlight => (
               <div key={highlight.id} className="bg-white rounded-lg shadow-md overflow-hidden">
@@ -147,7 +149,7 @@ const Discussions = () => {
                       rel="noopener noreferrer"
                       className="inline-flex items-center text-blue-700 hover:text-blue-800"
                     >
-                      View on Instagram <ExternalLink className="ml-2 h-4 w-4" />
+                      {t('discussions.viewOnInstagram')} <ExternalLink className="ml-2 h-4 w-4" />
                     </a>
                   </div>
                 </div>
@@ -158,7 +160,7 @@ const Discussions = () => {
 
         {/* Social Media Integration */}
         <section>
-          <h2 className="text-2xl font-bold text-gray-900 mb-8">Connect With Us</h2>
+          <h2 className="text-2xl font-bold text-gray-900 mb-8">{t('discussions.connect.title')}</h2>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             {socialChannels.map(channel => (
               <div key={channel.id} className="bg-white rounded-lg shadow-md p-6">
@@ -174,7 +176,7 @@ const Discussions = () => {
                   rel="noopener noreferrer"
                   className="inline-flex items-center text-blue-700 hover:text-blue-800"
                 >
-                  Follow Us <ExternalLink className="ml-2 h-4 w-4" />
+                  {t('discussions.followUs')} <ExternalLink className="ml-2 h-4 w-4" />
                 </a>
               </div>
             ))}
