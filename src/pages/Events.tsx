@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { Calendar, MapPin, Clock, Filter, Search } from 'lucide-react';
 import { format } from 'date-fns';
+import { useLanguage } from '../contexts/LanguageContext';
 
 // Updated events data with real upcoming events
 const upcomingEvents = [
@@ -28,6 +29,17 @@ const upcomingEvents = [
   {
     id: 3,
     title: "Language Exchange Event",
+    date: new Date(2025, 5, 28, 18, 0), // June 28, 2025, 6:00 PM
+    location: "Jardim da Estrela, Praça da Estrela, Lisboa",
+    description: "Join us for an enriching experience that promotes language learning, cultural exploration, and meaningful connections among members of the African Diaspora in Lisbon. Bring a blanket to sit on the grass, and look out for the pan-African flag to find us! Features language immersion, interactive activities, networking opportunities, and cultural exchange.",
+    category: "Educational",
+    image: "/WhatsApp Image 2025-06-10 at 21.17.23.jpeg",
+    registrationLink: "https://www.facebook.com/events/701026239495168/",
+    endTime: "20:00"
+  },
+  {
+    id: 4,
+    title: "Language Exchange Event",
     date: new Date(2025, 3, 26, 18, 0), // April 26, 2025, 6:00 PM
     location: "Intercâmbio Learning Center, Lisbon",
     description: "Practice your language skills and connect with native speakers in a friendly, supportive environment. This weekly event focuses on Portuguese and English language exchange, creating opportunities for cultural learning and community building.",
@@ -35,7 +47,7 @@ const upcomingEvents = [
     image: "https://i.imgur.com/ppZR0iC.jpg"
   },
   {
-    id: 4,
+    id: 5,
     title: "Professional Networking Mixer",
     date: new Date(2025, 6, 5, 19, 0), // July 5, 2025, 7:00 PM
     location: "Urban Business Hub, Lisbon",
@@ -134,6 +146,7 @@ const pastEvents = [
 const categories = ["All", "Cultural", "Educational", "Networking", "Community"];
 
 const Events = () => {
+  const { t } = useLanguage();
   const [searchTerm, setSearchTerm] = useState("");
   const [selectedCategory, setSelectedCategory] = useState("All");
   const [selectedEvent, setSelectedEvent] = useState<number | null>(null);
@@ -157,8 +170,8 @@ const Events = () => {
       {/* Header */}
       <div className="bg-pan-red text-white py-16">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <h1 className="text-4xl font-bold mb-4">Community Events</h1>
-          <p className="text-xl max-w-3xl">Join our vibrant community gatherings, workshops, and celebrations. Connect, learn, and grow with fellow diaspora members.</p>
+          <h1 className="text-4xl font-bold mb-4">{t('events.title')}</h1>
+          <p className="text-xl max-w-3xl">{t('events.subtitle')}</p>
         </div>
       </div>
 
@@ -172,7 +185,7 @@ const Events = () => {
               </div>
               <input
                 type="text"
-                placeholder="Search events..."
+                placeholder={t('events.search')}
                 className="pl-10 pr-4 py-2 border border-gray-300 rounded-md w-full focus:outline-none focus:ring-2 focus:ring-red-500"
                 value={searchTerm}
                 onChange={(e) => setSearchTerm(e.target.value)}
@@ -199,15 +212,15 @@ const Events = () => {
         <div className="space-y-8">
           {filteredUpcomingEvents.length === 0 && filteredPastEvents.length === 0 && (
             <div className="text-center py-12">
-              <h3 className="text-xl font-medium text-gray-600">No events found matching your criteria</h3>
-              <p className="mt-2 text-gray-500">Try adjusting your search or filter settings</p>
+              <h3 className="text-xl font-medium text-gray-600">{t('events.noEvents')}</h3>
+              <p className="mt-2 text-gray-500">{t('events.noEventsDesc')}</p>
             </div>
           )}
 
           {/* Upcoming Events */}
           {filteredUpcomingEvents.length > 0 && (
             <div>
-              <h2 className="text-2xl font-bold mb-6">Upcoming Events</h2>
+              <h2 className="text-2xl font-bold mb-6">{t('events.upcoming')}</h2>
               <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
                 {filteredUpcomingEvents.map(event => (
                   <div key={event.id} className="bg-white rounded-lg shadow-md overflow-hidden">
@@ -225,7 +238,7 @@ const Events = () => {
                       {event.endTime && (
                         <div className="flex items-center text-sm text-gray-500 mb-4">
                           <Clock className="h-4 w-4 mr-1" />
-                          Until {event.endTime}
+                          {t('events.until')} {event.endTime}
                         </div>
                       )}
                       <p className="text-gray-600 mb-4">{event.description}</p>
@@ -236,7 +249,7 @@ const Events = () => {
                           rel="noopener noreferrer"
                           className="inline-block bg-red-600 text-white px-4 py-2 rounded-md hover:bg-red-700 transition"
                         >
-                          Register Now
+                          {t('events.registerNow')}
                         </a>
                       )}
                     </div>
@@ -250,12 +263,12 @@ const Events = () => {
           {filteredPastEvents.length > 0 && (
             <div className="mt-12">
               <div className="flex items-center justify-between mb-6">
-                <h2 className="text-2xl font-bold">Past Events</h2>
+                <h2 className="text-2xl font-bold">{t('events.past')}</h2>
                 <button
                   onClick={() => setShowPastEvents(!showPastEvents)}
                   className="text-red-600 hover:text-red-800"
                 >
-                  {showPastEvents ? 'Show Less' : 'Show All'}
+                  {showPastEvents ? t('events.showLess') : t('events.showAll')}
                 </button>
               </div>
               <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
