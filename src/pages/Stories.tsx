@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { Search, Calendar, User, ArrowRight, Heart, Share2, MessageCircle } from 'lucide-react';
 import { format } from 'date-fns';
+import { useLanguage } from '../contexts/LanguageContext';
 
 // Featured story data
 const featuredStory = {
@@ -74,6 +75,7 @@ const storyThemes = [
 ];
 
 const Stories = () => {
+  const { t } = useLanguage();
   const [searchTerm, setSearchTerm] = useState("");
   const [selectedCategory, setSelectedCategory] = useState("All Stories");
   const [selectedThemes, setSelectedThemes] = useState<string[]>([]);
@@ -85,16 +87,15 @@ const Stories = () => {
       <div className="relative bg-pan-red text-white py-24">
         <div className="absolute inset-0 bg-gradient-to-r from-red-900 to-red-700 opacity-90"></div>
         <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <h1 className="text-5xl font-bold mb-6">Diaspora Stories: Our Voices, Our Journeys</h1>
+          <h1 className="text-5xl font-bold mb-6">{t('stories.title')}</h1>
           <p className="text-xl max-w-3xl mb-8">
-            Every story in our diaspora community weaves a unique thread into the fabric of our shared experience. 
-            Through these narratives, we celebrate our diversity, honor our heritage, and build bridges of understanding.
+            {t('stories.subtitle')}
           </p>
           <button 
             onClick={() => setShowSubmitForm(true)}
             className="bg-white text-red-900 px-8 py-3 rounded-md font-medium hover:bg-red-50 transition"
           >
-            Share Your Story
+            {t('stories.shareStory')}
           </button>
         </div>
       </div>
@@ -137,7 +138,7 @@ const Stories = () => {
                 </button>
                 <button className="flex items-center text-gray-500 hover:text-red-600">
                   <Share2 className="h-5 w-5 mr-1" />
-                  <span>Share</span>
+                  <span>{t('common.share')}</span>
                 </button>
               </div>
             </div>
@@ -153,7 +154,7 @@ const Stories = () => {
               <Search className="absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400" />
               <input
                 type="text"
-                placeholder="Search stories..."
+                placeholder={t('stories.search')}
                 className="pl-10 w-full border border-gray-300 rounded-md py-2 px-4 focus:outline-none focus:ring-2 focus:ring-red-500"
                 value={searchTerm}
                 onChange={(e) => setSearchTerm(e.target.value)}
@@ -170,7 +171,7 @@ const Stories = () => {
             </select>
           </div>
           <div className="mt-4">
-            <p className="text-sm font-medium text-gray-700 mb-2">Popular Themes:</p>
+            <p className="text-sm font-medium text-gray-700 mb-2">{t('stories.popularThemes')}</p>
             <div className="flex flex-wrap gap-2">
               {storyThemes.map(theme => (
                 <button
@@ -200,11 +201,11 @@ const Stories = () => {
       {showSubmitForm && (
         <div className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center p-4 z-50">
           <div className="bg-white rounded-lg max-w-2xl w-full p-8">
-            <h2 className="text-2xl font-bold mb-6">Share Your Story</h2>
+            <h2 className="text-2xl font-bold mb-6">{t('stories.form.title')}</h2>
             <form className="space-y-6">
               <div>
                 <label className="block text-sm font-medium text-gray-700 mb-1">
-                  Your Name
+                  {t('stories.form.name')}
                 </label>
                 <input
                   type="text"
@@ -213,7 +214,7 @@ const Stories = () => {
               </div>
               <div>
                 <label className="block text-sm font-medium text-gray-700 mb-1">
-                  Story Title
+                  {t('stories.form.storyTitle')}
                 </label>
                 <input
                   type="text"
@@ -222,17 +223,17 @@ const Stories = () => {
               </div>
               <div>
                 <label className="block text-sm font-medium text-gray-700 mb-1">
-                  Your Story
+                  {t('stories.form.story')}
                 </label>
                 <textarea
                   rows={6}
                   className="w-full border border-gray-300 rounded-md py-2 px-4 focus:outline-none focus:ring-2 focus:ring-red-500"
-                  placeholder="Share your journey, experiences, and reflections..."
+                  placeholder={t('stories.form.storyPlaceholder')}
                 ></textarea>
               </div>
               <div>
                 <label className="block text-sm font-medium text-gray-700 mb-1">
-                  Upload Images (optional)
+                  {t('stories.form.images')}
                 </label>
                 <input
                   type="file"
@@ -246,13 +247,13 @@ const Stories = () => {
                   onClick={() => setShowSubmitForm(false)}
                   className="px-4 py-2 border border-gray-300 rounded-md text-gray-700 hover:bg-gray-50"
                 >
-                  Cancel
+                  {t('stories.form.cancel')}
                 </button>
                 <button
                   type="submit"
                   className="px-4 py-2 bg-red-600 text-white rounded-md hover:bg-red-700"
                 >
-                  Submit Story
+                  {t('stories.form.submit')}
                 </button>
               </div>
             </form>
@@ -299,7 +300,7 @@ const Stories = () => {
                     </button>
                   </div>
                   <button className="text-red-600 hover:text-red-800 font-medium flex items-center">
-                    Read More <ArrowRight className="ml-1 h-4 w-4" />
+                    {t('stories.readMore')} <ArrowRight className="ml-1 h-4 w-4" />
                   </button>
                 </div>
               </div>
