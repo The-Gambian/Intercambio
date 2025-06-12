@@ -195,17 +195,22 @@ function Home() {
 
             <div className="bg-white border border-gray-200 rounded-lg overflow-hidden shadow-md hover:shadow-lg transition">
               <img 
-                src="https://i.imgur.com/ppZR0iC.jpg" 
+                src="/WhatsApp Image 2025-06-10 at 21.17.23.jpeg" 
                 alt="Language Exchange Event" 
                 className="w-full h-48 object-cover"
               />
               <div className="p-6">
-                <div className="text-sm text-pan-red font-semibold mb-2">April 26, 2025 • 6:00 PM</div>
+                <div className="text-sm text-pan-red font-semibold mb-2">June 28, 2025 • 18:00 - 20:00</div>
                 <h3 className="text-xl font-bold mb-2">{t('home.upcomingEvents.languageExchange.title')}</h3>
                 <p className="text-gray-600 mb-4">{t('home.upcomingEvents.languageExchange.description')}</p>
-                <Link to="/events" className="text-pan-red font-medium flex items-center hover:text-pan-red/80">
-                  {t('home.upcomingEvents.learnMore')} <ArrowRight className="ml-2 h-4 w-4" />
-                </Link>
+                <a 
+                  href="https://www.facebook.com/events/701026239495168/"
+                  target="_blank"
+                  rel="noopener noreferrer" 
+                  className="text-pan-red font-medium flex items-center hover:text-pan-red/80"
+                >
+                  {t('home.upcomingEvents.diasporaPicnic.register')} <ArrowRight className="ml-2 h-4 w-4" />
+                </a>
               </div>
             </div>
           </div>
@@ -238,7 +243,7 @@ function Home() {
                 </div>
               </div>
               <p className="text-gray-700 italic">
-                {t('home.testimonials.telma')}
+                "Sharing my experiences with the Intercâmbio Diáspora community has been incredibly rewarding. Through my writing and storytelling, I've been able to help others navigate their own identity journeys while building meaningful connections with people who share similar experiences."
               </p>
             </div>
 
@@ -259,7 +264,7 @@ function Home() {
                 </div>
               </div>
               <p className="text-gray-700 italic">
-                {t('home.testimonials.naky')}
+                "Leading cultural tours for the Intercâmbio Diáspora community has allowed me to share my knowledge of African heritage in Lisbon while creating spaces for cultural education and connection. It's amazing to see how these experiences bring people together and strengthen our community bonds."
               </p>
             </div>
 
@@ -280,7 +285,7 @@ function Home() {
                 </div>
               </div>
               <p className="text-gray-700 italic">
-                {t('home.testimonials.boni')}
+                "Organizing cultural events for Intercâmbio Diáspora has been one of my most fulfilling professional experiences. Using my event planning expertise to create celebrations that honor our heritage while fostering community connections has shown me the true power of bringing people together through culture."
               </p>
             </div>
           </div>
