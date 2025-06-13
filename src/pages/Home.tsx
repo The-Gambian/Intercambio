@@ -34,40 +34,8 @@ function Home() {
         </div>
       </section>
 
-      {/* Latest News Section */}
+      {/* Features Section - Moved up to show value early */}
       <section className="py-16 bg-white">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-12">
-            <h2 className="text-3xl font-bold text-pan-black">{t('home.news.title')}</h2>
-            <p className="mt-4 text-xl text-gray-600">{t('home.news.subtitle')}</p>
-          </div>
-
-          <div className="bg-white rounded-lg shadow-xl overflow-hidden mb-12">
-            <div className="md:flex">
-              <div className="md:w-1/2">
-                <img 
-                  src="https://i.imgur.com/aFewmTX.jpg"
-                  alt="Diaspora Community Gathering"
-                  className="w-full h-96 object-cover"
-                />
-              </div>
-              <div className="md:w-1/2 p-8">
-                <div className="text-sm text-pan-red mb-4">May 31, 2025</div>
-                <h3 className="text-2xl font-bold mb-4">{t('home.news.featured.title')}</h3>
-                <p className="text-gray-600 mb-6">
-                  {t('home.news.featured.content')}
-                </p>
-                <Link to="/news" className="text-pan-red font-medium flex items-center hover:text-pan-red/80">
-                  {t('home.news.readMore')} <ArrowRight className="ml-2 h-4 w-4" />
-                </Link>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* Features Section */}
-      <section className="py-16 bg-pan-green/10">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-12">
             <h2 className="text-3xl font-bold text-pan-black">{t('home.features.title')}</h2>
@@ -76,7 +44,7 @@ function Home() {
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             {/* Feature cards with Pan-African colors */}
-            <div className="bg-white p-6 rounded-lg shadow-md hover:shadow-lg transition">
+            <div className="bg-white p-6 rounded-lg shadow-md hover:shadow-lg transition border border-gray-100">
               <div className="bg-pan-gold/20 p-3 rounded-full w-12 h-12 flex items-center justify-center mb-4">
                 <Calendar className="h-6 w-6 text-pan-gold" />
               </div>
@@ -87,7 +55,7 @@ function Home() {
               </Link>
             </div>
 
-            <div className="bg-white p-6 rounded-lg shadow-md hover:shadow-lg transition">
+            <div className="bg-white p-6 rounded-lg shadow-md hover:shadow-lg transition border border-gray-100">
               <div className="bg-pan-gold/20 p-3 rounded-full w-12 h-12 flex items-center justify-center mb-4">
                 <Newspaper className="h-6 w-6 text-pan-gold" />
               </div>
@@ -98,7 +66,7 @@ function Home() {
               </Link>
             </div>
 
-            <div className="bg-white p-6 rounded-lg shadow-md hover:shadow-lg transition">
+            <div className="bg-white p-6 rounded-lg shadow-md hover:shadow-lg transition border border-gray-100">
               <div className="bg-pan-gold/20 p-3 rounded-full w-12 h-12 flex items-center justify-center mb-4">
                 <Users className="h-6 w-6 text-pan-gold" />
               </div>
@@ -109,7 +77,7 @@ function Home() {
               </Link>
             </div>
 
-            <div className="bg-white p-6 rounded-lg shadow-md hover:shadow-lg transition">
+            <div className="bg-white p-6 rounded-lg shadow-md hover:shadow-lg transition border border-gray-100">
               <div className="bg-pan-gold/20 p-3 rounded-full w-12 h-12 flex items-center justify-center mb-4">
                 <MessageCircle className="h-6 w-6 text-pan-gold" />
               </div>
@@ -120,7 +88,7 @@ function Home() {
               </Link>
             </div>
 
-            <div className="bg-white p-6 rounded-lg shadow-md hover:shadow-lg transition">
+            <div className="bg-white p-6 rounded-lg shadow-md hover:shadow-lg transition border border-gray-100">
               <div className="bg-pan-gold/20 p-3 rounded-full w-12 h-12 flex items-center justify-center mb-4">
                 <BookOpen className="h-6 w-6 text-pan-gold" />
               </div>
@@ -131,7 +99,7 @@ function Home() {
               </Link>
             </div>
 
-            <div className="bg-white p-6 rounded-lg shadow-md hover:shadow-lg transition">
+            <div className="bg-white p-6 rounded-lg shadow-md hover:shadow-lg transition border border-gray-100">
               <div className="bg-pan-gold/20 p-3 rounded-full w-12 h-12 flex items-center justify-center mb-4">
                 <Globe className="h-6 w-6 text-pan-gold" />
               </div>
@@ -141,6 +109,44 @@ function Home() {
                 {t('home.features.network.link')} <ArrowRight className="ml-2 h-4 w-4" />
               </Link>
             </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Newsletter Section - Moved up for early conversion */}
+      <section className="py-16 bg-pan-green/10">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-12">
+            <h2 className="text-3xl font-bold text-pan-black">{t('home.newsletter.title')}</h2>
+            <p className="mt-4 text-xl text-gray-600">{t('home.newsletter.subtitle')}</p>
+          </div>
+          <div className="max-w-xl mx-auto">
+            <form className="bg-white p-8 rounded-lg shadow-lg border border-gray-100">
+              <div className="mb-4">
+                <label htmlFor="name" className="block text-sm font-medium text-gray-700 mb-1">{t('home.newsletter.name')}</label>
+                <input
+                  type="text"
+                  id="name"
+                  className="w-full px-4 py-3 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-pan-red"
+                  placeholder={t('home.newsletter.namePlaceholder')}
+                />
+              </div>
+              <div className="mb-6">
+                <label htmlFor="email" className="block text-sm font-medium text-gray-700 mb-1">{t('home.newsletter.email')}</label>
+                <input
+                  type="email"
+                  id="email"
+                  className="w-full px-4 py-3 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-pan-red"
+                  placeholder={t('home.newsletter.emailPlaceholder')}
+                />
+              </div>
+              <button
+                type="submit"
+                className="w-full bg-pan-red text-white py-3 px-4 rounded-md hover:bg-pan-red/90 transition flex items-center justify-center font-medium"
+              >
+                {t('home.newsletter.subscribe')} <Mail className="ml-2 h-5 w-5" />
+              </button>
+            </form>
           </div>
         </div>
       </section>
@@ -195,7 +201,7 @@ function Home() {
 
             <div className="bg-white border border-gray-200 rounded-lg overflow-hidden shadow-md hover:shadow-lg transition">
               <img 
-                src="https://imgur.com/Um1K5jA.jpg" 
+                src="/WhatsApp Image 2025-06-10 at 21.17.23.jpeg" 
                 alt="Language Exchange Event" 
                 className="w-full h-48 object-cover"
               />
@@ -217,8 +223,40 @@ function Home() {
         </div>
       </section>
 
-      {/* Testimonials Section */}
+      {/* Latest News Section */}
       <section className="py-16 bg-pan-green/10">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-12">
+            <h2 className="text-3xl font-bold text-pan-black">{t('home.news.title')}</h2>
+            <p className="mt-4 text-xl text-gray-600">{t('home.news.subtitle')}</p>
+          </div>
+
+          <div className="bg-white rounded-lg shadow-xl overflow-hidden mb-12">
+            <div className="md:flex">
+              <div className="md:w-1/2">
+                <img 
+                  src="https://i.imgur.com/aFewmTX.jpg"
+                  alt="Diaspora Community Gathering"
+                  className="w-full h-96 object-cover"
+                />
+              </div>
+              <div className="md:w-1/2 p-8">
+                <div className="text-sm text-pan-red mb-4">May 31, 2025</div>
+                <h3 className="text-2xl font-bold mb-4">{t('home.news.featured.title')}</h3>
+                <p className="text-gray-600 mb-6">
+                  {t('home.news.featured.content')}
+                </p>
+                <Link to="/news" className="text-pan-red font-medium flex items-center hover:text-pan-red/80">
+                  {t('home.news.readMore')} <ArrowRight className="ml-2 h-4 w-4" />
+                </Link>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Testimonials Section */}
+      <section className="py-16 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-12">
             <h2 className="text-3xl font-bold text-pan-black">{t('home.testimonials.title')}</h2>
@@ -227,7 +265,7 @@ function Home() {
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             {/* Testimonial 1 - Telma */}
-            <div className="bg-white p-8 rounded-lg shadow-md relative">
+            <div className="bg-white p-8 rounded-lg shadow-md relative border border-gray-100">
               <div className="absolute top-4 left-4">
                 <Quote className="h-8 w-8 text-pan-gold" />
               </div>
@@ -248,7 +286,7 @@ function Home() {
             </div>
 
             {/* Testimonial 2 - Naky */}
-            <div className="bg-white p-8 rounded-lg shadow-md relative">
+            <div className="bg-white p-8 rounded-lg shadow-md relative border border-gray-100">
               <div className="absolute top-4 left-4">
                 <Quote className="h-8 w-8 text-pan-gold" />
               </div>
@@ -269,7 +307,7 @@ function Home() {
             </div>
 
             {/* Testimonial 3 - Boni */}
-            <div className="bg-white p-8 rounded-lg shadow-md relative">
+            <div className="bg-white p-8 rounded-lg shadow-md relative border border-gray-100">
               <div className="absolute top-4 left-4">
                 <Quote className="h-8 w-8 text-pan-gold" />
               </div>
@@ -292,44 +330,6 @@ function Home() {
         </div>
       </section>
 
-      {/* Newsletter Section */}
-      <section className="py-16 bg-white">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-12">
-            <h2 className="text-3xl font-bold text-pan-black">{t('home.newsletter.title')}</h2>
-            <p className="mt-4 text-xl text-gray-600">{t('home.newsletter.subtitle')}</p>
-          </div>
-          <div className="max-w-xl mx-auto">
-            <form className="bg-white p-6 rounded-lg shadow-md">
-              <div className="mb-4">
-                <label htmlFor="name" className="block text-sm font-medium text-gray-700 mb-1">{t('home.newsletter.name')}</label>
-                <input
-                  type="text"
-                  id="name"
-                  className="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-pan-red"
-                  placeholder={t('home.newsletter.namePlaceholder')}
-                />
-              </div>
-              <div className="mb-4">
-                <label htmlFor="email" className="block text-sm font-medium text-gray-700 mb-1">{t('home.newsletter.email')}</label>
-                <input
-                  type="email"
-                  id="email"
-                  className="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-pan-red"
-                  placeholder={t('home.newsletter.emailPlaceholder')}
-                />
-              </div>
-              <button
-                type="submit"
-                className="w-full bg-pan-red text-white py-2 px-4 rounded-md hover:bg-pan-red/90 transition flex items-center justify-center"
-              >
-                {t('home.newsletter.subscribe')} <Mail className="ml-2 h-4 w-4" />
-              </button>
-            </form>
-          </div>
-        </div>
-      </section>
-
       {/* Contribute Section */}
       <section className="py-16 bg-pan-green/10">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -338,7 +338,7 @@ function Home() {
             <p className="mt-4 text-xl text-gray-600">{t('home.contribute.subtitle')}</p>
           </div>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            <div className="bg-white p-6 rounded-lg text-center shadow-md">
+            <div className="bg-white p-6 rounded-lg text-center shadow-md border border-gray-100">
               <div className="bg-pan-gold/20 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4">
                 <Heart className="h-8 w-8 text-pan-gold" />
               </div>
@@ -348,7 +348,7 @@ function Home() {
                 {t('home.contribute.shareStory.button')}
               </Link>
             </div>
-            <div className="bg-white p-6 rounded-lg text-center shadow-md">
+            <div className="bg-white p-6 rounded-lg text-center shadow-md border border-gray-100">
               <div className="bg-pan-gold/20 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4">
                 <Users className="h-8 w-8 text-pan-gold" />
               </div>
@@ -358,7 +358,7 @@ function Home() {
                 {t('home.contribute.volunteer.button')}
               </Link>
             </div>
-            <div className="bg-white p-6 rounded-lg text-center shadow-md">
+            <div className="bg-white p-6 rounded-lg text-center shadow-md border border-gray-100">
               <div className="bg-pan-gold/20 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4">
                 <Globe className="h-8 w-8 text-pan-gold" />
               </div>
