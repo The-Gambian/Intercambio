@@ -1,7 +1,8 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { Calendar, Newspaper, Users, MessageCircle, BookOpen, ArrowRight, Globe, Instagram, Mail, Heart, Quote } from 'lucide-react';
+import { Calendar, Newspaper, Users, MessageCircle, BookOpen, ArrowRight, Globe, Mail, Heart, Quote } from 'lucide-react';
 import { useLanguage } from '../contexts/LanguageContext';
+import EmailSubscription from '../components/EmailSubscription';
 
 function Home() {
   const { t } = useLanguage();
@@ -120,34 +121,7 @@ function Home() {
             <h2 className="text-3xl font-bold text-pan-black">{t('home.newsletter.title')}</h2>
             <p className="mt-4 text-xl text-gray-600">{t('home.newsletter.subtitle')}</p>
           </div>
-          <div className="max-w-xl mx-auto">
-            <form className="bg-white p-8 rounded-lg shadow-lg border border-gray-100">
-              <div className="mb-4">
-                <label htmlFor="name" className="block text-sm font-medium text-gray-700 mb-1">{t('home.newsletter.name')}</label>
-                <input
-                  type="text"
-                  id="name"
-                  className="w-full px-4 py-3 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-pan-red"
-                  placeholder={t('home.newsletter.namePlaceholder')}
-                />
-              </div>
-              <div className="mb-6">
-                <label htmlFor="email" className="block text-sm font-medium text-gray-700 mb-1">{t('home.newsletter.email')}</label>
-                <input
-                  type="email"
-                  id="email"
-                  className="w-full px-4 py-3 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-pan-red"
-                  placeholder={t('home.newsletter.emailPlaceholder')}
-                />
-              </div>
-              <button
-                type="submit"
-                className="w-full bg-pan-red text-white py-3 px-4 rounded-md hover:bg-pan-red/90 transition flex items-center justify-center font-medium"
-              >
-                {t('home.newsletter.subscribe')} <Mail className="ml-2 h-5 w-5" />
-              </button>
-            </form>
-          </div>
+          <EmailSubscription />
         </div>
       </section>
 
@@ -201,7 +175,7 @@ function Home() {
 
             <div className="bg-white border border-gray-200 rounded-lg overflow-hidden shadow-md hover:shadow-lg transition">
               <img 
-                src="/WhatsApp Image 2025-06-10 at 21.17.23.jpeg" 
+                src="https://i.imgur.com/Um1K5jA.jpg" 
                 alt="Language Exchange Event" 
                 className="w-full h-48 object-cover"
               />
@@ -368,24 +342,6 @@ function Home() {
                 {t('home.contribute.partner.button')}
               </Link>
             </div>
-          </div>
-        </div>
-      </section>
-
-      {/* Social Media */}
-      <section className="py-8 bg-white">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center">
-            <h2 className="text-2xl font-bold text-pan-black mb-4">{t('home.social.title')}</h2>
-            <a 
-              href="https://www.instagram.com/intercambios_diaspora/" 
-              target="_blank" 
-              rel="noopener noreferrer" 
-              className="inline-flex items-center text-pan-red hover:text-pan-red/80"
-            >
-              <Instagram className="h-6 w-6 mr-2" />
-              <span className="font-medium">{t('home.social.instagram')}</span>
-            </a>
           </div>
         </div>
       </section>
