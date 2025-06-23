@@ -32,6 +32,21 @@ const EmailSubscription: React.FC<EmailSubscriptionProps> = ({
     e.preventDefault();
     setStatus('loading');
 
+    // Validate required fields
+    if (!formData.email || !formData.firstName || !formData.lastName) {
+      setStatus('error');
+      setMessage('Please fill in all required fields.');
+      return;
+    }
+
+    // Validate email format
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    if (!emailRegex.test(formData.email)) {
+      setStatus('error');
+      setMessage('Please enter a valid email address.');
+      return;
+    }
+
     try {
       // Check if we have Supabase environment variables
       const supabaseUrl = import.meta.env.VITE_SUPABASE_URL;
@@ -40,8 +55,6 @@ const EmailSubscription: React.FC<EmailSubscriptionProps> = ({
       if (!supabaseUrl || !supabaseAnonKey) {
         // Fallback to a simple form submission or external service
         console.log('Supabase not configured, using fallback method');
-        
-        // For now, we'll simulate success and log the data
         console.log('Subscription data:', formData);
         
         setStatus('success');
@@ -53,25 +66,40 @@ const EmailSubscription: React.FC<EmailSubscriptionProps> = ({
       // Try to call the Supabase edge function
       const apiUrl = `${supabaseUrl}/functions/v1/subscribe`;
       
+      console.log('Attempting subscription with:', {
+        url: apiUrl,
+        data: formData,
+        hasUrl: !!supabaseUrl,
+        hasKey: !!supabaseAnonKey
+      });
+
       const response = await fetch(apiUrl, {
         method: 'POST',
         headers: {
           'Authorization': `Bearer ${supabaseAnonKey}`,
           'Content-Type': 'application/json',
         },
-        body: JSON.stringify(formData),
+        body: JSON.stringify({
+          email: formData.email.trim(),
+          firstName: formData.firstName.trim(),
+          lastName: formData.lastName.trim()
+        }),
       });
 
+      console.log('Response status:', response.status);
+      console.log('Response headers:', Object.fromEntries(response.headers.entries()));
+
       const responseData = await response.json();
+      console.log('Response data:', responseData);
 
       if (response.ok) {
         setStatus('success');
         setMessage(responseData.message || 'Thank you for subscribing! Please check your email to confirm your subscription.');
         setFormData({ email: '', firstName: '', lastName: '' });
       } else {
-        // Handle specific error responses from the edge function
         console.error('Subscription API error:', responseData);
-        throw new Error(responseData.error || 'Subscription failed');
+        setStatus('error');
+        setMessage(responseData.error || 'Something went wrong. Please try again.');
       }
     } catch (error) {
       console.error('Subscription error:', error);
@@ -80,8 +108,6 @@ const EmailSubscription: React.FC<EmailSubscriptionProps> = ({
       // Provide more helpful error messages based on the error
       if (error instanceof Error && error.message.includes('fetch')) {
         setMessage('Unable to connect to our subscription service. Please try again later or contact us directly at info@intercambiodiaspora.com');
-      } else if (error instanceof Error && error.message.includes('Failed to process subscription')) {
-        setMessage('We are currently setting up our email system. Please contact us directly at info@intercambiodiaspora.com to join our mailing list.');
       } else {
         setMessage('Thank you for your interest! We are currently setting up our email system. Please contact us directly at info@intercambiodiaspora.com to join our mailing list.');
       }
