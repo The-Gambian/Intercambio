@@ -1,8 +1,9 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
-import { Mail, Phone, MapPin, Facebook, Instagram, Youtube, Linkedin } from 'lucide-react';
+import { Mail, Phone, MapPin, Facebook, Instagram, Youtube, Linkedin, MessageCircle } from 'lucide-react';
 import CookieConsent, { Cookies } from 'react-cookie-consent';
 import { useLanguage } from '../contexts/LanguageContext';
+import EmailSubscription from './EmailSubscription';
 
 const Footer = () => {
   const { t } = useLanguage();
@@ -16,9 +17,52 @@ const Footer = () => {
     console.log('Cookies declined');
   };
 
+  const joinWhatsApp = () => {
+    // Replace with your actual WhatsApp group link
+    window.open('https://chat.whatsapp.com/your-group-link', '_blank');
+  };
+
   return (
     <>
       <footer className="bg-pan-black text-white">
+        {/* WhatsApp and Email Subscription Section */}
+        <div className="bg-gradient-to-r from-amber-100 to-amber-50 text-gray-800 py-12">
+          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
+              {/* WhatsApp Section */}
+              <div className="flex flex-col items-center lg:items-start">
+                <h3 className="text-2xl font-bold mb-2 text-gray-800">Follow Us</h3>
+                <div className="flex space-x-4 mb-6">
+                  <a href="https://www.facebook.com/groups/717321330191930/" target="_blank" rel="noopener noreferrer" className="bg-white p-3 rounded-full shadow-md hover:shadow-lg transition">
+                    <Facebook className="h-6 w-6 text-blue-600" />
+                  </a>
+                  <a href="https://www.instagram.com/intercambios_diaspora/" target="_blank" rel="noopener noreferrer" className="bg-white p-3 rounded-full shadow-md hover:shadow-lg transition">
+                    <Instagram className="h-6 w-6 text-pink-600" />
+                  </a>
+                  <a href="https://www.linkedin.com/company/intercambio-diaspora/" target="_blank" rel="noopener noreferrer" className="bg-white p-3 rounded-full shadow-md hover:shadow-lg transition">
+                    <Linkedin className="h-6 w-6 text-blue-700" />
+                  </a>
+                  <button onClick={joinWhatsApp} className="bg-white p-3 rounded-full shadow-md hover:shadow-lg transition">
+                    <MessageCircle className="h-6 w-6 text-green-600" />
+                  </button>
+                </div>
+                
+                <h3 className="text-2xl font-bold mb-4 text-gray-800">Get Announcements On WhatsApp</h3>
+                <button 
+                  onClick={joinWhatsApp}
+                  className="bg-amber-600 hover:bg-amber-700 text-white px-8 py-3 rounded-full font-medium transition flex items-center shadow-lg"
+                >
+                  Join The WhatsApp Chat <MessageCircle className="ml-2 h-5 w-5" />
+                </button>
+              </div>
+
+              {/* Email Subscription Section */}
+              <EmailSubscription variant="footer" />
+            </div>
+          </div>
+        </div>
+
+        {/* Main Footer Content */}
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
           <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
             <div>
