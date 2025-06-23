@@ -3,10 +3,20 @@ import { Search, Calendar, User, Tag, ArrowRight } from 'lucide-react';
 import { format } from 'date-fns';
 import { useLanguage } from '../contexts/LanguageContext';
 
-// Updated news data with new Imgur images
+// Updated news data with new latest article
 const newsData = [
   {
     id: 1,
+    title: "Intercâmbio Diáspora Launches New Community Platform",
+    excerpt: "We're excited to announce the launch of our new digital platform designed to better connect and serve the African diaspora community in Portugal.",
+    content: "Today marks a significant milestone for Intercâmbio Diáspora as we officially launch our comprehensive digital platform designed to strengthen connections within the African and Afro-descendant community in Portugal.\n\nOur new platform features:\n- Enhanced event discovery and registration\n- Community discussion forums\n- Resource sharing and learning hub\n- Professional networking opportunities\n- Cultural celebration calendar\n\nThis platform represents months of development and community feedback, ensuring it truly serves the needs of our diverse community. We've incorporated features that allow members to share their stories, connect with others who share similar experiences, and access resources that support their journey in Portugal.\n\nThe platform also includes multilingual support, making it accessible to community members who are more comfortable in Portuguese, English, or other languages. We believe this inclusivity is essential for building a truly connected diaspora community.\n\nWe invite all community members to explore the platform, create their profiles, and begin connecting with others. Together, we can build stronger networks and support systems that benefit everyone in our community.",
+    date: new Date(2024, 11, 15), // December 15, 2024
+    author: "Intercâmbio Diáspora Team",
+    category: "Community",
+    image: "https://i.imgur.com/aFewmTX.jpg"
+  },
+  {
+    id: 2,
     title: "Intercâmbio Diáspora Celebrates African Heritage Day",
     excerpt: "Join us for a day of cultural celebration, storytelling, and community connection at our African Heritage Day event.",
     content: "We're excited to announce our upcoming African Heritage Day celebration! This special event will bring together members of the African and Afro-descendant community in Lisbon for a day of cultural exchange, storytelling, and connection.\n\nThe event will feature:\n- Traditional music and dance performances\n- Storytelling sessions\n- Cultural workshops\n- Community networking\n- African cuisine\n\nThis celebration is part of our ongoing commitment to creating spaces where African and Afro-descendant communities can celebrate their heritage, share their stories, and build meaningful connections.\n\nThe event will take place at our community space in Lisbon, and all are welcome to join. Whether you're part of the African diaspora or interested in learning more about African cultures, this event offers a wonderful opportunity for cultural exchange and community building.",
@@ -16,7 +26,7 @@ const newsData = [
     image: "https://i.imgur.com/eUtTakc.jpg"
   },
   {
-    id: 2,
+    id: 3,
     title: "Language Exchange Program Launches New Sessions",
     excerpt: "Our popular language exchange program expands with new Portuguese-English conversation groups and cultural learning opportunities.",
     content: "We're thrilled to announce the expansion of our language exchange program! In response to growing community interest, we're launching new Portuguese-English conversation groups that combine language learning with cultural exchange.\n\nOur language exchange sessions provide a supportive environment where participants can:\n- Practice Portuguese and English with native speakers\n- Learn about cultural contexts and expressions\n- Build confidence in communication\n- Make friends from diverse backgrounds\n\nThe program is designed to be accessible to learners at all levels, from beginners to advanced speakers. Each session includes structured conversation practice, cultural discussions, and informal social time.\n\nParticipants have shared how these exchanges have not only improved their language skills but also helped them build meaningful connections within the community.",
@@ -26,7 +36,7 @@ const newsData = [
     image: "https://i.imgur.com/cmCCoJI.jpg"
   },
   {
-    id: 3,
+    id: 4,
     title: "Community Tour: Exploring African Heritage in Lisbon",
     excerpt: "Join us for a guided tour exploring the rich African history and cultural heritage sites in Lisbon.",
     content: "Discover the African heritage woven into Lisbon's history with our upcoming community tour! Led by knowledgeable guides from the African diaspora community, this tour offers a unique perspective on the city's historical and contemporary connections to Africa.\n\nThe tour will explore:\n- Historical sites significant to African history in Lisbon\n- Contemporary African cultural spaces\n- Community landmarks\n- Art installations and exhibitions\n\nThis initiative is part of our commitment to highlighting the contributions of African and Afro-descendant communities to Lisbon's cultural landscape. Through these tours, we aim to preserve and share important historical narratives while fostering understanding and appreciation of African heritage.\n\nParticipants will gain insights into both historical and contemporary aspects of African presence in Lisbon, making connections between past and present.",
@@ -36,7 +46,7 @@ const newsData = [
     image: "https://i.imgur.com/fHIxWQt.jpg"
   },
   {
-    id: 4,
+    id: 5,
     title: "Professional Development Workshop Series",
     excerpt: "New workshop series focuses on career development, entrepreneurship, and professional networking for diaspora community members.",
     content: "We're launching a comprehensive professional development workshop series designed specifically for members of the African and Afro-descendant diaspora community. These workshops address the unique challenges and opportunities faced by our community members in the professional sphere.\n\nThe workshop series includes:\n- Resume writing and interview skills\n- Entrepreneurship in Portugal\n- Professional networking strategies\n- Career transition guidance\n- Leadership development\n\nEach workshop combines practical skills development with cultural awareness and community support. Participants will have opportunities to connect with mentors, share experiences, and build professional networks within the community.\n\nThe series is designed to empower community members with the tools and connections needed for professional success while maintaining cultural authenticity.",
@@ -46,7 +56,7 @@ const newsData = [
     image: "https://i.imgur.com/1ntgyJg.jpg"
   },
   {
-    id: 5,
+    id: 6,
     title: "Youth Mentorship Program Launch",
     excerpt: "New initiative connects young people from the diaspora community with mentors for educational and personal development support.",
     content: "We're proud to announce the launch of our Youth Mentorship Program, designed to support young people from African and Afro-descendant backgrounds in their educational and personal development journeys.\n\nThe program matches youth with mentors from similar cultural backgrounds who can provide:\n- Academic guidance\n- Career advice\n- Cultural connection\n- Personal development support\n\nThis initiative responds to community feedback about the importance of role models and guidance for young people navigating education and career paths while maintaining strong connections to their cultural heritage.\n\nMentors are professionals from various fields who understand the unique experiences and challenges faced by youth in the diaspora community.",
@@ -56,7 +66,7 @@ const newsData = [
     image: "https://i.imgur.com/aLhAefJ.jpg"
   },
   {
-    id: 6,
+    id: 7,
     title: "Cultural Exchange Workshop Series",
     excerpt: "Interactive workshops exploring African cultural traditions, music, and art with hands-on activities and community discussions.",
     content: "Join us for our new Cultural Exchange Workshop Series, designed to celebrate and preserve African cultural traditions through interactive learning experiences. These workshops provide hands-on opportunities to engage with various aspects of African heritage.\n\nWorkshop topics include:\n- Traditional African music and instruments\n- African art and craft techniques\n- Storytelling traditions\n- Culinary heritage\n- Dance and movement\n\nEach workshop is led by community members and cultural practitioners who bring authentic knowledge and passion to their teaching. Participants will not only learn new skills but also connect with others who share an interest in African culture.\n\nThese workshops are open to all community members and allies, creating inclusive spaces for cultural learning and appreciation.",
@@ -66,7 +76,7 @@ const newsData = [
     image: "https://i.imgur.com/4Y46Pd9.jpg"
   },
   {
-    id: 7,
+    id: 8,
     title: "Community Networking Event Success",
     excerpt: "Our recent networking event brought together professionals from diverse backgrounds, creating new opportunities for collaboration and growth.",
     content: "Our recent Community Networking Event was a tremendous success, bringing together over 100 professionals from the African and Afro-descendant diaspora community. The event created valuable opportunities for connection, collaboration, and professional growth.\n\nHighlights from the event:\n- Professional speed networking sessions\n- Industry-specific discussion groups\n- Mentorship matching opportunities\n- Resource sharing workshops\n- Cultural celebration and entertainment\n\nParticipants represented diverse industries including technology, healthcare, education, arts, and entrepreneurship. Many attendees reported making meaningful connections that have already led to new collaborations and opportunities.\n\nThe success of this event demonstrates the strength and potential of our community when we come together to support each other's professional aspirations.",
@@ -76,7 +86,7 @@ const newsData = [
     image: "https://i.imgur.com/AR9vw6I.jpg"
   },
   {
-    id: 8,
+    id: 9,
     title: "Educational Support Program Expansion",
     excerpt: "Our educational support initiatives expand to include new resources for students and families navigating the Portuguese education system.",
     content: "We're excited to announce the expansion of our Educational Support Program, which now includes comprehensive resources for students and families from the African diaspora community navigating the Portuguese education system.\n\nNew program features:\n- Academic tutoring and support\n- University application guidance\n- Scholarship information and assistance\n- Parent engagement workshops\n- Cultural identity support in educational settings\n\nThe program addresses the unique challenges faced by diaspora students and families, providing culturally sensitive support that honors their heritage while helping them succeed in Portuguese educational institutions.\n\nOur team of educators and volunteers work closely with participants to ensure they have the tools and confidence needed for academic success.",
@@ -88,7 +98,7 @@ const newsData = [
 ];
 
 // Available categories for filtering
-const categories = ["All", "Events", "Education", "Culture", "Career", "Networking"];
+const categories = ["All", "Community", "Events", "Education", "Culture", "Career", "Networking"];
 
 const News = () => {
   const { t } = useLanguage();
