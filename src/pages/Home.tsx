@@ -200,9 +200,14 @@ function Home() {
       {/* Latest News Section */}
       <section className="py-16 bg-pan-green/10">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-12">
-            <h2 className="text-3xl font-bold text-pan-black">{t('home.news.title')}</h2>
-            <p className="mt-4 text-xl text-gray-600">{t('home.news.subtitle')}</p>
+          <div className="flex justify-between items-center mb-8">
+            <div>
+              <h2 className="text-3xl font-bold text-pan-black">{t('home.news.title')}</h2>
+              <p className="mt-4 text-xl text-gray-600">{t('home.news.subtitle')}</p>
+            </div>
+            <Link to="/news" className="text-pan-red font-medium flex items-center hover:text-pan-red/80">
+              See More News <ArrowRight className="ml-2 h-4 w-4" />
+            </Link>
           </div>
 
           <div className="bg-white rounded-lg shadow-xl overflow-hidden mb-12">
