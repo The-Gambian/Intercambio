@@ -250,10 +250,10 @@ function Home() {
             </Link>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             <div className="bg-white border border-gray-200 rounded-lg overflow-hidden shadow-md hover:shadow-lg transition">
               <img 
-                src="https://i.imgur.com/yewLak5.jpg"
+                src="https://imgur.com/oOfmX3A.jpg"
                 alt="Full Moon Beach Night" 
                 className="w-full h-48 object-cover"
               />
@@ -301,6 +301,59 @@ function Home() {
                 <div className="text-sm text-pan-red font-semibold mb-2">May 25, 2025 • 14:00 - 23:00</div>
                 <h3 className="text-xl font-bold mb-2">{t('home.upcomingEvents.africaDay.title')}</h3>
                 <p className="text-gray-600 mb-4">{t('home.upcomingEvents.africaDay.description')}</p>
+                <Link to="/events" className="text-pan-red font-medium flex items-center hover:text-pan-red/80">
+                  {t('home.upcomingEvents.learnMore')} <ArrowRight className="ml-2 h-4 w-4" />
+                </Link>
+              </div>
+            </div>
+
+            <div className="bg-white border border-gray-200 rounded-lg overflow-hidden shadow-md hover:shadow-lg transition">
+              <img 
+                src="/WhatsApp Image 2025-06-10 at 21.17.23.jpeg"
+                alt="Language Exchange Event" 
+                className="w-full h-48 object-cover"
+              />
+              <div className="p-6">
+                <div className="text-sm text-pan-red font-semibold mb-2">June 28, 2025 • 18:00 - 20:00</div>
+                <h3 className="text-xl font-bold mb-2">Language Exchange Event</h3>
+                <p className="text-gray-600 mb-4">Join us for an enriching experience that promotes language learning, cultural exploration, and meaningful connections among members of the African Diaspora in Lisbon.</p>
+                <a 
+                  href="https://www.facebook.com/events/701026239495168/"
+                  target="_blank"
+                  rel="noopener noreferrer" 
+                  className="text-pan-red font-medium flex items-center hover:text-pan-red/80"
+                >
+                  Register on Facebook <ArrowRight className="ml-2 h-4 w-4" />
+                </a>
+              </div>
+            </div>
+
+            <div className="bg-white border border-gray-200 rounded-lg overflow-hidden shadow-md hover:shadow-lg transition">
+              <img 
+                src="https://i.imgur.com/ppZR0iC.jpg"
+                alt="Language Exchange Event" 
+                className="w-full h-48 object-cover"
+              />
+              <div className="p-6">
+                <div className="text-sm text-pan-red font-semibold mb-2">April 26, 2025 • 18:00</div>
+                <h3 className="text-xl font-bold mb-2">Language Exchange Event</h3>
+                <p className="text-gray-600 mb-4">Practice your language skills and connect with native speakers in a friendly, supportive environment. Weekly Portuguese and English language exchange.</p>
+                <Link to="/events" className="text-pan-red font-medium flex items-center hover:text-pan-red/80">
+                  {t('home.upcomingEvents.learnMore')} <ArrowRight className="ml-2 h-4 w-4" />
+                </Link>
+              </div>
+            </div>
+
+            <div className="bg-white border border-gray-200 rounded-lg overflow-hidden shadow-md hover:shadow-lg transition">
+              <img 
+                src="https://i.imgur.com/7mdxG48.jpg"
+                alt="Professional Networking Mixer" 
+                className="w-full h-48 object-cover"
+              />
+              <div className="p-6">
+                <div className="text-sm text-pan-red font-semibold mb-2">July 5, 2025 • 19:00</div>
+                <h3 className="text-xl font-bold mb-2">Professional Networking Mixer</h3>
+                <p className="text-gray-600 mb-4">Connect with professionals from diverse backgrounds and expand your network. Features structured networking activities and professional development discussions.</p>
                 <Link to="/events" className="text-pan-red font-medium flex items-center hover:text-pan-red/80">
                   {t('home.upcomingEvents.learnMore')} <ArrowRight className="ml-2 h-4 w-4" />
                 </Link>
