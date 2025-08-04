@@ -253,6 +253,25 @@ function Home() {
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             <div className="bg-white border border-gray-200 rounded-lg overflow-hidden shadow-md hover:shadow-lg transition">
               <img 
+                src="https://i.imgur.com/yewLak5.jpg"
+                alt="Full Moon Beach Night" 
+                className="w-full h-48 object-cover"
+              />
+              <div className="p-6">
+                <div className="text-sm text-pan-red font-semibold mb-2">August 9, 2025 • 20:00 - 00:00</div>
+                <h3 className="text-xl font-bold mb-2">Noite de Lua na Praia</h3>
+                <p className="text-gray-600 mb-4">Join us for a magical full moon gathering on the beach with childhood games and gratitude rituals. Connect with nature and community under the full moon at Praia de São Bruno, Caxias.</p>
+                <Link 
+                  to="/events" 
+                  className="text-pan-red font-medium flex items-center hover:text-pan-red/80"
+                >
+                  {t('home.upcomingEvents.learnMore')} <ArrowRight className="ml-2 h-4 w-4" />
+                </Link>
+              </div>
+            </div>
+
+            <div className="bg-white border border-gray-200 rounded-lg overflow-hidden shadow-md hover:shadow-lg transition">
+              <img 
                 src="https://i.imgur.com/3KJGfwj.jpg"
                 alt="Diaspora Picnic" 
                 className="w-full h-48 object-cover"
@@ -285,27 +304,6 @@ function Home() {
                 <Link to="/events" className="text-pan-red font-medium flex items-center hover:text-pan-red/80">
                   {t('home.upcomingEvents.learnMore')} <ArrowRight className="ml-2 h-4 w-4" />
                 </Link>
-              </div>
-            </div>
-
-            <div className="bg-white border border-gray-200 rounded-lg overflow-hidden shadow-md hover:shadow-lg transition">
-              <img 
-                src="https://i.imgur.com/Um1K5jA.jpg" 
-                alt="Language Exchange Event" 
-                className="w-full h-48 object-cover"
-              />
-              <div className="p-6">
-                <div className="text-sm text-pan-red font-semibold mb-2">June 28, 2025 • 18:00 - 20:00</div>
-                <h3 className="text-xl font-bold mb-2">{t('home.upcomingEvents.languageExchange.title')}</h3>
-                <p className="text-gray-600 mb-4">{t('home.upcomingEvents.languageExchange.description')}</p>
-                <a 
-                  href="https://www.facebook.com/events/701026239495168/"
-                  target="_blank"
-                  rel="noopener noreferrer" 
-                  className="text-pan-red font-medium flex items-center hover:text-pan-red/80"
-                >
-                  {t('home.upcomingEvents.diasporaPicnic.register')} <ArrowRight className="ml-2 h-4 w-4" />
-                </a>
               </div>
             </div>
           </div>
