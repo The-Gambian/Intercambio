@@ -75,7 +75,7 @@ const Footer = () => {
                 <span className="ml-2 text-xl font-bold text-white">Intercambio Diaspora</span>
               </div>
               <p className="mt-2 text-sm text-white">
-                {t('footer.description')}
+                Led by and for the African diaspora — open to everyone building a more connected, culturally aware, and inclusive Portugal.
               </p>
             </div>
             
