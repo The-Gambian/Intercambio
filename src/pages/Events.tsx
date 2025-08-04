@@ -12,7 +12,7 @@ const upcomingEvents = [
     location: "Praia de São Bruno, Caxias",
     description: "Join us for a magical full moon gathering on the beach! We'll amplify this lunar energy with childhood games and a gratitude ritual on the beach. Bring drinks, light food, comfortable clothes and shoes—but also put your feet in the sand to ground yourself and strengthen your body and mind. A perfect evening to connect with nature, community, and inner peace under the full moon.",
     category: "Cultural",
-    image: "https://i.imgur.com/yewLak5.jpg",
+    image: "https://imgur.com/oOfmX3A.jpg",
     endTime: "00:00"
   },
   {
