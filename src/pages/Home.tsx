@@ -22,7 +22,7 @@ function Home() {
         <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-24 md:py-32">
           <div className="max-w-3xl">
             <h1 className="text-4xl md:text-6xl font-bold mb-6 font-serif">{t('home.hero.title')}</h1>
-            <p className="text-xl md:text-2xl mb-8 font-light">{t('home.hero.subtitle')}</p>
+            <p className="text-xl md:text-2xl mb-8 font-light">Led by and for the African diaspora — open to everyone building a more connected, culturally aware, and inclusive Portugal.</p>
             <div className="flex flex-wrap gap-4">
               <Link to="/about" className="bg-pan-gold text-pan-black px-6 py-3 rounded-md font-medium hover:bg-pan-gold/90 transition text-lg">
                 {t('home.hero.learnMore')}
