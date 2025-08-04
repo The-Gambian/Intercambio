@@ -7,6 +7,16 @@ import { useLanguage } from '../contexts/LanguageContext';
 const upcomingEvents = [
   {
     id: 1,
+    title: "Noite de Lua na Praia - Full Moon Beach Night",
+    date: new Date(2025, 7, 9, 20, 0), // August 9, 2025, 8:00 PM
+    location: "Praia de São Bruno, Caxias",
+    description: "Join us for a magical full moon gathering on the beach! We'll amplify this lunar energy with childhood games and a gratitude ritual on the beach. Bring drinks, light food, comfortable clothes and shoes—but also put your feet in the sand to ground yourself and strengthen your body and mind. A perfect evening to connect with nature, community, and inner peace under the full moon.",
+    category: "Cultural",
+    image: "https://i.imgur.com/yewLak5.jpg",
+    endTime: "00:00"
+  },
+  {
+    id: 2,
     title: "Diáspora Picnic",
     date: new Date(2025, 4, 31, 13, 0), // May 31, 2025, 1:00 PM
     location: "Parque da Bela Vista, Quinta do Pombeiro, Casa Senhorial Norte, Azinhaga do Pombeiro, 1900-793 Lisboa",
@@ -17,7 +27,7 @@ const upcomingEvents = [
     endTime: "18:00"
   },
   {
-    id: 2,
+    id: 3,
     title: "Africa Day Celebration",
     date: new Date(2025, 4, 25, 14, 0), // May 25, 2025, 2:00 PM
     location: "Rua da Fábrica de Material de Guerra, 1, 1950-128 Lisbon, Portugal",
@@ -27,18 +37,18 @@ const upcomingEvents = [
     endTime: "23:00"
   },
   {
-    id: 3,
+    id: 4,
     title: "Language Exchange Event",
     date: new Date(2025, 5, 28, 18, 0), // June 28, 2025, 6:00 PM
     location: "Jardim da Estrela, Praça da Estrela, Lisboa",
     description: "Join us for an enriching experience that promotes language learning, cultural exploration, and meaningful connections among members of the African Diaspora in Lisbon. Bring a blanket to sit on the grass, and look out for the pan-African flag to find us! Features language immersion, interactive activities, networking opportunities, and cultural exchange.",
     category: "Educational",
-    image: "https://imgur.com/Um1K5jA.jpg",
+    image: "/WhatsApp Image 2025-06-10 at 21.17.23.jpeg",
     registrationLink: "https://www.facebook.com/events/701026239495168/",
     endTime: "20:00"
   },
   {
-    id: 4,
+    id: 5,
     title: "Language Exchange Event",
     date: new Date(2025, 3, 26, 18, 0), // April 26, 2025, 6:00 PM
     location: "Intercâmbio Learning Center, Lisbon",
@@ -47,7 +57,7 @@ const upcomingEvents = [
     image: "https://i.imgur.com/ppZR0iC.jpg"
   },
   {
-    id: 5,
+    id: 6,
     title: "Professional Networking Mixer",
     date: new Date(2025, 6, 5, 19, 0), // July 5, 2025, 7:00 PM
     location: "Urban Business Hub, Lisbon",
