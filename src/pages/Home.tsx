@@ -309,7 +309,7 @@ function Home() {
 
             <div className="bg-white border border-gray-200 rounded-lg overflow-hidden shadow-md hover:shadow-lg transition">
               <img 
-                src="/WhatsApp Image 2025-06-10 at 21.17.23.jpeg"
+                src="https://imgur.com/Um1K5jA.jpeg"
                 alt="Language Exchange Event" 
                 className="w-full h-48 object-cover"
               />
