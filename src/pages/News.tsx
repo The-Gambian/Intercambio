@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Search, Calendar, User, Tag, ArrowRight } from 'lucide-react';
+import { Search, Calendar, User, Tag, ArrowRight, Link, Check } from 'lucide-react';
 import { format } from 'date-fns';
 import { useLanguage } from '../contexts/LanguageContext';
 
@@ -7,6 +7,16 @@ import { useLanguage } from '../contexts/LanguageContext';
 const newsData = [
   {
     id: 1,
+    title: "Successful Diaspora Picnic Brings Community Together",
+    excerpt: "Over 80 community members gathered at Parque da Bela Vista for an unforgettable afternoon of cultural exchange, delicious food, and meaningful connections that strengthened our diaspora bonds.",
+    content: "The sun was shining and spirits were high as over 80 members of our diaspora community came together on May 31st for what turned out to be one of our most successful events yet—the Diaspora Picnic at Parque da Bela Vista.\n\n**A True Community Potluck**\nThe heart of the event was the incredible potluck spread that showcased the culinary diversity of our community. Tables overflowed with dishes representing countries across Africa and the diaspora: fragrant jollof rice from West Africa, spicy berbere-seasoned dishes from Ethiopia, Cape Verdean cachupa, Angolan muamba, and so much more. The variety was a beautiful representation of our community's rich cultural tapestry.\n\n**Games and Laughter**\nThe afternoon was filled with activities that brought out everyone's playful side. Children and adults alike participated in traditional games, football matches, and impromptu dance sessions. The sound of laughter and multiple languages filled the park as families and friends both old and new connected over shared experiences.\n\n**Meaningful Connections**\nWhat made this event truly special were the connections formed. We witnessed:\n- Recent immigrants meeting established community members who offered practical advice and friendship\n- Children playing together while parents shared parenting experiences in a new country\n- Professionals networking and discovering collaboration opportunities\n- Elders sharing stories and wisdom with younger generations\n- Cultural exchanges as people learned about different African traditions\n\n**Community Support in Action**\nThe event demonstrated the power of community support. Attendees shared resources, job opportunities, housing tips, and childcare arrangements. Several participants mentioned feeling less isolated and more connected to a broader support network after the picnic.\n\n**Celebrating Our Heritage**\nThroughout the afternoon, we celebrated our diverse African heritage through music, storytelling, and cultural sharing. A spontaneous drum circle formed, traditional songs were sung, and stories were shared about homeland traditions and how they're being preserved and adapted in Portugal.\n\n**Family-Friendly Success**\nThe event was particularly successful in bringing together families. Children played safely while parents relaxed and connected, creating the kind of extended community family that many participants had been missing since moving to Portugal.\n\n**Participant Feedback**\n'This felt like home,' shared one participant. 'Being surrounded by people who understand my journey and share similar experiences was exactly what I needed.'\n\nAnother attendee noted: 'My children got to play with other kids who look like them and hear their parents' languages. That representation is so important for their sense of identity.'\n\n**Environmental Consciousness**\nTrue to our community values, the event was organized with environmental consciousness in mind. Participants brought reusable plates and utensils, and we ensured the park was left cleaner than we found it.\n\n**Building for the Future**\nThe success of this picnic has inspired us to make it a regular occurrence. Based on participant feedback, we're planning:\n- Quarterly community picnics\n- Themed cultural celebration picnics\n- Family-focused outdoor activities\n- Collaboration with other community organizations\n- Expansion to different parks around Lisbon\n\n**Gratitude and Recognition**\nWe extend our heartfelt gratitude to all the volunteers who helped organize and set up the event, the families who contributed delicious dishes, and every single person who attended and made the day special. Events like these remind us why community building is at the heart of everything we do.\n\nThe Diaspora Picnic wasn't just an event—it was a celebration of who we are, where we come from, and the beautiful community we're building together in Portugal. Here's to many more gatherings that strengthen our bonds and celebrate our shared journey.",
+    date: new Date(2024, 4, 31), // May 31, 2024
+    author: "Intercâmbio Diáspora Team",
+    category: "Community",
+    image: "https://i.imgur.com/3KJGfwj.jpg"
+  },
+  {
+    id: 2,
     title: "Reflections from Web Summit: Connections, Insights, and Community Building",
     excerpt: "Our experience at Web Summit 2024 highlighted the power of authentic networking, representation in tech, and community-driven innovation within the African diaspora.",
     content: "This year's Web Summit in Lisbon was more than just a tech conference for our community—it was a powerful reminder of the importance of authentic connections and representation in the innovation ecosystem.\n\nKey insights from our participation:\n\n**Authentic Networking Over Transactional Exchanges**\nWhile many attendees focused on quick business card exchanges, we prioritized meaningful conversations that could lead to lasting partnerships. This approach resonated particularly well with other diaspora entrepreneurs and allies who value relationship-building over purely transactional networking.\n\n**Representation Matters in Tech Spaces**\nSeeing diverse faces in leadership positions and innovative startups was inspiring, but it also highlighted how much work remains to be done. Our presence at Web Summit wasn't just about learning—it was about being visible and showing that the African diaspora is actively contributing to Portugal's innovation landscape.\n\n**Community-Driven Innovation**\nMany of the most compelling startups we encountered were solving problems that directly impact communities. This reinforced our belief that innovation is most powerful when it's rooted in real community needs and experiences.\n\n**Building Bridges Between Communities**\nWeb Summit provided unique opportunities to connect with other diaspora communities, Portuguese entrepreneurs, and international visitors. These cross-cultural exchanges are essential for building the inclusive innovation ecosystem we envision for Portugal.\n\n**Looking Forward**\nThe connections made and insights gained at Web Summit will directly benefit our community through new partnerships, mentorship opportunities, and collaborative projects. We're already planning follow-up meetings and exploring ways to bring some of the innovative solutions we discovered to our community members.\n\nEvents like Web Summit remind us that our community's participation in Portugal's tech and innovation scene isn't just beneficial—it's essential for creating a truly inclusive and dynamic ecosystem.",
@@ -16,7 +26,7 @@ const newsData = [
     image: "https://i.imgur.com/7mdxG48.jpg"
   },
   {
-    id: 2,
+    id: 3,
     title: "Celebrating African Restaurants in Lisbon: The Power of Community and Authentic Flavors",
     excerpt: "Exploring how African restaurants in Lisbon serve as more than dining establishments—they're cultural bridges, community spaces, and pillars of economic empowerment.",
     content: "Lisbon's African restaurant scene represents far more than exceptional cuisine—it embodies the resilience, creativity, and community spirit of the African diaspora in Portugal.\n\n**Cultural Bridges in Every Dish**\nEach African restaurant in Lisbon tells a story of heritage preserved and shared. From Cape Verdean cachupa to Angolan muamba, these establishments serve as cultural ambassadors, introducing Portuguese diners to the rich culinary traditions of Africa while providing diaspora communities with tastes of home.\n\n**Community Gathering Spaces**\nBeyond serving food, these restaurants function as informal community centers where:\n- Recent immigrants find familiar faces and advice\n- Families celebrate milestones with traditional foods\n- Cultural events and celebrations take place\n- Business connections and friendships are formed\n- Languages and stories are shared across generations\n\n**Economic Empowerment Through Entrepreneurship**\nAfrican restaurant owners are creating economic opportunities not just for themselves, but for their communities:\n- Employing fellow diaspora members\n- Supporting African food suppliers and importers\n- Contributing to local economies while maintaining cultural authenticity\n- Creating pathways for other aspiring entrepreneurs\n\n**Preserving and Evolving Traditions**\nThese establishments masterfully balance authenticity with adaptation:\n- Maintaining traditional recipes and cooking methods\n- Adapting to local tastes and dietary preferences\n- Training the next generation in culinary traditions\n- Innovating while respecting cultural roots\n\n**Building Cross-Cultural Understanding**\nAfrican restaurants serve as informal cultural education centers, helping Portuguese diners understand and appreciate African cultures through the universal language of food. This cultural exchange builds bridges and breaks down barriers in meaningful ways.\n\n**Supporting Our Community**\nAs Intercâmbio Diáspora, we encourage our community to support these vital establishments. When we dine at African restaurants, we're not just enjoying a meal—we're supporting entrepreneurs, preserving culture, and strengthening our community's economic foundation.\n\nThese restaurants remind us that food is one of our most powerful tools for cultural preservation, community building, and cross-cultural understanding in our adopted home of Portugal.",
@@ -26,7 +36,27 @@ const newsData = [
     image: "https://i.imgur.com/4Y46Pd9.jpg"
   },
   {
-    id: 3,
+    id: 4,
+    title: "Magical Full Moon Beach Gathering Connects Community with Nature",
+    excerpt: "Our August 9th 'Noite de Lua na Praia' brought together community members for a unique evening of childhood games, gratitude rituals, and spiritual connection under the full moon.",
+    content: "Under the luminous glow of the full moon at Praia de São Bruno in Caxias, our community gathered for a truly magical evening that combined spiritual connection, playful nostalgia, and deep community bonding.\n\n**Amplifying Lunar Energy**\nThe August 9th full moon provided the perfect backdrop for our 'Noite de Lua na Praia' event. As the moon rose over the Atlantic, casting silver reflections on the water, over 40 community members came together to harness this powerful lunar energy for personal and collective renewal.\n\n**Childhood Games Under the Stars**\nThe evening began with a series of childhood games that transported participants back to simpler times. The beach echoed with laughter as adults rediscovered the joy of:\n- Traditional African children's games\n- Beach volleyball and football\n- Storytelling circles\n- Sand castle building competitions\n- Traditional songs and chants\n\nThe games served as more than entertainment—they were a bridge connecting us to our childhood memories and cultural roots while creating new memories in our adopted home.\n\n**Gratitude Ritual and Reflection**\nAs the moon reached its peak, the community gathered in a large circle for a powerful gratitude ritual. Participants shared:\n- Appreciation for their journey to Portugal\n- Gratitude for community connections\n- Hopes and intentions for the future\n- Acknowledgment of challenges overcome\n- Celebration of cultural heritage\n\nThe ritual created a sacred space where vulnerability was welcomed and collective strength was felt by all.\n\n**Grounding and Connection**\nTrue to the event's intention, many participants removed their shoes to feel the sand between their toes, literally grounding themselves while strengthening their connection to both the earth and each other. This simple act became a powerful metaphor for staying rooted while adapting to new environments.\n\n**Community Bonding**\nThe unique setting and activities fostered deep connections:\n- New friendships formed over shared childhood memories\n- Intergenerational bonding as elders shared traditional games with younger participants\n- Cultural exchange as people from different African countries taught each other their traditional games\n- Spiritual connections through shared ritual and intention-setting\n\n**Nourishment for Body and Soul**\nParticipants brought light foods and drinks to share, creating an impromptu beach picnic that nourished both body and community spirit. The sharing of food under the moonlight added another layer of connection and care.\n\n**Participant Reflections**\n'I haven't felt this connected to my inner child in years,' shared one participant. 'Playing these games under the full moon with people who understand my journey was healing in ways I didn't expect.'\n\nAnother attendee reflected: 'The combination of nature, community, and ritual created such a powerful experience. I felt both grounded and uplifted at the same time.'\n\n**Environmental Consciousness**\nThe event emphasized our connection to nature and environmental responsibility. Participants were mindful of leaving no trace on the beach, and many commented on how the natural setting enhanced their sense of connection to both the earth and each other.\n\n**Spiritual and Cultural Significance**\nThe full moon has deep significance in many African cultures, representing renewal, reflection, and community gathering. This event honored those traditions while creating new ones in our Portuguese context.\n\n**Planning Future Moon Gatherings**\nThe overwhelming positive response has inspired us to make moon gatherings a regular offering:\n- Quarterly full moon beach gatherings\n- New moon intention-setting circles\n- Seasonal celebration rituals\n- Collaboration with other spiritual and cultural communities\n- Integration of different African spiritual traditions\n\n**Lasting Impact**\nParticipants left the beach with more than just sand in their shoes—they carried with them renewed energy, deeper community connections, and a sense of spiritual grounding that many had been seeking since moving to Portugal.\n\nThe 'Noite de Lua na Praia' reminded us that community building can take many forms, and sometimes the most powerful connections happen when we step away from traditional indoor spaces and allow nature to be our meeting ground.\n\nEvents like these honor our need for both playfulness and spirituality, creating space for the full spectrum of human experience within our diaspora community.",
+    date: new Date(2024, 7, 10), // August 10, 2024 (day after the event)
+    author: "Cultural Programs Coordinator",
+    category: "Cultural",
+    image: "https://imgur.com/oOfmX3A.jpg"
+  },
+  {
+    id: 5,
+    title: "Museum Visit Explores History of Resistance and Liberation in Portugal",
+    excerpt: "Our April 6th visit to the Museu do Aljube provided powerful insights into Portuguese resistance history while fostering meaningful dialogue about freedom, resistance, and diaspora experiences.",
+    content: "On April 6, 2025, over 25 community members joined us for a profound and educational visit to the Museu do Aljube – Resistência e Liberdade, a museum dedicated to the history of resistance against dictatorship in Portugal. This visit provided not only historical education but also created space for meaningful dialogue about resistance, freedom, and our own diaspora experiences.\n\n**Historical Context and Learning**\nThe Museu do Aljube, housed in a former political prison, offered our community a deep dive into Portugal's struggle against the Estado Novo dictatorship (1933-1974). As we walked through the exhibits, participants gained insights into:\n- The mechanisms of political repression and censorship\n- Stories of individual and collective resistance\n- The role of political prisoners and their families\n- The international context of Portugal's liberation struggle\n- The transition to democracy following the Carnation Revolution\n\n**Connecting Past and Present**\nWhat made this visit particularly powerful was how participants connected the historical narratives to contemporary experiences. Many drew parallels between:\n- Historical struggles for freedom and current social justice movements\n- The experience of political exile and modern migration\n- Resistance strategies used in Portugal and those employed in African liberation movements\n- The importance of preserving memory and telling untold stories\n\n**Diaspora Perspectives on Resistance**\nThe museum visit sparked rich discussions about resistance in the African diaspora context. Participants shared:\n- Stories of resistance from their countries of origin\n- Experiences of subtle forms of resistance in daily life as immigrants\n- The role of cultural preservation as a form of resistance\n- How education and community building can be acts of resistance\n- The importance of maintaining identity while integrating into new societies\n\n**Intergenerational Dialogue**\nThe visit brought together community members of different ages, creating opportunities for intergenerational dialogue about:\n- Different experiences of political systems and freedom\n- How historical knowledge informs present-day activism\n- The responsibility of preserving and sharing stories\n- The evolution of resistance movements over time\n\n**Educational Impact**\nParticipants left with a deeper understanding of:\n- Portuguese history and its impact on contemporary society\n- The universal nature of struggles for freedom and dignity\n- The importance of museums and cultural institutions in preserving memory\n- How historical awareness can inform present-day civic engagement\n\n**Community Reflection and Discussion**\nFollowing the museum visit, the group gathered at a nearby café for continued discussion. The conversation covered:\n- Personal reflections on the exhibits and their emotional impact\n- Connections between Portuguese resistance history and African liberation movements\n- The role of storytelling in preserving difficult histories\n- How historical awareness can strengthen community solidarity\n- Plans for future educational and cultural visits\n\n**Participant Feedback**\n'This visit helped me understand Portugal's history in a way that textbooks never could,' shared one participant. 'Seeing the actual spaces where people were imprisoned for their beliefs made the struggle for freedom very real and personal.'\n\nAnother attendee reflected: 'The parallels between the resistance stories we learned about and the struggles in our own countries of origin were striking. It reminded me that the fight for freedom and dignity is universal.'\n\n**Cultural Bridge Building**\nThe visit served as a bridge between Portuguese history and diaspora experiences, helping participants:\n- Better understand the society they now call home\n- Appreciate the freedoms available in contemporary Portugal\n- Connect their own stories to broader narratives of resistance and liberation\n- Develop deeper empathy for all people who have struggled for freedom\n\n**Future Educational Programming**\nThe success of this museum visit has inspired us to develop a regular educational programming series:\n- Monthly visits to museums and cultural sites\n- Historical walking tours of Lisbon\n- Discussions connecting Portuguese and African histories\n- Collaboration with educational institutions and cultural organizations\n- Development of educational resources for community members\n\n**Preserving Our Own Stories**\nThe visit also reinforced the importance of preserving and sharing our own community stories. Just as the museum preserves the memory of Portuguese resistance, we recognized our responsibility to document and share diaspora experiences for future generations.\n\n**Building Historical Consciousness**\nEvents like this museum visit are essential for building historical consciousness within our community. Understanding the history of our adopted home helps us:\n- Navigate contemporary Portuguese society with greater awareness\n- Appreciate the democratic freedoms we now enjoy\n- Connect our experiences to broader historical narratives\n- Develop informed perspectives on current social and political issues\n\nThe visit to the Museu do Aljube was more than an educational outing—it was an opportunity for our community to engage with history, reflect on our own experiences, and strengthen our understanding of the complex relationship between past and present, resistance and freedom, memory and identity.",
+    date: new Date(2025, 3, 7), // April 7, 2025 (day after the event)
+    author: "Educational Programs Coordinator",
+    category: "Education",
+    image: "https://i.imgur.com/T15A3ek.jpg"
+  },
+  {
+    id: 6,
     title: "African Lisbon Tour: Discovering Hidden Heritage in the Heart of the City",
     excerpt: "Our guided tour through Lisbon revealed the rich African heritage woven into the city's fabric, connecting past and present through stories, sites, and community.",
     content: "On March 22nd, over 30 community members and allies joined us for an eye-opening journey through Lisbon's African heritage. Led by our knowledgeable community guide Naky, the African Lisbon Tour exceeded all expectations, revealing layers of history and culture that many participants had never encountered before.\n\n**Uncovering Hidden Stories**\nThe tour began in the historic center of Lisbon, where we explored sites that tell the complex story of African presence in Portugal. From colonial-era monuments to contemporary cultural spaces, each stop provided context for understanding how African communities have shaped and been shaped by this city.\n\nParticipants were particularly moved by learning about the contributions of African communities to Lisbon's development, stories that are often overlooked in mainstream historical narratives. The tour highlighted both historical injustices and the resilience and creativity of African communities throughout the centuries.\n\n**Contemporary African Lisbon**\nBeyond historical sites, we visited vibrant neighborhoods where African diaspora communities thrive today. We stopped by African-owned businesses, cultural centers, and community gathering spaces that serve as modern anchors for diaspora life in Lisbon.\n\nThe tour included visits to:\n- Historic sites with African connections\n- Contemporary African cultural spaces\n- Community businesses and gathering places\n- Art installations celebrating African heritage\n- Neighborhoods with significant diaspora populations\n\n**Community Connections**\nWhat made this tour special wasn't just the information shared, but the connections formed. Participants included recent immigrants, long-time residents, Portuguese allies, and international visitors. The diversity of perspectives enriched every discussion and created opportunities for meaningful cultural exchange.\n\nMany participants expressed surprise at how much African heritage exists in Lisbon and how interconnected the stories are with broader Portuguese history. The tour provided a framework for understanding contemporary diaspora experiences within this historical context.\n\n**Looking Forward**\nThe success of this tour has inspired us to make it a regular offering. We're planning monthly African heritage tours, each focusing on different aspects of the community's presence in Lisbon. Future tours will explore themes like music and arts, entrepreneurship, and family stories.\n\nParticipant feedback was overwhelmingly positive, with many requesting more opportunities to explore and celebrate African heritage in Portugal. This tour reminded us of the power of storytelling and community-led education in building understanding and pride.\n\nEvents like these strengthen our community by helping us understand our place in Lisbon's ongoing story while celebrating the contributions we continue to make to this city we call home.",
@@ -165,6 +195,7 @@ const News = () => {
   const [searchTerm, setSearchTerm] = useState("");
   const [selectedCategory, setSelectedCategory] = useState("All");
   const [selectedArticle, setSelectedArticle] = useState<number | null>(null);
+  const [copiedArticleId, setCopiedArticleId] = useState<number | null>(null);
 
   // Filter news based on search term and category
   const filterNews = (events: typeof newsData) => {
@@ -177,6 +208,76 @@ const News = () => {
   };
 
   const filteredNews = filterNews(newsData);
+
+  // Copy link functionality
+  const copyArticleLink = async (articleId: number, articleTitle: string) => {
+    try {
+      // Create a shareable URL for the article
+      const articleUrl = `${window.location.origin}/news#article-${articleId}`;
+      
+      // Try to use the modern clipboard API
+      if (navigator.clipboard && window.isSecureContext) {
+        await navigator.clipboard.writeText(articleUrl);
+      } else {
+        // Fallback for older browsers
+        const textArea = document.createElement('textarea');
+        textArea.value = articleUrl;
+        textArea.style.position = 'fixed';
+        textArea.style.left = '-999999px';
+        textArea.style.top = '-999999px';
+        document.body.appendChild(textArea);
+        textArea.focus();
+        textArea.select();
+        document.execCommand('copy');
+        textArea.remove();
+      }
+      
+      // Show success feedback
+      setCopiedArticleId(articleId);
+      setTimeout(() => setCopiedArticleId(null), 2000);
+      
+    } catch (err) {
+      console.error('Failed to copy link:', err);
+      // Fallback: show the URL in an alert
+      const articleUrl = `${window.location.origin}/news#article-${articleId}`;
+      alert(`Copy this link: ${articleUrl}`);
+    }
+  };
+
+  // Social sharing functions
+  const shareToFacebook = (article: typeof newsData[0]) => {
+    const url = `${window.location.origin}/news#article-${article.id}`;
+    const shareUrl = `https://www.facebook.com/sharer/sharer.php?u=${encodeURIComponent(url)}&quote=${encodeURIComponent(article.title)}`;
+    window.open(shareUrl, '_blank', 'width=600,height=400');
+  };
+
+  const shareToTwitter = (article: typeof newsData[0]) => {
+    const url = `${window.location.origin}/news#article-${article.id}`;
+    const text = `${article.title} - ${article.excerpt}`;
+    const shareUrl = `https://twitter.com/intent/tweet?text=${encodeURIComponent(text)}&url=${encodeURIComponent(url)}`;
+    window.open(shareUrl, '_blank', 'width=600,height=400');
+  };
+
+  const shareToLinkedIn = (article: typeof newsData[0]) => {
+    const url = `${window.location.origin}/news#article-${article.id}`;
+    const shareUrl = `https://www.linkedin.com/sharing/share-offsite/?url=${encodeURIComponent(url)}`;
+    window.open(shareUrl, '_blank', 'width=600,height=400');
+  };
+
+  const shareToWhatsApp = (article: typeof newsData[0]) => {
+    const url = `${window.location.origin}/news#article-${article.id}`;
+    const text = `${article.title}\n\n${article.excerpt}\n\nRead more: ${url}`;
+    const shareUrl = `https://wa.me/?text=${encodeURIComponent(text)}`;
+    window.open(shareUrl, '_blank');
+  };
+
+  const shareViaEmail = (article: typeof newsData[0]) => {
+    const url = `${window.location.origin}/news#article-${article.id}`;
+    const subject = `Check out this article: ${article.title}`;
+    const body = `I thought you might be interested in this article from Intercâmbio Diáspora:\n\n${article.title}\n\n${article.excerpt}\n\nRead the full article here: ${url}`;
+    const mailtoUrl = `mailto:?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+    window.location.href = mailtoUrl;
+  };
 
   return (
     <div className="bg-gray-50 min-h-screen">
