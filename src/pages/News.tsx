@@ -112,7 +112,7 @@ const newsData = [
     date: new Date(2024, 7, 10), // August 10, 2024 (day after the event)
     author: "Cultural Programs Coordinator",
     category: "Cultural",
-    image: "https://imgur.com/undefined.jpg"
+    image: "https://imgur.com/Y6RlDNo.jpg"
   },
   {
     id: 5,
@@ -132,7 +132,7 @@ const newsData = [
     date: new Date(2024, 2, 23), // March 23, 2024 (day after the event)
     author: "Intercâmbio Diáspora Team",
     category: "Culture",
-    image: "https://imgur.com/undefined.jpg"
+    image: "https://imgur.com/PsIVblJ.jpg"
   },
   {
     id: 2,
@@ -192,18 +192,18 @@ const newsData = [
     date: new Date(2025, 2, 6), // March 6, 2025
     author: "Intercâmbio Diáspora Team",
     category: "Community",
-    image: "https://i.imgur.com/fSh8uVQ.jpg"
+    image: "https://imgur.com/hhAm9aK.jpg"
   },
   {
     id: 10,
-    title: "Toneca Tomás Inspires at Lisbon Book Signing",
-    excerpt: "Community members gathered at Associação Caboverdeana to celebrate the release of 'Liberation of Black African Consciousness' and honor African unity.",
-    content: "On March 6th, Associação Caboverdeana in Lisbon hosted a powerful evening with author Toneca Tomás for the signing and celebration of the book *Liberation of Black African Consciousness*.\n\n**A Gathering of Minds and Spirits**\nThe event brought together Africans from diverse backgrounds to reflect on Black consciousness, liberation, and the power of reclaiming our stories. Attendees shared in the excitement of Toneca Tomás' work, which explores the ongoing journey toward empowerment and freedom.\n\n**Celebrating Black African Consciousness**\nMore than a book signing, the evening became a celebration of identity, unity, and critical thought. Conversations sparked around the importance of literature in preserving history, expanding mindsets, and strengthening collective purpose within the diaspora.\n\n**Strengthening the Community**\nParticipants described the event as both intellectual and emotional, noting how important it is to have spaces in Lisbon that center African voices. The gathering also served as a networking opportunity for professionals, creatives, and community leaders looking to build connections rooted in shared values.\n\n**Looking Forward**\nThe success of this event reaffirms the importance of cultural and literary gatherings within the diaspora. Toneca Tomás' words continue to inspire, encouraging us all to stay grounded in consciousness and unity.\n\nWe thank Toneca Tomás, Associação Caboverdeana, and the community members who came out in support. The book signing was more than an event—it was a moment of reflection, celebration, and collective awakening.",
-    date: new Date(2025, 2, 6), // March 6, 2025
-    author: "Intercâmbio Diáspora Team",
-    category: "Community",
-    image: "https://imgur.com/8duHj80.jpg"
-  }
+  title: "Mental Health is Wealth: Reignwel Hosts First Cross-Cultural Meetup",
+  excerpt: "Community members came together in Lisbon for a powerful bilingual conversation on mental health, healing practices, and the launch of the Reignwel App.",
+  content: "On January 25th, 2025, the diaspora community gathered in Lisbon for the first-ever Reignwel Meetup: *Saúde mental é riqueza | Mental Health is Wealth*. This special event, organized in partnership with Intercâmbio Cultural and supported by local sponsors, opened space for honest conversations about mental health within the diaspora.\n\n**A Safe and Inclusive Space**\nConducted in both Portuguese and English, the meetup welcomed therapists, coaches, mentors, spiritual advisors, holistic healers, and community members. The goal was clear: to normalize mental health conversations while offering culturally relevant tools and practices.\n\n**Intentional Healing and Shared Wisdom**\nSpeakers and participants shared insights on therapy, intentional healing, and self-care practices that resonate within diaspora contexts. Stories of resilience were exchanged, and participants found comfort in learning that healing can be collective as much as it is personal.\n\n**The Reignwel App Launch**\nOne of the highlights of the evening was the official launch of the Reignwel App—a groundbreaking platform using AI to help users personalize their mental health journeys. This new tool represents a forward-looking blend of culture, technology, and wellness.\n\n**Community Impact**\nThe event underscored the importance of prioritizing mental well-being as a form of wealth and empowerment. Participants left not only with practical resources but also with renewed confidence that the diaspora can thrive when mental health is at the center.\n\n**Looking Ahead**\nThis first meetup is only the beginning. Reignwel aims to host more conversations, workshops, and collaborations that place mental health at the heart of community building.\n\nWe extend gratitude to all facilitators, supporters, and attendees who made this gathering a success. Together, we are rewriting the narrative: within the diaspora, mental health truly is wealth.",
+  date: new Date(2025, 0, 25), // January 25, 2025
+  author: "Intercâmbio Diáspora Team",
+  category: "Community",
+  image: "https://imgur.com/8duHj80.jpg"
+},
 ];
 
 // Available categories for filtering
