@@ -8,12 +8,12 @@ const newsData = [
   {
     id: 1,
     title: "Successful Diaspora Picnic Brings Community Together",
-    excerpt: "Over 80 community members gathered at Parque da Bela Vista for an unforgettable afternoon of cultural exchange, delicious food, and meaningful connections that strengthened our diaspora bonds.",
-    content: "The sun was shining and spirits were high as over 80 members of our diaspora community came together on May 31st for what turned out to be one of our most successful events yet—the Diaspora Picnic at Parque da Bela Vista.\n\n**A True Community Potluck**\nThe heart of the event was the incredible potluck spread that showcased the culinary diversity of our community. Tables overflowed with dishes representing countries across Africa and the diaspora: fragrant jollof rice from West Africa, spicy berbere-seasoned dishes from Ethiopia, Cape Verdean cachupa, Angolan muamba, and so much more. The variety was a beautiful representation of our community's rich cultural tapestry.\n\n**Games and Laughter**\nThe afternoon was filled with activities that brought out everyone's playful side. Children and adults alike participated in traditional games, football matches, and impromptu dance sessions. The sound of laughter and multiple languages filled the park as families and friends both old and new connected over shared experiences.\n\n**Meaningful Connections**\nWhat made this event truly special were the connections formed. We witnessed:\n- Recent immigrants meeting established community members who offered practical advice and friendship\n- Children playing together while parents shared parenting experiences in a new country\n- Professionals networking and discovering collaboration opportunities\n- Elders sharing stories and wisdom with younger generations\n- Cultural exchanges as people learned about different African traditions\n\n**Community Support in Action**\nThe event demonstrated the power of community support. Attendees shared resources, job opportunities, housing tips, and childcare arrangements. Several participants mentioned feeling less isolated and more connected to a broader support network after the picnic.\n\n**Celebrating Our Heritage**\nThroughout the afternoon, we celebrated our diverse African heritage through music, storytelling, and cultural sharing. A spontaneous drum circle formed, traditional songs were sung, and stories were shared about homeland traditions and how they're being preserved and adapted in Portugal.\n\n**Family-Friendly Success**\nThe event was particularly successful in bringing together families. Children played safely while parents relaxed and connected, creating the kind of extended community family that many participants had been missing since moving to Portugal.\n\n**Participant Feedback**\n'This felt like home,' shared one participant. 'Being surrounded by people who understand my journey and share similar experiences was exactly what I needed.'\n\nAnother attendee noted: 'My children got to play with other kids who look like them and hear their parents' languages. That representation is so important for their sense of identity.'\n\n**Environmental Consciousness**\nTrue to our community values, the event was organized with environmental consciousness in mind. Participants brought reusable plates and utensils, and we ensured the park was left cleaner than we found it.\n\n**Building for the Future**\nThe success of this picnic has inspired us to make it a regular occurrence. Based on participant feedback, we're planning:\n- Quarterly community picnics\n- Themed cultural celebration picnics\n- Family-focused outdoor activities\n- Collaboration with other community organizations\n- Expansion to different parks around Lisbon\n\n**Gratitude and Recognition**\nWe extend our heartfelt gratitude to all the volunteers who helped organize and set up the event, the families who contributed delicious dishes, and every single person who attended and made the day special. Events like these remind us why community building is at the heart of everything we do.\n\nThe Diaspora Picnic wasn't just an event—it was a celebration of who we are, where we come from, and the beautiful community we're building together in Portugal. Here's to many more gatherings that strengthen our bonds and celebrate our shared journey.",
+    excerpt: "Over 80 community members gathered at Parque da Bela Vista for an afternoon of food, music, and connection that strengthened our bonds.",
+    content: "On May 31st, the sun shone over Parque da Bela Vista as more than 80 members of our diaspora family came together for a joyful community picnic.\n\n**A Shared Table**\nThe potluck was the heart of the day, with dishes from across Africa and the diaspora—jollof rice, cachupa, muamba, berbere-seasoned stews, and more. Each dish told a story and reflected our cultural diversity.\n\n**Fun and Connection**\nPeople from diffrent countries played games, share food, and danced together, while conversations in many languages filled the park. New friendships were made, elders shared wisdom, and families found comfort in community support.\n\n**Celebrating Heritage**\nMusic, storytelling, and a spontaneous drum circle reminded us of our shared roots and the traditions we continue to carry in Portugal.\n\n**Looking Ahead**\nThe success of this gathering has inspired plans for regular community picnics, themed celebrations, and family activities across Lisbon.\n\nWe thank all the volunteers, families, and participants who made the day unforgettable. The Diaspora Picnic was more than an event—it was a celebration of who we are and the strong community we're building together.",
     date: new Date(2024, 4, 31), // May 31, 2024
     author: "Intercâmbio Diáspora Team",
     category: "Community",
-    image: "https://i.imgur.com/3KJGfwj.jpg"
+    image: "https://imgur.com/aFewmTX.jpg"
   },
   {
     id: 2,
@@ -23,7 +23,7 @@ const newsData = [
     date: new Date(2024, 10, 20), // November 20, 2024
     author: "Intercâmbio Diáspora Team",
     category: "Professional Development",
-    image: "https://i.imgur.com/7mdxG48.jpg"
+    image: "https://imgur.com/A32HAcG.jpg"
   },
   {
     id: 13,
@@ -92,7 +92,7 @@ const newsData = [
     author: "Community Reporter",
     date: new Date(2023, 11, 10), // December 10, 2023 (two days after event)
     category: "Community",
-    image: "https://i.imgur.com/j7O5Vuv.jpg"
+    image: "https://imgur.com/9AW7riB.jpg"
   },
   {
     id: 3,
@@ -102,7 +102,7 @@ const newsData = [
     date: new Date(2024, 10, 15), // November 15, 2024
     author: "Intercâmbio Diáspora Team",
     category: "Culture",
-    image: "https://i.imgur.com/4Y46Pd9.jpg"
+    image: "https://imgur.com/q3JhdT8.jpg"
   },
   {
     id: 4,
@@ -112,7 +112,7 @@ const newsData = [
     date: new Date(2024, 7, 10), // August 10, 2024 (day after the event)
     author: "Cultural Programs Coordinator",
     category: "Cultural",
-    image: "https://imgur.com/oOfmX3A.jpg"
+    image: "https://imgur.com/undefined.jpg"
   },
   {
     id: 5,
@@ -122,7 +122,7 @@ const newsData = [
     date: new Date(2025, 3, 7), // April 7, 2025 (day after the event)
     author: "Educational Programs Coordinator",
     category: "Education",
-    image: "https://i.imgur.com/T15A3ek.jpg"
+    image: "https://imgur.com/tlNMF5I.jpg"
   },
   {
     id: 6,
@@ -132,17 +132,17 @@ const newsData = [
     date: new Date(2024, 2, 23), // March 23, 2024 (day after the event)
     author: "Intercâmbio Diáspora Team",
     category: "Culture",
-    image: "https://i.imgur.com/Vhmiy5j.jpg"
+    image: "https://imgur.com/undefined.jpg"
   },
   {
-    id: 4,
-    title: "Language Exchange Success: Building Bridges Through Conversation",
-    excerpt: "Our March 18th Language Exchange & Cultural Meetup brought together Portuguese and English speakers for an evening of learning, laughter, and meaningful connections.",
-    content: "The Intercâmbio Learning Center buzzed with energy on March 18th as over 25 participants gathered for our Language Exchange & Cultural Meetup. The evening perfectly embodied our mission of building bridges through authentic cultural and linguistic exchange.\n\n**Breaking Down Language Barriers**\nThe event paired Portuguese native speakers with English speakers in structured conversation groups, creating a supportive environment for language practice. What started as tentative exchanges quickly evolved into animated discussions about everything from daily life in Lisbon to cultural traditions from around the world.\n\nParticipants appreciated the structured approach that included:\n- Guided conversation starters\n- Cultural context explanations\n- Informal practice time\n- Group discussions on shared experiences\n- Resource sharing for continued learning\n\n**Cultural Exchange Beyond Language**\nWhile language practice was the primary focus, the evening naturally evolved into broader cultural exchange. Participants shared stories about their journeys to Portugal, discussed cultural differences and similarities, and found common ground in their experiences as part of diverse communities.\n\nThe African diaspora participants particularly valued the opportunity to practice Portuguese in a culturally sensitive environment where their experiences and perspectives were understood and appreciated. Portuguese participants expressed genuine interest in learning about African cultures and diaspora experiences.\n\n**Building Lasting Connections**\nMany participants exchanged contact information and made plans to continue practicing together outside of our organized events. Several mentioned that the evening helped them feel more confident about using Portuguese in professional and social settings.\n\nOne participant shared: 'This wasn't just about language practice—it was about feeling seen and understood while learning. The cultural context made all the difference in my confidence.'\n\n**Community Impact**\nThe success of this event highlighted the hunger in our community for structured opportunities to improve language skills while maintaining cultural connections. The feedback was overwhelmingly positive, with participants requesting more frequent language exchange opportunities.\n\n**Expanding the Program**\nBased on the enthusiasm and feedback from this event, we're expanding our language exchange program to include:\n- Weekly conversation groups\n- Specialized sessions for different proficiency levels\n- Cultural workshops integrated with language learning\n- Professional Portuguese for career development\n- Family-friendly sessions for parents and children\n\nThe March 18th event reminded us that language learning is most effective when it happens within a supportive community context. By combining linguistic practice with cultural understanding, we're not just helping people communicate better—we're building stronger, more connected communities.\n\nWe're already planning our next language exchange event and looking forward to welcoming both returning participants and new community members to this growing program.",
-    date: new Date(2024, 2, 19), // March 19, 2024 (day after the event)
-    author: "Language Program Coordinator",
-    category: "Education",
-    image: "https://i.imgur.com/uL7QWGB.jpg"
+    id: 2,
+    title: "Black Women in Tech Pre-Web Summit Brings Entrepreneurs Together",
+    excerpt: "Ahead of the Web Summit, Black women in tech and entrepreneurs gathered in Lisbon to share stories, build networks, and highlight the power of diaspora innovation.",
+    content: "In the lead-up to the Web Summit, Lisbon became the stage for a powerful gathering: Black Women in Tech, a pre-summit event that brought together Black entrepreneurs, innovators, and allies for an evening of connection and empowerment.\n\n**A Space for Representation**\nThe event highlighted the importance of visibility and representation in the tech world. Black women founders, developers, and creatives shared their journeys of breaking barriers, building companies, and creating opportunities within the diaspora.\n\n**Inspiring Stories and Shared Wisdom**\nThe conversations went beyond business strategies. Attendees exchanged lessons on resilience, navigating challenges in Europe, and the importance of mentorship. Elders in the community shared insights with younger entrepreneurs, while newcomers gained advice and encouragement from those more established.\n\n**Networking and Collaboration**\nTrue to the spirit of diaspora gatherings, the room was alive with introductions, shared visions, and potential partnerships. Ideas for collaborations emerged—from tech startups to cultural projects—that reflected the creativity and resourcefulness of the community.\n\n**Celebrating Culture and Innovation**\nThe evening was not only about business but also about culture. African and diaspora traditions were woven into the atmosphere through music, food, and storytelling, reminding everyone that innovation is strongest when rooted in identity.\n\n**Looking Ahead**\nThe success of this pre-summit event showed the need for more spaces where Black women in tech and entrepreneurs can thrive together. Plans are already underway to create ongoing meetups, mentorship programs, and collaborations that build on the momentum from this gathering.\n\n**Gratitude and Recognition**\nWe extend our thanks to the organizers, speakers, and every participant who made the event special. This gathering was more than preparation for the Web Summit—it was a statement of presence, resilience, and the future we are building as a diaspora community in tech.",
+    date: new Date(2024, 11, 10), // Example: November 10, 2024
+    author: "Intercâmbio Diáspora Team",
+    category: "Community",
+    image: "https://imgur.com/uL7QWGB.jpg"
   },
   {
     id: 5,
@@ -162,7 +162,7 @@ const newsData = [
     date: new Date(2024, 3, 15),
     author: "Intercâmbio Diáspora Team",
     category: "Events",
-    image: "https://i.imgur.com/eUtTakc.jpg"
+    image: "https://imgur.com/j7O5Vuv.jpg"
   },
   {
     id: 6,
@@ -186,23 +186,23 @@ const newsData = [
   },
   {
     id: 9,
-    title: "Cultural Exchange Workshop Series",
-    excerpt: "Interactive workshops exploring African cultural traditions, music, and art with hands-on activities and community discussions.",
-    content: "Join us for our new Cultural Exchange Workshop Series, designed to celebrate and preserve African cultural traditions through interactive learning experiences. These workshops provide hands-on opportunities to engage with various aspects of African heritage.\n\nWorkshop topics include:\n- Traditional African music and instruments\n- African art and craft techniques\n- Storytelling traditions\n- Culinary heritage\n- Dance and movement\n\nEach workshop is led by community members and cultural practitioners who bring authentic knowledge and passion to their teaching. Participants will not only learn new skills but also connect with others who share an interest in African culture.\n\nThese workshops are open to all community members and allies, creating inclusive spaces for cultural learning and appreciation.",
-    date: new Date(2024, 2, 20),
-    author: "Cultural Programs Team",
-    category: "Culture",
-    image: "https://i.imgur.com/4Y46Pd9.jpg"
+    title: "Toneca Tomás Inspires at Lisbon Book Signing",
+    excerpt: "Community members gathered at Associação Caboverdeana to celebrate the release of 'Liberation of Black African Consciousness' and honor African unity.",
+    content: "On March 6th, Associação Caboverdeana in Lisbon hosted a powerful evening with author Toneca Tomás for the signing and celebration of the book *Liberation of Black African Consciousness*.\n\n**A Gathering of Minds and Spirits**\nThe event brought together Africans from diverse backgrounds to reflect on Black consciousness, liberation, and the power of reclaiming our stories. Attendees shared in the excitement of Toneca Tomás' work, which explores the ongoing journey toward empowerment and freedom.\n\n**Celebrating Black African Consciousness**\nMore than a book signing, the evening became a celebration of identity, unity, and critical thought. Conversations sparked around the importance of literature in preserving history, expanding mindsets, and strengthening collective purpose within the diaspora.\n\n**Strengthening the Community**\nParticipants described the event as both intellectual and emotional, noting how important it is to have spaces in Lisbon that center African voices. The gathering also served as a networking opportunity for professionals, creatives, and community leaders looking to build connections rooted in shared values.\n\n**Looking Forward**\nThe success of this event reaffirms the importance of cultural and literary gatherings within the diaspora. Toneca Tomás' words continue to inspire, encouraging us all to stay grounded in consciousness and unity.\n\nWe thank Toneca Tomás, Associação Caboverdeana, and the community members who came out in support. The book signing was more than an event—it was a moment of reflection, celebration, and collective awakening.",
+    date: new Date(2025, 2, 6), // March 6, 2025
+    author: "Intercâmbio Diáspora Team",
+    category: "Community",
+    image: "https://i.imgur.com/fSh8uVQ.jpg"
   },
   {
     id: 10,
-    title: "Community Networking Event Success",
-    excerpt: "Our recent networking event brought together professionals from diverse backgrounds, creating new opportunities for collaboration and growth.",
-    content: "Our recent Community Networking Event was a tremendous success, bringing together over 100 professionals from the African and Afro-descendant diaspora community. The event created valuable opportunities for connection, collaboration, and professional growth.\n\nHighlights from the event:\n- Professional speed networking sessions\n- Industry-specific discussion groups\n- Mentorship matching opportunities\n- Resource sharing workshops\n- Cultural celebration and entertainment\n\nParticipants represented diverse industries including technology, healthcare, education, arts, and entrepreneurship. Many attendees reported making meaningful connections that have already led to new collaborations and opportunities.\n\nThe success of this event demonstrates the strength and potential of our community when we come together to support each other's professional aspirations.",
-    date: new Date(2024, 2, 15),
-    author: "Professional Development Coordinator",
-    category: "Networking",
-    image: "https://i.imgur.com/AR9vw6I.jpg"
+    title: "Toneca Tomás Inspires at Lisbon Book Signing",
+    excerpt: "Community members gathered at Associação Caboverdeana to celebrate the release of 'Liberation of Black African Consciousness' and honor African unity.",
+    content: "On March 6th, Associação Caboverdeana in Lisbon hosted a powerful evening with author Toneca Tomás for the signing and celebration of the book *Liberation of Black African Consciousness*.\n\n**A Gathering of Minds and Spirits**\nThe event brought together Africans from diverse backgrounds to reflect on Black consciousness, liberation, and the power of reclaiming our stories. Attendees shared in the excitement of Toneca Tomás' work, which explores the ongoing journey toward empowerment and freedom.\n\n**Celebrating Black African Consciousness**\nMore than a book signing, the evening became a celebration of identity, unity, and critical thought. Conversations sparked around the importance of literature in preserving history, expanding mindsets, and strengthening collective purpose within the diaspora.\n\n**Strengthening the Community**\nParticipants described the event as both intellectual and emotional, noting how important it is to have spaces in Lisbon that center African voices. The gathering also served as a networking opportunity for professionals, creatives, and community leaders looking to build connections rooted in shared values.\n\n**Looking Forward**\nThe success of this event reaffirms the importance of cultural and literary gatherings within the diaspora. Toneca Tomás' words continue to inspire, encouraging us all to stay grounded in consciousness and unity.\n\nWe thank Toneca Tomás, Associação Caboverdeana, and the community members who came out in support. The book signing was more than an event—it was a moment of reflection, celebration, and collective awakening.",
+    date: new Date(2025, 2, 6), // March 6, 2025
+    author: "Intercâmbio Diáspora Team",
+    category: "Community",
+    image: "https://imgur.com/8duHj80.jpg"
   }
 ];
 
