@@ -1,134 +1,213 @@
 import React, { useState } from 'react';
-import { Search, Calendar, User, ArrowRight, Share2, Copy, Check } from 'lucide-react';
+import { Search, Calendar, User, Tag, ArrowRight, Link, Check } from 'lucide-react';
 import { format } from 'date-fns';
 import { useLanguage } from '../contexts/LanguageContext';
 
-// News data with consistent formatting - all using plain text with \n\n for paragraphs
+// Updated news data with new latest article
 const newsData = [
   {
     id: 1,
     title: "Successful Diaspora Picnic Brings Community Together",
-    excerpt: "Over 150 members of the African diaspora community gathered for a day of cultural exchange, networking, and celebration at Parque da Bela Vista.",
-    content: "The Intercâmbio Diáspora community came together for an unforgettable afternoon at Parque da Bela Vista, creating lasting connections and celebrating our shared heritage. The event, which took place on May 31st, 2025, exceeded all expectations with over 150 attendees from diverse African backgrounds.\n\nThe picnic featured a rich tapestry of activities designed to foster community bonds and cultural exchange. Families brought traditional dishes from their home countries, creating an incredible feast that showcased the culinary diversity of the African diaspora. From Senegalese thieboudienne to Nigerian jollof rice, Cape Verdean cachupa to Angolan muamba, the variety of flavors told the story of our community's rich heritage.\n\nOne of the highlights was the impromptu music session where community members shared traditional songs and modern African music. Children played together while adults engaged in meaningful conversations about their experiences living in Portugal, sharing advice on everything from navigating bureaucracy to finding the best African grocery stores in Lisbon.\n\n\"This event reminded me why community is so important,\" shared Maria Santos, a participant from Cape Verde. \"Being able to speak in Crioulo with other families while our children played together felt like home.\"\n\nThe success of this picnic demonstrates the growing strength and unity of our community in Portugal. Plans are already underway for the next gathering, with many attendees volunteering to help organize future events.",
-    author: "Community Team",
-    date: new Date(2025, 4, 31),
-    category: "Community Events",
-    image: "https://i.imgur.com/3KJGfwj.jpg",
-    featured: true
+    excerpt: "Over 80 community members gathered at Parque da Bela Vista for an afternoon of food, music, and connection that strengthened our bonds.",
+    content: "On May 31st, the sun shone over Parque da Bela Vista as more than 80 members of our diaspora family came together for a joyful community picnic.\n\n**A Shared Table**\nThe potluck was the heart of the day, with dishes from across Africa and the diaspora—jollof rice, cachupa, muamba, berbere-seasoned stews, and more. Each dish told a story and reflected our cultural diversity.\n\n**Fun and Connection**\nPeople from diffrent countries played games, share food, and danced together, while conversations in many languages filled the park. New friendships were made, elders shared wisdom, and families found comfort in community support.\n\n**Celebrating Heritage**\nMusic, storytelling, and a spontaneous drum circle reminded us of our shared roots and the traditions we continue to carry in Portugal.\n\n**Looking Ahead**\nThe success of this gathering has inspired plans for regular community picnics, themed celebrations, and family activities across Lisbon.\n\nWe thank all the volunteers, families, and participants who made the day unforgettable. The Diaspora Picnic was more than an event—it was a celebration of who we are and the strong community we're building together.",
+    date: new Date(2024, 4, 31), // May 31, 2024
+    author: "Intercâmbio Diáspora Team",
+    category: "Community",
+    image: "https://imgur.com/aFewmTX.jpg"
   },
   {
     id: 2,
     title: "Reflections from Web Summit: Connections, Insights, and Community Building",
     excerpt: "Our experience at Web Summit 2024 highlighted the power of authentic networking, representation in tech, and community-driven innovation within the African diaspora.",
-    content: "This year's Web Summit in Lisbon was more than just a tech conference for our community—it was a powerful reminder of the importance of authentic connections and representation in the innovation ecosystem.\n\nKey insights from our participation:\n\n**Authentic Networking Over Transactional Exchanges**\nWhile many attendees focused on quick business card exchanges, our community members prioritized meaningful conversations that led to genuine partnerships and collaborations. These deeper connections have already resulted in several ongoing projects and mentorship relationships.\n\n**Representation Matters in Tech Spaces**\nSeeing African diaspora entrepreneurs, developers, and innovators on stage and in leadership positions was inspiring for many of our younger community members. It reinforced that technology and innovation are not just accessible to us—we are actively shaping these fields.\n\n**Community-Driven Innovation**\nSeveral startups founded by African diaspora entrepreneurs showcased solutions addressing real challenges faced by immigrant communities, from language learning platforms to financial inclusion tools.\n\n**Building Bridges**\nOur community members served as cultural bridges, facilitating connections between African startups and Portuguese investors, creating opportunities for cross-cultural business relationships.\n\nThe experience reinforced our belief that when diaspora communities come together in professional spaces, we create opportunities not just for individual success, but for collective advancement and positive impact on both our adopted and ancestral homes.",
-    author: "Editorial Team",
-    date: new Date(2024, 10, 15),
-    category: "Community Insights",
-    image: "https://i.imgur.com/7mdxG48.jpg"
-  },
-  {
-    id: 3,
-    title: "Magical Full Moon Beach Gathering Connects Community with Nature",
-    excerpt: "The Noite de Lua na Praia event brought together community members for an evening of gratitude, games, and connection under the full moon at Praia de São Bruno.",
-    content: "Under the luminous glow of the full moon, members of the Intercâmbio Diáspora community gathered at Praia de São Bruno in Caxias for an enchanting evening that perfectly blended cultural tradition with natural wonder.\n\nThe Noite de Lua na Praia event, held on August 9th, created a sacred space where community members could disconnect from the digital world and reconnect with nature, each other, and their inner selves. The evening began with traditional childhood games that transcended cultural boundaries—from Cape Verdean ring games to Nigerian clapping songs, participants shared the joy of play under the starlit sky.\n\nThe highlight of the evening was the gratitude ritual, where community members formed a circle on the sand and shared reflections on their journeys, challenges overcome, and hopes for the future. The sound of waves provided a natural soundtrack as stories were shared in multiple languages—Portuguese, English, Crioulo, Wolof, and others—creating a beautiful tapestry of diaspora experiences.\n\n\"There's something magical about being barefoot in the sand, feeling grounded while looking up at the same moon our ancestors saw,\" reflected Amina Diallo, a participant from Senegal. \"It reminded me that no matter how far we travel, we're all connected by the same sky.\"\n\nThe event emphasized the importance of grounding practices and community wellness. Participants were encouraged to remove their shoes and feel the sand between their toes, a simple act that many described as deeply therapeutic and connecting.\n\nAs the evening concluded with quiet conversations and the gentle sound of waves, many expressed gratitude for having found a community that honors both cultural heritage and personal growth. The success of this gathering has inspired plans for seasonal moon ceremonies throughout the year.",
-    author: "Cultural Events Team",
-    date: new Date(2025, 7, 10),
-    category: "Cultural Events",
-    image: "https://imgur.com/oOfmX3A.jpg"
-  },
-  {
-    id: 4,
-    title: "Museum Visit Explores History of Resistance and Liberation in Portugal",
-    excerpt: "Community members explored Portuguese history and resistance movements at the Museu do Aljube, connecting past struggles with contemporary diaspora experiences.",
-    content: "On April 6th, 2025, members of the Intercâmbio Diáspora community embarked on an educational journey through Portuguese history at the Museu do Aljube – Resistência e Liberdade. This powerful museum visit provided profound insights into Portugal's complex past and its connections to contemporary diaspora experiences.\n\nThe museum, housed in a former political prison, tells the story of resistance against the Estado Novo dictatorship and the fight for freedom and democracy in Portugal. For many community members, walking through these halls sparked important conversations about resistance, liberation, and the ongoing struggle for equality and justice.\n\n\"Learning about the Portuguese resistance movement helped me understand the country's journey toward democracy,\" shared João Mendes, a community member from Angola. \"It also made me reflect on how our own communities have resisted oppression and fought for recognition and rights.\"\n\nThe guided tour highlighted connections between historical resistance movements and contemporary social justice efforts. Community members engaged in thoughtful discussions about how lessons from the past can inform present-day advocacy for immigrant rights, cultural preservation, and social inclusion.\n\nParticularly moving was the section on colonial history and its aftermath, which provided context for understanding the complex relationships between Portugal and African nations. These discussions helped community members process their own family histories and understand the broader historical forces that shaped diaspora experiences.\n\nThe visit concluded with a group reflection session where participants shared how the museum experience connected to their personal stories and community work. Many expressed appreciation for gaining a deeper understanding of Portuguese society and history, knowledge that enhances their ability to navigate and contribute to their adopted home.\n\nThis educational initiative reflects our community's commitment to understanding the full context of our experiences in Portugal, honoring both the struggles and triumphs that have shaped this nation's journey toward inclusivity and democracy.",
-    author: "Educational Programs Team",
-    date: new Date(2025, 3, 7),
-    category: "Educational Events",
-    image: "https://i.imgur.com/ppZR0iC.jpg"
-  },
-  {
-    id: 5,
-    title: "New Partnership Announcement: Expanding Educational Opportunities",
-    excerpt: "Intercâmbio Diáspora announces strategic partnerships with local educational institutions to provide enhanced learning opportunities for community members.",
-    content: "We are excited to announce new partnerships with several educational institutions in Lisbon that will significantly expand learning opportunities for our community members. These collaborations represent a major step forward in our mission to support educational advancement and professional development within the African diaspora.\n\nOur new partnerships include collaborations with language schools offering discounted Portuguese classes, universities providing scholarship information sessions, and professional development centers offering career advancement workshops specifically designed for immigrant communities.\n\nThese partnerships will enable us to offer:\n\n**Enhanced Language Learning Programs**\nStructured Portuguese language courses at multiple levels, from beginner to advanced, with special focus on professional and academic Portuguese.\n\n**Professional Development Workshops**\nCareer advancement sessions covering resume writing, interview skills, networking strategies, and understanding Portuguese workplace culture.\n\n**Educational Pathway Guidance**\nInformation sessions about higher education opportunities, credential recognition processes, and scholarship applications.\n\n**Cultural Integration Support**\nWorkshops that help community members navigate Portuguese social and professional environments while maintaining their cultural identity.\n\nThese initiatives reflect our commitment to empowering community members with the tools and knowledge needed to thrive in Portugal while celebrating and preserving their cultural heritage.",
-    author: "Partnership Team",
-    date: new Date(2025, 2, 20),
-    category: "Partnerships",
-    image: "https://i.imgur.com/ppZR0iC.jpg"
-  },
-  {
-    id: 6,
-    title: "Community Spotlight: Local Business Success Stories",
-    excerpt: "Celebrating the entrepreneurial spirit within our community as local businesses founded by diaspora members continue to thrive and contribute to Portugal's economy.",
-    content: "The entrepreneurial spirit within the Intercâmbio Diáspora community continues to flourish, with numerous businesses founded by community members making significant contributions to Portugal's economy and cultural landscape.\n\nFrom restaurants serving authentic African cuisine to tech startups solving global challenges, our community members are creating businesses that bridge cultures and create opportunities for both diaspora and local communities.\n\n**Featured Success Stories:**\n\n**Mama Africa Restaurant** - Founded by Fatima Kone from Mali, this restaurant in Príncipe Real has become a cultural hub, serving traditional West African dishes while hosting cultural events and live music.\n\n**TechBridge Solutions** - A software development company founded by Samuel Okafor from Nigeria, specializing in fintech solutions for African markets while maintaining operations in Lisbon.\n\n**Afro Hair Studio** - Established by Mariana Silva from Brazil, this salon has become the go-to destination for natural hair care, while also offering workshops on hair care and cultural identity.\n\nThese businesses represent more than economic success—they are cultural bridges that introduce Portuguese society to African traditions, foods, and innovations while providing essential services to diaspora communities.\n\nThe success of these ventures demonstrates the valuable contributions that diaspora entrepreneurs make to Portugal's economy and cultural diversity. Their stories inspire other community members to pursue their entrepreneurial dreams while maintaining strong connections to their cultural roots.",
-    author: "Business Development Team",
-    date: new Date(2025, 2, 10),
-    category: "Business & Economy",
-    image: "https://i.imgur.com/7mdxG48.jpg"
-  },
-  {
-    id: 7,
-    title: "Language Exchange Program Celebrates Six Months of Success",
-    excerpt: "Our weekly language exchange program has facilitated over 200 meaningful connections between Portuguese learners and native speakers, creating lasting friendships and cultural understanding.",
-    content: "Six months ago, we launched our weekly language exchange program with the simple goal of helping community members improve their Portuguese while sharing their own languages and cultures. Today, we celebrate a program that has exceeded all expectations, creating not just language learning opportunities but lasting friendships and deep cultural connections.\n\nThe numbers tell an impressive story: over 200 participants have joined our sessions, representing more than 15 different countries and languages. Each week, an average of 25-30 people gather to practice Portuguese, English, and various African languages in a supportive, friendly environment.\n\n**Program Highlights:**\n\n**Structured Learning Sessions**\nEach meeting includes guided conversation practice, vocabulary building exercises, and cultural sharing activities that make learning engaging and effective.\n\n**Cultural Exchange Component**\nParticipants don't just learn languages—they share stories, traditions, and perspectives that enrich everyone's understanding of different cultures.\n\n**Lasting Friendships**\nMany participants have formed friendships that extend beyond the weekly sessions, with language partners meeting for coffee, attending cultural events together, and supporting each other's integration journey.\n\n**Professional Networking**\nThe program has also become an informal networking space where participants share job opportunities, business connections, and professional advice.\n\n\"I came to improve my Portuguese, but I gained so much more,\" says Ana Rodrigues, a participant from Cape Verde. \"I've made friends from all over Africa and Portugal, and my confidence in speaking Portuguese has grown tremendously.\"\n\nThe success of this program demonstrates the power of peer-to-peer learning and cultural exchange. We're now planning to expand with specialized sessions for different proficiency levels and professional Portuguese workshops.",
-    author: "Education Team",
-    date: new Date(2025, 1, 28),
-    category: "Educational Programs",
-    image: "https://imgur.com/Um1K5jA.jpeg"
-  },
-  {
-    id: 8,
-    title: "Cultural Heritage Month: Celebrating African Traditions in Portugal",
-    excerpt: "February's cultural heritage celebration showcased the rich diversity of African traditions through music, dance, storytelling, and culinary experiences.",
-    content: "February 2025 marked our inaugural Cultural Heritage Month, a celebration that brought together the diverse traditions, stories, and artistic expressions of the African diaspora community in Portugal. Throughout the month, various events highlighted the rich cultural tapestry that our community brings to Portuguese society.\n\nThe month-long celebration featured weekly themed events, each focusing on different aspects of African heritage:\n\n**Week 1: Music and Rhythm**\nTraditional drumming workshops and contemporary African music showcases brought together musicians and music lovers. Participants learned traditional rhythms from various African cultures while contemporary artists performed fusion pieces that blend African and Portuguese influences.\n\n**Week 2: Storytelling and Oral Traditions**\nElders from the community shared traditional stories, proverbs, and historical accounts, while younger members presented contemporary narratives about diaspora experiences. These sessions created powerful intergenerational connections and preserved important cultural knowledge.\n\n**Week 3: Dance and Movement**\nDance workshops featuring traditional and contemporary African dance styles attracted participants of all ages. Professional dancers led sessions in everything from West African traditional dances to modern Afrobeat choreography.\n\n**Week 4: Culinary Heritage**\nCooking workshops and food festivals celebrated the incredible diversity of African cuisines. Community members shared family recipes, cooking techniques, and the cultural significance of traditional dishes.\n\nThe month concluded with a grand celebration that brought together all elements—music, dance, storytelling, and food—in a festival that attracted not only community members but also Portuguese friends and neighbors interested in learning about African cultures.\n\n\"Seeing my children learn traditional dances and hear stories in our native language while living in Portugal fills my heart with joy,\" shared Aminata Diallo, a community member from Guinea-Bissau. \"It's important that they know where they come from while building their future here.\"\n\nThe success of Cultural Heritage Month has established it as an annual tradition, with plans already underway for an even larger celebration next year.",
-    author: "Cultural Programs Team",
-    date: new Date(2025, 1, 15),
-    category: "Cultural Events",
-    image: "https://i.imgur.com/vchikwW.jpg"
-  },
-  {
-    id: 9,
-    title: "Professional Development Workshop Series Launches",
-    excerpt: "New monthly workshop series focuses on career advancement, entrepreneurship, and professional networking for African diaspora professionals in Portugal.",
-    content: "Recognizing the unique challenges and opportunities faced by African diaspora professionals in Portugal, we have launched a comprehensive Professional Development Workshop Series designed to support career advancement and entrepreneurial success.\n\nThe monthly workshop series addresses key areas identified through community surveys and feedback sessions:\n\n**Career Advancement Strategies**\nWorkshops covering resume optimization for the Portuguese job market, interview techniques, and understanding workplace culture and expectations in Portugal.\n\n**Entrepreneurship and Business Development**\nSessions on starting a business in Portugal, understanding legal requirements, accessing funding opportunities, and building networks with local business communities.\n\n**Professional Networking**\nStructured networking events that connect diaspora professionals with established business leaders, mentors, and potential collaborators in various industries.\n\n**Skills Development**\nTechnical and soft skills workshops tailored to current market demands, including digital literacy, project management, and leadership development.\n\nThe inaugural workshop, \"Navigating the Portuguese Job Market,\" attracted over 40 participants and featured presentations from successful diaspora professionals who shared their career journeys and practical advice.\n\n\"Understanding the unwritten rules of Portuguese professional culture was a game-changer for my career,\" shared Carlos Mendes, a software engineer from Angola who participated in the first workshop. \"These sessions provide insights you can't find in any guidebook.\"\n\nGuest speakers have included successful entrepreneurs, HR professionals, and career coaches who provide both practical advice and inspiration. The workshops also feature peer-to-peer learning opportunities where participants share their own experiences and challenges.\n\nUpcoming workshops will focus on digital marketing for small businesses, financial planning for entrepreneurs, and building professional brands in multicultural environments. Registration for all workshops is free for community members, reflecting our commitment to accessible professional development.",
-    author: "Professional Development Team",
-    date: new Date(2025, 1, 5),
+    content: "This year's Web Summit in Lisbon was more than just a tech conference for our community—it was a powerful reminder of the importance of authentic connections and representation in the innovation ecosystem.\n\nKey insights from our participation:\n\n**Authentic Networking Over Transactional Exchanges**\nWhile many attendees focused on quick business card exchanges, we prioritized meaningful conversations that could lead to lasting partnerships. This approach resonated particularly well with other diaspora entrepreneurs and allies who value relationship-building over purely transactional networking.\n\n**Representation Matters in Tech Spaces**\nSeeing diverse faces in leadership positions and innovative startups was inspiring, but it also highlighted how much work remains to be done. Our presence at Web Summit wasn't just about learning—it was about being visible and showing that the African diaspora is actively contributing to Portugal's innovation landscape.\n\n**Community-Driven Innovation**\nMany of the most compelling startups we encountered were solving problems that directly impact communities. This reinforced our belief that innovation is most powerful when it's rooted in real community needs and experiences.\n\n**Building Bridges Between Communities**\nWeb Summit provided unique opportunities to connect with other diaspora communities, Portuguese entrepreneurs, and international visitors. These cross-cultural exchanges are essential for building the inclusive innovation ecosystem we envision for Portugal.\n\n**Looking Forward**\nThe connections made and insights gained at Web Summit will directly benefit our community through new partnerships, mentorship opportunities, and collaborative projects. We're already planning follow-up meetings and exploring ways to bring some of the innovative solutions we discovered to our community members.\n\nEvents like Web Summit remind us that our community's participation in Portugal's tech and innovation scene isn't just beneficial—it's essential for creating a truly inclusive and dynamic ecosystem.",
+    date: new Date(2024, 10, 20), // November 20, 2024
+    author: "Intercâmbio Diáspora Team",
     category: "Professional Development",
-    image: "https://i.imgur.com/7mdxG48.jpg"
+    image: "https://imgur.com/A32HAcG.jpg"
   },
   {
-    id: 10,
-    title: "Youth Leadership Program Empowers Next Generation",
-    excerpt: "New initiative focuses on developing leadership skills among young people in the African diaspora community, preparing them to become future community leaders and advocates.",
-    content: "The launch of our Youth Leadership Program marks an important milestone in our commitment to empowering the next generation of African diaspora leaders in Portugal. This comprehensive program is designed to develop leadership skills, cultural awareness, and civic engagement among young people aged 16-25.\n\nThe program combines mentorship, skill-building workshops, and real-world leadership opportunities:\n\n**Mentorship Component**\nEach participant is paired with an established community leader or professional who provides guidance, support, and career advice throughout the program.\n\n**Leadership Skills Development**\nMonthly workshops cover essential leadership topics including public speaking, project management, conflict resolution, and team building.\n\n**Cultural Identity and Pride**\nSessions focused on understanding and celebrating African heritage while navigating multicultural identities in Portuguese society.\n\n**Civic Engagement**\nOpportunities to participate in community organizing, advocacy efforts, and social justice initiatives that impact diaspora communities.\n\n**Real-World Projects**\nParticipants work on actual community projects, from organizing events to developing social media campaigns, gaining practical experience while contributing to community goals.\n\nThe program's first cohort includes 20 young people from diverse African backgrounds, each bringing unique perspectives and talents to the group. Early activities have included organizing a youth-led cultural showcase and developing a social media strategy to engage young diaspora members.\n\n\"This program is giving me the tools and confidence to make a real difference in my community,\" says Khadija Hassan, a 19-year-old participant from Somalia. \"I'm learning that leadership isn't just about being in charge—it's about serving others and creating positive change.\"\n\nThe Youth Leadership Program represents our investment in the future of the African diaspora community in Portugal. By developing young leaders today, we're ensuring that our community will continue to thrive and advocate for positive change for generations to come.",
-    author: "Youth Programs Team",
-    date: new Date(2024, 11, 20),
-    category: "Youth Programs",
-    image: "https://i.imgur.com/4x5JR34.jpg"
-  },
-  {
-    id: 11,
+    id: 13,
     title: "Cultural Exchange Workshop Celebrates African Heritage and Traditions",
-    excerpt: "Interactive workshop brought together community members to explore African cultural traditions through hands-on activities, music, and storytelling.",
-    content: "The Cultural Exchange Workshop held on February 25th, 2024, at the Community Center in Lisbon was a vibrant celebration of African heritage that brought together over 80 community members for an afternoon of cultural exploration and connection.\n\nThe workshop featured multiple interactive stations where participants could engage with different aspects of African culture:\n\n**Traditional Music and Drumming Circle**\nCommunity members learned traditional rhythms from various African cultures, with experienced drummers teaching techniques and sharing the cultural significance of different beats. The drumming circle became a powerful moment of unity as participants from different countries found common ground in rhythm and music.\n\n**Textile and Craft Workshops**\nArtisans demonstrated traditional textile techniques including kente weaving patterns, batik dyeing, and beadwork. Participants created their own small crafts to take home, learning about the cultural meanings behind different patterns and colors.\n\n**Storytelling Sessions**\nElders from the community shared traditional folktales, proverbs, and historical stories that have been passed down through generations. These sessions were conducted in multiple languages, with translations provided to ensure everyone could participate and learn.\n\n**Dance Demonstrations and Lessons**\nProfessional dancers taught traditional dances from West Africa, East Africa, and Southern Africa, explaining the cultural contexts and occasions for each dance style. The energy was infectious as participants of all ages joined in the movements.\n\n**Cultural Food Tasting**\nA collaborative cooking demonstration featured traditional dishes from different African regions, with community members sharing recipes and cooking techniques while explaining the cultural significance of various ingredients and preparation methods.\n\n\"This workshop reminded me of the richness of our heritage and how important it is to share these traditions with our children and the broader community,\" reflected Mama Diarra, a participant from Mali. \"Seeing young people so engaged with learning about their roots was beautiful.\"\n\nThe workshop also featured an intergenerational component where older community members shared knowledge with younger participants, creating valuable connections and ensuring cultural knowledge continues to be passed down.\n\nThe success of this workshop has led to plans for quarterly cultural exchange events, each focusing on different themes and traditions. The next workshop will explore the intersection of traditional and contemporary African art forms.",
-    author: "Cultural Programs Team",
-    date: new Date(2024, 1, 26),
-    category: "Cultural Events",
+    excerpt: "Interactive workshop brought together community members to explore African cultural traditions, music, and art through hands-on activities and meaningful discussions.",
+    content: `
+      <p>On February 25th, 2024, Intercâmbio Diáspora hosted a vibrant Cultural Exchange Workshop at the Community Center in Lisbon, bringing together over 60 participants for an afternoon of cultural exploration and celebration.</p>
+      
+      <p>The workshop featured multiple interactive stations where participants could engage with different aspects of African cultural heritage. Traditional music demonstrations filled the space with rhythmic beats, while art stations allowed attendees to try their hand at traditional crafts and visual expressions.</p>
+      
+      <p>"This workshop was about more than just learning – it was about feeling connected to our roots and sharing that connection with others," said workshop facilitator Maria Santos. "We saw people of all ages and backgrounds coming together to celebrate the richness of African culture."</p>
+      
+      <p>Highlights of the afternoon included:</p>
+      <ul>
+        <li>Traditional drumming circles led by experienced musicians</li>
+        <li>Textile and craft workshops featuring traditional techniques</li>
+        <li>Storytelling sessions sharing oral traditions and folklore</li>
+        <li>Dance demonstrations and participatory sessions</li>
+        <li>Cultural food tasting featuring dishes from various African countries</li>
+      </ul>
+      
+      <p>Participant João Silva reflected, "I learned so much about traditions I had heard about but never experienced firsthand. The hands-on approach made everything feel real and meaningful."</p>
+      
+      <p>The workshop also served as an educational bridge, helping participants understand the historical and contemporary significance of various cultural practices. Community elders shared their knowledge and experiences, creating intergenerational connections that strengthened the community fabric.</p>
+      
+      <p>"Events like this are essential for preserving our cultural heritage while making it accessible to new generations," noted cultural coordinator Ana Costa. "We're not just maintaining traditions – we're helping them evolve and thrive in our Portuguese context."</p>
+      
+      <p>The success of this workshop has inspired plans for regular cultural education sessions, with the next workshop scheduled to focus on traditional music and its evolution in contemporary contexts.</p>
+    `,
+    author: "Community Reporter",
+    date: new Date(2024, 1, 26), // February 26, 2024 (day after event)
+    category: "Cultural",
     image: "https://i.imgur.com/4x5JR34.jpg"
   },
   {
     id: 12,
     title: "Year-End Community Gathering Reflects on Achievements and Builds Connections",
-    excerpt: "The annual year-end gathering brought together community members to celebrate accomplishments, share stories, and plan for the future.",
-    content: "The Year-End Community Gathering on December 8th, 2023, marked a significant milestone for the Intercâmbio Diáspora community as we came together to reflect on a year of growth, connection, and meaningful impact. Held at the Community Center in Lisbon, the event attracted over 120 community members for an evening of celebration and forward-looking planning.\n\nThe gathering began with a presentation highlighting the year's major achievements:\n\n**Community Growth**\nOur community expanded from 50 active members to over 300, representing countries across Africa and the diaspora. This growth reflects the increasing need for and value of our community connections.\n\n**Successful Events**\nThroughout 2023, we organized 24 events including cultural celebrations, educational workshops, professional networking sessions, and social gatherings, each contributing to stronger community bonds.\n\n**Educational Impact**\nOur language exchange program helped over 150 people improve their Portuguese skills while sharing their own languages and cultures with others.\n\n**Professional Connections**\nNetworking events facilitated numerous job opportunities, business partnerships, and mentorship relationships within the community.\n\nThe evening's highlight was an open mic session where community members shared personal stories of growth, challenges overcome, and goals achieved during the year. These testimonials created powerful moments of connection as people recognized shared experiences and celebrated individual triumphs.\n\n\"Hearing everyone's stories reminded me that we're not just individuals trying to make it in a new country—we're a community supporting each other's dreams,\" shared Patricia Nunes, a community member from Cape Verde.\n\nTraditional music performances throughout the evening featured artists from different African countries, creating a soundtrack that celebrated our diverse heritage. The shared meal included dishes from across Africa, prepared by community members who took pride in sharing their culinary traditions.\n\nThe gathering concluded with collaborative planning sessions where community members contributed ideas for 2024 initiatives. Suggestions included expanded educational programs, cultural festivals, youth mentorship initiatives, and partnerships with local Portuguese organizations.\n\nVolunteers and key contributors were recognized for their dedication to building and sustaining our community. Their efforts throughout the year made possible the events, programs, and connections that define our community experience.\n\nAs we looked toward 2024, the energy and enthusiasm in the room made it clear that our community is not just surviving but thriving, ready to continue building bridges between cultures and supporting each member's journey in Portugal.",
-    author: "Community Leadership Team",
-    date: new Date(2023, 11, 9),
-    category: "Community Events",
-    image: "https://i.imgur.com/j7O5Vuv.jpg"
-  }
+    excerpt: "The December community gathering brought together members to celebrate the year's accomplishments, share stories, and strengthen bonds as we look toward the future.",
+    content: `
+      <p>On December 8th, 2023, Intercâmbio Diáspora concluded the year with a heartwarming community gathering at the Community Center in Lisbon. Over 80 community members came together for an evening of reflection, celebration, and connection.</p>
+      
+      <p>The gathering served as both a celebration of the year's achievements and an opportunity for community members to share their personal stories and experiences. The atmosphere was filled with warmth, laughter, and the sense of belonging that defines the Intercâmbio Diáspora community.</p>
+      
+      <p>"Looking back at this year, I'm amazed by how much our community has grown and the connections we've built," said community organizer Telma Rodriguez. "This gathering reminded us that we're not just individuals living in Portugal – we're a family supporting each other."</p>
+      
+      <p>The evening's program included:</p>
+      <ul>
+        <li>Community achievements presentation highlighting the year's milestones</li>
+        <li>Open mic session for members to share their stories and experiences</li>
+        <li>Traditional music performances by community members</li>
+        <li>Shared meal featuring dishes from various African countries</li>
+        <li>Planning discussions for upcoming 2024 initiatives</li>
+        <li>Recognition of community volunteers and contributors</li>
+      </ul>
+      
+      <p>One of the most moving moments came during the story-sharing session, where recent immigrant Carlos Mendes spoke about finding his place in Portugal through the community. "When I first arrived, I felt lost and disconnected. This community became my anchor, helping me navigate not just the practical aspects of life here, but also maintaining my cultural identity."</p>
+      
+      <p>The gathering also served as a platform for looking ahead to 2024, with community members contributing ideas for new programs, events, and initiatives. The enthusiasm for expanding language exchange programs, cultural workshops, and professional networking opportunities was particularly evident.</p>
+      
+      <p>"What struck me most was the diversity of our community – people from different countries, professions, and life stages, all united by our shared experience and commitment to supporting each other," observed attendee Patricia Oliveira.</p>
+      
+      <p>The evening concluded with a collective commitment to continue building bridges, preserving cultural heritage, and supporting new community members in their journey of integration and belonging.</p>
+      
+      <p>As we entered 2024, the energy and connections forged at this gathering set the foundation for another year of community growth, cultural celebration, and mutual support.</p>
+    `,
+    author: "Community Reporter",
+    date: new Date(2023, 11, 10), // December 24, 2024 (two days after event)
+    category: "Community",
+    image: "https://imgur.com/9AW7riB.jpg"
+  },
+  {
+    id: 3,
+    title: "Celebrating African Restaurants in Lisbon: The Power of Community and Authentic Flavors",
+    excerpt: "Exploring how African restaurants in Lisbon serve as more than dining establishments—they're cultural bridges, community spaces, and pillars of economic empowerment.",
+    content: "Lisbon's African restaurant scene represents far more than exceptional cuisine—it embodies the resilience, creativity, and community spirit of the African diaspora in Portugal.\n\n**Cultural Bridges in Every Dish**\nEach African restaurant in Lisbon tells a story of heritage preserved and shared. From Cape Verdean cachupa to Angolan muamba, these establishments serve as cultural ambassadors, introducing Portuguese diners to the rich culinary traditions of Africa while providing diaspora communities with tastes of home.\n\n**Community Gathering Spaces**\nBeyond serving food, these restaurants function as informal community centers where:\n- Recent immigrants find familiar faces and advice\n- Families celebrate milestones with traditional foods\n- Cultural events and celebrations take place\n- Business connections and friendships are formed\n- Languages and stories are shared across generations\n\n**Economic Empowerment Through Entrepreneurship**\nAfrican restaurant owners are creating economic opportunities not just for themselves, but for their communities:\n- Employing fellow diaspora members\n- Supporting African food suppliers and importers\n- Contributing to local economies while maintaining cultural authenticity\n- Creating pathways for other aspiring entrepreneurs\n\n**Preserving and Evolving Traditions**\nThese establishments masterfully balance authenticity with adaptation:\n- Maintaining traditional recipes and cooking methods\n- Adapting to local tastes and dietary preferences\n- Training the next generation in culinary traditions\n- Innovating while respecting cultural roots\n\n**Building Cross-Cultural Understanding**\nAfrican restaurants serve as informal cultural education centers, helping Portuguese diners understand and appreciate African cultures through the universal language of food. This cultural exchange builds bridges and breaks down barriers in meaningful ways.\n\n**Supporting Our Community**\nAs Intercâmbio Diáspora, we encourage our community to support these vital establishments. When we dine at African restaurants, we're not just enjoying a meal—we're supporting entrepreneurs, preserving culture, and strengthening our community's economic foundation.\n\nThese restaurants remind us that food is one of our most powerful tools for cultural preservation, community building, and cross-cultural understanding in our adopted home of Portugal.",
+    date: new Date(2024, 10, 15), // November 15, 2024
+    author: "Intercâmbio Diáspora Team",
+    category: "Culture",
+    image: "https://imgur.com/q3JhdT8.jpg"
+  },
+  {
+    id: 4,
+    title: "Magical Full Moon Beach Gathering Connects Community with Nature",
+    excerpt: "Our August 9th 'Noite de Lua na Praia' brought together community members for a unique evening of childhood games, gratitude rituals, and spiritual connection under the full moon.",
+    content: "Under the luminous glow of the full moon at Praia de São Bruno in Caxias, our community gathered for a truly magical evening that combined spiritual connection, playful nostalgia, and deep community bonding.\n\n**Amplifying Lunar Energy**\nThe August 9th full moon provided the perfect backdrop for our 'Noite de Lua na Praia' event. As the moon rose over the Atlantic, casting silver reflections on the water, over 40 community members came together to harness this powerful lunar energy for personal and collective renewal.\n\n**Childhood Games Under the Stars**\nThe evening began with a series of childhood games that transported participants back to simpler times. The beach echoed with laughter as adults rediscovered the joy of:\n- Traditional African children's games\n- Beach volleyball and football\n- Storytelling circles\n- Sand castle building competitions\n- Traditional songs and chants\n\nThe games served as more than entertainment—they were a bridge connecting us to our childhood memories and cultural roots while creating new memories in our adopted home.\n\n**Gratitude Ritual and Reflection**\nAs the moon reached its peak, the community gathered in a large circle for a powerful gratitude ritual. Participants shared:\n- Appreciation for their journey to Portugal\n- Gratitude for community connections\n- Hopes and intentions for the future\n- Acknowledgment of challenges overcome\n- Celebration of cultural heritage\n\nThe ritual created a sacred space where vulnerability was welcomed and collective strength was felt by all.\n\n**Grounding and Connection**\nTrue to the event's intention, many participants removed their shoes to feel the sand between their toes, literally grounding themselves while strengthening their connection to both the earth and each other. This simple act became a powerful metaphor for staying rooted while adapting to new environments.\n\n**Community Bonding**\nThe unique setting and activities fostered deep connections:\n- New friendships formed over shared childhood memories\n- Intergenerational bonding as elders shared traditional games with younger participants\n- Cultural exchange as people from different African countries taught each other their traditional games\n- Spiritual connections through shared ritual and intention-setting\n\n**Nourishment for Body and Soul**\nParticipants brought light foods and drinks to share, creating an impromptu beach picnic that nourished both body and community spirit. The sharing of food under the moonlight added another layer of connection and care.\n\n**Participant Reflections**\n'I haven't felt this connected to my inner child in years,' shared one participant. 'Playing these games under the full moon with people who understand my journey was healing in ways I didn't expect.'\n\nAnother attendee reflected: 'The combination of nature, community, and ritual created such a powerful experience. I felt both grounded and uplifted at the same time.'\n\n**Environmental Consciousness**\nThe event emphasized our connection to nature and environmental responsibility. Participants were mindful of leaving no trace on the beach, and many commented on how the natural setting enhanced their sense of connection to both the earth and each other.\n\n**Spiritual and Cultural Significance**\nThe full moon has deep significance in many African cultures, representing renewal, reflection, and community gathering. This event honored those traditions while creating new ones in our Portuguese context.\n\n**Planning Future Moon Gatherings**\nThe overwhelming positive response has inspired us to make moon gatherings a regular offering:\n- Quarterly full moon beach gatherings\n- New moon intention-setting circles\n- Seasonal celebration rituals\n- Collaboration with other spiritual and cultural communities\n- Integration of different African spiritual traditions\n\n**Lasting Impact**\nParticipants left the beach with more than just sand in their shoes—they carried with them renewed energy, deeper community connections, and a sense of spiritual grounding that many had been seeking since moving to Portugal.\n\nThe 'Noite de Lua na Praia' reminded us that community building can take many forms, and sometimes the most powerful connections happen when we step away from traditional indoor spaces and allow nature to be our meeting ground.\n\nEvents like these honor our need for both playfulness and spirituality, creating space for the full spectrum of human experience within our diaspora community.",
+    date: new Date(2024, 7, 10), // August 10, 2025 (day after the event)
+    author: "Cultural Programs Coordinator",
+    category: "Cultural",
+    image: "https://imgur.com/Y6RlDNo.jpg"
+  },
+  {
+    id: 5,
+    title: "Museum Visit Explores History of Resistance and Liberation in Portugal",
+    excerpt: "Our April 6th visit to the Museu do Aljube provided powerful insights into Portuguese resistance history while fostering meaningful dialogue about freedom, resistance, and diaspora experiences.",
+    content: "On April 6, 2025, over 25 community members joined us for a profound and educational visit to the Museu do Aljube – Resistência e Liberdade, a museum dedicated to the history of resistance against dictatorship in Portugal. This visit provided not only historical education but also created space for meaningful dialogue about resistance, freedom, and our own diaspora experiences.\n\n**Historical Context and Learning**\nThe Museu do Aljube, housed in a former political prison, offered our community a deep dive into Portugal's struggle against the Estado Novo dictatorship (1933-1974). As we walked through the exhibits, participants gained insights into:\n- The mechanisms of political repression and censorship\n- Stories of individual and collective resistance\n- The role of political prisoners and their families\n- The international context of Portugal's liberation struggle\n- The transition to democracy following the Carnation Revolution\n\n**Connecting Past and Present**\nWhat made this visit particularly powerful was how participants connected the historical narratives to contemporary experiences. Many drew parallels between:\n- Historical struggles for freedom and current social justice movements\n- The experience of political exile and modern migration\n- Resistance strategies used in Portugal and those employed in African liberation movements\n- The importance of preserving memory and telling untold stories\n\n**Diaspora Perspectives on Resistance**\nThe museum visit sparked rich discussions about resistance in the African diaspora context. Participants shared:\n- Stories of resistance from their countries of origin\n- Experiences of subtle forms of resistance in daily life as immigrants\n- The role of cultural preservation as a form of resistance\n- How education and community building can be acts of resistance\n- The importance of maintaining identity while integrating into new societies\n\n**Intergenerational Dialogue**\nThe visit brought together community members of different ages, creating opportunities for intergenerational dialogue about:\n- Different experiences of political systems and freedom\n- How historical knowledge informs present-day activism\n- The responsibility of preserving and sharing stories\n- The evolution of resistance movements over time\n\n**Educational Impact**\nParticipants left with a deeper understanding of:\n- Portuguese history and its impact on contemporary society\n- The universal nature of struggles for freedom and dignity\n- The importance of museums and cultural institutions in preserving memory\n- How historical awareness can inform present-day civic engagement\n\n**Community Reflection and Discussion**\nFollowing the museum visit, the group gathered at a nearby café for continued discussion. The conversation covered:\n- Personal reflections on the exhibits and their emotional impact\n- Connections between Portuguese resistance history and African liberation movements\n- The role of storytelling in preserving difficult histories\n- How historical awareness can strengthen community solidarity\n- Plans for future educational and cultural visits\n\n**Participant Feedback**\n'This visit helped me understand Portugal's history in a way that textbooks never could,' shared one participant. 'Seeing the actual spaces where people were imprisoned for their beliefs made the struggle for freedom very real and personal.'\n\nAnother attendee reflected: 'The parallels between the resistance stories we learned about and the struggles in our own countries of origin were striking. It reminded me that the fight for freedom and dignity is universal.'\n\n**Cultural Bridge Building**\nThe visit served as a bridge between Portuguese history and diaspora experiences, helping participants:\n- Better understand the society they now call home\n- Appreciate the freedoms available in contemporary Portugal\n- Connect their own stories to broader narratives of resistance and liberation\n- Develop deeper empathy for all people who have struggled for freedom\n\n**Future Educational Programming**\nThe success of this museum visit has inspired us to develop a regular educational programming series:\n- Monthly visits to museums and cultural sites\n- Historical walking tours of Lisbon\n- Discussions connecting Portuguese and African histories\n- Collaboration with educational institutions and cultural organizations\n- Development of educational resources for community members\n\n**Preserving Our Own Stories**\nThe visit also reinforced the importance of preserving and sharing our own community stories. Just as the museum preserves the memory of Portuguese resistance, we recognized our responsibility to document and share diaspora experiences for future generations.\n\n**Building Historical Consciousness**\nEvents like this museum visit are essential for building historical consciousness within our community. Understanding the history of our adopted home helps us:\n- Navigate contemporary Portuguese society with greater awareness\n- Appreciate the democratic freedoms we now enjoy\n- Connect our experiences to broader historical narratives\n- Develop informed perspectives on current social and political issues\n\nThe visit to the Museu do Aljube was more than an educational outing—it was an opportunity for our community to engage with history, reflect on our own experiences, and strengthen our understanding of the complex relationship between past and present, resistance and freedom, memory and identity.",
+    date: new Date(2025, 3, 7), // April 7, 2025 (day after the event)
+    author: "Educational Programs Coordinator",
+    category: "Education",
+    image: "https://imgur.com/tlNMF5I.jpg"
+  },
+  {
+    id: 6,
+    title: "African Lisbon Tour: Discovering Hidden Heritage in the Heart of the City",
+    excerpt: "Our guided tour through Lisbon revealed the rich African heritage woven into the city's fabric, connecting past and present through stories, sites, and community.",
+    content: "On March 22nd, over 30 community members and allies joined us for an eye-opening journey through Lisbon's African heritage. Led by our knowledgeable community guide Naky, the African Lisbon Tour exceeded all expectations, revealing layers of history and culture that many participants had never encountered before.\n\n**Uncovering Hidden Stories**\nThe tour began in the historic center of Lisbon, where we explored sites that tell the complex story of African presence in Portugal. From colonial-era monuments to contemporary cultural spaces, each stop provided context for understanding how African communities have shaped and been shaped by this city.\n\nParticipants were particularly moved by learning about the contributions of African communities to Lisbon's development, stories that are often overlooked in mainstream historical narratives. The tour highlighted both historical injustices and the resilience and creativity of African communities throughout the centuries.\n\n**Contemporary African Lisbon**\nBeyond historical sites, we visited vibrant neighborhoods where African diaspora communities thrive today. We stopped by African-owned businesses, cultural centers, and community gathering spaces that serve as modern anchors for diaspora life in Lisbon.\n\nThe tour included visits to:\n- Historic sites with African connections\n- Contemporary African cultural spaces\n- Community businesses and gathering places\n- Art installations celebrating African heritage\n- Neighborhoods with significant diaspora populations\n\n**Community Connections**\nWhat made this tour special wasn't just the information shared, but the connections formed. Participants included recent immigrants, long-time residents, Portuguese allies, and international visitors. The diversity of perspectives enriched every discussion and created opportunities for meaningful cultural exchange.\n\nMany participants expressed surprise at how much African heritage exists in Lisbon and how interconnected the stories are with broader Portuguese history. The tour provided a framework for understanding contemporary diaspora experiences within this historical context.\n\n**Looking Forward**\nThe success of this tour has inspired us to make it a regular offering. We're planning monthly African heritage tours, each focusing on different aspects of the community's presence in Lisbon. Future tours will explore themes like music and arts, entrepreneurship, and family stories.\n\nParticipant feedback was overwhelmingly positive, with many requesting more opportunities to explore and celebrate African heritage in Portugal. This tour reminded us of the power of storytelling and community-led education in building understanding and pride.\n\nEvents like these strengthen our community by helping us understand our place in Lisbon's ongoing story while celebrating the contributions we continue to make to this city we call home.",
+    date: new Date(2024, 2, 23), // November 2, 2024 (day after the event)
+    author: "Intercâmbio Diáspora Team",
+    category: "Culture",
+    image: "https://imgur.com/PsIVblJ.jpg"
+  },
+  {
+    id: 2,
+    title: "Black Women in Tech Pre-Web Summit Brings Entrepreneurs Together",
+    excerpt: "Ahead of the Web Summit, Black women in tech and entrepreneurs gathered in Lisbon to share stories, build networks, and highlight the power of diaspora innovation.",
+    content: "In the lead-up to the Web Summit, Lisbon became the stage for a powerful gathering: Black Women in Tech, a pre-summit event that brought together Black entrepreneurs, innovators, and allies for an evening of connection and empowerment.\n\n**A Space for Representation**\nThe event highlighted the importance of visibility and representation in the tech world. Black women founders, developers, and creatives shared their journeys of breaking barriers, building companies, and creating opportunities within the diaspora.\n\n**Inspiring Stories and Shared Wisdom**\nThe conversations went beyond business strategies. Attendees exchanged lessons on resilience, navigating challenges in Europe, and the importance of mentorship. Elders in the community shared insights with younger entrepreneurs, while newcomers gained advice and encouragement from those more established.\n\n**Networking and Collaboration**\nTrue to the spirit of diaspora gatherings, the room was alive with introductions, shared visions, and potential partnerships. Ideas for collaborations emerged—from tech startups to cultural projects—that reflected the creativity and resourcefulness of the community.\n\n**Celebrating Culture and Innovation**\nThe evening was not only about business but also about culture. African and diaspora traditions were woven into the atmosphere through music, food, and storytelling, reminding everyone that innovation is strongest when rooted in identity.\n\n**Looking Ahead**\nThe success of this pre-summit event showed the need for more spaces where Black women in tech and entrepreneurs can thrive together. Plans are already underway to create ongoing meetups, mentorship programs, and collaborations that build on the momentum from this gathering.\n\n**Gratitude and Recognition**\nWe extend our thanks to the organizers, speakers, and every participant who made the event special. This gathering was more than preparation for the Web Summit—it was a statement of presence, resilience, and the future we are building as a diaspora community in tech.",
+    date: new Date(2024, 11, 10), // Example: November 10, 2024
+    author: "Intercâmbio Diáspora Team",
+    category: "Community",
+    image: "https://imgur.com/uL7QWGB.jpg"
+  },
+  {
+    id: 5,
+    title: "Community Gathering & Story Circle: The Diapora movie night",
+    excerpt: "March 10th's Community Gathering created a powerful space for storytelling, connection, and celebration of our diverse diaspora experiences.",
+    content: "The Community Center in Lisbon transformed into a warm, welcoming space on March 10th as over 40 community members gathered for our Community Gathering & Story Circle. The evening celebrated the power of storytelling in building connections and preserving our collective experiences as part of the African diaspora in Portugal.\n\n**The Power of Shared Stories**\nThe heart of the evening was our story circle, where community members shared personal experiences about their journeys to Portugal, challenges overcome, and moments of joy and discovery. The stories ranged from humorous cultural misunderstandings to profound reflections on identity and belonging.\n\nEach story was met with understanding nods, supportive comments, and often, shared laughter or tears. The circle created a safe space where vulnerability was welcomed and diverse experiences were celebrated.\n\n**Diverse Voices, Common Themes**\nWhile each story was unique, common themes emerged:\n- The challenge and reward of learning Portuguese\n- Navigating bureaucracy and administrative processes\n- Finding community and building new friendships\n- Maintaining cultural traditions while embracing new ones\n- Professional challenges and successes\n- The importance of family and community support\n\n**Cultural Celebration**\nThe evening wasn't just about sharing challenges—it was also a celebration. We enjoyed:\n- Traditional music from various African countries\n- A potluck dinner featuring dishes from across the diaspora\n- Informal dancing and singing\n- Photo sharing and memory making\n- Resource sharing and mutual support\n\n**Intergenerational Connections**\nOne of the most beautiful aspects of the evening was seeing connections form across generations. Long-time residents shared wisdom and practical advice with recent arrivals, while newer community members brought fresh perspectives and energy.\n\nChildren played together while parents shared experiences, creating the kind of extended community family that many participants had been missing since moving to Portugal.\n\n**Building Support Networks**\nBeyond the formal storytelling, the evening facilitated numerous informal connections. Participants exchanged contact information, offered professional advice, shared housing tips, and made plans for future gatherings.\n\nSeveral participants mentioned that the evening helped them feel less isolated and more connected to a broader community of people who understood their experiences.\n\n**Community Feedback**\n'This is exactly what I needed,' shared one participant. 'Hearing other people's stories made me realize I'm not alone in my experiences, and it gave me hope and practical ideas for my own journey.'\n\nAnother participant noted: 'The combination of storytelling, food, and music created such a warm atmosphere. It felt like being with family.'\n\n**Continuing the Tradition**\nThe success of this gathering has inspired us to make story circles a regular part of our programming. We're planning:\n- Monthly story circles with different themes\n- Intergenerational storytelling events\n- Digital story collection for community archives\n- Storytelling workshops to help people share their experiences\n- Collaboration with local cultural organizations\n\nThe March 10th Community Gathering reminded us that our stories are our strength. By sharing our experiences, we not only support each other but also create a rich tapestry of diaspora life that can inspire and guide future community members.\n\nEvents like these are essential for building the kind of supportive, connected community we all need to thrive in our adopted home of Portugal.",
+    date: new Date(2024, 2, 11), // March 11, 2024 (day after the event)
+    author: "Community Programs Coordinator",
+    category: "Community",
+    image: "https://i.imgur.com/eqADTrh.jpg"
+  },
+  {
+    id: 4,
+    title: "Intercâmbio Diáspora Celebrates African Heritage Day",
+    excerpt: "Join us for a day of cultural celebration, storytelling, and community connection at our African Heritage Day event.",
+    content: "We're excited to announce our upcoming African Heritage Day celebration! This special event will bring together members of the African and Afro-descendant community in Lisbon for a day of cultural exchange, storytelling, and connection.\n\nThe event will feature:\n- Traditional music and dance performances\n- Storytelling sessions\n- Cultural workshops\n- Community networking\n- African cuisine\n\nThis celebration is part of our ongoing commitment to creating spaces where African and Afro-descendant communities can celebrate their heritage, share their stories, and build meaningful connections.\n\nThe event will take place at our community space in Lisbon, and all are welcome to join. Whether you're part of the African diaspora or interested in learning more about African cultures, this event offers a wonderful opportunity for cultural exchange and community building.",
+    date: new Date(2024, 3, 15),
+    author: "Intercâmbio Diáspora Team",
+    category: "Events",
+    image: "https://imgur.com/j7O5Vuv.jpg"
+  },
+  {
+    id: 6,
+    title: "Community Tour: Exploring African Heritage in Lisbon",
+    excerpt: "Join us for a guided tour exploring the rich African history and cultural heritage sites in Lisbon.",
+    content: "Discover the African heritage woven into Lisbon's history with our upcoming community tour! Led by knowledgeable guides from the African diaspora community, this tour offers a unique perspective on the city's historical and contemporary connections to Africa.\n\nThe tour will explore:\n- Historical sites significant to African history in Lisbon\n- Contemporary African cultural spaces\n- Community landmarks\n- Art installations and exhibitions\n\nThis initiative is part of our commitment to highlighting the contributions of African and Afro-descendant communities to Lisbon's cultural landscape. Through these tours, we aim to preserve and share important historical narratives while fostering understanding and appreciation of African heritage.\n\nParticipants will gain insights into both historical and contemporary aspects of African presence in Lisbon, making connections between past and present.",
+    date: new Date(2024, 3, 5),
+    author: "Cultural Programs Team",
+    category: "Culture",
+    image: "https://i.imgur.com/fHIxWQt.jpg"
+  },
+  {
+    id: 7,
+    title: "Professional Development Workshop Series",
+    excerpt: "New workshop series focuses on career development, entrepreneurship, and professional networking for diaspora community members.",
+    content: "We're launching a comprehensive professional development workshop series designed specifically for members of the African and Afro-descendant diaspora community. These workshops address the unique challenges and opportunities faced by our community members in the professional sphere.\n\nThe workshop series includes:\n- Resume writing and interview skills\n- Entrepreneurship in Portugal\n- Professional networking strategies\n- Career transition guidance\n- Leadership development\n\nEach workshop combines practical skills development with cultural awareness and community support. Participants will have opportunities to connect with mentors, share experiences, and build professional networks within the community.\n\nThe series is designed to empower community members with the tools and connections needed for professional success while maintaining cultural authenticity.",
+    date: new Date(2024, 3, 1),
+    author: "Professional Development Coordinator",
+    category: "Career",
+    image: "https://i.imgur.com/1ntgyJg.jpg"
+  },
+  {
+    id: 9,
+    title: "Toneca Tomás Inspires at Lisbon Book Signing",
+    excerpt: "Community members gathered at Associação Caboverdeana to celebrate the release of 'Liberation of Black African Consciousness' and honor African unity.",
+    content: "On March 6th, Associação Caboverdeana in Lisbon hosted a powerful evening with author Toneca Tomás for the signing and celebration of the book *Liberation of Black African Consciousness*.\n\n**A Gathering of Minds and Spirits**\nThe event brought together Africans from diverse backgrounds to reflect on Black consciousness, liberation, and the power of reclaiming our stories. Attendees shared in the excitement of Toneca Tomás' work, which explores the ongoing journey toward empowerment and freedom.\n\n**Celebrating Black African Consciousness**\nMore than a book signing, the evening became a celebration of identity, unity, and critical thought. Conversations sparked around the importance of literature in preserving history, expanding mindsets, and strengthening collective purpose within the diaspora.\n\n**Strengthening the Community**\nParticipants described the event as both intellectual and emotional, noting how important it is to have spaces in Lisbon that center African voices. The gathering also served as a networking opportunity for professionals, creatives, and community leaders looking to build connections rooted in shared values.\n\n**Looking Forward**\nThe success of this event reaffirms the importance of cultural and literary gatherings within the diaspora. Toneca Tomás' words continue to inspire, encouraging us all to stay grounded in consciousness and unity.\n\nWe thank Toneca Tomás, Associação Caboverdeana, and the community members who came out in support. The book signing was more than an event—it was a moment of reflection, celebration, and collective awakening.",
+    date: new Date(2025, 2, 6), // March 6, 2025
+    author: "Intercâmbio Diáspora Team",
+    category: "Community",
+    image: "https://imgur.com/hhAm9aK.jpg"
+  },
+  {
+    id: 10,
+  title: "Mental Health is Wealth: Reignwel Hosts First Cross-Cultural Meetup",
+  excerpt: "Community members came together in Lisbon for a powerful bilingual conversation on mental health, healing practices, and the launch of the Reignwel App.",
+  content: "On January 25th, 2025, the diaspora community gathered in Lisbon for the first-ever Reignwel Meetup: *Saúde mental é riqueza | Mental Health is Wealth*. This special event, organized in partnership with Intercâmbio Cultural and supported by local sponsors, opened space for honest conversations about mental health within the diaspora.\n\n**A Safe and Inclusive Space**\nConducted in both Portuguese and English, the meetup welcomed therapists, coaches, mentors, spiritual advisors, holistic healers, and community members. The goal was clear: to normalize mental health conversations while offering culturally relevant tools and practices.\n\n**Intentional Healing and Shared Wisdom**\nSpeakers and participants shared insights on therapy, intentional healing, and self-care practices that resonate within diaspora contexts. Stories of resilience were exchanged, and participants found comfort in learning that healing can be collective as much as it is personal.\n\n**The Reignwel App Launch**\nOne of the highlights of the evening was the official launch of the Reignwel App—a groundbreaking platform using AI to help users personalize their mental health journeys. This new tool represents a forward-looking blend of culture, technology, and wellness.\n\n**Community Impact**\nThe event underscored the importance of prioritizing mental well-being as a form of wealth and empowerment. Participants left not only with practical resources but also with renewed confidence that the diaspora can thrive when mental health is at the center.\n\n**Looking Ahead**\nThis first meetup is only the beginning. Reignwel aims to host more conversations, workshops, and collaborations that place mental health at the heart of community building.\n\nWe extend gratitude to all facilitators, supporters, and attendees who made this gathering a success. Together, we are rewriting the narrative: within the diaspora, mental health truly is wealth.",
+  date: new Date(2025, 0, 25), // January 25, 2025
+  author: "Intercâmbio Diáspora Team",
+  category: "Community",
+  image: "https://imgur.com/8duHj80.jpg"
+},
 ];
 
-const categories = ["All", "Community Events", "Cultural Events", "Educational Programs", "Professional Development", "Youth Programs", "Partnerships", "Business & Economy", "Community Insights", "Educational Events", "Networking"];
+// Available categories for filtering
+const categories = ["All", "Community", "Events", "Education", "Culture", "Career", "Networking"];
 
 const News = () => {
   const { t } = useLanguage();
@@ -137,103 +216,87 @@ const News = () => {
   const [selectedArticle, setSelectedArticle] = useState<number | null>(null);
   const [copiedArticleId, setCopiedArticleId] = useState<number | null>(null);
 
-  // Filter articles based on search term and category
-  const filteredArticles = newsData.filter(article => {
-    const matchesSearch = article.title.toLowerCase().includes(searchTerm.toLowerCase()) || 
-                         article.excerpt.toLowerCase().includes(searchTerm.toLowerCase());
-    const matchesCategory = selectedCategory === "All" || article.category === selectedCategory;
-    return matchesSearch && matchesCategory;
-  });
+  // Filter news based on search term and category
+  const filterNews = (events: typeof newsData) => {
+    return events.filter(article => {
+      const matchesSearch = article.title.toLowerCase().includes(searchTerm.toLowerCase()) || 
+                          article.excerpt.toLowerCase().includes(searchTerm.toLowerCase());
+      const matchesCategory = selectedCategory === "All" || article.category === selectedCategory;
+      return matchesSearch && matchesCategory;
+    });
+  };
 
-  const copyArticleLink = (articleId: number) => {
-    const url = `${window.location.origin}/news#article-${articleId}`;
-    navigator.clipboard.writeText(url).then(() => {
+  const filteredNews = filterNews(newsData);
+
+  // Copy link functionality
+  const copyArticleLink = async (articleId: number, articleTitle: string) => {
+    try {
+      // Create a shareable URL for the article
+      const articleUrl = `${window.location.origin}/news#article-${articleId}`;
+      
+      // Try to use the modern clipboard API
+      if (navigator.clipboard && window.isSecureContext) {
+        await navigator.clipboard.writeText(articleUrl);
+      } else {
+        // Fallback for older browsers
+        const textArea = document.createElement('textarea');
+        textArea.value = articleUrl;
+        textArea.style.position = 'fixed';
+        textArea.style.left = '-999999px';
+        textArea.style.top = '-999999px';
+        document.body.appendChild(textArea);
+        textArea.focus();
+        textArea.select();
+        document.execCommand('copy');
+        textArea.remove();
+      }
+      
+      // Show success feedback
       setCopiedArticleId(articleId);
       setTimeout(() => setCopiedArticleId(null), 2000);
-    });
-  };
-
-  // Function to render content with proper paragraph formatting
-  const renderContent = (content: string) => {
-    return content.split('\n\n').map((paragraph, index) => {
-      // Handle bold text formatting
-      const formattedParagraph = paragraph.replace(/\*\*(.*?)\*\*/g, '<strong>$1</strong>');
       
-      return (
-        <p 
-          key={index} 
-          className="mb-4 text-gray-700 leading-relaxed"
-          dangerouslySetInnerHTML={{ __html: formattedParagraph }}
-        />
-      );
-    });
+    } catch (err) {
+      console.error('Failed to copy link:', err);
+      // Fallback: show the URL in an alert
+      const articleUrl = `${window.location.origin}/news#article-${articleId}`;
+      alert(`Copy this link: ${articleUrl}`);
+    }
   };
 
-  if (selectedArticle) {
-    const article = newsData.find(a => a.id === selectedArticle);
-    if (!article) return null;
+  // Social sharing functions
+  const shareToFacebook = (article: typeof newsData[0]) => {
+    const url = `${window.location.origin}/news#article-${article.id}`;
+    const shareUrl = `https://www.facebook.com/sharer/sharer.php?u=${encodeURIComponent(url)}&quote=${encodeURIComponent(article.title)}`;
+    window.open(shareUrl, '_blank', 'width=600,height=400');
+  };
 
-    return (
-      <div className="bg-gray-50 min-h-screen">
-        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
-          <button
-            onClick={() => setSelectedArticle(null)}
-            className="mb-6 text-red-600 hover:text-red-800 flex items-center"
-          >
-            ← {t('news.backToNews')}
-          </button>
-          
-          <article className="bg-white rounded-lg shadow-md overflow-hidden">
-            <img 
-              src={article.image} 
-              alt={article.title}
-              className="w-full h-96 object-cover"
-            />
-            <div className="p-8">
-              <div className="flex items-center justify-between mb-6">
-                <div className="flex items-center text-sm text-red-600">
-                  <Calendar className="h-4 w-4 mr-2" />
-                  {format(article.date, "MMMM d, yyyy")}
-                </div>
-                <button
-                  onClick={() => copyArticleLink(article.id)}
-                  className="flex items-center text-gray-500 hover:text-red-600"
-                >
-                  {copiedArticleId === article.id ? (
-                    <>
-                      <Check className="h-4 w-4 mr-1" />
-                      {t('news.copied')}
-                    </>
-                  ) : (
-                    <>
-                      <Share2 className="h-4 w-4 mr-1" />
-                      {t('news.share')}
-                    </>
-                  )}
-                </button>
-              </div>
-              
-              <h1 className="text-3xl font-bold mb-4">{article.title}</h1>
-              
-              <div className="flex items-center mb-6">
-                <div className="w-10 h-10 bg-red-100 rounded-full flex items-center justify-center">
-                  <User className="h-6 w-6 text-red-600" />
-                </div>
-                <div className="ml-3">
-                  <p className="font-medium">{article.author}</p>
-                  <p className="text-sm text-gray-500">{article.category}</p>
-                </div>
-              </div>
-              
-              <div className="prose prose-lg max-w-none">
-                {renderContent(article.content)}
-              </div>
-            </div>
-          </article>
-        </div>
-      </div>
-    );
-  }
+  const shareToTwitter = (article: typeof newsData[0]) => {
+    const url = `${window.location.origin}/news#article-${article.id}`;
+    const text = `${article.title} - ${article.excerpt}`;
+    const shareUrl = `https://twitter.com/intent/tweet?text=${encodeURIComponent(text)}&url=${encodeURIComponent(url)}`;
+    window.open(shareUrl, '_blank', 'width=600,height=400');
+  };
+
+  const shareToLinkedIn = (article: typeof newsData[0]) => {
+    const url = `${window.location.origin}/news#article-${article.id}`;
+    const shareUrl = `https://www.linkedin.com/sharing/share-offsite/?url=${encodeURIComponent(url)}`;
+    window.open(shareUrl, '_blank', 'width=600,height=400');
+  };
+
+  const shareToWhatsApp = (article: typeof newsData[0]) => {
+    const url = `${window.location.origin}/news#article-${article.id}`;
+    const text = `${article.title}\n\n${article.excerpt}\n\nRead more: ${url}`;
+    const shareUrl = `https://wa.me/?text=${encodeURIComponent(text)}`;
+    window.open(shareUrl, '_blank');
+  };
+
+  const shareViaEmail = (article: typeof newsData[0]) => {
+    const url = `${window.location.origin}/news#article-${article.id}`;
+    const subject = `Check out this article: ${article.title}`;
+    const body = `I thought you might be interested in this article from Intercâmbio Diáspora:\n\n${article.title}\n\n${article.excerpt}\n\nRead the full article here: ${url}`;
+    const mailtoUrl = `mailto:?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+    window.location.href = mailtoUrl;
+  };
 
   return (
     <div className="bg-gray-50 min-h-screen">
@@ -250,117 +313,173 @@ const News = () => {
         <div className="bg-white rounded-lg shadow-md p-6 mb-8">
           <div className="flex flex-col md:flex-row gap-4">
             <div className="flex-grow relative">
-              <Search className="absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400" />
+              <div className="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
+                <Search className="h-5 w-5 text-gray-400" />
+              </div>
               <input
                 type="text"
                 placeholder={t('news.search')}
-                className="pl-10 w-full border border-gray-300 rounded-md py-2 px-4 focus:outline-none focus:ring-2 focus:ring-red-500"
+                className="pl-10 pr-4 py-2 border border-gray-300 rounded-md w-full focus:outline-none focus:ring-2 focus:ring-red-500"
                 value={searchTerm}
                 onChange={(e) => setSearchTerm(e.target.value)}
               />
             </div>
-            <select
-              className="border border-gray-300 rounded-md py-2 px-4 focus:outline-none focus:ring-2 focus:ring-red-500"
-              value={selectedCategory}
-              onChange={(e) => setSelectedCategory(e.target.value)}
-            >
-              {categories.map(category => (
-                <option key={category} value={category}>{category}</option>
-              ))}
-            </select>
+            <div className="relative">
+              <div className="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
+                <Tag className="h-5 w-5 text-gray-400" />
+              </div>
+              <select
+                className="pl-10 pr-4 py-2 border border-gray-300 rounded-md w-full md:w-48 focus:outline-none focus:ring-2 focus:ring-red-500 appearance-none"
+                value={selectedCategory}
+                onChange={(e) => setSelectedCategory(e.target.value)}
+              >
+                {categories.map(category => (
+                  <option key={category} value={category}>{category}</option>
+                ))}
+              </select>
+            </div>
           </div>
         </div>
 
         {/* Featured Article */}
-        {filteredArticles.length > 0 && filteredArticles[0].featured && (
-          <div className="bg-white rounded-lg shadow-xl overflow-hidden mb-12">
+        {!selectedArticle && (
+          <div className="bg-white rounded-lg overflow-hidden shadow-md mb-8">
             <div className="md:flex">
               <div className="md:w-1/2">
                 <img 
-                  src={filteredArticles[0].image} 
-                  alt={filteredArticles[0].title}
-                  className="w-full h-96 object-cover"
+                  src={newsData[0].image} 
+                  alt={newsData[0].title} 
+                  className="w-full h-64 md:h-full object-cover"
                 />
               </div>
-              <div className="md:w-1/2 p-8">
-                <div className="flex items-center text-sm text-red-600 mb-4">
-                  <Calendar className="h-4 w-4 mr-2" />
-                  {format(filteredArticles[0].date, "MMMM d, yyyy")}
+              <div className="md:w-1/2 p-6 md:p-8">
+                <div className="flex items-center text-sm text-red-700 font-medium mb-2">
+                  <Calendar className="h-4 w-4 mr-1" />
+                  {format(newsData[0].date, "MMMM d, yyyy")}
                 </div>
-                <h2 className="text-3xl font-bold mb-4">{filteredArticles[0].title}</h2>
-                <div className="flex items-center mb-6">
-                  <div className="w-10 h-10 bg-red-100 rounded-full flex items-center justify-center">
-                    <User className="h-6 w-6 text-red-600" />
-                  </div>
-                  <div className="ml-3">
-                    <p className="font-medium">{filteredArticles[0].author}</p>
-                    <p className="text-sm text-gray-500">{filteredArticles[0].category}</p>
-                  </div>
+                <h2 className="text-2xl font-bold mb-4">{newsData[0].title}</h2>
+                <p className="text-gray-600 mb-6">{newsData[0].excerpt}</p>
+                <div className="flex items-center text-gray-500 mb-6">
+                  <User className="h-4 w-4 mr-1" />
+                  {t('news.by')} {newsData[0].author}
                 </div>
-                <p className="text-gray-600 mb-6">{filteredArticles[0].excerpt}</p>
-                <button
-                  onClick={() => setSelectedArticle(filteredArticles[0].id)}
-                  className="text-red-600 font-medium flex items-center hover:text-red-800"
+                <button 
+                  className="text-red-700 font-medium flex items-center hover:text-red-800"
+                  onClick={() => setSelectedArticle(newsData[0].id)}
                 >
-                  {t('news.readMore')} <ArrowRight className="ml-2 h-4 w-4" />
+                  {t('news.readFullArticle')} <ArrowRight className="ml-2 h-4 w-4" />
                 </button>
               </div>
             </div>
           </div>
         )}
 
-        {/* Articles Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-          {filteredArticles.slice(filteredArticles[0]?.featured ? 1 : 0).map(article => (
-            <div key={article.id} className="bg-white rounded-lg shadow-md overflow-hidden">
-              <img 
-                src={article.image} 
-                alt={article.title}
-                className="w-full h-48 object-cover"
-              />
-              <div className="p-6">
-                <div className="flex items-center text-sm text-red-600 mb-2">
-                  <Calendar className="h-4 w-4 mr-2" />
-                  {format(article.date, "MMMM d, yyyy")}
-                </div>
-                <h3 className="text-xl font-bold mb-2">{article.title}</h3>
-                <div className="flex items-center mb-4">
-                  <div className="w-8 h-8 bg-red-100 rounded-full flex items-center justify-center">
-                    <User className="h-5 w-5 text-red-600" />
+        {/* News Grid */}
+        {!selectedArticle && (
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-12">
+            {filteredNews.slice(1).map(article => (
+              <div 
+                key={article.id} 
+                className="bg-white rounded-lg overflow-hidden shadow-md hover:shadow-lg transition cursor-pointer"
+                onClick={() => setSelectedArticle(article.id)}
+              >
+                <img 
+                  src={article.image} 
+                  alt={article.title} 
+                  className="w-full h-48 object-cover"
+                />
+                <div className="p-6">
+                  <div className="flex items-center text-sm text-red-700 font-medium mb-2">
+                    <Calendar className="h-4 w-4 mr-1" />
+                    {format(article.date, "MMMM d, yyyy")}
                   </div>
-                  <div className="ml-3">
-                    <p className="text-sm font-medium">{article.author}</p>
-                    <p className="text-xs text-gray-500">{article.category}</p>
+                  <h3 className="text-xl font-bold mb-2">{article.title}</h3>
+                  <p className="text-gray-600 mb-4">{article.excerpt}</p>
+                  <div className="flex justify-between items-center">
+                    <div className="flex items-center text-gray-500">
+                      <User className="h-4 w-4 mr-1" />
+                      {t('news.by')} {article.author}
+                    </div>
+                    <span className="inline-block bg-red-100 text-red-800 text-xs px-2 py-1 rounded-full">
+                      {article.category}
+                    </span>
                   </div>
-                </div>
-                <p className="text-gray-600 mb-4 line-clamp-3">{article.excerpt}</p>
-                <div className="flex items-center justify-between">
-                  <button
-                    onClick={() => setSelectedArticle(article.id)}
-                    className="text-red-600 hover:text-red-800 font-medium flex items-center"
-                  >
-                    {t('news.readMore')} <ArrowRight className="ml-1 h-4 w-4" />
-                  </button>
-                  <button
-                    onClick={() => copyArticleLink(article.id)}
-                    className="text-gray-500 hover:text-red-600"
-                  >
-                    {copiedArticleId === article.id ? (
-                      <Check className="h-4 w-4" />
-                    ) : (
-                      <Copy className="h-4 w-4" />
-                    )}
-                  </button>
                 </div>
               </div>
-            </div>
-          ))}
-        </div>
+            ))}
+          </div>
+        )}
 
-        {filteredArticles.length === 0 && (
+        {filteredNews.length === 0 && (
           <div className="text-center py-12">
             <h3 className="text-xl font-medium text-gray-600">{t('news.noArticles')}</h3>
             <p className="mt-2 text-gray-500">{t('news.noArticlesDesc')}</p>
+          </div>
+        )}
+
+        {/* Article Detail View */}
+        {selectedArticle && (
+          <div className="bg-white rounded-lg shadow-md overflow-hidden mb-12">
+            {newsData.filter(article => article.id === selectedArticle).map(article => (
+              <div key={article.id}>
+                <img 
+                  src={article.image} 
+                  alt={article.title} 
+                  className="w-full h-64 md:h-96 object-cover"
+                />
+                <div className="p-6 md:p-8">
+                  <button 
+                    className="text-red-700 font-medium mb-4 flex items-center hover:text-red-800"
+                    onClick={() => setSelectedArticle(null)}
+                  >
+                    {t('news.backToNews')}
+                  </button>
+                  
+                  <div className="flex flex-wrap items-center gap-4 mb-4">
+                    <div className="flex items-center text-sm text-red-700 font-medium">
+                      <Calendar className="h-4 w-4 mr-1" />
+                      {format(article.date, "MMMM d, yyyy")}
+                    </div>
+                    <div className="flex items-center text-sm text-gray-600">
+                      <User className="h-4 w-4 mr-1" />
+                      {t('news.by')} {article.author}
+                    </div>
+                    <span className="inline-block bg-red-100 text-red-800 text-xs px-2 py-1 rounded-full">
+                      {article.category}
+                    </span>
+                  </div>
+                  
+                  <h1 className="text-3xl font-bold mb-6">{article.title}</h1>
+                  
+                  <div className="prose max-w-none">
+                    {article.content.split('\n\n').map((paragraph, index) => (
+                      <p key={index} className="mb-4 text-gray-700">{paragraph}</p>
+                    ))}
+                  </div>
+                  
+                  <div className="mt-8 pt-8 border-t border-gray-200">
+                    <h3 className="text-lg font-semibold mb-4">{t('news.shareArticle')}</h3>
+                    <div className="flex space-x-4">
+                      <button className="bg-red-600 text-white p-2 rounded-full hover:bg-red-700">
+                        <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                          <path fillRule="evenodd" d="M22 12c0-5.523-4.477-10-10-10S2 6.477 2 12c0 4.991 3.657 9.128 8.438 9.878v-6.987h-2.54V12h2.54V9.797c0-2.506 1.492-3.89 3.777-3.89 1.094 0 2.238.195 2.238.195v2.46h-1.26c-1.243 0-1.63.771-1.63 1.562V12h2.773l-.443 2.89h-2.33v6.988C18.343 21.128 22 16.991 22 12z" clipRule="evenodd"></path>
+                        </svg>
+                      </button>
+                      <button className="bg-red-400 text-white p-2 rounded-full hover:bg-red-500">
+                        <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                          <path d="M8.29 20.251c7.547 0 11.675-6.253 11.675-11.675 0-.178 0-.355-.012-.53A8.348 8.348 0 0022 5.92a8.19 8.19 0 01-2.357.646 4.118 4.118 0 001.804-2.27 8.224 8.224 0 01-2.605.996 4.107 4.107 0 00-6.993 3.743 11.65 11.65 0 01-8.457-4.287 4.106 4.106 0 001.27 5.477A4.072 4.072 0 012.8 9.713v.052a4.105 4.105 0 003.292 4.022 4.095 4.095 0 01-1.853.07 4.108 4.108 0 003.834 2.85A8.233 8.233 0 012 18.407a11.616 11.616 0 006.29 1.84"></path>
+                        </svg>
+                      </button>
+                      <button className="bg-green-600 text-white p-2 rounded-full hover:bg-green-700">
+                        <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                          <path fillRule="evenodd" d="M19.812 5.418c.861.23 1.538.907 1.768 1.768C21.998 8.746 22 12 22 12s0 3.255-.418 4.814a2.504 2.504 0 0 1-1.768 1.768c-1.56.419-7.814.419-7.814.419s-6.255 0-7.814-.419a2.505 2.505 0 0 1-1.768-1.768C2 15.255 2 12 2 12s0-3.255.417-4.814a2.507 2.507 0 0 1 1.768-1.768C5.744 5 11.998 5 11.998 5s6.255 0 7.814.418ZM15.194 12 10 15V9l5.194 3Z" clipRule="evenodd"></path>
+                        </svg>
+                      </button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            ))}
           </div>
         )}
       </div>
