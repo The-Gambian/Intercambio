@@ -84,11 +84,11 @@ const Stories = () => {
   return (
     <div className="min-h-screen bg-gray-50">
       {/* Hero Section */}
-      <div className="relative bg-pan-red text-white py-24">
+      <div className="relative bg-pan-red text-white py-16">
         <div className="absolute inset-0 bg-gradient-to-r from-red-900 to-red-700 opacity-90"></div>
         <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <h1 className="text-5xl font-bold mb-6">{t('stories.title')}</h1>
-          <p className="text-xl max-w-3xl mb-8">
+          <h1 className="text-4xl font-bold mb-4">{t('stories.title')}</h1>
+          <p className="text-lg max-w-3xl mb-6">
             {t('stories.subtitle')}
           </p>
           <button 
@@ -101,7 +101,7 @@ const Stories = () => {
       </div>
 
       {/* Featured Story */}
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 -mt-16">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 -mt-12">
         <div className="bg-white rounded-lg shadow-xl overflow-hidden">
           <div className="md:flex">
             <div className="md:w-1/2">
