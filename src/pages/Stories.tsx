@@ -6,47 +6,47 @@ import { useLanguage } from '../contexts/LanguageContext';
 // Featured story data
 const featuredStory = {
   id: 'featured',
-  title: "Finding Home in the Diaspora",
-  author: "Maria Silva",
+  title: "From Gambia to Portugal: Building Bridges Across Cultures",
+  author: "Malik Jallow",
   date: new Date(2024, 3, 15),
-  excerpt: "A journey of cultural identity, community building, and creating connections in Portugal.",
-  content: "When I first arrived in Portugal, I carried with me not just my belongings, but the weight of my cultural identity and the uncertainty of finding my place in a new land...",
-  image: "/community-gathering.jpeg",
+  excerpt: "A co-founder's journey from Banjul to Lisbon, discovering how cultural exchange can create powerful communities that honor heritage while embracing new possibilities.",
+  content: "When I left Gambia for Portugal in 2019, I thought I was simply pursuing better opportunities. What I discovered was something far more profound - the power of diaspora communities to create spaces where we don't have to choose between our heritage and our future.\n\nGrowing up in Banjul, community was everything. Extended families, neighborhood gatherings, shared meals - these weren't just social activities, they were the fabric that held us together. When I arrived in Lisbon, I felt that fabric had been torn. I was successful in my studies and work, but something essential was missing.\n\nThe turning point came during a chance encounter at a Portuguese language class. I met other Africans, Afro-descendants, and allies who shared similar feelings of being caught between worlds. We started meeting informally - sharing meals, practicing Portuguese, talking about our experiences. These gatherings reminded me of the community spirit I grew up with in Gambia, but with a new dimension: we were creating something that honored our diverse backgrounds while building something new together.\n\nThis is how Intercâmbio Diáspora was born. Not from a business plan, but from a genuine need to recreate the sense of belonging that diaspora communities often lose. We realized that our stories - of migration, adaptation, success, and struggle - were not just personal narratives but collective experiences that could inspire and support others.\n\nToday, when I see young Africans at our events finding mentors, or when I watch Portuguese locals learning about African cultures with genuine curiosity and respect, I know we've created something special. We've built a bridge that allows people to cross between cultures without losing themselves.\n\nThe diaspora experience taught me that home isn't just a place you come from - it's also something you can create wherever you are, with whoever shares your vision of community and belonging.",
+  image: "https://i.imgur.com/j7O5Vuv.jpg",
   category: "Personal Journey",
-  tags: ["Identity", "Community", "Culture"]
+  tags: ["Migration", "Community Building", "Cultural Identity", "Gambia", "Founders"]
 };
 
 // Story data for the grid
 const storiesData = [
   {
     id: '1',
-    title: "Building Bridges Through Language",
-    author: "João Santos",
+    title: "From Atlanta to Lisbon: Redefining Home in the African Diaspora",
+    author: "Ebony Washington",
     date: new Date(2024, 3, 10),
-    excerpt: "How learning Portuguese became more than just mastering a language - it became a gateway to understanding my heritage.",
-    image: "/language-exchange.jpeg",
-    category: "Language & Identity",
-    tags: ["Language", "Heritage", "Education"]
+    excerpt: "An African-American co-founder's perspective on finding community and purpose in Portugal while navigating identity, belonging, and the global African diaspora experience.",
+    image: "https://i.imgur.com/eqADTrh.jpg",
+    category: "Diaspora Identity",
+    tags: ["African-American", "Identity", "Community", "USA", "Founders"]
   },
   {
     id: '2',
-    title: "From Brazil to Portugal: A Professional Journey",
-    author: "Ana Costa",
+    title: "The Language of Belonging: Learning Portuguese as Cultural Bridge",
+    author: "Amara Diallo",
     date: new Date(2024, 3, 8),
-    excerpt: "Navigating career transitions and professional growth in a new country while maintaining cultural connections.",
-    image: "/professional-event.jpeg",
-    category: "Professional Growth",
-    tags: ["Career", "Migration", "Professional Life"]
+    excerpt: "How mastering Portuguese became more than language learning - it became a pathway to deeper cultural understanding and community connection in the diaspora.",
+    image: "https://imgur.com/Um1K5jA.jpeg",
+    category: "Language & Integration",
+    tags: ["Language Learning", "Integration", "Cultural Exchange"]
   },
   {
     id: '3',
-    title: "Preserving Traditions Across Borders",
-    author: "Miguel Oliveira",
+    title: "Raising Third Culture Kids: Preserving Heritage in Portugal",
+    author: "Fatima Santos",
     date: new Date(2024, 3, 5),
-    excerpt: "How our community keeps cultural traditions alive while embracing new experiences in Portugal.",
-    image: "/africa-day.png",
-    category: "Cultural Heritage",
-    tags: ["Traditions", "Community", "Culture"]
+    excerpt: "A mother's journey of raising children who are proud of their African heritage while fully integrated into Portuguese society - navigating identity, education, and belonging.",
+    image: "https://i.imgur.com/vchikwW.jpg",
+    category: "Family & Heritage",
+    tags: ["Parenting", "Third Culture Kids", "Heritage", "Education"]
   }
 ];
 
@@ -263,6 +263,65 @@ const Stories = () => {
 
       {/* Story Grid */}
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pb-16">
+        {/* Expanded Story Content for Featured Stories */}
+        <div className="mb-16">
+          <h2 className="text-3xl font-bold text-pan-black mb-8 text-center">Featured Diaspora Stories</h2>
+          
+          {/* Ebony's Story - Expanded */}
+          <div className="bg-white rounded-lg shadow-md overflow-hidden mb-8">
+            <div className="md:flex">
+              <div className="md:w-1/3">
+                <img 
+                  src="https://i.imgur.com/eqADTrh.jpg" 
+                  alt="Ebony Washington"
+                  className="w-full h-64 md:h-full object-cover"
+                />
+              </div>
+              <div className="md:w-2/3 p-8">
+                <div className="flex items-center text-sm text-red-600 mb-2">
+                  <Calendar className="h-4 w-4 mr-2" />
+                  March 10, 2024
+                </div>
+                <h3 className="text-2xl font-bold mb-4">From Atlanta to Lisbon: Redefining Home in the African Diaspora</h3>
+                <div className="flex items-center mb-4">
+                  <div className="w-10 h-10 bg-red-100 rounded-full flex items-center justify-center">
+                    <User className="h-6 w-6 text-red-600" />
+                  </div>
+                  <div className="ml-3">
+                    <p className="font-medium">Ebony Washington</p>
+                    <p className="text-sm text-gray-500">Co-founder, Intercâmbio Diáspora</p>
+                  </div>
+                </div>
+                <div className="text-gray-700 space-y-4">
+                  <p>
+                    "Moving from Atlanta to Lisbon wasn't just a geographical change - it was a journey of rediscovering what it means to be part of the global African diaspora. As an African-American woman, I thought I understood my place in the diaspora narrative. Portugal taught me there was so much more to learn."
+                  </p>
+                  <p>
+                    "In Atlanta, my Blackness was defined by the American experience - civil rights history, Southern culture, specific struggles and triumphs. In Portugal, I encountered Africans from Cape Verde, Angola, Guinea-Bissau, and beyond. Each carried their own stories of colonialism, independence, migration, and resilience. I realized that while our paths were different, our destination was the same: creating spaces where we could thrive while honoring our heritage."
+                  </p>
+                  <p>
+                    "Intercâmbio Diáspora became my way of weaving these diverse threads together. When I see a Cape Verdean grandmother teaching traditional recipes to a young African-American student, or when I watch a Guinean entrepreneur mentor a Portuguese-born Afro-descendant, I see the diaspora in action - not as separate communities, but as one extended family finding each other across oceans and generations."
+                  </p>
+                </div>
+                <div className="flex items-center space-x-4 mt-6">
+                  <button className="flex items-center text-gray-500 hover:text-red-600">
+                    <Heart className="h-5 w-5 mr-1" />
+                    <span>89</span>
+                  </button>
+                  <button className="flex items-center text-gray-500 hover:text-red-600">
+                    <MessageCircle className="h-5 w-5 mr-1" />
+                    <span>23</span>
+                  </button>
+                  <button className="flex items-center text-gray-500 hover:text-red-600">
+                    <Share2 className="h-5 w-5 mr-1" />
+                    <span>{t('common.share')}</span>
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
           {storiesData.map(story => (
             <div key={story.id} className="bg-white rounded-lg shadow-md overflow-hidden">
