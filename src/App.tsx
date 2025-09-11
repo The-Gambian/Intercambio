@@ -28,6 +28,7 @@ function App() {
               <Route path="/events" element={<Events />} />
               <Route path="/news" element={<News />} />
               <Route path="/stories" element={<Stories />} />
+              <Route path="/stories/:storyId" element={<Stories />} />
               <Route path="/discussions" element={<Discussions />} />
               <Route path="/learning-hub" element={<LearningHub />} />
               <Route path="/about" element={<About />} />
