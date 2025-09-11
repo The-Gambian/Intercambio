@@ -5,19 +5,19 @@ import { useLanguage } from '../contexts/LanguageContext';
 
 // Featured stories data with real diaspora experiences
 const featuredStories = [
-  {
-    id: 'malik-story',
-    title: "From Gambia to Portugal: Building Bridges Across Cultures",
-    author: "Malik Jallow",
-    role: "Co-founder, Intercâmbio Diáspora",
-    date: new Date(2024, 3, 15),
-    excerpt: "A co-founder's journey from Banjul to Lisbon, discovering how cultural exchange can create powerful communities that honor heritage while embracing new possibilities.",
-    content: "When I left Gambia for Portugal in 2019, I thought I was simply pursuing better opportunities. What I discovered was something far more profound - the power of diaspora communities to create spaces where we don't have to choose between our heritage and our future.\n\nGrowing up in Banjul, community was everything. Extended families, neighborhood gatherings, shared meals - these weren't just social activities, they were the fabric that held us together. When I arrived in Lisbon, I felt that fabric had been torn. I was successful in my studies and work, but something essential was missing.\n\nThe turning point came during a chance encounter at a Portuguese language class. I met other Africans, Afro-descendants, and allies who shared similar feelings of being caught between worlds. We started meeting informally - sharing meals, practicing Portuguese, talking about our experiences. These gatherings reminded me of the community spirit I grew up with in Gambia, but with a new dimension: we were creating something that honored our diverse backgrounds while building something new together.\n\nThis is how Intercâmbio Diáspora was born. Not from a business plan, but from a genuine need to recreate the sense of belonging that diaspora communities often lose. We realized that our stories - of migration, adaptation, success, and struggle - were not just personal narratives but collective experiences that could inspire and support others.\n\nToday, when I see young Africans at our events finding mentors, or when I watch Portuguese locals learning about African cultures with genuine curiosity and respect, I know we've created something special. We've built a bridge that allows people to cross between cultures without losing themselves.\n\nThe diaspora experience taught me that home isn't just a place you come from - it's also something you can create wherever you are, with whoever shares your vision of community and belonging.",
-    image: "https://i.imgur.com/j7O5Vuv.jpg",
-    category: "Founder Stories",
-    tags: ["Migration", "Community Building", "Cultural Identity", "Gambia", "Founders"],
-    readTime: "5 min read"
-  },
+ {
+  id: 'malik-story',
+  title: "From Banjul to Lisbon: A Journey of Community, Culture, and Creation",
+  author: "Malik Jallow",
+  role: "Co-founder, Intercâmbio Diáspora & Founder, AfrojamLX",
+  date: new Date(2025, 2, 1),
+  excerpt: "From studying abroad to building platforms for culture and connection, Malik’s journey is a story of resilience, creativity, and the power of the diaspora spirit.",
+  content: "My journey began in Banjul, Gambia, where community was always at the center of life. In 2014, I left for Turkey to pursue university studies — my first step into a wider world. Those years shaped me, not only academically, but personally, as I learned how to navigate new languages, cultures, and identities while still holding onto where I came from.\n\nIn 2018, I arrived in Lisbon for an Erasmus exchange. It was supposed to be temporary, but Lisbon had a way of pulling me in. The city’s energy, its mix of cultures, and its deep connections to Africa spoke to something inside me. Later, I returned for a master’s in Big Data and Business Intelligence, which gave me the tools to think critically about systems, innovation, and the future.\n\nBut beyond the studies, what stayed with me was the search for belonging. Like many in the diaspora, I often felt caught between worlds — carrying my Gambian roots while trying to build a new life abroad. In 2023, that search led me to meet Ebony, and together we started Intercâmbio Diáspora. What began as a simple idea — bringing people together through language, culture, and shared experiences — has grown into a community where the African diaspora and allies can connect, learn, and thrive.\n\nAt the same time, my love for music never left me. Music has always been part of my story, and through the AfrojamLX project, I’m working to create spaces where artists can share their voices, build their careers, and connect with audiences. For me, it’s more than music — it’s about building platforms that empower the diaspora to tell our stories on our own terms.\n\nLooking back, I see a thread running through all these experiences: the search for home. From Banjul to Turkey, to Lisbon, what I’ve learned is that home isn’t just a place you return to. It’s something you create — with people, with culture, with vision. And in building community here, I’ve found not just a home for myself, but a way to help others find theirs too.",
+  image: "https://imgur.com/xlMzwlh.jpg",
+  category: "Founder Stories",
+  tags: ["Migration", "Community Building", "Cultural Identity", "Music", "Gambia", "Lisbon"],
+  readTime: "5 min read"
+},
   {
     id: 'ebony-story',
     title: "From Atlanta to Lisbon: Redefining Home in the African Diaspora",
