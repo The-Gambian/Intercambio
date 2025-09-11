@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { useParams, Link, useNavigate } from 'react-router-dom';
 import { Search, Calendar, User, ArrowRight, Heart, Share2, MessageCircle, Filter } from 'lucide-react';
 import { format } from 'date-fns';
 import { useLanguage } from '../contexts/LanguageContext';
@@ -98,10 +99,11 @@ const categories = [
 
 const Stories = () => {
   const { t } = useLanguage();
+  const { storyId } = useParams();
+  const navigate = useNavigate();
   const [searchTerm, setSearchTerm] = useState("");
   const [selectedCategory, setSelectedCategory] = useState("All Stories");
   const [showSubmitForm, setShowSubmitForm] = useState(false);
-  const [selectedStory, setSelectedStory] = useState<string | null>(null);
 
   // Filter stories based on search and category
   const filteredStories = communityStories.filter(story => {
@@ -111,6 +113,17 @@ const Stories = () => {
     const matchesCategory = selectedCategory === "All Stories" || story.category === selectedCategory;
     return matchesSearch && matchesCategory;
   });
+
+  // If we have a storyId in the URL, show that story
+  const selectedStory = storyId ? featuredStories.find(s => s.id === storyId) || communityStories.find(s => s.id === storyId) : null;
+
+  const handleStoryClick = (id: string) => {
+    navigate(`/stories/${id}`);
+  };
+
+  const handleCloseStory = () => {
+    navigate('/stories');
+  };
 
   return (
     <div className="min-h-screen bg-gray-50">
@@ -176,12 +189,12 @@ const Stories = () => {
                       <Calendar className="h-4 w-4 mr-1" />
                       {format(story.date, "MMM d, yyyy")}
                     </div>
-                    <button 
-                      onClick={() => setSelectedStory(story.id)}
+                    <Link 
+                      to={`/stories/${story.id}`}
                       className="text-pan-red hover:text-red-800 font-medium flex items-center"
                     >
                       Read Full Story <ArrowRight className="ml-1 h-4 w-4" />
-                    </button>
+                    </Link>
                   </div>
                 </div>
               </div>
@@ -257,9 +270,12 @@ const Stories = () => {
                       <Calendar className="h-3 w-3 mr-1" />
                       {format(story.date, "MMM d")}
                     </div>
-                    <button className="text-blue-600 hover:text-blue-800 text-sm font-medium flex items-center">
+                    <Link 
+                      to={`/stories/${story.id}`}
+                      className="text-blue-600 hover:text-blue-800 text-sm font-medium flex items-center"
+                    >
                       Read More <ArrowRight className="ml-1 h-3 w-3" />
-                    </button>
+                    </Link>
                   </div>
                 </div>
               </div>
@@ -406,76 +422,75 @@ const Stories = () => {
       {selectedStory && (
         <div className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center p-4 z-50">
           <div className="bg-white rounded-lg max-w-4xl w-full max-h-[90vh] overflow-y-auto">
-            {(() => {
-              const story = featuredStories.find(s => s.id === selectedStory);
-              if (!story) return null;
-              
-              return (
-                <div>
-                  <img 
-                    src={story.image} 
-                    alt={story.title}
-                    className="w-full h-64 object-cover"
-                  />
-                  <div className="p-8">
-                    <div className="flex items-center justify-between mb-4">
-                      <span className="inline-block bg-pan-red/10 text-pan-red text-sm px-3 py-1 rounded-full font-medium">
-                        {story.category}
-                      </span>
-                      <button
-                        onClick={() => setSelectedStory(null)}
-                        className="text-gray-500 hover:text-gray-700 text-2xl"
-                      >
-                        ×
-                      </button>
-                    </div>
-                    
-                    <h1 className="text-3xl font-bold mb-4 text-pan-black">{story.title}</h1>
-                    
-                    <div className="flex items-center mb-6">
-                      <div className="w-12 h-12 bg-pan-red/10 rounded-full flex items-center justify-center">
-                        <User className="h-8 w-8 text-pan-red" />
-                      </div>
-                      <div className="ml-4">
-                        <p className="font-medium text-lg text-pan-black">{story.author}</p>
-                        <p className="text-gray-600">{story.role}</p>
-                        <div className="flex items-center text-sm text-gray-500 mt-1">
-                          <Calendar className="h-4 w-4 mr-1" />
-                          {format(story.date, "MMMM d, yyyy")} • {story.readTime}
-                        </div>
-                      </div>
-                    </div>
-                    
-                    <div className="prose max-w-none">
-                      {story.content.split('\n\n').map((paragraph, index) => (
-                        <p key={index} className="mb-4 text-gray-700 leading-relaxed">
-                          {paragraph.replace(/\*\*(.*?)\*\*/g, '<strong>$1</strong>').split('<strong>').map((part, i) => {
-                            if (i === 0) return part;
-                            const [bold, rest] = part.split('</strong>');
-                            return <span key={i}><strong>{bold}</strong>{rest}</span>;
-                          })}
-                        </p>
-                      ))}
-                    </div>
-                    
-                    <div className="flex items-center space-x-4 mt-8 pt-6 border-t border-gray-200">
-                      <button className="flex items-center text-gray-500 hover:text-pan-red transition">
-                        <Heart className="h-5 w-5 mr-1" />
-                        <span>Like</span>
-                      </button>
-                      <button className="flex items-center text-gray-500 hover:text-pan-red transition">
-                        <Share2 className="h-5 w-5 mr-1" />
-                        <span>Share</span>
-                      </button>
-                      <button className="flex items-center text-gray-500 hover:text-pan-red transition">
-                        <MessageCircle className="h-5 w-5 mr-1" />
-                        <span>Comment</span>
-                      </button>
+            <div>
+              <img 
+                src={selectedStory.image} 
+                alt={selectedStory.title}
+                className="w-full h-64 object-cover"
+              />
+              <div className="p-8">
+                <div className="flex items-center justify-between mb-4">
+                  <span className="inline-block bg-pan-red/10 text-pan-red text-sm px-3 py-1 rounded-full font-medium">
+                    {selectedStory.category}
+                  </span>
+                  <button
+                    onClick={handleCloseStory}
+                    className="text-gray-500 hover:text-gray-700 text-2xl"
+                  >
+                    ×
+                  </button>
+                </div>
+                
+                <h1 className="text-3xl font-bold mb-4 text-pan-black">{selectedStory.title}</h1>
+                
+                <div className="flex items-center mb-6">
+                  <div className="w-12 h-12 bg-pan-red/10 rounded-full flex items-center justify-center">
+                    <User className="h-8 w-8 text-pan-red" />
+                  </div>
+                  <div className="ml-4">
+                    <p className="font-medium text-lg text-pan-black">{selectedStory.author}</p>
+                    <p className="text-gray-600">{selectedStory.role}</p>
+                    <div className="flex items-center text-sm text-gray-500 mt-1">
+                      <Calendar className="h-4 w-4 mr-1" />
+                      {format(selectedStory.date, "MMMM d, yyyy")} • {selectedStory.readTime}
                     </div>
                   </div>
                 </div>
-              );
-            })()}
+                
+                <div className="prose max-w-none">
+                  {selectedStory.content.split('\n\n').map((paragraph, index) => (
+                    <p key={index} className="mb-4 text-gray-700 leading-relaxed">
+                      {paragraph.replace(/\*\*(.*?)\*\*/g, '<strong>$1</strong>').split('<strong>').map((part, i) => {
+                        if (i === 0) return part;
+                        const [bold, rest] = part.split('</strong>');
+                        return <span key={i}><strong>{bold}</strong>{rest}</span>;
+                      })}
+                    </p>
+                  ))}
+                </div>
+                
+                <div className="flex items-center space-x-4 mt-8 pt-6 border-t border-gray-200">
+                  <button className="flex items-center text-gray-500 hover:text-pan-red transition">
+                    <Heart className="h-5 w-5 mr-1" />
+                    <span>Like</span>
+                  </button>
+                  <button 
+                    onClick={() => {
+                      navigator.clipboard.writeText(window.location.href);
+                      alert('Story link copied to clipboard!');
+                    }}
+                    className="flex items-center text-gray-500 hover:text-pan-red transition"
+                  >
+                    <Share2 className="h-5 w-5 mr-1" />
+                    <span>Share</span>
+                  </button>
+                  <button className="flex items-center text-gray-500 hover:text-pan-red transition">
+                    <MessageCircle className="h-5 w-5 mr-1" />
+                    <span>Comment</span>
+                  </button>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
       )}
