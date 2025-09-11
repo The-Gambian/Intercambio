@@ -9,7 +9,7 @@ const featuredStories = [
  {
   id: 'malik-story',
   title: "From Banjul to Lisbon: A Journey of Community, Culture, and Creation",
-  author: "Malik Jallow",
+  author: "Malik Kah",
   role: "Co-founder, Intercâmbio Diáspora & Founder, AfrojamLX",
   date: new Date(2025, 2, 1),
   excerpt: "From studying abroad to building platforms for culture and connection, Malik’s journey is a story of resilience, creativity, and the power of the diaspora spirit.",
@@ -114,17 +114,147 @@ const Stories = () => {
     return matchesSearch && matchesCategory;
   });
 
-  // If we have a storyId in the URL, show that story
-  const selectedStory = storyId ? featuredStories.find(s => s.id === storyId) || communityStories.find(s => s.id === storyId) : null;
+  // If we have a storyId in the URL, show individual story page
+  if (storyId) {
+    const selectedStory = featuredStories.find(s => s.id === storyId) || communityStories.find(s => s.id === storyId);
+    
+    if (!selectedStory) {
+      return (
+        <div className="min-h-screen bg-gray-50 flex items-center justify-center">
+          <div className="text-center">
+            <h1 className="text-2xl font-bold text-gray-900 mb-4">Story Not Found</h1>
+            <p className="text-gray-600 mb-6">The story you're looking for doesn't exist.</p>
+            <Link to="/stories" className="bg-pan-red text-white px-6 py-3 rounded-md hover:bg-red-800 transition">
+              Back to Stories
+            </Link>
+          </div>
+        </div>
+      );
+    }
 
-  const handleStoryClick = (id: string) => {
-    navigate(`/stories/${id}`);
-  };
+    return (
+      <div className="min-h-screen bg-gray-50">
+        {/* Story Header */}
+        <div className="bg-white border-b border-gray-200">
+          <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-6">
+            <button
+              onClick={() => navigate('/stories')}
+              className="flex items-center text-pan-red hover:text-red-800 mb-4 font-medium"
+            >
+              ← Back to Stories
+            </button>
+            <div className="flex items-center justify-between mb-4">
+              <span className="inline-block bg-pan-red/10 text-pan-red text-sm px-3 py-1 rounded-full font-medium">
+                {selectedStory.category}
+              </span>
+              <span className="text-sm text-gray-500">{selectedStory.readTime}</span>
+            </div>
+            <h1 className="text-3xl md:text-4xl font-bold mb-4 text-pan-black">{selectedStory.title}</h1>
+            <div className="flex items-center">
+              <img 
+                src={selectedStory.image} 
+                alt={selectedStory.author}
+                className="w-12 h-12 rounded-full object-cover mr-4"
+              />
+              <div>
+                <p className="font-medium text-lg text-pan-black">{selectedStory.author}</p>
+                <p className="text-gray-600">{selectedStory.role}</p>
+                <div className="flex items-center text-sm text-gray-500 mt-1">
+                  <Calendar className="h-4 w-4 mr-1" />
+                  {format(selectedStory.date, "MMMM d, yyyy")}
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
 
-  const handleCloseStory = () => {
-    navigate('/stories');
-  };
+        {/* Story Content */}
+        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+          <div className="bg-white rounded-lg shadow-md overflow-hidden">
+            <img 
+              src={selectedStory.image} 
+              alt={selectedStory.title}
+              className="w-full h-64 md:h-96 object-cover"
+            />
+            <div className="p-8">
+              <div className="prose max-w-none">
+                {selectedStory.content.split('\n\n').map((paragraph, index) => (
+                  <p key={index} className="mb-6 text-gray-700 leading-relaxed text-lg">
+                    {paragraph.replace(/\*\*(.*?)\*\*/g, '<strong>$1</strong>').split('<strong>').map((part, i) => {
+                      if (i === 0) return part;
+                      const [bold, rest] = part.split('</strong>');
+                      return <span key={i}><strong>{bold}</strong>{rest}</span>;
+                    })}
+                  </p>
+                ))}
+              </div>
+              
+              {/* Story Tags */}
+              {selectedStory.tags && (
+                <div className="mt-8 pt-6 border-t border-gray-200">
+                  <h3 className="text-sm font-medium text-gray-900 mb-3">Tags</h3>
+                  <div className="flex flex-wrap gap-2">
+                    {selectedStory.tags.map((tag, index) => (
+                      <span key={index} className="inline-block bg-gray-100 text-gray-700 text-sm px-3 py-1 rounded-full">
+                        {tag}
+                      </span>
+                    ))}
+                  </div>
+                </div>
+              )}
+              
+              {/* Social Actions */}
+              <div className="flex items-center space-x-6 mt-8 pt-6 border-t border-gray-200">
+                <button className="flex items-center text-gray-500 hover:text-pan-red transition">
+                  <Heart className="h-5 w-5 mr-2" />
+                  <span>Like this story</span>
+                </button>
+                <button 
+                  onClick={() => {
+                    navigator.clipboard.writeText(window.location.href);
+                    alert('Story link copied to clipboard!');
+                  }}
+                  className="flex items-center text-gray-500 hover:text-pan-red transition"
+                >
+                  <Share2 className="h-5 w-5 mr-2" />
+                  <span>Share story</span>
+                </button>
+                <button className="flex items-center text-gray-500 hover:text-pan-red transition">
+                  <MessageCircle className="h-5 w-5 mr-2" />
+                  <span>Comment</span>
+                </button>
+              </div>
+            </div>
+          </div>
+          
+          {/* Related Stories */}
+          <div className="mt-12">
+            <h2 className="text-2xl font-bold text-pan-black mb-6">More Stories</h2>
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+              {featuredStories.filter(story => story.id !== selectedStory.id).slice(0, 2).map(story => (
+                <Link key={story.id} to={`/stories/${story.id}`} className="bg-white rounded-lg shadow-md overflow-hidden hover:shadow-lg transition-shadow">
+                  <img src={story.image} alt={story.title} className="w-full h-48 object-cover" />
+                  <div className="p-6">
+                    <span className="inline-block bg-pan-red/10 text-pan-red text-sm px-3 py-1 rounded-full font-medium mb-3">
+                      {story.category}
+                    </span>
+                    <h3 className="text-lg font-bold mb-2 text-pan-black">{story.title}</h3>
+                    <p className="text-gray-600 text-sm mb-3">{story.excerpt}</p>
+                    <div className="flex items-center justify-between">
+                      <span className="text-sm text-gray-500">{story.author}</span>
+                      <span className="text-sm text-gray-500">{story.readTime}</span>
+                    </div>
+                  </div>
+                </Link>
+              ))}
+            </div>
+          </div>
+        </div>
+      </div>
+    );
+  }
 
+  // Main stories listing page
   return (
     <div className="min-h-screen bg-gray-50">
       {/* Compact Hero Section */}
@@ -414,83 +544,6 @@ const Stories = () => {
                 </button>
               </div>
             </form>
-          </div>
-        </div>
-      )}
-
-      {/* Full Story Modal */}
-      {selectedStory && (
-        <div className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center p-4 z-50">
-          <div className="bg-white rounded-lg max-w-4xl w-full max-h-[90vh] overflow-y-auto">
-            <div>
-              <img 
-                src={selectedStory.image} 
-                alt={selectedStory.title}
-                className="w-full h-64 object-cover"
-              />
-              <div className="p-8">
-                <div className="flex items-center justify-between mb-4">
-                  <span className="inline-block bg-pan-red/10 text-pan-red text-sm px-3 py-1 rounded-full font-medium">
-                    {selectedStory.category}
-                  </span>
-                  <button
-                    onClick={handleCloseStory}
-                    className="text-gray-500 hover:text-gray-700 text-2xl"
-                  >
-                    ×
-                  </button>
-                </div>
-                
-                <h1 className="text-3xl font-bold mb-4 text-pan-black">{selectedStory.title}</h1>
-                
-                <div className="flex items-center mb-6">
-                  <div className="w-12 h-12 bg-pan-red/10 rounded-full flex items-center justify-center">
-                    <User className="h-8 w-8 text-pan-red" />
-                  </div>
-                  <div className="ml-4">
-                    <p className="font-medium text-lg text-pan-black">{selectedStory.author}</p>
-                    <p className="text-gray-600">{selectedStory.role}</p>
-                    <div className="flex items-center text-sm text-gray-500 mt-1">
-                      <Calendar className="h-4 w-4 mr-1" />
-                      {format(selectedStory.date, "MMMM d, yyyy")} • {selectedStory.readTime}
-                    </div>
-                  </div>
-                </div>
-                
-                <div className="prose max-w-none">
-                  {selectedStory.content.split('\n\n').map((paragraph, index) => (
-                    <p key={index} className="mb-4 text-gray-700 leading-relaxed">
-                      {paragraph.replace(/\*\*(.*?)\*\*/g, '<strong>$1</strong>').split('<strong>').map((part, i) => {
-                        if (i === 0) return part;
-                        const [bold, rest] = part.split('</strong>');
-                        return <span key={i}><strong>{bold}</strong>{rest}</span>;
-                      })}
-                    </p>
-                  ))}
-                </div>
-                
-                <div className="flex items-center space-x-4 mt-8 pt-6 border-t border-gray-200">
-                  <button className="flex items-center text-gray-500 hover:text-pan-red transition">
-                    <Heart className="h-5 w-5 mr-1" />
-                    <span>Like</span>
-                  </button>
-                  <button 
-                    onClick={() => {
-                      navigator.clipboard.writeText(window.location.href);
-                      alert('Story link copied to clipboard!');
-                    }}
-                    className="flex items-center text-gray-500 hover:text-pan-red transition"
-                  >
-                    <Share2 className="h-5 w-5 mr-1" />
-                    <span>Share</span>
-                  </button>
-                  <button className="flex items-center text-gray-500 hover:text-pan-red transition">
-                    <MessageCircle className="h-5 w-5 mr-1" />
-                    <span>Comment</span>
-                  </button>
-                </div>
-              </div>
-            </div>
           </div>
         </div>
       )}
