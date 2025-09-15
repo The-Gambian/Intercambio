@@ -9,7 +9,7 @@ const featuredStories = [
  {
   id: 'malik-story',
   title: "From Banjul to Lisbon: A Journey of Community, Culture, and Creation",
-  author: "Malik Kah",
+  author: "Malik Jallow",
   role: "Co-founder, Intercâmbio Diáspora & Founder, AfrojamLX",
   date: new Date(2025, 2, 1),
   excerpt: "From studying abroad to building platforms for culture and connection, Malik’s journey is a story of resilience, creativity, and the power of the diaspora spirit.",
@@ -37,52 +37,43 @@ const featuredStories = [
 // Community stories data
 const communityStories = [
   {
-    id: '1',
-    title: "The Language of Belonging: Learning Portuguese as Cultural Bridge",
-    author: "Amara Diallo",
-    role: "Language Exchange Coordinator",
-    date: new Date(2024, 3, 8),
-    excerpt: "How mastering Portuguese became more than language learning - it became a pathway to deeper cultural understanding and community connection.",
-    image: "https://imgur.com/Um1K5jA.jpeg",
-    category: "Language & Integration",
-    tags: ["Language Learning", "Integration", "Cultural Exchange"],
-    readTime: "4 min read"
-  },
-  {
-    id: '2',
-    title: "Raising Third Culture Kids: Preserving Heritage in Portugal",
-    author: "Fatima Santos",
-    role: "Community Member",
-    date: new Date(2024, 3, 5),
-    excerpt: "A mother's journey of raising children who are proud of their African heritage while fully integrated into Portuguese society.",
-    image: "https://i.imgur.com/vchikwW.jpg",
-    category: "Family & Heritage",
-    tags: ["Parenting", "Third Culture Kids", "Heritage", "Education"],
+    id: 'mbye-ebrima-story',
+    title: "Bridging Worlds Through the Kora: Mbye Ebrima's Musical Journey",
+    author: "Mbye Ebrima",
+    role: "Kora Player, Composer & Storyteller",
+    date: new Date(2024, 2, 15),
+    excerpt: "A visionary Gambian kora player who transcends boundaries, blending ancient Mandinka oral traditions with global music genres in Lisbon's vibrant music scene.",
+    content: "Mbye Ebrima is a visionary Gambian kora player, composer, and storyteller. Ebrima's music transcends boundaries, blending ancient Mandinka oral traditions with a wide spectrum of global music genres, including jazz, flamenco, fado, and Afrobeat. His ability to fuse traditional African sounds with contemporary styles makes him a unique and compelling artist in the world music scene.\n\nHaving moved to Lisbon nearly a decade ago, Mbye Ebrima has established himself as a prominent figure in the city's music scene, where his performances have captivated audiences and fostered cultural exchange. Through collaborations with local and international artists, he has nurtured a deep connection between African and European musical traditions, offering fresh interpretations of traditional African instruments and rhythms.\n\nEbrima's work is a testament to the power of music as a universal language that bridges cultural gaps, highlighting the richness of African heritage while embracing modernity. His journey from Gambia to Lisbon represents the beautiful fusion of cultures that defines the diaspora experience - maintaining deep roots while growing new branches in foreign soil.\n\nThrough his kora, Ebrima tells stories that span continents and generations, creating a musical bridge between his homeland and his adopted city. His performances are not just concerts; they are cultural exchanges that bring people together through the universal language of music.",
+    image: "https://imgur.com/DtpOZ2P.jpg",
+    category: "Arts & Culture",
+    tags: ["Music", "Kora", "Gambia", "Cultural Bridge", "Traditional Arts", "Lisbon"],
     readTime: "5 min read"
   },
   {
-    id: '3',
-    title: "From Student to Entrepreneur: Building Dreams in Lisbon",
-    author: "Carlos Mendes",
-    role: "Tech Entrepreneur",
-    date: new Date(2024, 2, 28),
-    excerpt: "How the diaspora community supported my journey from international student to successful tech entrepreneur in Portugal.",
-    image: "https://i.imgur.com/7mdxG48.jpg",
-    category: "Professional Growth",
-    tags: ["Entrepreneurship", "Technology", "Student Life", "Success"],
-    readTime: "4 min read"
+    id: 'demba-jobarteh-story',
+    title: "Guardian of Griot Heritage: Demba Jobarteh's Musical Legacy",
+    author: "Demba Jobarteh",
+    role: "Multi-instrumentalist & Percussionist",
+    date: new Date(2024, 1, 20),
+    excerpt: "From the village of Tabató in Guinea-Bissau, a master griot preserves ancestral knowledge through the balafon, djembe, and ngoni, bridging ancient rhythms with modern audiences.",
+    content: "Demba Djabaté is a multi-instrumentalist and percussionist from the village of Tabató in Guinea-Bissau, a place renowned for its deep griot heritage. Coming from a long lineage of Mandinga griots, Demba is a master of traditional West African instruments such as the balafon, djembe, and ngoni. From a young age, he was immersed in the oral and musical traditions of his ancestors, learning the vital role of the griot as a historian, storyteller, and cultural guardian.\n\nThrough his music, Demba weaves together the collective memory of his people, preserving their stories, values, and identity. His artistry is not just performance—it is a sacred duty to maintain the cultural threads that connect past, present, and future generations.\n\nPerforming both in Guinea-Bissau and internationally, Demba brings an energetic and soulful presence to the stage. His artistry bridges ancient rhythms with modern audiences, blending the vibrant melodies of the balafon with the dynamic pulse of the djembe and the lyrical tones of the ngoni.\n\nMore than a performer, he is a custodian of ancestral knowledge, using music as a living archive of Mandinga history and heritage. With every performance, Demba keeps the griot legacy alive—connecting generations through sound, rhythm, and storytelling. His work represents the essential role of cultural preservation in the diaspora, ensuring that traditional knowledge continues to flow like a river from one generation to the next.",
+    image: "https://imgur.com/j1zoGEF.jpg",
+    category: "Arts & Culture",
+    tags: ["Griot", "Guinea-Bissau", "Traditional Music", "Cultural Heritage", "Balafon", "Djembe"],
+    readTime: "6 min read"
   },
   {
-    id: '4',
-    title: "Music as Medicine: Healing Through Cultural Expression",
-    author: "Asha Kone",
-    role: "Musician & Cultural Artist",
-    date: new Date(2024, 2, 20),
-    excerpt: "Discovering how traditional African music became a source of healing and connection for our diaspora community in Portugal.",
-    image: "https://i.imgur.com/4x5JR34.jpg",
+    id: 'marinho-pina-story',
+    title: "Rhythm and Memory: Marinho Pina's Griot Journey",
+    author: "Marinho Pina",
+    role: "Musician, Percussionist & Storyteller",
+    date: new Date(2023, 11, 5),
+    excerpt: "A musician and storyteller from Guinea-Bissau who weaves together music, rhythm, and ancestral wisdom to honor the griot tradition across continents.",
+    content: "Marinho Pina is a musician, percussionist, and storyteller from Guinea-Bissau, who weaves together music, rhythm, and ancestral wisdom to honor and continue the griot tradition of West Africa. His art is deeply rooted in the oral heritage of his homeland, where music is not only entertainment, but a vessel for history, identity, and spiritual connection.\n\nDrawing from traditional rhythms and instruments, Marinho creates performances that are both poetic and percussive—bridging the past with the present. Whether through spoken word, drum patterns, or collaborative projects, he embodies the griot's role as a guardian of memory and a voice for the community.\n\nIn the griot tradition, the musician is more than an entertainer—they are the keeper of collective memory, the voice of the ancestors, and the bridge between the spiritual and material worlds. Marinho carries this sacred responsibility with deep reverence and contemporary relevance.\n\nWith performances across Europe and Africa, Marinho is not only a cultural ambassador for Guinea-Bissau but also a builder of artistic bridges between continents, using rhythm and storytelling to inspire dialogue, connection, and celebration.\n\nHis work demonstrates how traditional African arts can thrive in diaspora communities, creating new spaces for cultural expression while maintaining deep connections to ancestral wisdom. Through his performances, Marinho ensures that the griot tradition continues to evolve and inspire new generations, both in Africa and across the diaspora.",
+    image: "https://imgur.com/EHmZZDI.jpeg",
     category: "Arts & Culture",
-    tags: ["Music", "Healing", "Traditional Arts", "Community"],
-    readTime: "3 min read"
+    tags: ["Griot Tradition", "Guinea-Bissau", "Storytelling", "Percussion", "Cultural Ambassador", "Oral Heritage"],
+    readTime: "6 min read"
   }
 ];
 
