@@ -109,12 +109,10 @@ const Discussions = () => {
                   <h3 className="text-xl font-bold mb-2">{topic.title}</h3>
                   <p className="text-gray-600 mb-4">{topic.description}</p>
                   <a
-                    href={topic.formLink}
-                    target="_blank"
-                    rel="noopener noreferrer"
+                    href="/contact"
                     className="inline-flex items-center text-blue-700 hover:text-blue-800"
                   >
-                    {t('discussions.participate')} <ExternalLink className="ml-2 h-4 w-4" />
+                    Get Involved <ExternalLink className="ml-2 h-4 w-4" />
                   </a>
                 </div>
               </div>
