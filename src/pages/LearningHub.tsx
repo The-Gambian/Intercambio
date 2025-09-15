@@ -160,12 +160,12 @@ const resourcesData = [
   }
 ];
 
-const LearningHub: React.FC = () => {
+const Services: React.FC = () => {
   const { t } = useLanguage();
   const [searchTerm, setSearchTerm] = useState('');
 
   const handleResourceClick = () => {
-    window.open('https://5pzn0sic.forms.app/lead-generation-form', '_blank');
+    window.location.href = '/contact';
   };
 
   return (
@@ -173,8 +173,8 @@ const LearningHub: React.FC = () => {
       {/* Header */}
       <div className="bg-pan-red text-white py-16">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <h1 className="text-4xl font-bold mb-4">{t('learningHub.title')}</h1>
-          <p className="text-xl max-w-3xl">{t('learningHub.subtitle')}</p>
+          <h1 className="text-4xl font-bold mb-4">Services & Resources</h1>
+          <p className="text-xl max-w-3xl">Discover professional services, resources, and support offered by our diaspora community members and partners.</p>
         </div>
       </div>
 
@@ -183,7 +183,7 @@ const LearningHub: React.FC = () => {
         <div className="relative mb-8">
           <input
             type="text"
-            placeholder={t('learningHub.search')}
+            placeholder="Search services and resources..."
             className="w-full p-4 pl-12 rounded-lg border border-gray-300 focus:outline-none focus:border-red-500"
             value={searchTerm}
             onChange={(e) => setSearchTerm(e.target.value)}
@@ -216,9 +216,9 @@ const LearningHub: React.FC = () => {
                       <p className="text-gray-600 text-sm">{resource.description}</p>
                       <button 
                         onClick={handleResourceClick}
-                        className="mt-2 text-blue-600 flex items-center text-sm hover:text-blue-800"
+                        className="mt-2 text-blue-600 flex items-center text-sm hover:text-blue-800 cursor-pointer"
                       >
-                        {t('learningHub.contactInfo')} <ExternalLink className="ml-1 w-4 h-4" />
+                        Contact for Info <ExternalLink className="ml-1 w-4 h-4" />
                       </button>
                     </div>
                   </div>
@@ -232,4 +232,4 @@ const LearningHub: React.FC = () => {
   );
 };
 
-export default LearningHub;
+export default Services;
