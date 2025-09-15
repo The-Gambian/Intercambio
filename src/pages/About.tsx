@@ -154,9 +154,7 @@ const About = () => {
                 {t('about.getInvolved.story.content')}
               </p>
               <a 
-                href="https://5pzn0sic.forms.app/lead-generation-form" 
-                target="_blank" 
-                rel="noopener noreferrer" 
+                href="/contact"
                 className="inline-block bg-white text-pan-red px-4 py-2 rounded-md font-medium hover:bg-pan-gold hover:text-pan-black transition"
               >
                 {t('about.getInvolved.story.button')}
@@ -169,9 +167,7 @@ const About = () => {
                 {t('about.getInvolved.partner.content')}
               </p>
               <a 
-                href="https://5pzn0sic.forms.app/lead-generation-form" 
-                target="_blank" 
-                rel="noopener noreferrer" 
+                href="/contact"
                 className="inline-block bg-white text-pan-red px-4 py-2 rounded-md font-medium hover:bg-pan-gold hover:text-pan-black transition"
               >
                 {t('about.getInvolved.partner.button')}
