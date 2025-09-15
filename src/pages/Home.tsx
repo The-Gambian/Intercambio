@@ -166,7 +166,7 @@ function Home() {
 
             {/* Feature Card 5 - Learning */}
             <Link 
-              to="/learning-hub"
+              to="/services"
               className="group relative bg-white rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-2 border border-gray-100 overflow-hidden cursor-pointer"
             >
               <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-purple-500 to-violet-500"></div>
@@ -178,13 +178,13 @@ function Home() {
                   <div className="absolute -top-2 -right-2 w-6 h-6 bg-pan-gold rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
                 </div>
                 <h3 className="text-2xl font-bold mb-4 text-pan-black group-hover:text-purple-600 transition-colors">
-                  {t('home.features.learning.title')}
+                  Services & Resources
                 </h3>
                 <p className="text-gray-600 mb-6 leading-relaxed">
-                  {t('home.features.learning.description')}
+                  Access professional services, resources, and support from our diaspora community members and trusted partners.
                 </p>
                 <div className="inline-flex items-center text-purple-600 font-semibold hover:text-purple-700 transition-colors group-hover:translate-x-1 transform duration-300">
-                  {t('home.features.learning.link')} 
+                  Explore Services
                   <ArrowRight className="ml-2 h-5 w-5 group-hover:translate-x-1 transition-transform" />
                 </div>
               </div>
