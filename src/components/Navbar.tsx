@@ -2,11 +2,13 @@ import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import { Menu, X, Facebook, Instagram, Youtube, Linkedin } from 'lucide-react';
 import { useLanguage } from '../contexts/LanguageContext';
+import { useAuth } from '../contexts/AuthContext';
 import LanguageSwitcher from './LanguageSwitcher';
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
   const { t } = useLanguage();
+  const { user, isAdmin } = useAuth();
 
   const toggleMenu = () => {
     setIsOpen(!isOpen);
@@ -43,6 +45,11 @@ const Navbar = () => {
                 <Link to="/discussions" className="text-white hover:text-pan-gold transition-colors font-medium">{t('nav.discussions')}</Link>
                 <Link to="/learning-hub" className="text-white hover:text-pan-gold transition-colors font-medium">{t('nav.learningHub')}</Link>
                 <Link to="/contact" className="text-white hover:text-pan-gold transition-colors font-medium">{t('nav.contact')}</Link>
+                {user && isAdmin && (
+                  <Link to="/admin/dashboard" className="bg-pan-gold text-pan-black px-3 py-1 rounded-md hover:bg-yellow-400 transition-colors font-medium text-sm">
+                    Admin Panel
+                  </Link>
+                )}
               </div>
 
               {/* Mobile menu button */}
@@ -107,8 +114,14 @@ const Navbar = () => {
             <Link to="/news" className="block px-3 py-2 rounded-md text-white hover:text-pan-gold hover:bg-gray-800 transition-colors font-medium" onClick={toggleMenu}>{t('nav.news')}</Link>
             <Link to="/stories" className="block px-3 py-2 rounded-md text-white hover:text-pan-gold hover:bg-gray-800 transition-colors font-medium" onClick={toggleMenu}>{t('nav.stories')}</Link>
             <Link to="/discussions" className="block px-3 py-2 rounded-md text-white hover:text-pan-gold hover:bg-gray-800 transition-colors font-medium" onClick={toggleMenu}>{t('nav.discussions')}</Link>
-            <Link to="/learning-hub" className="block px-3 py-2 rounded-md text-white hover:text-pan-gold hover:bg-gray-800 transition-colors font-medium" onClick={toggleMenu}>{t('nav.learningHub')}</Link>
+            <Link to="/services" className="block px-3 py-2 rounded-md text-white hover:text-pan-gold hover:bg-gray-800 transition-colors font-medium" onClick={toggleMenu}>Services</Link>
             <Link to="/contact" className="block px-3 py-2 rounded-md text-white hover:text-pan-gold hover:bg-gray-800 transition-colors font-medium" onClick={toggleMenu}>{t('nav.contact')}</Link>
+            
+            {user && isAdmin && (
+              <Link to="/admin/dashboard" className="block px-3 py-2 rounded-md bg-pan-gold text-pan-black hover:bg-yellow-400 transition-colors font-medium" onClick={toggleMenu}>
+                Admin Panel
+              </Link>
+            )}
             
             {/* Divider */}
             <div className="border-t border-gray-700 my-2"></div>
