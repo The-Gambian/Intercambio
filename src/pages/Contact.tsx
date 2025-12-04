@@ -61,26 +61,6 @@ const Contact = () => {
                   </div>
                 </div>
                 
-                <div className="flex items-start">
-                  <Phone className="h-6 w-6 text-red-300 mr-4 mt-1" />
-                  <div>
-                    <p className="font-medium">{t('contact.info.phone')}</p>
-                    <a href="tel:+351213531932" className="text-red-100 hover:text-white">
-                      21 353 1932
-                    </a>
-                  </div>
-                </div>
-                
-                <div className="flex items-start">
-                  <MapPin className="h-6 w-6 text-red-300 mr-4 mt-1" />
-                  <div>
-                    <p className="font-medium">{t('contact.info.address')}</p>
-                    <p className="text-red-100">
-                      R. Duque de Palmela 2 8° andar<br />
-                      1250-098 Lisboa
-                    </p>
-                  </div>
-                </div>
                 
                 <div className="flex items-start">
                   <Clock className="h-6 w-6 text-red-300 mr-4 mt-1" />
@@ -192,24 +172,6 @@ const Contact = () => {
         </div>
       </div>
 
-      {/* Map */}
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
-        <h2 className="text-2xl font-bold text-gray-900 mb-6 text-center">{t('contact.location.title')}</h2>
-        <div className="bg-white rounded-lg shadow-md overflow-hidden">
-          <div className="aspect-w-16 aspect-h-9 h-96">
-            <iframe 
-              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3112.8656419791396!2d-9.153799323540632!3d38.72236597259455!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xd19339f6a8440e5%3A0x8b4bd6f6d3b3c1c4!2sR.%20Duque%20de%20Palmela%202%2C%201250-098%20Lisboa%2C%20Portugal!5e0!3m2!1sen!2s!4v1709642844045!5m2!1sen!2s" 
-              width="100%" 
-              height="100%" 
-              style={{ border: 0 }} 
-              allowFullScreen 
-              loading="lazy" 
-              referrerPolicy="no-referrer-when-downgrade"
-              title="Intercambio Diaspora Location"
-            ></iframe>
-          </div>
-        </div>
-      </div>
 
       {/* FAQ Section */}
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">

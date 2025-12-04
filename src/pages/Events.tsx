@@ -6,6 +6,48 @@ import { useLanguage } from '../contexts/LanguageContext';
 // Updated events data with real upcoming events
 const upcomingEvents = [
   {
+    id: 4,
+    title: "Language Exchange Event",
+    date: new Date(2025, 9, 18, 18, 0), // October 18, 2025, 6:00 PM
+    location: "Associação Caboverdeana, R. Duque de Palmela 2 6° andar, Marquês de Pombal",
+    description: "Join us for an enriching experience that promotes language learning, cultural exploration, and meaningful connections among members of the African Diaspora in Lisbon. Features language immersion, interactive activities, networking opportunities, and cultural exchange.",
+    category: "Educational",
+    image: "https://imgur.com/FaF8QJn.jpg",
+    endTime: "20:00"
+  },
+  {
+    id: 5,
+    title: "Intercâmbio com Café - Language Exchange",
+    date: new Date(2025, 10, 8, 11, 0), // November 8, 2025, 11:00 AM
+    location: "Kulea Café, Rua das Mercês 30, Lisboa (Ajuda)",
+    description: "A study session and conversation among people of the African Diaspora. Join us for an intimate coffee meetup focused on language exchange and meaningful conversations in a cozy café setting.",
+    category: "Educational",
+    image: "https://imgur.com/Gg2oDX9.jpg",
+    endTime: "13:00"
+  },
+  {
+    id: 6,
+    title: "Cross-Cultural Conversations: Mental Health Best Practices",
+    date: new Date(2025, 10, 22, 18, 0), // November 22, 2025, 6:00 PM
+    location: "M8TRIARCH Living Gallery, Travessa das Mónicas, 1100-359",
+    description: "A Mental Health Best Practices MeetUp focusing on Intentional Healing & Benefits of Therapy Within the Diaspora. This meetup is designed to normalize conversations surrounding mental health challenges within the diaspora, offering a platform to exchange culturally relevant tools and resources. Open to certified and holistic healers and the general community. Event will be held in English & Portuguese.",
+    category: "Community",
+    image: "https://imgur.com/UKuasmf.jpg",
+    registrationLink: "https://reignwel.com",
+    endTime: "20:00"
+  },
+  {
+    id: 7,
+    title: "Intercâmbio Diáspora Christmas Dinner",
+    date: new Date(2025, 11, 19, 19, 0), // December 19, 2025, 7:00 PM
+    location: "Asha's Place Lisbon, R. do Diário de Notícias 59, 1200-334 Lisboa",
+    description: "Join us for a special Christmas dinner celebration featuring traditional African dishes including Jollof Rice, Matapa, Domoda, Chamussa, Frango à Zambeziana, Doce de Mandioca, and Gulabos. Drinks include Water, Hibiscus, and MIK special cocktail. Price: 20€ per person. RSVP required - limited spaces available!",
+    category: "Cultural",
+    image: "https://imgur.com/NEMWKcu.jpg",
+    registrationLink: "/contact",
+    endTime: "22:00"
+  },
+  {
     id: 1,
     title: "Noite de Lua na Praia - Full Moon Beach Night",
     date: new Date(2025, 7, 9, 20, 0), // August 9, 2025, 8:00 PM
@@ -36,35 +78,6 @@ const upcomingEvents = [
     image: "https://i.imgur.com/vchikwW.jpg",
     endTime: "23:00"
   },
-  {
-    id: 4,
-    title: "Language Exchange Event",
-    date: new Date(2025, 5, 28, 18, 0), // June 28, 2025, 6:00 PM
-    location: "Jardim da Estrela, Praça da Estrela, Lisboa",
-    description: "Join us for an enriching experience that promotes language learning, cultural exploration, and meaningful connections among members of the African Diaspora in Lisbon. Bring a blanket to sit on the grass, and look out for the pan-African flag to find us! Features language immersion, interactive activities, networking opportunities, and cultural exchange.",
-    category: "Educational",
-    image: "https://imgur.com/Um1K5jA.jpeg",
-    registrationLink: "https://www.facebook.com/events/701026239495168/",
-    endTime: "20:00"
-  },
-  {
-    id: 5,
-    title: "Language Exchange Event",
-    date: new Date(2025, 3, 26, 18, 0), // April 26, 2025, 6:00 PM
-    location: "Intercâmbio Learning Center, Lisbon",
-    description: "Practice your language skills and connect with native speakers in a friendly, supportive environment. This weekly event focuses on Portuguese and English language exchange, creating opportunities for cultural learning and community building.",
-    category: "Educational",
-    image: "https://i.imgur.com/ppZR0iC.jpg"
-  },
-  {
-    id: 6,
-    title: "Professional Networking Mixer",
-    date: new Date(2025, 6, 5, 19, 0), // July 5, 2025, 7:00 PM
-    location: "Urban Business Hub, Lisbon",
-    description: "Connect with professionals from diverse backgrounds and expand your network. This event features structured networking activities, professional development discussions, and opportunities to build meaningful business relationships.",
-    category: "Networking",
-    image: "https://i.imgur.com/7mdxG48.jpg"
-  }
 ];
 
 // Past events from LinkedIn and Instagram with updated images

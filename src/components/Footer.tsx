@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
-import { Mail, Phone, MapPin, Facebook, Instagram, Youtube, Linkedin, MessageCircle } from 'lucide-react';
+import { Mail, Facebook, Instagram, Youtube, Linkedin, MessageCircle } from 'lucide-react';
 import CookieConsent, { Cookies } from 'react-cookie-consent';
 import { useLanguage } from '../contexts/LanguageContext';
 import EmailSubscription from './EmailSubscription';
@@ -108,14 +108,6 @@ const Footer = () => {
                 <li className="flex items-center">
                   <Mail className="h-5 w-5 mr-2 text-pan-gold" />
                   <a href="mailto:info@intercambiodiaspora.com" className="text-white hover:text-pan-gold">info@intercambiodiaspora.com</a>
-                </li>
-                <li className="flex items-center">
-                  <Phone className="h-5 w-5 mr-2 text-pan-gold" />
-                  <a href="tel:+351123456789" className="text-white hover:text-pan-gold">+351 123 456 789</a>
-                </li>
-                <li className="flex items-center">
-                  <MapPin className="h-5 w-5 mr-2 text-pan-gold" />
-                  <span className="text-white">Lisbon, Portugal</span>
                 </li>
               </ul>
               
