@@ -66,7 +66,7 @@ const Contact = () => {
                   <div>
                     <p className="font-medium">{t('contact.info.community')}</p>
                     <p className="text-red-100">
-                      {t('contact.info.communityDesc')}
+                     Join our regular meetups and connect with our WhatsApp community for updates and discussions.
                     </p>
                   </div>
                 </div>
