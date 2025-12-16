@@ -75,7 +75,7 @@ const Footer = () => {
                 <span className="ml-2 text-xl font-bold text-white">Intercambio Diaspora</span>
               </div>
               <p className="mt-2 text-sm text-white">
-                Led by and for the African diaspora — open to everyone building a more connected, culturally aware, and inclusive for all in Portugal.
+                Led by and for the African diaspora — open to everyone building a more connected, culturally aware, and inclusive Portugal.
               </p>
             </div>
             
@@ -98,7 +98,6 @@ const Footer = () => {
                 <li><Link to="/contact" className="text-white hover:text-pan-gold">{t('nav.contact')}</Link></li>
                 <li><Link to="/privacy-policy" className="text-white hover:text-pan-gold">Privacy Policy</Link></li>
                 <li><Link to="/terms-of-service" className="text-white hover:text-pan-gold">Terms of Service</Link></li>
-                <li><Link to="/admin/login" className="text-white hover:text-pan-gold">Admin Login</Link></li>
               </ul>
             </div>
             
