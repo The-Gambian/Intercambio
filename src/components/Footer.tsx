@@ -1,6 +1,6 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { Link } from 'react-router-dom';
-import { Mail, Facebook, Instagram, Youtube, Linkedin, MessageCircle } from 'lucide-react';
+import { Mail, Facebook, Instagram, Youtube, Linkedin } from 'lucide-react';
 import CookieConsent, { Cookies } from 'react-cookie-consent';
 import { useLanguage } from '../contexts/LanguageContext';
 import EmailSubscription from './EmailSubscription';
@@ -15,11 +15,6 @@ const Footer = () => {
   const handleDecline = () => {
     Cookies.remove('intercambio_diaspora_cookie_consent');
     console.log('Cookies declined');
-  };
-
-  const joinWhatsApp = () => {
-    // Replace with your actual WhatsApp group link
-    window.open('https://chat.whatsapp.com/your-group-link', '_blank');
   };
 
   return (
