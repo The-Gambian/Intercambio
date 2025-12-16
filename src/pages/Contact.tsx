@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Mail, Phone, MapPin, Globe, Clock, Send, Facebook, Instagram, Youtube, Linkedin } from 'lucide-react';
+import { Mail, Phone, MapPin, Globe, Clock, Send, Facebook, Instagram, Youtube, Linkedin, MessageCircle } from 'lucide-react';
 import { useLanguage } from '../contexts/LanguageContext';
 
 const Contact = () => {
@@ -61,13 +61,12 @@ const Contact = () => {
                   </div>
                 </div>
                 
-                
                 <div className="flex items-start">
-                  <Clock className="h-6 w-6 text-red-300 mr-4 mt-1" />
+                  <MessageCircle className="h-6 w-6 text-red-300 mr-4 mt-1" />
                   <div>
-                    <p className="font-medium">{t('contact.info.hours')}</p>
+                    <p className="font-medium">Community Engagement</p>
                     <p className="text-red-100">
-                      {t('contact.info.hoursDesc')}
+                      Join our regular meetups and connect with our WhatsApp community for updates and discussions.
                     </p>
                   </div>
                 </div>
