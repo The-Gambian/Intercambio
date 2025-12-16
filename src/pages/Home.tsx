@@ -1,100 +1,11 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { Calendar, Newspaper, Users, MessageCircle, BookOpen, ArrowRight, Briefcase, Mail, Heart, Quote } from 'lucide-react';
-import { format } from 'date-fns';
 import { useLanguage } from '../contexts/LanguageContext';
 import EmailSubscription from '../components/EmailSubscription';
 
-// Import the events data from Events page
-const upcomingEvents = [
-  {
-    id: 4,
-    title: "Language Exchange Event",
-    date: new Date(2025, 9, 18, 18, 0), // October 18, 2025, 6:00 PM
-    location: "Associação Caboverdeana, R. Duque de Palmela 2 6° andar, Marquês de Pombal",
-    description: "Join us for an enriching experience that promotes language learning, cultural exploration, and meaningful connections among members of the African Diaspora in Lisbon. Features language immersion, interactive activities, networking opportunities, and cultural exchange.",
-    category: "Educational",
-    image: "https://imgur.com/FaF8QJn.jpg",
-    endTime: "20:00"
-  },
-  {
-    id: 5,
-    title: "Intercâmbio com Café - Language Exchange",
-    date: new Date(2025, 10, 8, 11, 0), // November 8, 2025, 11:00 AM
-    location: "Kulea Café, Rua das Mercês 30, Lisboa (Ajuda)",
-    description: "A study session and conversation among people of the African Diaspora. Join us for an intimate coffee meetup focused on language exchange and meaningful conversations in a cozy café setting.",
-    category: "Educational",
-    image: "https://imgur.com/Gg2oDX9.jpg",
-    endTime: "13:00"
-  },
-  {
-    id: 6,
-    title: "Cross-Cultural Conversations: Mental Health Best Practices",
-    date: new Date(2025, 10, 22, 18, 0), // November 22, 2025, 6:00 PM
-    location: "M8TRIARCH Living Gallery, Travessa das Mónicas, 1100-359",
-    description: "A Mental Health Best Practices MeetUp focusing on Intentional Healing & Benefits of Therapy Within the Diaspora. This meetup is designed to normalize conversations surrounding mental health challenges within the diaspora, offering a platform to exchange culturally relevant tools and resources. Open to certified and holistic healers and the general community. Event will be held in English & Portuguese.",
-    category: "Community",
-    image: "https://imgur.com/UKuasmf.jpg",
-    registrationLink: "https://reignwel.com",
-    endTime: "20:00"
-  },
-  {
-    id: 7,
-    title: "Intercâmbio Diáspora Christmas Dinner",
-    date: new Date(2025, 11, 19, 19, 0), // December 19, 2025, 7:00 PM
-    location: "Asha's Place Lisbon, R. do Diário de Notícias 59, 1200-334 Lisboa",
-    description: "Join us for a special Christmas dinner celebration featuring traditional African dishes including Jollof Rice, Matapa, Domoda, Chamussa, Frango à Zambeziana, Doce de Mandioca, and Gulabos. Drinks include Water, Hibiscus, and MIK special cocktail. Price: 20€ per person. RSVP required - limited spaces available!",
-    category: "Cultural",
-    image: "https://imgur.com/NEMWKcu.jpg",
-    registrationLink: "/contact",
-    endTime: "22:00"
-  },
-  {
-    id: 1,
-    title: "Noite de Lua na Praia - Full Moon Beach Night",
-    date: new Date(2025, 7, 9, 20, 0), // August 9, 2025, 8:00 PM
-    location: "Praia de São Bruno, Caxias",
-    description: "Join us for a magical full moon gathering on the beach! We'll amplify this lunar energy with childhood games and a gratitude ritual on the beach. Bring drinks, light food, comfortable clothes and shoes—but also put your feet in the sand to ground yourself and strengthen your body and mind. A perfect evening to connect with nature, community, and inner peace under the full moon.",
-    category: "Cultural",
-    image: "https://imgur.com/oOfmX3A.jpg",
-    endTime: "00:00"
-  },
-  {
-    id: 2,
-    title: "Diáspora Picnic",
-    date: new Date(2025, 4, 31, 13, 0), // May 31, 2025, 1:00 PM
-    location: "Parque da Bela Vista, Quinta do Pombeiro, Casa Senhorial Norte, Azinhaga do Pombeiro, 1900-793 Lisboa",
-    description: "Join us for a community picnic featuring games, fellowship, and cultural exchange. This is a potluck event - bring a dish to share! Connect with fellow Zillennials in Portugal while enjoying an afternoon of fun and community building.",
-    category: "Cultural",
-    image: "https://i.imgur.com/3KJGfwj.jpg",
-    registrationLink: "https://forms.gle/AKjtjV5xmU8cNAXE7",
-    endTime: "18:00"
-  },
-  {
-    id: 3,
-    title: "Africa Day Celebration",
-    date: new Date(2025, 4, 25, 14, 0), // May 25, 2025, 2:00 PM
-    location: "Rua da Fábrica de Material de Guerra, 1, 1950-128 Lisbon, Portugal",
-    description: "Join us for a vibrant celebration of African cultures with concerts, traditional food, DJ sets, dance performances, and cultural projections. Experience the rich heritage of Africa through music, art, and community.",
-    category: "Cultural",
-    image: "https://i.imgur.com/vchikwW.jpg",
-    endTime: "23:00"
-  },
-];
-
 function Home() {
   const { t } = useLanguage();
-
-  // Get the 6 most recent upcoming events sorted by date
-  const getUpcomingEvents = () => {
-    const now = new Date();
-    return upcomingEvents
-      .filter(event => event.date >= now) // Only future events
-      .sort((a, b) => a.date.getTime() - b.date.getTime()) // Sort by date ascending
-      .slice(0, 6); // Take first 6
-  };
-
-  const nextSixEvents = getUpcomingEvents();
 
   return (
     <div>
@@ -340,49 +251,114 @@ function Home() {
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {nextSixEvents.map(event => (
-              <div key={event.id} className="bg-white border border-gray-200 rounded-lg overflow-hidden shadow-md hover:shadow-lg transition">
-                <img 
-                  src={event.image}
-                  alt={event.title} 
-                  className="w-full h-48 object-cover"
-                />
-                <div className="p-6">
-                  <div className="text-sm text-pan-red font-semibold mb-2">
-                    {format(event.date, "MMMM d, yyyy")} • {format(event.date, "HH:mm")}
-                    {event.endTime && ` - ${event.endTime}`}
-                  </div>
-                  <h3 className="text-xl font-bold mb-2">{event.title}</h3>
-                  <p className="text-gray-600 mb-4 line-clamp-3">{event.description}</p>
-                  {event.registrationLink ? (
-                    event.registrationLink.startsWith('http') ? (
-                      <a 
-                        href={event.registrationLink}
-                        target="_blank"
-                        rel="noopener noreferrer" 
-                        className="text-pan-red font-medium flex items-center hover:text-pan-red/80"
-                      >
-                        Register Now <ArrowRight className="ml-2 h-4 w-4" />
-                      </a>
-                    ) : (
-                      <Link 
-                        to={event.registrationLink}
-                        className="text-pan-red font-medium flex items-center hover:text-pan-red/80"
-                      >
-                        Register Now <ArrowRight className="ml-2 h-4 w-4" />
-                      </Link>
-                    )
-                  ) : (
-                    <Link 
-                      to="/events" 
-                      className="text-pan-red font-medium flex items-center hover:text-pan-red/80"
-                    >
-                      {t('home.upcomingEvents.learnMore')} <ArrowRight className="ml-2 h-4 w-4" />
-                    </Link>
-                  )}
-                </div>
+            <div className="bg-white border border-gray-200 rounded-lg overflow-hidden shadow-md hover:shadow-lg transition">
+              <img 
+                src="https://imgur.com/oOfmX3A.jpg"
+                alt="Full Moon Beach Night" 
+                className="w-full h-48 object-cover"
+              />
+              <div className="p-6">
+                <div className="text-sm text-pan-red font-semibold mb-2">August 9, 2025 • 20:00 - 00:00</div>
+                <h3 className="text-xl font-bold mb-2">Noite de Lua na Praia</h3>
+                <p className="text-gray-600 mb-4">Join us for a magical full moon gathering on the beach with childhood games and gratitude rituals. Connect with nature and community under the full moon at Praia de São Bruno, Caxias.</p>
+                <Link 
+                  to="/events" 
+                  className="text-pan-red font-medium flex items-center hover:text-pan-red/80"
+                >
+                  {t('home.upcomingEvents.learnMore')} <ArrowRight className="ml-2 h-4 w-4" />
+                </Link>
               </div>
-            ))}
+            </div>
+
+            <div className="bg-white border border-gray-200 rounded-lg overflow-hidden shadow-md hover:shadow-lg transition">
+              <img 
+                src="https://i.imgur.com/3KJGfwj.jpg"
+                alt="Diaspora Picnic" 
+                className="w-full h-48 object-cover"
+              />
+              <div className="p-6">
+                <div className="text-sm text-pan-red font-semibold mb-2">May 31, 2025 • 13:00 - 18:00</div>
+                <h3 className="text-xl font-bold mb-2">{t('home.upcomingEvents.diasporaPicnic.title')}</h3>
+                <p className="text-gray-600 mb-4">{t('home.upcomingEvents.diasporaPicnic.description')}</p>
+                <a 
+                  href="https://forms.gle/AKjtjV5xmU8cNAXE7"
+                  target="_blank"
+                  rel="noopener noreferrer" 
+                  className="text-pan-red font-medium flex items-center hover:text-pan-red/80"
+                >
+                  {t('home.upcomingEvents.diasporaPicnic.register')} <ArrowRight className="ml-2 h-4 w-4" />
+                </a>
+              </div>
+            </div>
+
+            <div className="bg-white border border-gray-200 rounded-lg overflow-hidden shadow-md hover:shadow-lg transition">
+              <img 
+                src="https://i.imgur.com/vchikwW.jpg"
+                alt="Africa Day Celebration" 
+                className="w-full h-48 object-cover"
+              />
+              <div className="p-6">
+                <div className="text-sm text-pan-red font-semibold mb-2">May 25, 2025 • 14:00 - 23:00</div>
+                <h3 className="text-xl font-bold mb-2">{t('home.upcomingEvents.africaDay.title')}</h3>
+                <p className="text-gray-600 mb-4">{t('home.upcomingEvents.africaDay.description')}</p>
+                <Link to="/events" className="text-pan-red font-medium flex items-center hover:text-pan-red/80">
+                  {t('home.upcomingEvents.learnMore')} <ArrowRight className="ml-2 h-4 w-4" />
+                </Link>
+              </div>
+            </div>
+
+            <div className="bg-white border border-gray-200 rounded-lg overflow-hidden shadow-md hover:shadow-lg transition">
+              <img 
+                src="https://imgur.com/Um1K5jA.jpeg"
+                alt="Language Exchange Event" 
+                className="w-full h-48 object-cover"
+              />
+              <div className="p-6">
+                <div className="text-sm text-pan-red font-semibold mb-2">June 28, 2025 • 18:00 - 20:00</div>
+                <h3 className="text-xl font-bold mb-2">Language Exchange Event</h3>
+                <p className="text-gray-600 mb-4">Join us for an enriching experience that promotes language learning, cultural exploration, and meaningful connections among members of the African Diaspora in Lisbon.</p>
+                <a 
+                  href="https://www.facebook.com/events/701026239495168/"
+                  target="_blank"
+                  rel="noopener noreferrer" 
+                  className="text-pan-red font-medium flex items-center hover:text-pan-red/80"
+                >
+                  Register on Facebook <ArrowRight className="ml-2 h-4 w-4" />
+                </a>
+              </div>
+            </div>
+
+            <div className="bg-white border border-gray-200 rounded-lg overflow-hidden shadow-md hover:shadow-lg transition">
+              <img 
+                src="https://i.imgur.com/ppZR0iC.jpg"
+                alt="Language Exchange Event" 
+                className="w-full h-48 object-cover"
+              />
+              <div className="p-6">
+                <div className="text-sm text-pan-red font-semibold mb-2">April 26, 2025 • 18:00</div>
+                <h3 className="text-xl font-bold mb-2">Language Exchange Event</h3>
+                <p className="text-gray-600 mb-4">Practice your language skills and connect with native speakers in a friendly, supportive environment. Weekly Portuguese and English language exchange.</p>
+                <Link to="/events" className="text-pan-red font-medium flex items-center hover:text-pan-red/80">
+                  {t('home.upcomingEvents.learnMore')} <ArrowRight className="ml-2 h-4 w-4" />
+                </Link>
+              </div>
+            </div>
+
+            <div className="bg-white border border-gray-200 rounded-lg overflow-hidden shadow-md hover:shadow-lg transition">
+              <img 
+                src="https://i.imgur.com/7mdxG48.jpg"
+                alt="Professional Networking Mixer" 
+                className="w-full h-48 object-cover"
+              />
+              <div className="p-6">
+                <div className="text-sm text-pan-red font-semibold mb-2">July 5, 2025 • 19:00</div>
+                <h3 className="text-xl font-bold mb-2">Professional Networking Mixer</h3>
+                <p className="text-gray-600 mb-4">Connect with professionals from diverse backgrounds and expand your network. Features structured networking activities and professional development discussions.</p>
+                <Link to="/events" className="text-pan-red font-medium flex items-center hover:text-pan-red/80">
+                  {t('home.upcomingEvents.learnMore')} <ArrowRight className="ml-2 h-4 w-4" />
+                </Link>
+              </div>
+            </div>
           </div>
         </div>
       </section>
