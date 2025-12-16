@@ -73,7 +73,7 @@ const newsData = [
     date: new Date(2025, 3, 7), // April 7, 2025 (day after the event)
     author: "Educational Programs Coordinator",
     category: "Education",
-    image: "https://imgur.com/tlNMF5I.jpg"
+    image: "https://www.museudoaljube.pt/wp-content/uploads/2020/04/DSC08769%C2%A9Jos%C3%A9-Frade_20190425_172440-1-1536x1024.jpg"
   },
   {
     id: 8,
