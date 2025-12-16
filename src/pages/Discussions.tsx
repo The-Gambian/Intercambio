@@ -10,7 +10,7 @@ const featuredTopics = [
     title: "Share Your Story",
     description: "Contribute to our community narrative by sharing your experiences as part of the African diaspora in Portugal.",
     category: "Personal Stories",
-    image: "/community-gathering.jpeg",
+    image: "https://imgur.com/a/8XM3ncS.jpeg",
     formLink: "https://5pzn0sic.forms.app/lead-generation-form"
   },
   {
@@ -18,7 +18,7 @@ const featuredTopics = [
     title: "Language Exchange",
     description: "Connect with language partners and join our conversation groups for Portuguese and English practice.",
     category: "Language Learning",
-    image: "/language-exchange.jpeg",
+    image: "https://imgur.com/Gg2oDX9.jpeg",
     formLink: "https://5pzn0sic.forms.app/lead-generation-form"
   },
   {
@@ -38,7 +38,7 @@ const communityHighlights = [
     title: "African Heritage Day Celebration",
     description: "Over 200 community members came together to celebrate our diverse cultural heritage through music, dance, and food.",
     date: new Date(2024, 3, 15),
-    image: "/professional-event.jpeg",
+    image: "https://imgur.com/8duHj80.jpeg",
     link: "https://www.instagram.com/intercambios_diaspora/"
   },
   {
