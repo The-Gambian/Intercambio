@@ -64,9 +64,9 @@ const Contact = () => {
                 <div className="flex items-start">
                   <MessageCircle className="h-6 w-6 text-red-300 mr-4 mt-1" />
                   <div>
-                    <p className="font-medium">Community Engagement</p>
+                    <p className="font-medium">{t('contact.info.community')}</p>
                     <p className="text-red-100">
-                      Join our regular meetups and connect with our WhatsApp community for updates and discussions.
+                      {t('contact.info.communityDesc')}
                     </p>
                   </div>
                 </div>
