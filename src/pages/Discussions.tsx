@@ -38,7 +38,7 @@ const communityHighlights = [
     title: "African Heritage Day Celebration",
     description: "Over 200 community members came together to celebrate our diverse cultural heritage through music, dance, and food.",
     date: new Date(2024, 3, 15),
-    image: "https://imgur.com/8duHj80.jpeg",
+    image: "https://imgur.com/aFewmTX.jpeg",
     link: "https://www.instagram.com/intercambios_diaspora/"
   },
   {
@@ -46,7 +46,7 @@ const communityHighlights = [
     title: "Language Exchange Meetup",
     description: "Weekly language exchange bringing together Portuguese learners and native speakers for cultural and linguistic exchange.",
     date: new Date(2024, 3, 10),
-    image: "/language-exchange.jpeg",
+    image: "https://imgur.com/Um1K5jA.jpeg",
     link: "https://www.instagram.com/intercambios_diaspora/"
   }
 ];
