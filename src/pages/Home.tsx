@@ -1,11 +1,16 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import { format } from 'date-fns';
 import { Calendar, Newspaper, Users, MessageCircle, BookOpen, ArrowRight, Briefcase, Mail, Heart, Quote } from 'lucide-react';
 import { useLanguage } from '../contexts/LanguageContext';
 import EmailSubscription from '../components/EmailSubscription';
+import { getRecentUpcomingEvents } from '../data/events';
 
 function Home() {
   const { t } = useLanguage();
+  
+  // Get the 6 most recent upcoming events
+  const recentEvents = getRecentUpcomingEvents(6);
 
   return (
     <div>
@@ -250,115 +255,40 @@ function Home() {
             </Link>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            <div className="bg-white border border-gray-200 rounded-lg overflow-hidden shadow-md hover:shadow-lg transition">
-              <img 
-                src="https://imgur.com/oOfmX3A.jpg"
-                alt="Full Moon Beach Night" 
-                className="w-full h-48 object-cover"
-              />
-              <div className="p-6">
-                <div className="text-sm text-pan-red font-semibold mb-2">August 9, 2025 • 20:00 - 00:00</div>
-                <h3 className="text-xl font-bold mb-2">Noite de Lua na Praia</h3>
-                <p className="text-gray-600 mb-4">Join us for a magical full moon gathering on the beach with childhood games and gratitude rituals. Connect with nature and community under the full moon at Praia de São Bruno, Caxias.</p>
-                <Link 
-                  to="/events" 
-                  className="text-pan-red font-medium flex items-center hover:text-pan-red/80"
-                >
-                  {t('home.upcomingEvents.learnMore')} <ArrowRight className="ml-2 h-4 w-4" />
-                </Link>
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+            {recentEvents.map(event => (
+              <div key={event.id} className="bg-white border border-gray-200 rounded-lg overflow-hidden shadow-md hover:shadow-lg transition">
+                <img 
+                  src={event.image}
+                  alt={event.title} 
+                  className="w-full h-48 object-cover"
+                />
+                <div className="p-6">
+                  <div className="text-sm text-pan-red font-semibold mb-2">
+                    {format(event.date, "MMMM d, yyyy")} • {format(event.date, "HH:mm")}
+                    {event.endTime && ` - ${event.endTime}`}
+                  </div>
+                  <h3 className="text-xl font-bold mb-2">{event.title}</h3>
+                  <p className="text-gray-600 mb-4 line-clamp-3">{event.description}</p>
+                  {event.registrationLink ? (
+                    <a 
+                      href={event.registrationLink}
+                      target={event.registrationLink.startsWith('http') ? "_blank" : "_self"}
+                      rel={event.registrationLink.startsWith('http') ? "noopener noreferrer" : undefined}
+                      className="text-pan-red font-medium flex items-center hover:text-pan-red/80"
+                    >
+                      {event.registrationLink.includes('facebook') ? 'Register on Facebook' : 
+                       event.registrationLink.includes('forms.gle') ? 'Register Now' : 
+                       'Learn More'} <ArrowRight className="ml-2 h-4 w-4" />
+                    </a>
+                  ) : (
+                    <Link to="/events" className="text-pan-red font-medium flex items-center hover:text-pan-red/80">
+                      {t('home.upcomingEvents.learnMore')} <ArrowRight className="ml-2 h-4 w-4" />
+                    </Link>
+                  )}
+                </div>
               </div>
-            </div>
-
-            <div className="bg-white border border-gray-200 rounded-lg overflow-hidden shadow-md hover:shadow-lg transition">
-              <img 
-                src="https://i.imgur.com/3KJGfwj.jpg"
-                alt="Diaspora Picnic" 
-                className="w-full h-48 object-cover"
-              />
-              <div className="p-6">
-                <div className="text-sm text-pan-red font-semibold mb-2">May 31, 2025 • 13:00 - 18:00</div>
-                <h3 className="text-xl font-bold mb-2">{t('home.upcomingEvents.diasporaPicnic.title')}</h3>
-                <p className="text-gray-600 mb-4">{t('home.upcomingEvents.diasporaPicnic.description')}</p>
-                <a 
-                  href="https://forms.gle/AKjtjV5xmU8cNAXE7"
-                  target="_blank"
-                  rel="noopener noreferrer" 
-                  className="text-pan-red font-medium flex items-center hover:text-pan-red/80"
-                >
-                  {t('home.upcomingEvents.diasporaPicnic.register')} <ArrowRight className="ml-2 h-4 w-4" />
-                </a>
-              </div>
-            </div>
-
-            <div className="bg-white border border-gray-200 rounded-lg overflow-hidden shadow-md hover:shadow-lg transition">
-              <img 
-                src="https://i.imgur.com/vchikwW.jpg"
-                alt="Africa Day Celebration" 
-                className="w-full h-48 object-cover"
-              />
-              <div className="p-6">
-                <div className="text-sm text-pan-red font-semibold mb-2">May 25, 2025 • 14:00 - 23:00</div>
-                <h3 className="text-xl font-bold mb-2">{t('home.upcomingEvents.africaDay.title')}</h3>
-                <p className="text-gray-600 mb-4">{t('home.upcomingEvents.africaDay.description')}</p>
-                <Link to="/events" className="text-pan-red font-medium flex items-center hover:text-pan-red/80">
-                  {t('home.upcomingEvents.learnMore')} <ArrowRight className="ml-2 h-4 w-4" />
-                </Link>
-              </div>
-            </div>
-
-            <div className="bg-white border border-gray-200 rounded-lg overflow-hidden shadow-md hover:shadow-lg transition">
-              <img 
-                src="https://imgur.com/Um1K5jA.jpeg"
-                alt="Language Exchange Event" 
-                className="w-full h-48 object-cover"
-              />
-              <div className="p-6">
-                <div className="text-sm text-pan-red font-semibold mb-2">June 28, 2025 • 18:00 - 20:00</div>
-                <h3 className="text-xl font-bold mb-2">Language Exchange Event</h3>
-                <p className="text-gray-600 mb-4">Join us for an enriching experience that promotes language learning, cultural exploration, and meaningful connections among members of the African Diaspora in Lisbon.</p>
-                <a 
-                  href="https://www.facebook.com/events/701026239495168/"
-                  target="_blank"
-                  rel="noopener noreferrer" 
-                  className="text-pan-red font-medium flex items-center hover:text-pan-red/80"
-                >
-                  Register on Facebook <ArrowRight className="ml-2 h-4 w-4" />
-                </a>
-              </div>
-            </div>
-
-            <div className="bg-white border border-gray-200 rounded-lg overflow-hidden shadow-md hover:shadow-lg transition">
-              <img 
-                src="https://i.imgur.com/ppZR0iC.jpg"
-                alt="Language Exchange Event" 
-                className="w-full h-48 object-cover"
-              />
-              <div className="p-6">
-                <div className="text-sm text-pan-red font-semibold mb-2">April 26, 2025 • 18:00</div>
-                <h3 className="text-xl font-bold mb-2">Language Exchange Event</h3>
-                <p className="text-gray-600 mb-4">Practice your language skills and connect with native speakers in a friendly, supportive environment. Weekly Portuguese and English language exchange.</p>
-                <Link to="/events" className="text-pan-red font-medium flex items-center hover:text-pan-red/80">
-                  {t('home.upcomingEvents.learnMore')} <ArrowRight className="ml-2 h-4 w-4" />
-                </Link>
-              </div>
-            </div>
-
-            <div className="bg-white border border-gray-200 rounded-lg overflow-hidden shadow-md hover:shadow-lg transition">
-              <img 
-                src="https://i.imgur.com/7mdxG48.jpg"
-                alt="Professional Networking Mixer" 
-                className="w-full h-48 object-cover"
-              />
-              <div className="p-6">
-                <div className="text-sm text-pan-red font-semibold mb-2">July 5, 2025 • 19:00</div>
-                <h3 className="text-xl font-bold mb-2">Professional Networking Mixer</h3>
-                <p className="text-gray-600 mb-4">Connect with professionals from diverse backgrounds and expand your network. Features structured networking activities and professional development discussions.</p>
-                <Link to="/events" className="text-pan-red font-medium flex items-center hover:text-pan-red/80">
-                  {t('home.upcomingEvents.learnMore')} <ArrowRight className="ml-2 h-4 w-4" />
-                </Link>
-              </div>
-            </div>
+            ))}
           </div>
         </div>
       </section>
