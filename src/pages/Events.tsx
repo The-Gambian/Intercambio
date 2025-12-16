@@ -12,7 +12,7 @@ const upcomingEvents = [
     location: "Associação Caboverdeana, R. Duque de Palmela 2 6° andar, Marquês de Pombal",
     description: "Join us for an enriching experience that promotes language learning, cultural exploration, and meaningful connections among members of the African Diaspora in Lisbon. Features language immersion, interactive activities, networking opportunities, and cultural exchange.",
     category: "Educational",
-    image: "https://imgur.com/FaF8QJn",
+    image: "https://imgur.com/FaF8QJn.jpg",
     endTime: "20:00"
   },
   {
@@ -22,7 +22,7 @@ const upcomingEvents = [
     location: "Kulea Café, Rua das Mercês 30, Lisboa (Ajuda)",
     description: "A study session and conversation among people of the African Diaspora. Join us for an intimate coffee meetup focused on language exchange and meaningful conversations in a cozy café setting.",
     category: "Educational",
-    image: "https://imgur.com/Gg2oDX9",
+    image: "https://imgur.com/Gg2oDX9.jpg",
     endTime: "13:00"
   },
   {
@@ -32,7 +32,7 @@ const upcomingEvents = [
     location: "M8TRIARCH Living Gallery, Travessa das Mónicas, 1100-359",
     description: "A Mental Health Best Practices MeetUp focusing on Intentional Healing & Benefits of Therapy Within the Diaspora. This meetup is designed to normalize conversations surrounding mental health challenges within the diaspora, offering a platform to exchange culturally relevant tools and resources. Open to certified and holistic healers and the general community. Event will be held in English & Portuguese.",
     category: "Community",
-    image: "https://imgur.com/UKuasmf",
+    image: "https://imgur.com/UKuasmf.jpg",
     registrationLink: "https://reignwel.com",
     endTime: "20:00"
   },
@@ -43,7 +43,7 @@ const upcomingEvents = [
     location: "Asha's Place Lisbon, R. do Diário de Notícias 59, 1200-334 Lisboa",
     description: "Join us for a special Christmas dinner celebration featuring traditional African dishes including Jollof Rice, Matapa, Domoda, Chamussa, Frango à Zambeziana, Doce de Mandioca, and Gulabos. Drinks include Water, Hibiscus, and MIK special cocktail. Price: 20€ per person. RSVP required - limited spaces available!",
     category: "Cultural",
-    image: "https://imgur.com/NEMWKcu",
+    image: "https://imgur.com/NEMWKcu.jpg",
     registrationLink: "/contact",
     endTime: "22:00"
   },
