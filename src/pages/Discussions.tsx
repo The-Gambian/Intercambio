@@ -10,7 +10,7 @@ const featuredTopics = [
     title: "Share Your Story",
     description: "Contribute to our community narrative by sharing your experiences as part of the African diaspora in Portugal.",
     category: "Personal Stories",
-    image: "https://imgur.com/a/8XM3ncS.jpeg",
+    image: "https://imgur.com/RFFBb3M.jpeg",
     formLink: "https://5pzn0sic.forms.app/lead-generation-form"
   },
   {
@@ -26,7 +26,7 @@ const featuredTopics = [
     title: "Cultural Events",
     description: "Suggest cultural activities or collaborate on upcoming community events.",
     category: "Events",
-    image: "/africa-day.png",
+    image: "https://imgur.com/UKuasmf.png",
     formLink: "https://5pzn0sic.forms.app/lead-generation-form"
   }
 ];
